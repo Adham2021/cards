@@ -5,7 +5,7 @@
   },
   "name": "smash-template-opl",
   "version": "1.0.0",
-  "main": "contactus.js",
+  "main": "server.js",
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
