@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 // POST endpoint to handle form submissions
-app.post('/submit-form', async (req, res) => {
+app.post('/submit-form_main', async (req, res) => {
     try {
         const { name, phone, massage } = req.body;
 
@@ -29,20 +29,18 @@ app.post('/submit-form', async (req, res) => {
         const mailOptions = {
             from: 'adham.shahwan94@gmail.com',
             to: 'adham@fit-x.app',
-            subject: `New Contact from ${name}`,
-            text: `Name: ${name}\nPhone: ${phone}\nMessage: ${massage}`,
+            subject: `ליד חדש שמעוניין בשירות שלך`,
+            text: `שם הלקוח: ${name}\nמספר טלפון: ${phone}\nהתוכן: ${massage}`,
         };
 
         // Send the email
         const info = await transporter.sendMail(mailOptions);
 
-        console.log('Email sent: ', info);
-
         // Respond to the client
-        res.status(200).send('Thank you! Your message has been sent.');
+        res.status(200).send('תודה רבה,הפרטים שלך נקלטו במערכת, מחזור אליך בהקדם!');
     } catch (error) {
-        console.error('Error sending email: ', error);
-        res.status(500).send('Oops! Something went wrong.');
+        console.error('שגיאה בשליחת נתונים: ', error);
+        res.status(500).send('שגיאה בשליחת נתונים');
     }
 });
 
