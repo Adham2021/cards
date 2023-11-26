@@ -2,5 +2,16 @@
   "dependencies": {
     "express": "^4.18.2",
     "nodemailer": "^6.9.7"
-  }
+  },
+  "name": "smash-template-opl",
+  "version": "1.0.0",
+  "main": "contactus.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
