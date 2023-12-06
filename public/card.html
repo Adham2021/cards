@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <title>Eye On Media</title>
+  <style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+
+  .cover-photo {
+    width: 100%;
+    height: 150px;
+    background-image: url('https://img.freepik.com/free-photo/top-view-grey-laptop-with-glasses_23-2148189998.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px 10px 0 0;
+  }
+
+  .profile {
+    text-align: center;
+    position: relative;
+    top: -75px; /* Adjust based on your cover photo height */
+  }
+
+  .profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+  }
+
+  .add-to-contacts {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    color: #007bff;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  .add-to-contacts:hover {
+    background-color: #007bff;
+    color: #fff;
+  }
+
+  .add-to-contacts i {
+    font-size: 18px;
+    margin-right: 5px;
+  }
+
+  .contact-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-icons a {
+    text-decoration: none;
+    color: #333;
+    margin: 10px;
+    text-align: center;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: color 0.3s ease;
+  }
+
+  .contact-icons i {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+
+  .contact-icons a:hover {
+    color: #007bff;
+  }
+
+  .container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .toggle-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .toggle-content.show {
+    max-height: 1000px;
+  }
+
+  .toggle-btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+  }
+
+  .toggle-btn:hover {
+    background-color: #d1e0ff;
+  }
+
+  .toggle-btn i {
+    font-size: 16px;
+  }
+
+  .services h3,
+  .faq h3,
+  .reviews h3 {
+    text-align: center;
+    color: #007bff;
+  }
+
+  .service-item,
+  .faq-item,
+  .review {
+    margin-top: 10px;
+  }
+
+  .service-icon,
+  .faq-item label {
+    font-size: 24px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+  }
+
+  .service-item:hover .service-icon,
+  .faq-item label:hover {
+    color: #007bff;
+  }
+
+  .service-text,
+  .faq-item p,
+  .review p {
+    font-size: 16px;
+  }
+
+  .faq-item label {
+    display: block;
+    padding: 10px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: left;
+  }
+
+  .faq-item label:hover {
+    background-color: #d1e0ff;
+  }
+
+  .faq-item p {
+    overflow: hidden;
+    transition: height 0.5s ease;
+    background-color: #e3f7ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+    height: auto; /* Set to 'auto' to accommodate varying content heights */
+  }
+  .service-item p {
+    overflow: hidden;
+    transition: height 0.5s ease;
+    background-color: #e3f7ff;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+    height: auto; /* Set to 'auto' to accommodate varying content heights */
+  }
+
+  .review {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .review img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+  }
+
+  .star-rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+  }
+
+  .star-rating i {
+    color: #ffd700; /* Gold color for stars */
+    font-size: 18px;
+    margin-right: 2px;
+  }
+
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 18px;
+  }
+
+  .footer i {
+    font-size: 24px;
+  }
+
+  .waze i {
+    color: #4285F4; /* Google Maps color */
+  }
+
+  .facebook i {
+    color: #1877f2;
+  }
+
+  .whatsapp i {
+    color: #25d366;
+  }
+
+  .phone i {
+    color: #34b7f1;
+  }
+
+  .email i {
+    color: #ea4335;
+  }
+
+  .website i {
+    color: #4caf50;
+  }
+</style>
+
+</head>
+
+<body>
+
+  <div class="cover-photo"></div>
+
+  <div class="container">
+
+    <div class="profile">
+      <img src="https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/405704220_238606702572716_5358032061614312331_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=bV289EmJpCgAX9xGh3S&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfB0x2RYdaFYxI5kfNzugZ7XmSTLLBy6DiTgA3Vy6IK4lA&oe=6575E105" alt="Your Name">
+      <h2>Eye On Media</h2>
+      <a href="#" class="add-to-contacts">
+        <i class="fas fa-phone"></i>
+        הוספה לאנשי קשר שלי
+      </a>
+    </div>
+
+    <div class="contact-icons">
+      <a href="https://www.facebook.com/yourfacebook" target="_blank" class="facebook">
+        <i class="fab fa-facebook"></i>
+        <span>פייסבוק</span>
+      </a>
+      <a href="https://wa.me/+972527539647" target="_blank" class="whatsapp">
+        <i class="fab fa-whatsapp"></i>
+        <span>וואטסאפ</span>
+      </a>
+      <a href="tel:+1234567890" class="phone">
+        <i class="fas fa-phone"></i>
+        <span>טלפון</span>
+      </a>
+      <a href="mailto:your@email.com" class="email">
+        <i class="fas fa-envelope"></i>
+        <span>אימייל</span>
+      </a>
+      <a href="https://www.yourwebsite.com" target="_blank" class="website">
+        <i class="fas fa-globe"></i>
+        <span>אתר שלנו</span>
+      </a>
+         <a href="https://ul.waze.com/ul?ll=32.68783290%2C35.24220010&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank" class="waze">
+      <i class="fab fa-waze"></i>
+      <span>המיקום</span>
+    </a>
+    </div>
+
+<div class="services">
+      <h3 class="services-title">השירותים שלנו</h3>
+
+      <div class="service-item">
+        <div class="toggle-btn" onclick="toggleService(this)">
+          <span class="service-text">Service 1</span>
+          <i class="fas fa-angle-down"></i>
+        </div>
+        <div class="toggle-content">
+          <p>Description of service 1.</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="toggle-btn" onclick="toggleService(this)">
+          <span class="service-text">Service 2</span>
+          <i class="fas fa-angle-down"></i>
+        </div>
+        <div class="toggle-content">
+          <p>Description of service 2.</p>
+        </div>
+      </div>
+
+      <div class="service-item">
+        <div class="toggle-btn" onclick="toggleService(this)">
+          <span class="service-text">Service 3</span>
+          <i class="fas fa-angle-down"></i>
+        </div>
+        <div class="toggle-content">
+          <p>Description of service 3.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq">
+      <h3>שאלות & תשובות</h3>
+
+      <div class="faq-item">
+        <div class="toggle-btn" onclick="toggleContent(this)">
+          <span>1. Question 1</span>
+          <i class="fas fa-plus"></i>
+        </div>
+        <div class="toggle-content">
+          <p>Answer 1</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="toggle-btn" onclick="toggleContent(this)">
+          <span>2. Question 2</span>
+          <i class="fas fa-plus"></i>
+        </div>
+        <div class="toggle-content">
+          <p>Answer 2</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="toggle-btn" onclick="toggleContent(this)">
+          <span>3. Question 3</span>
+          <i class="fas fa-plus"></i>
+        </div>
+        <div class="toggle-content">
+          <p>Answer 3</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews">
+      <h3>לקוחות ממליצים</h3>
+
+      <div class="review">
+        <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" alt="Client Image">
+        <p>דוד כהן</p>
+        <div class="star-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+        </div>
+        <p>"Great service! Highly recommended."</p>
+      </div>
+
+      <div class="review">
+        <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" alt="Client Image">
+        <p>חוה זינה</p>
+        <div class="star-rating">
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star-half-alt"></i>
+        </div>
+        <p>"Excellent work, very professional."</p>
+      </div>
+    </div>
+ <div class="footer">
+    <p>יפיע- נצרת 1695500- טלפון - +972 527539647</p>
+    <div>
+      <a href="https://www.facebook.com/yourfacebook" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/yourinstagram" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@yourtiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <!-- Add more social media icons as needed -->
+    </div>
+    <p>&copy; 2023 Eye On Media. כל הזכויות שמורות.</p>
+  </div>
+  </div>
+
+  <script>
+    function toggleContent(btn) {
+      // Toggle the 'show' class on the toggle-content div
+      var toggleContent = btn.nextElementSibling;
+      toggleContent.classList.toggle('show');
+
+      // Toggle the icon based on the 'show' class
+      var icon = btn.querySelector('i');
+      if (toggleContent.classList.contains('show')) {
+        icon.classList.remove('fa-plus');
+        icon.classList.add('fa-minus');
+      } else {
+        icon.classList.remove('fa-minus');
+        icon.classList.add('fa-plus');
+      }
+    }
+    function toggleService(btn) {
+      // Toggle the 'show' class on the toggle-content div
+      var toggleContent = btn.nextElementSibling;
+      toggleContent.classList.toggle('show');
+
+      // Toggle the icon based on the 'show' class
+      var icon = btn.querySelector('i');
+      if (toggleContent.classList.contains('show')) {
+        icon.classList.remove('fa-angle-down');
+        icon.classList.add('fa-angle-up');
+      } else {
+        icon.classList.remove('fa-angle-up');
+        icon.classList.add('fa-angle-down');
+      }
+    }
+  </script>
+
+</body>
+
+</html>
