@@ -1,555 +1,703 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" dir="rtl">
+    
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <title>Eye On Media</title>
-  <style>
-  body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f0f0f0;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <title>Eye On Media</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
 
-   .cover-photo {
-      width: 100%;
-      height: 200px;
-      background-image: url('https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/405979955_238628209237232_7953395107559204795_n.png?_nc_cat=110&ccb=1-7&_nc_sid=783fdb&_nc_ohc=Rns0EiUk_U0AX_U7mAt&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfCEPNgZFGnfK1sR4_jmgYS6bDudP3nQwSVkffwVoJ4q4A&oe=65755F0D');
-      background-size: cover;
-      background-position: center;
-      border-radius: 10px 10px 0 0;
-    }
+        .cover-photo {
+            width: 100%;
+            height: 200px;
+            background-image: url('https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/405979955_238628209237232_7953395107559204795_n.png?_nc_cat=110&ccb=1-7&_nc_sid=783fdb&_nc_ohc=Rns0EiUk_U0AX_U7mAt&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfCEPNgZFGnfK1sR4_jmgYS6bDudP3nQwSVkffwVoJ4q4A&oe=65755F0D');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px 10px 0 0;
+        }
 
-  .profile {
-    text-align: center;
-    position: relative;
-    top: -75px; /* Adjust based on your cover photo height */
-  }
-.profile h2 {
-  font-size: 18px;
-  color: #333; /* Adjust the color as needed */
-  margin-bottom: 5px; /* Adjust the margin as needed */
-}
+        .profile {
+            text-align: center;
+            position: relative;
+            top: -75px;
+            /* Adjust based on your cover photo height */
+        }
 
-/* Style for the subtitle */
-.profile .subtitle {
-  font-size: 14px;
-  color: #666; /* Adjust the color as needed */
-  margin-top: 5px; /* Adjust the margin as needed */
-}
-  .profile img {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    object-fit: cover;
-  }
+        .profile h2 {
+            font-size: 18px;
+            color: #333;
+            /* Adjust the color as needed */
+            margin-bottom: 5px;
+            /* Adjust the margin as needed */
+        }
 
-      .add-to-contacts {
-      display: inline-flex;
-      align-items: center;
-      padding: 10px;
-      border: 1px solid #007bff;
-      border-radius: 5px;
-      color: #007bff;
-      text-decoration: none;
-      transition: background-color 0.3s ease, color 0.3s ease;
-    }
+        /* Style for the subtitle */
+        .profile .subtitle {
+            font-size: 14px;
+            color: #666;
+            /* Adjust the color as needed */
+            margin-top: 5px;
+            /* Adjust the margin as needed */
+        }
 
-  .add-to-contacts:hover {
-    background-color: #007bff;
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+
+        .add-to-contacts {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px;
+            border: 1px solid #007bff;
+            border-radius: 5px;
+            color: #007bff;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .add-to-contacts:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+        .add-to-contacts i {
+            font-size: 18px;
+            margin-right: 5px;
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-icons a {
+            text-decoration: none;
+            color: #333;
+            margin: 10px;
+            text-align: center;
+            font-size: 18px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .contact-icons i {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .contact-icons a:hover {
+            color: #007bff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .toggle-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .toggle-content.show {
+            max-height: 1000px;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #d1e0ff;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            background-color: #d1e0ff;
+        }
+
+        .toggle-btn i {
+            font-size: 16px;
+        }
+
+
+
+
+        .service-item,
+        .faq-item,
+        .review {
+            margin-top: 10px;
+        }
+
+        .service-icon,
+        .faq-item label {
+            font-size: 24px;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .service-item:hover .service-icon,
+        .faq-item label:hover {
+            color: #007bff;
+        }
+
+        .service-text,
+        .faq-item p,
+        .review p,
+        .working-hours p,
+        .about-us p {
+            font-size: 16px;
+        }
+
+        .faq-item label {
+            display: block;
+            padding: 10px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            text-align: left;
+        }
+
+        .faq-item label:hover {
+            background-color: #d1e0ff;
+        }
+
+        .faq-item p {
+            overflow: hidden;
+            transition: height 0.5s ease;
+            background-color: #e3f7ff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            width: 100%;
+            height: auto;
+            /* Set to 'auto' to accommodate varying content heights */
+        }
+
+        .service-item p {
+            overflow: hidden;
+            transition: height 0.5s ease;
+            background-color: #e3f7ff;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            width: 100%;
+            height: auto;
+            /* Set to 'auto' to accommodate varying content heights */
+        }
+
+        .review {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .review img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+
+        .review .subtitle {
+            font-style: italic;
+            /* Italicize the subtitle */
+            color: #888;
+            /* Set a subdued color for the subtitle */
+        }
+
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .star-rating i {
+            color: #ffd700;
+            /* Gold color for stars */
+            font-size: 18px;
+            margin-right: 2px;
+        }
+
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .footer a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 18px;
+        }
+
+        .footer i {
+            font-size: 24px;
+        }
+
+        .waze i {
+            color: #4285F4;
+            /* Google Maps color */
+        }
+
+        .facebook i {
+            color: #1877f2;
+        }
+
+        .whatsapp i {
+            color: #25d366;
+        }
+
+        .phone i {
+            color: #34b7f1;
+        }
+
+        .email i {
+            color: #ea4335;
+        }
+
+        .website i {
+            color: #4caf50;
+        }
+
+        .working-hours,
+        .about-us,
+        .services,
+        .faq,
+        .reviews {
+            text-align: center;
+            margin-top: 20px;
+            border-top: 2px solid #007bff;
+            padding-top: 20px;
+        }
+
+        .working-hours p {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+
+
+        .about-us h3,
+        .reviews h3,
+        .working-hours h3,
+        .faq h3,
+        .services h3 {
+            margin: 0 10px;
+            /* Adjust margin for better spacing */
+            background-color: #f2f2f2;
+            color: #000;
+            /* Adjust the color as needed */
+        }
+
+
+        .line {
+            flex-grow: 1;
+            border-top: 1px solid #000;
+            /* Adjust line styling as needed */
+        }
+
+
+        #language-menu {
+            display: none;
+            position: absolute;
+            background-color: #fff; /* Light background color for the menu */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+        }
+
+        #language-menu a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333; /* Text color for the menu items */
+        }
+
+        #language-menu a:hover {
+            background-color: #e0e0e0; /* Background color on hover */
+        }
+
+        #language-menu-btn {
+            display: flex;
+    align-items: center;
+    background-color: transparent;
     color: #fff;
-  }
-
-  .add-to-contacts i {
-    font-size: 18px;
-    margin-right: 5px;
-  }
-
-  .contact-icons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .contact-icons a {
-    text-decoration: none;
-    color: #333;
-    margin: 10px;
-    text-align: center;
-    font-size: 18px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: color 0.3s ease;
-  }
-
-  .contact-icons i {
-    font-size: 24px;
-    margin-bottom: 5px;
-  }
-
-  .contact-icons a:hover {
-    color: #007bff;
-  }
-
-  .container {
-      max-width: 600px;
-      margin: 0 auto;
-      padding: 20px;
-      background-color: #fff;
-      border: 2px solid #007bff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-
-  .toggle-content {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.5s ease;
-  }
-
-  .toggle-content.show {
-    max-height: 1000px;
-  }
-
-  .toggle-btn {
+    padding: 5px 10px;
+    border: 1px solid white;
     cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    background-color: #d1e0ff;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-  }
+    border-radius: 10%;
+        }
 
-  .toggle-btn:hover {
-    background-color: #d1e0ff;
-  }
-
-  .toggle-btn i {
-    font-size: 16px;
-  }
-
-
-  
-
-  .service-item,
-  .faq-item,
-  .review {
-    margin-top: 10px;
-  }
-
-  .service-icon,
-  .faq-item label {
-    font-size: 24px;
+        #language-flag {
+            margin-right: 5px;
+            width: 20px; /* Adjust the size as needed */
+            height: auto;
+        }
+        .languages { 
+            position: relative;
+    top: 20px;
     margin-right: 10px;
-    transition: color 0.3s ease;
-  }
-
-  .service-item:hover .service-icon,
-  .faq-item label:hover {
-    color: #007bff;
-  }
-
-  .service-text,
-  .faq-item p,
-  .review p,
-  .working-hours p,
-  .about-us p{
-    font-size: 16px;
-  }
-
-  .faq-item label {
-    display: block;
-    padding: 10px;
-    background-color: #f0f0f0;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    width: 100%;
-    text-align: left;
-  }
-
-  .faq-item label:hover {
-    background-color: #d1e0ff;
-  }
-
-  .faq-item p {
-    overflow: hidden;
-    transition: height 0.5s ease;
-    background-color: #e3f7ff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-    width: 100%;
-    height: auto; /* Set to 'auto' to accommodate varying content heights */
-  }
-  .service-item p {
-    overflow: hidden;
-    transition: height 0.5s ease;
-    background-color: #e3f7ff;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-    width: 100%;
-    height: auto; /* Set to 'auto' to accommodate varying content heights */
-  }
-
-  .review {
-    border: 1px solid #ddd;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .review img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-    object-fit: cover;
-  }
-  .review .subtitle {
-    font-style: italic; /* Italicize the subtitle */
-    color: #888; /* Set a subdued color for the subtitle */
-}
-
-  .star-rating {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 8px;
-  }
-
-  .star-rating i {
-    color: #ffd700; /* Gold color for stars */
-    font-size: 18px;
-    margin-right: 2px;
-  }
-
-  .footer {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
-    border-radius: 0 0 10px 10px;
-  }
-
-  .footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    font-size: 18px;
-  }
-
-  .footer i {
-    font-size: 24px;
-  }
-
-  .waze i {
-    color: #4285F4; /* Google Maps color */
-  }
-
-  .facebook i {
-    color: #1877f2;
-  }
-
-  .whatsapp i {
-    color: #25d366;
-  }
-
-  .phone i {
-    color: #34b7f1;
-  }
-
-  .email i {
-    color: #ea4335;
-  }
-
-  .website i {
-    color: #4caf50;
-  }
- .working-hours,
- .about-us,
- .services,
-  .faq,
-  .reviews{
-      text-align: center;
-      margin-top: 20px;
-      border-top: 2px solid #007bff;
-      padding-top: 20px;
-    }
-
-    .working-hours p {
-      font-size: 16px;
-      margin-top: 10px;
-    }
-
-
-
-  .about-us h3,
-  .reviews h3,
-  .working-hours h3,
-  .faq h3,
-  .services h3
-
-  {
-     margin: 0 10px; /* Adjust margin for better spacing */
-     background-color: #f2f2f2;
-    color: #000; /* Adjust the color as needed */
-  }
-  
-  
-  .line {
-      flex-grow: 1;
-      border-top: 1px solid #000; /* Adjust line styling as needed */
-    }
-
-</style>
+        }
+        
+    </style>
 
 </head>
 
 <body>
 
-  <div class="cover-photo"></div>
+    <div class="cover-photo">
+        <div class="languages">
+            <button id="language-menu-btn" onclick="chooseLanguage()">
+                <img id="language-flag" src="assets/images/files/flags/israel.png">
+                עברית
+            </button>
+            <div id="language-menu">
+                <a href="#" onclick="changeLanguage('hebrew')">
+                    <img id="language-flag" src="assets/images/files/flags/israel.png">
+                    עברית</a>
+                <a href="#" onclick="changeLanguage('arabic')">
+                    <img id="language-flag" src="assets/images/files/flags/saudi-arabia.png">
+                    العربية</a>
+                <a href="#" onclick="changeLanguage('english')">
+                    <img id="language-flag" src="assets/images/files/flags/united-kingdom.png">
+                    English</a>
+            </div>
+        </div>
+    </div>
+    </div>    
+    <div class="container">
+        <div class="profile">
+            <img src="https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/405704220_238606702572716_5358032061614312331_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=bV289EmJpCgAX9xGh3S&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfB0x2RYdaFYxI5kfNzugZ7XmSTLLBy6DiTgA3Vy6IK4lA&oe=6575E105"
+                alt="Your Name">
+            <h2>Eye On Media</h2>
+            <p class="subtitle">חברה לשיווק עסקים בדיגיטל</p>
+            <a onclick="addToContacts()" class="add-to-contacts">
+                <i class="fas fa-phone"></i>
+                הוספה לאנשי קשר שלי
+            </a>
+        </div>
+        
+       
+        <div class="contact-icons">
+            <a href="https://www.facebook.com/profile.php?id=100092701628022" target="_blank" class="facebook">
+                <i class="fab fa-facebook"></i>
+                <span>פייסבוק</span>
+            </a>
+            <a href="https://wa.me/+972544275526" target="_blank" class="whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span>וואטסאפ</span>
+            </a>
+            <a href="tel:+972544275526" class="phone">
+                <i class="fas fa-phone"></i>
+                <span>חייגו אלינו</span>
+            </a>
+            <a href="mailto:eye_onmedia@gmail.com" class="email">
+                <i class="fas fa-envelope"></i>
+                <span>אימייל</span>
+            </a>
+            <a href="https://www.eye-on-media.com" target="_blank" class="website">
+                <i class="fas fa-globe"></i>
+                <span>אתר שלנו</span>
+            </a>
+            <a href="https://ul.waze.com/ul?ll=32.68783290%2C35.24220010&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+                target="_blank" class="waze">
+                <i class="fab fa-waze"></i>
+                <span>נווטו אלינו</span>
+            </a>
+        </div>
 
-  <div class="container">
+        <div class="about-us">
+            <div class="line"></div>
+            <h3>אודותינו</h3>
+            <div class="line"></div>
+            <p>אנחנו משרד שמתעסק בשיווק לעסקים. צוות המומחים שלנו מפתח ומיישם
+                תכני שיווק אסטרטגיים כדי לקדם את עסקך. אנו יצירתיים, מתמקדים, ומתחנקים
+                לשלוחה משימה - לעזור לעסק שלך לצמוח ולצלח.</p>
+        </div>
 
-    <div class="profile">
-      <img src="https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/405704220_238606702572716_5358032061614312331_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=efb6e6&_nc_ohc=bV289EmJpCgAX9xGh3S&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfB0x2RYdaFYxI5kfNzugZ7XmSTLLBy6DiTgA3Vy6IK4lA&oe=6575E105" alt="Your Name">
-      <h2>Eye On Media</h2>
-       <p class="subtitle">חברה לשיווק עסקים בדיגיטל</p>
-      <a  onclick="addToContacts()" class="add-to-contacts">
-        <i class="fas fa-phone"></i>
-        הוספה לאנשי קשר שלי
-      </a>
+        <div class="services">
+            <div class="line"></div>
+            <h3 class="services-title">השירותים שלנו</h3>
+            <div class="line"></div>
+
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text">קמפיינרים</span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content">
+                    <p>שירותי קמפיינים מתייחסים לשירותים שמתמקדים בתכנון, ביצוע וניתוח של קמפיינים שיווקיים בעולם
+                        הדיגיטל. זה יכול לכלול פעולות כמו בניית קמפיינים בפלטפורמות דיגיטליות שונות (כמו Google Ads,
+                        Facebook Ads, ו-Instagram Ads), יצירת תוכן שיווקי, בחינת נתונים ותוצאות, ובסופו של תהליך זה -
+                        התאמה שוטפת של הקמפיינים למערכת התקציב, ליעדי העסק, ולמטרות השיווק.</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text">יועץ אסטרטגי</span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content">
+                    <p>השירות כולל ניתוח עמוק של סביבת העסק, השוק, והמתחרים, כדי להבין את הפוטנציאלים והאתגרים. היועץ
+                        אסטרטגי מתקן עמם מטרות, עקרונות, ותכניות אסטרטגיות ומשרת כמומחה</p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text">מלווה עסקי</span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content">
+                    <p>שירות המלווה עסקי שלנו הוא חבילה מקיפה שמתמקדת בתמיכה וייעוץ אסטרטגי בפיתוח ובניהול העסק שלך. אנו
+                        מספקים שירות אישי ומותאם עבור צרכייך הספציפיים, כדי לסייע לך להשיג את המטרות שלך ולהצליח בעסק
+                        שלך. אנו עוברים יחד איתך דרך תהליכי תכנון, ייעוץ, ויישום, כדי לוודא שאתה מקבל את התמיכה והכלים
+                        הנדרשים לפתח את עסקך ולהגיע לשלב הבא של הצלחה.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="working-hours">
+            <div class="line"></div>
+            <h3>שעות פעילות</h3>
+            <div class="line"></div>
+            <p>יום שני-שישי: 09:00 - 18:00</p>
+            <p>יום שבת: סגור</p>
+            <p>יום ראשון: 10:00 - 15:00</p>
+        </div>
+
+        <div class="faq">
+            <div class="line"></div>
+            <h3>שאלות & תשובות</h3>
+            <div class="line"></div>
+
+            <div class="faq-item">
+                <div class="toggle-btn" onclick="toggleContent(this)">
+                    <span>איך כרטיס ביקור דיגיטלי יכול לתרום לחשיפה של עסק בעולם הדיגיטל ?</span>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="toggle-content">
+                    <p> כרטיס ביקור דיגיטלי הוא כלי שימושי לחשיפה ושיווק באונליין. הוא מאפשר לעסק להציג מידע חשוב, כמו
+                        פרטי יצירת קשר, שירותים או מוצרים, ולקדם את המותג בצורה מקצועית ומרשימה.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="toggle-btn" onclick="toggleContent(this)">
+                    <span> איך יש לשלב את ניהול מדיה חברתית באסטרטגיה השיווקית של עסק ?</span>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="toggle-content">
+                    <p>
+                        זיהוי קהל יעד: הבנת הקהל המטרה ואילו רשתות חברתיות הם פעילים בהן.
+                        יצירת תוכן איכותי: יצירת תוכן מרתק ומשובח שייצר אינטראקציה ושיתוף פעולה ברשתות החברתיות.
+                        שימוש בכלי פרסום: הפעלת פרסומים ממומנים דרך מדיה חברתית לקידום התוכן והגעה לקהל נוסף.
+                        פעילות רצופה: ניהול תוכן תדיר ופעילות רצופה לבניית קהל נאמן ולשמירה על קשר עם הלקוחות.
+                        ניתוח נתונים: שימוש בנתונים וכלים אנליטיים לניתוח התנהגות הקהל ומידע שיווקי, והתאמת האסטרטגיה
+                        לפי התוצאות.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="toggle-btn" onclick="toggleContent(this)">
+                    <span>מהם היתרונות של כרטיס ביקור דיגיטלי בהשוואה לכרטיס ביקור טרדיציונלי ?</span>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="toggle-content">
+                    <p>יתרונות רבים כוללים אפשרות לעדכן את המידע בזמן אמת, האפשרות להוסיף קישורים לרשתות חברתיות ולאתר
+                        העסק, ואפשרות לשלוח את הכרטיס בקלות דרך מייל או מסרון.</p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="reviews">
+            <div class="line"></div>
+            <h3>לקוחות ממליצים</h3>
+            <div class="line"></div>
+
+            <div class="review">
+                <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png"
+                    alt="Client Image">
+                <p>יוסי הק.</p>
+                <p class="subtitle">בעל עסק בתחום הטכנולוגיה</p>
+                <div class="star-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p>"השירות שלהם בלתי רגיל! יצרנו יחסים מצוינים עם צוות השיווק וראינו תוצאות מדהימות במהירות. ממליץ
+                    בחום!" "</p>
+            </div>
+
+            <div class="review">
+                <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png"
+                    alt="Client Image">
+                <p>דניאלה</p>
+                <p class="subtitle">מנהלת בחברת פרסום</p>
+
+                <div class="star-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>"קיבלנו כרטיס ביקור דיגיטלי מעוצב ומקצועי שגרם להכרזות שלנו להתפשט כאשר שילבנו אותו במדיה חברתית.
+                    התפקוד שלהם מדויק ופרופישנאלי!"</p>
+            </div>
+            <div class="review">
+                <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png"
+                    alt="Client Image">
+                <p>אבי ז.</p>
+                <p class="subtitle">בעל חנות למכירת חומרי בניין</p>
+
+                <div class="star-rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p>"הם עזרו לנו להבין את התחום הדיגיטלי ואיך למקד את מאמצי השיווק שלנו. היו יצירתיים, מקצועיים
+                    ומושקעים."</p>
+            </div>
+        </div>
+        <div class="footer">
+            <p>יפיע- נצרת 1695500- טלפון - +972 527539647</p>
+            <div>
+                <a href="https://www.facebook.com/yourfacebook" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/yourinstagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@yourtiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <!-- Add more social media icons as needed -->
+            </div>
+            <p>&copy; 2023 Eye On Media. כל הזכויות שמורות.</p>
+        </div>
     </div>
 
-    <div class="contact-icons">
-      <a href="https://www.facebook.com/profile.php?id=100092701628022" target="_blank" class="facebook">
-        <i class="fab fa-facebook"></i>
-        <span>פייסבוק</span>
-      </a>
-      <a href="https://wa.me/+972544275526" target="_blank" class="whatsapp">
-        <i class="fab fa-whatsapp"></i>
-        <span>וואטסאפ</span>
-      </a>
-      <a href="tel:+972544275526" class="phone">
-        <i class="fas fa-phone"></i>
-        <span>חייגו אלינו</span>
-      </a>
-      <a href="mailto:eye_onmedia@gmail.com" class="email">
-        <i class="fas fa-envelope"></i>
-        <span>אימייל</span>
-      </a>
-      <a href="https://www.eye-on-media.com" target="_blank" class="website">
-        <i class="fas fa-globe"></i>
-        <span>אתר שלנו</span>
-      </a>
-         <a href="https://ul.waze.com/ul?ll=32.68783290%2C35.24220010&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location" target="_blank" class="waze">
-      <i class="fab fa-waze"></i>
-      <span>נווטו אלינו</span>
-    </a>
-    </div>
+    <script>
+        function toggleContent(btn) {
+            // Toggle the 'show' class on the toggle-content div
+            var toggleContent = btn.nextElementSibling;
+            toggleContent.classList.toggle('show');
+
+            // Toggle the icon based on the 'show' class
+            var icon = btn.querySelector('i');
+            if (toggleContent.classList.contains('show')) {
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            }
+        }
+        function toggleService(btn) {
+            // Toggle the 'show' class on the toggle-content div
+            var toggleContent = btn.nextElementSibling;
+            toggleContent.classList.toggle('show');
+
+            // Toggle the icon based on the 'show' class
+            var icon = btn.querySelector('i');
+            if (toggleContent.classList.contains('show')) {
+                icon.classList.remove('fa-angle-down');
+                icon.classList.add('fa-angle-up');
+            } else {
+                icon.classList.remove('fa-angle-up');
+                icon.classList.add('fa-angle-down');
+            }
+        }
+        function addToContacts() {
+            var contact = {
+                name: "Eye On Media",
+                phone: "+972544275526",
+                email: "eye_onmedia@gmail.com"
+            };
+            // create a vcard file
+            var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
+            var blob = new Blob([vcard], { type: "text/vcard" });
+            var url = URL.createObjectURL(blob);
+
+            const newLink = document.createElement('a');
+            newLink.download = contact.name + ".vcf";
+            newLink.textContent = contact.name;
+            newLink.href = url;
+
+            newLink.click();
+        }
+
+        function changeLanguage(language) {
+  // Implement language change logic here
+  // You may use external libraries or APIs for translation
+
+  // For example, you can change the document language attribute:
+  document.documentElement.lang = language;
+
+  // Close the language menu after selection
+  document.getElementById('language-menu').style.display = 'none';
+}
+function chooseLanguage() {
+  var menu = document.getElementById('language-menu');
+  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+}
+
+function changeLanguage(language) {
+  // Implement language change logic here
+  // You may use external libraries or APIs for translation
+
+  // For example, you can change the document language attribute:
+  document.documentElement.lang = language;
+
+  // Close the language menu after selection
+  document.getElementById('language-menu').style.display = 'none';
+}
+document.addEventListener('click', function(event) {
+        var languageMenu = document.getElementById('language-menu');
+        var languageButton = document.getElementById('language-menu-btn');
+
+        // Check if the click target is outside the language menu and button
+        if (event.target !== languageMenu && event.target !== languageButton) {
+            // Hide the language menu
+            languageMenu.style.display = 'none';
+        }
+    });
+    </script>
+
     
-      <div class="about-us">
-      <div class="line"></div>
-      <h3>אודותינו</h3>
-      <div class="line"></div>
-      <p>אנחנו משרד שמתעסק בשיווק לעסקים. צוות המומחים שלנו מפתח ומיישם
-        תכני שיווק אסטרטגיים כדי לקדם את עסקך. אנו יצירתיים, מתמקדים, ומתחנקים
-        לשלוחה משימה - לעזור לעסק שלך לצמוח ולצלח.</p>
-    </div>
-
-<div class="services">
-<div class="line"></div>
-      <h3 class="services-title">השירותים שלנו</h3>
-      <div class="line"></div>
-
-      <div class="service-item">
-        <div class="toggle-btn" onclick="toggleService(this)">
-          <span class="service-text">קמפיינרים</span>
-          <i class="fas fa-angle-down"></i>
-        </div>
-        <div class="toggle-content">
-          <p>שירותי קמפיינים מתייחסים לשירותים שמתמקדים בתכנון, ביצוע וניתוח של קמפיינים שיווקיים בעולם הדיגיטל. זה יכול לכלול פעולות כמו בניית קמפיינים בפלטפורמות דיגיטליות שונות (כמו Google Ads, Facebook Ads, ו-Instagram Ads), יצירת תוכן שיווקי, בחינת נתונים ותוצאות, ובסופו של תהליך זה - התאמה שוטפת של הקמפיינים למערכת התקציב, ליעדי העסק, ולמטרות השיווק.</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <div class="toggle-btn" onclick="toggleService(this)">
-          <span class="service-text">יועץ אסטרטגי</span>
-          <i class="fas fa-angle-down"></i>
-        </div>
-        <div class="toggle-content">
-          <p>השירות כולל ניתוח עמוק של סביבת העסק, השוק, והמתחרים, כדי להבין את הפוטנציאלים והאתגרים. היועץ אסטרטגי מתקן עמם מטרות, עקרונות, ותכניות אסטרטגיות ומשרת כמומחה</p>
-        </div>
-      </div>
-
-      <div class="service-item">
-        <div class="toggle-btn" onclick="toggleService(this)">
-          <span class="service-text">מלווה עסקי</span>
-          <i class="fas fa-angle-down"></i>
-        </div>
-        <div class="toggle-content">
-          <p>שירות המלווה עסקי שלנו הוא חבילה מקיפה שמתמקדת בתמיכה וייעוץ אסטרטגי בפיתוח ובניהול העסק שלך. אנו מספקים שירות אישי ומותאם עבור צרכייך הספציפיים, כדי לסייע לך להשיג את המטרות שלך ולהצליח בעסק שלך. אנו עוברים יחד איתך דרך תהליכי תכנון, ייעוץ, ויישום, כדי לוודא שאתה מקבל את התמיכה והכלים הנדרשים לפתח את עסקך ולהגיע לשלב הבא של הצלחה.</p>
-        </div>
-      </div>
-    </div>
-    
- <div class="working-hours">
- <div class="line"></div>
-      <h3>שעות פעילות</h3>
-      <div class="line"></div>
-      <p>יום שני-שישי: 09:00 - 18:00</p>
-      <p>יום שבת: סגור</p>
-      <p>יום ראשון: 10:00 - 15:00</p>
-    </div>
-
-    <div class="faq">
-    <div class="line"></div>
-      <h3>שאלות & תשובות</h3>
-      <div class="line"></div>
-
-      <div class="faq-item">
-        <div class="toggle-btn" onclick="toggleContent(this)">
-          <span>איך כרטיס ביקור דיגיטלי יכול לתרום לחשיפה של עסק בעולם הדיגיטל ?</span>
-          <i class="fas fa-plus"></i>
-        </div>
-        <div class="toggle-content">
-          <p> כרטיס ביקור דיגיטלי הוא כלי שימושי לחשיפה ושיווק באונליין. הוא מאפשר לעסק להציג מידע חשוב, כמו פרטי יצירת קשר, שירותים או מוצרים, ולקדם את המותג בצורה מקצועית ומרשימה.</p>
-        </div>
-      </div>
-<div class="faq-item">
-        <div class="toggle-btn" onclick="toggleContent(this)">
-          <span> איך יש לשלב את ניהול מדיה חברתית באסטרטגיה השיווקית של עסק ?</span>
-          <i class="fas fa-plus"></i>
-        </div>
-        <div class="toggle-content">
-          <p>
-זיהוי קהל יעד: הבנת הקהל המטרה ואילו רשתות חברתיות הם פעילים בהן.
-יצירת תוכן איכותי: יצירת תוכן מרתק ומשובח שייצר אינטראקציה ושיתוף פעולה ברשתות החברתיות.
-שימוש בכלי פרסום: הפעלת פרסומים ממומנים דרך מדיה חברתית לקידום התוכן והגעה לקהל נוסף.
-פעילות רצופה: ניהול תוכן תדיר ופעילות רצופה לבניית קהל נאמן ולשמירה על קשר עם הלקוחות.
-ניתוח נתונים: שימוש בנתונים וכלים אנליטיים לניתוח התנהגות הקהל ומידע שיווקי, והתאמת האסטרטגיה לפי התוצאות.</p>
-        </div>
-      </div>
-      <div class="faq-item">
-        <div class="toggle-btn" onclick="toggleContent(this)">
-          <span>מהם היתרונות של כרטיס ביקור דיגיטלי בהשוואה לכרטיס ביקור טרדיציונלי ?</span>
-          <i class="fas fa-plus"></i>
-        </div>
-        <div class="toggle-content">
-          <p>יתרונות רבים כוללים אפשרות לעדכן את המידע בזמן אמת, האפשרות להוסיף קישורים לרשתות חברתיות ולאתר העסק, ואפשרות לשלוח את הכרטיס בקלות דרך מייל או מסרון.</p>
-        </div>
-      </div>
-
-     
-    </div>
-
-    <div class="reviews">
-    <div class="line"></div>
-      <h3>לקוחות ממליצים</h3>
-      <div class="line"></div>
-
-      <div class="review">
-        <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" alt="Client Image">
-        <p>יוסי הק.</p>
-         <p class="subtitle">בעל עסק בתחום הטכנולוגיה</p>
-        <div class="star-rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-        </div>
-<p>"השירות שלהם בלתי רגיל! יצרנו יחסים מצוינים עם צוות השיווק וראינו תוצאות מדהימות במהירות. ממליץ בחום!" "</p>
-</div>
-
-      <div class="review">
-        <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" alt="Client Image">
-        <p>דניאלה</p>
-                 <p class="subtitle">מנהלת בחברת פרסום</p>
-
-        <div class="star-rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half-alt"></i>
-        </div>
-        <p>"קיבלנו כרטיס ביקור דיגיטלי מעוצב ומקצועי שגרם להכרזות שלנו להתפשט כאשר שילבנו אותו במדיה חברתית. התפקוד שלהם מדויק ופרופישנאלי!"</p>
-      </div>
-      <div class="review">
-        <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" alt="Client Image">
-        <p>אבי ז.</p>
-                 <p class="subtitle">בעל חנות למכירת חומרי בניין</p>
-
-        <div class="star-rating">
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star"></i>
-          <i class="fas fa-star-half-alt"></i>
-        </div>
-        <p>"הם עזרו לנו להבין את התחום הדיגיטלי ואיך למקד את מאמצי השיווק שלנו. היו יצירתיים, מקצועיים ומושקעים."</p>
-      </div>
-    </div>
- <div class="footer">
-    <p>יפיע- נצרת 1695500- טלפון - +972 527539647</p>
-    <div>
-      <a href="https://www.facebook.com/yourfacebook" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/yourinstagram" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://www.tiktok.com/@yourtiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
-      <!-- Add more social media icons as needed -->
-    </div>
-    <p>&copy; 2023 Eye On Media. כל הזכויות שמורות.</p>
-  </div>
-  </div>
-
-  <script>
-    function toggleContent(btn) {
-      // Toggle the 'show' class on the toggle-content div
-      var toggleContent = btn.nextElementSibling;
-      toggleContent.classList.toggle('show');
-
-      // Toggle the icon based on the 'show' class
-      var icon = btn.querySelector('i');
-      if (toggleContent.classList.contains('show')) {
-        icon.classList.remove('fa-plus');
-        icon.classList.add('fa-minus');
-      } else {
-        icon.classList.remove('fa-minus');
-        icon.classList.add('fa-plus');
-      }
-    }
-    function toggleService(btn) {
-      // Toggle the 'show' class on the toggle-content div
-      var toggleContent = btn.nextElementSibling;
-      toggleContent.classList.toggle('show');
-
-      // Toggle the icon based on the 'show' class
-      var icon = btn.querySelector('i');
-      if (toggleContent.classList.contains('show')) {
-        icon.classList.remove('fa-angle-down');
-        icon.classList.add('fa-angle-up');
-      } else {
-        icon.classList.remove('fa-angle-up');
-        icon.classList.add('fa-angle-down');
-      }
-    }
-    function addToContacts() {
-    window.location.href = 'tel:' + "adham";
-    }
-  </script>
 
 </body>
 
