@@ -308,6 +308,7 @@ color: white;;
         .working-hours,
         .about-us,
         .services,
+        .gallery-container,
         .faq,
         .reviews {
             text-align: center;
@@ -325,6 +326,7 @@ color: white;;
 
         .about-us h3,
         .reviews h3,
+        .gallery-container h3,
         .working-hours h3,
         .faq h3,
         .services h3 {
@@ -383,8 +385,41 @@ color: white;;
     top: 20px;
     margin-right: 10px;
         }
-        
+       
     </style>
+        <style>
+            .gallery-container {
+                position: relative;
+                width: 100%;
+                overflow: hidden;
+            }
+    
+            .gallery {
+                display: flex;
+                transition: transform 0.5s ease-in-out;
+            }
+    
+            .gallery img {
+                width: 100%;
+                object-fit: cover;
+            }
+    
+            .arrow {
+                position: absolute;
+                top: 50%;
+                font-size: 30px;
+                cursor: pointer;
+                user-select: none;
+            }
+    
+            .arrow.left {
+                left: 10px;
+            }
+    
+            .arrow.right {
+                right: 10px;
+            }
+        </style>
 
 </head>
 
@@ -458,7 +493,19 @@ color: white;;
                 <span>נווטו אלינו</span>
             </a>
         </div>
-
+        <div class="gallery-container">
+            <div class="line"></div>
+            <h3>תמונות מהפרויקטים שלנו</h3>
+            <div class="line"></div>
+            <div class="gallery" onmousedown="startDrag(event)" onmousemove="drag(event)" onmouseup="endDrag()">
+                <!-- Images will be dynamically added here using JavaScript -->
+                <img src="https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/405796913_1011495686602669_1727247685080338223_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=FqQEDubIMW0AX_3qYCW&_nc_ht=scontent.ftlv19-1.fna&oh=00_AfAJqM466-JcuTvvmlAG90woFKq7ob4WQwZMRfDKfnA5ew&oe=6578EF50" 
+                >
+            </div>
+        
+            <div class="arrow right" onclick="prevSlide()">&#10094;</div>
+            <div class="arrow left" onclick="nextSlide()">&#10095;</div>
+        </div>
         <div class="about-us">
             <div class="line"></div>
             <h3>קצת עלינו</h3>
@@ -717,8 +764,85 @@ document.addEventListener('click', function(event) {
     });
     </script>
 
-    
+<script>
+    const gallery = document.querySelector('.gallery');
+    let currentIndex = 0;
+    let initialX = 0;
+    let isDragging = false;
 
+    const imageArray = [
+        'https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/403725270_1011495669936004_2598338113921723447_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=R990VHyEZysAX9t_oNW&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfDKYrJaJDEUc6FOxDx3i9oM0e-YNUfp5KFaq4CgZuGz4A&oe=657850D3',
+        'https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/403713937_1011495636602674_8685912819137191999_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=6OLUrKg-lNMAX-OVMm-&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfD-BQHjqRzteDqLvra0oIgsiFyNeUoMEQ3PATOoZUxWRA&oe=65783828',
+        'https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/405796913_1011495686602669_1727247685080338223_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=FqQEDubIMW0AX_3qYCW&_nc_ht=scontent.ftlv19-1.fna&oh=00_AfAJqM466-JcuTvvmlAG90woFKq7ob4WQwZMRfDKfnA5ew&oe=6578EF50'
+
+    ];
+
+    function initGallery() {
+        imageArray.forEach(url => {
+            const img = document.createElement('img');
+            img.src = url;
+            gallery.appendChild(img);
+        });
+        showSlide(currentIndex);
+    }
+
+    function showSlide(index) {
+    // Check if the index is within the bounds of the array
+    if (index >= 0 && index < imageArray.length) {
+        // Update the image source in the HTML
+        document.querySelector('.gallery img').src = imageArray[index] ;
+        // Update the currentIndex
+        currentIndex = index;
+    }
+}
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
+        showSlide(currentIndex);
+    }
+
+    function nextSlide() {
+        debugger
+        currentIndex = (currentIndex + 1) % imageArray.length;
+        showSlide(currentIndex);
+    }
+
+    function startDrag(event) {
+        isDragging = true;
+        initialX = event.clientX;
+    }
+
+    function drag(event) {
+    if (!isDragging) return;
+
+    const deltaX = event.clientX - initialX;
+    gallery.style.transition = 'transform 0s'; // Disable transition during drag
+    gallery.style.transform = `translateX(calc(${-currentIndex * 100}% + ${deltaX}px))`;
+}
+
+function endDrag() {
+    if (!isDragging) return;
+
+    const deltaX = event.clientX - initialX;
+    const threshold = window.innerWidth / 4;
+
+    if (Math.abs(deltaX) > threshold) {
+        if (deltaX > 0) {
+            currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
+        } else {
+            currentIndex = (currentIndex + 1) % imageArray.length;
+        }
+    }
+
+    // Enable transition after drag
+    gallery.style.transition = 'transform 0.5s ease-in-out';
+    showSlide(currentIndex);
+
+    isDragging = false;
+}
+
+    initGallery();
+</script>
 </body>
 
 </html>
