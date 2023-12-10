@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en" dir="rtl">
-    
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+
 
     <title>מועתסם ח'ליליה</title>
     <style>
@@ -17,13 +18,13 @@
         }
 
         .cover-photo {
-    width: 100%;
-    height: 300px;
-    background-image: url('assets/images/files/mk/salon.jpg');
-    background-size: cover;
-    background-position: center;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
-}
+            width: 100%;
+            height: 300px;
+            background-image: url('assets/images/files/mk/salon.jpg');
+            background-size: cover;
+            background-position: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+        }
 
 
         .profile {
@@ -37,6 +38,9 @@
             font-size: 23px;
             color: #ffffff;
             margin-bottom: 5px;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInFromBottom 1s ease-out 0.5s forwards;
 
         }
 
@@ -47,6 +51,17 @@
             /* Adjust the color as needed */
             margin-top: 5px;
             /* Adjust the margin as needed */
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInFromBottom 1s ease-out 1s forwards;
+
+        }
+
+        @keyframes fadeInFromBottom {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .profile img {
@@ -67,9 +82,14 @@
             color: #007bff;
             text-decoration: none;
             transition: background-color 0.3s ease, color 0.3s ease;
+            animation: fadeInFromBottom 1s ease-out 1.5s forwards;
+            opacity: 0;
+            transform: translateY(50px);
         }
-         .add-to-contacts span {
-color: white;;
+
+        .add-to-contacts span {
+            color: white;
+            ;
         }
 
         .add-to-contacts:hover {
@@ -91,16 +111,16 @@ color: white;;
         }
 
         .contact-icons a {
-    text-decoration: none;
-    color: #ffffff;
-    margin: 10px;
-    text-align: center;
-    font-size: 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    transition: color 0.3s ease;
-}
+            text-decoration: none;
+            color: #ffffff;
+            margin: 10px;
+            text-align: center;
+            font-size: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
 
         .contact-icons i {
             font-size: 24px;
@@ -115,7 +135,7 @@ color: white;;
             max-width: 600px;
             margin: 0 auto;
             padding: 20px;
-            background: linear-gradient(to bottom,#000000, #FCD516);
+            background: linear-gradient(to bottom, #000000, #FCD516);
             box-shadow: 0 0 10px rgb(255 235 0);
 
         }
@@ -204,7 +224,7 @@ color: white;;
             margin-top: 10px;
             height: auto;
             color: black;
-            
+
         }
 
         .service-item p {
@@ -299,9 +319,11 @@ color: white;;
         .website i {
             color: #FCD516;
         }
+
         .instagram i {
             color: #FCD516;
         }
+
         .tiktok i {
             color: #FCD516;
         }
@@ -323,8 +345,11 @@ color: white;;
             margin-top: 10px;
         }
 
-
-
+        .gallery-container h4
+{
+    background-color: burlywood;
+    border-radius: 10%;
+}
         .about-us h3,
         .reviews h3,
         .gallery-container h3,
@@ -349,102 +374,122 @@ color: white;;
         #language-menu {
             display: none;
             position: absolute;
-            background-color: #fff; /* Light background color for the menu */
+            background-color: #fff;
+            /* Light background color for the menu */
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Optional: Add a subtle shadow */
         }
 
         #language-menu a {
             display: block;
             padding: 10px;
             text-decoration: none;
-            color: #333; /* Text color for the menu items */
+            color: #333;
+            /* Text color for the menu items */
         }
 
         #language-menu a:hover {
-            background-color: #e0e0e0; /* Background color on hover */
+            background-color: #e0e0e0;
+            /* Background color on hover */
         }
 
         #language-menu-btn {
             display: flex;
-    align-items: center;
-    background-color: transparent;
-    color: #fff;
-    padding: 5px 10px;
-    border: 1px solid white;
-    cursor: pointer;
-    border-radius: 10%;
+            align-items: center;
+            background-color: transparent;
+            color: #fff;
+            padding: 5px 10px;
+            border: 1px solid white;
+            cursor: pointer;
+            border-radius: 10%;
         }
 
         #language-flag {
             margin-right: 5px;
-            width: 20px; /* Adjust the size as needed */
+            width: 20px;
+            /* Adjust the size as needed */
             height: auto;
         }
-        .languages { 
+
+        .languages {
             position: relative;
-    top: 20px;
-    margin-right: 10px;
+            top: 20px;
+            margin-right: 10px;
         }
-       
     </style>
-        <style>
-            .gallery-container {
-                position: relative;
-                width: 100%;
-                overflow: hidden;
-            }
-    
-            .gallery {
-                display: flex;
-                transition: transform 0.5s ease-in-out;
-                margin-top: 15px;
-            }
-    
-            .gallery img {
-                width: 100%;
-                object-fit: cover;
-                transition: transform 0.5s ease-in-out;
-            }
-            
-    
-            .arrow.left {
-                left: 10px;
-            }
-    
-            .arrow.right {
-                right: 10px;
+    <style>
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .gallery,
+        .gallery2  {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            margin-top: 15px;
+        }
+
+        .gallery img,
+        .gallery2 img {
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+    </style>
+    <style>
+        .reviews-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reviews {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .review {
+            width: 100%;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            user-select: none;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+        }
+
+        .image-container {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
             }
 
-        </style>
-<style>
-    .reviews-slider {
-    position: relative;
-    overflow: hidden;
-}
-
-.reviews {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.review {
-    width: 100%;
-}
-
-.arrow {
-    position: absolute;
-    top: 50%;
-    font-size: 24px;
-    cursor: pointer;
-    user-select: none;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-}
-
-</style>
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -468,38 +513,41 @@ color: white;;
             </div>
         </div>
     </div>
-    </div>    
+    </div>
     <div class="container">
         <div class="profile">
-            <img src="assets/images/files/mk/logo.jpg" style="border: 3px solid white;"
-                alt="Your Name">
-            <h2 >מועתסם ח'ליליה</h2>
+            <div class="image-container">
+                <img id="animated-logo" src="assets/images/files/mk/logo.jpg" style="border: 3px solid white;">
+            </div>
+            <h2>מועתסם ח'ליליה</h2>
             <p class="subtitle">אדריכלות ועיצוב פנים</p>
             <a onclick="addToContacts()" class="add-to-contacts">
                 <i class="fas fa-phone"></i>
-                <span >הוספה לאנשי קשר שלי</span>
+                <span>הוספה לאנשי קשר שלי</span>
             </a>
         </div>
-        
-       
+
+
         <div class="contact-icons">
-            <a href="https://www.facebook.com/profile.php?id=100032267426602&locale=ar_AR" target="_blank" class="facebook">
+            <a href="https://www.facebook.com/profile.php?id=100032267426602&locale=ar_AR" target="_blank"
+                class="facebook">
                 <i class="fab fa-facebook"></i>
                 <span>פייסבוק</span>
             </a>
-            <a href="https://instagram.com/moatasem.khalilieh_arch?igshid=MzMyNGUyNmU2YQ==" target="_blank" class="instagram">
+            <a href="https://instagram.com/moatasem.khalilieh_arch?igshid=MzMyNGUyNmU2YQ==" target="_blank"
+                class="instagram">
                 <i class="fab fa-instagram"></i>
                 <span>אינסגרם</span>
             </a>
-            <a href="https://www.tiktok.com/@moatasem.kh_arch?_t=8i0kCVuXgW1&_r=1 " target="_blank" class="tiktok">
+            <a href="https://www.tiktok.com/@moatasem.kh_arch?_t=8i0kCVuXgW1&_r=1" target="_blank" class="tiktok">
                 <i class="fab fa-tiktok"></i>
                 <span>טיקטוק</span>
             </a>
-            <a href="https://wa.me/+972544275526" target="_blank" class="whatsapp">
+            <a href="https://wa.me/+972528957836" target="_blank" class="whatsapp">
                 <i class="fab fa-whatsapp"></i>
                 <span>וואטסאפ</span>
             </a>
-            <a href="tel:+972544275526" class="phone">
+            <a href="tel:+972528957836" class="phone">
                 <i class="fas fa-phone"></i>
                 <span>חייגו אלינו</span>
             </a>
@@ -523,7 +571,9 @@ color: white;;
             <h3>קצת עלינו</h3>
             <div class="line"></div>
             <p>
-                אנו במשרדנו מתמחים בתכנון ועיצוב פנים עם דגש על יצירת חללים ייחודיים ופונקציונליים. במשרד מציעים פתרונות מעוצבים אישית המשלבים אמנות, טכנולוגיה ורגישות לסביבה ולצרכי הלקוח. בין אם זה בנייה חדשה, שיפוץ או עיצוב פנים, ומתמקדים ביצירת חוויית מגורים או עבודה משופרת ללקוחותינו
+                אנו במשרדנו מתמחים בתכנון ועיצוב פנים עם דגש על יצירת חללים ייחודיים ופונקציונליים. במשרד מציעים פתרונות
+                מעוצבים אישית המשלבים אמנות, טכנולוגיה ורגישות לסביבה ולצרכי הלקוח. בין אם זה בנייה חדשה, שיפוץ או עיצוב
+                פנים, ומתמקדים ביצירת חוויית מגורים או עבודה משופרת ללקוחותינו
             </p>
         </div>
 
@@ -534,38 +584,31 @@ color: white;;
 
             <div class="service-item">
                 <div class="toggle-btn" onclick="toggleService(this)">
-                    <span class="service-text">קמפיינרים</span>
+                    <span class="service-text">תכנון ועיצוב פנים מותאם אישית</span>
                     <i class="fas fa-angle-down"></i>
                 </div>
                 <div class="toggle-content">
-                    <p>שירותי קמפיינים מתייחסים לשירותים שמתמקדים בתכנון, ביצוע וניתוח של קמפיינים שיווקיים בעולם
-                        הדיגיטל. זה יכול לכלול פעולות כמו בניית קמפיינים בפלטפורמות דיגיטליות שונות (כמו Google Ads,
-                        Facebook Ads, ו-Instagram Ads), יצירת תוכן שיווקי, בחינת נתונים ותוצאות, ובסופו של תהליך זה -
-                        התאמה שוטפת של הקמפיינים למערכת התקציב, ליעדי העסק, ולמטרות השיווק.</p>
+                    <p>במשרדכם, אניות על יצירת חללים ייחודיים ופונקציונליים. השירות כולל ייעוץ אישי ותכנון מותאם לכל לקוח, שמשלב אמנות, טכנולוגיה ורגישות ליצירת חוויית מגורים או עבודה משופרת.</p>
                 </div>
             </div>
 
             <div class="service-item">
                 <div class="toggle-btn" onclick="toggleService(this)">
-                    <span class="service-text">יועץ אסטרטגי</span>
+                    <span class="service-text">פתרונות מעוצבים לבנייה חדשה</span>
                     <i class="fas fa-angle-down"></i>
                 </div>
                 <div class="toggle-content">
-                    <p>השירות כולל ניתוח עמוק של סביבת העסק, השוק, והמתחרים, כדי להבין את הפוטנציאלים והאתגרים. היועץ
-                        אסטרטגי מתקן עמם מטרות, עקרונות, ותכניות אסטרטגיות ומשרת כמומחה</p>
+                  <p>אתם מציעים פתרונות מעוצבים וייחודיים לבניית נכסים חדשים. השירות כולל שילוב של אמנות, טכנולוגיה ועיצוב ליצירת חללים שמשדרים רגישות ויוקרה.</p>
                 </div>
             </div>
 
             <div class="service-item">
                 <div class="toggle-btn" onclick="toggleService(this)">
-                    <span class="service-text">מלווה עסקי</span>
+                    <span class="service-text">שיפוצים ועיצוב פנים</span>
                     <i class="fas fa-angle-down"></i>
                 </div>
                 <div class="toggle-content">
-                    <p>שירות המלווה עסקי שלנו הוא חבילה מקיפה שמתמקדת בתמיכה וייעוץ אסטרטגי בפיתוח ובניהול העסק שלך. אנו
-                        מספקים שירות אישי ומותאם עבור צרכייך הספציפיים, כדי לסייע לך להשיג את המטרות שלך ולהצליח בעסק
-                        שלך. אנו עוברים יחד איתך דרך תהליכי תכנון, ייעוץ, ויישום, כדי לוודא שאתה מקבל את התמיכה והכלים
-                        הנדרשים לפתח את עסקך ולהגיע לשלב הבא של הצלחה.</p>
+                    <p>עבודה עם לקוחות על שדרוג ושיפוצים של נכסים קיימים. אתם מתמקדים ביצירת חוויית מגורים או עבודה משופרת דרך שדרוג ועיצוב פנים מותאם לצרכי הלקוח.</p>
                 </div>
             </div>
         </div>
@@ -574,23 +617,35 @@ color: white;;
             <div class="line"></div>
             <h3>שעות פעילות</h3>
             <div class="line"></div>
-            <p>יום שני-שישי: 09:00 - 18:00</p>
+            <p>יום שני-שישי: 08:00 - 15:00</p>
             <p>יום שבת: סגור</p>
-            <p>יום ראשון: 10:00 - 15:00</p>
+            <p>יום ראשון: 08:00 - 17:00</p>
         </div>
 
-        <div class="gallery-container" >
+        <div class="gallery-container">
             <div class="line"></div>
             <h3>תמונות מהפרויקטים שלנו</h3>
             <div class="line"></div>
+            <h4>1.תכנון ועיצוב פנים לבית בשטח של 90 מ״ר - יפיע </h4>
             <div class="gallery">
                 <!-- Images will be dynamically added here using JavaScript -->
-                <img src="https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/405796913_1011495686602669_1727247685080338223_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=FqQEDubIMW0AX_3qYCW&_nc_ht=scontent.ftlv19-1.fna&oh=00_AfAJqM466-JcuTvvmlAG90woFKq7ob4WQwZMRfDKfnA5ew&oe=6578EF50" 
-                >
+                <img
+                    src="https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/405796913_1011495686602669_1727247685080338223_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=FqQEDubIMW0AX_3qYCW&_nc_ht=scontent.ftlv19-1.fna&oh=00_AfAJqM466-JcuTvvmlAG90woFKq7ob4WQwZMRfDKfnA5ew&oe=6578EF50">
             </div>
-        
+
             <div class="arrow right" onclick="prevSlide()">&#10094;</div>
             <div class="arrow left" onclick="nextSlide()">&#10095;</div>
+        </div>
+        <div class="gallery-container">
+            <h4>2.תכנון ועיצוב פנים לבית בשטח של 90 מ״ר - יפיע </h4>
+            <div class="gallery2">
+                <!-- Images will be dynamically added here using JavaScript -->
+                <img
+                    src="https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320080648_847815176544346_5023572296604230546_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=OOUgEnz0nOAAX9ZAu54&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCeEohTv1iX5Wy96hIEmxo0pAmVRdhcS3jtX9uD3ymHiw&oe=6579F586">
+            </div>
+
+            <div class="arrow right" onclick="prevSlide2()">&#10094;</div>
+            <div class="arrow left" onclick="nextSlide2()">&#10095;</div>
         </div>
 
         <div class="faq">
@@ -600,55 +655,56 @@ color: white;;
 
             <div class="faq-item">
                 <div class="toggle-btn" onclick="toggleContent(this)">
-                    <span>איך כרטיס ביקור דיגיטלי יכול לתרום לחשיפה של עסק בעולם הדיגיטל ?</span>
+                    <span>שאלה: איך אתם מתמקדים ביצירת חללים ייחודיים?</span>
                     <i class="fas fa-plus"></i>
                 </div>
                 <div class="toggle-content">
-                    <p> כרטיס ביקור דיגיטלי הוא כלי שימושי לחשיפה ושיווק באונליין. הוא מאפשר לעסק להציג מידע חשוב, כמו
-                        פרטי יצירת קשר, שירותים או מוצרים, ולקדם את המותג בצורה מקצועית ומרשימה.</p>
+                   <p>אנו מתמקדים בשילוב של אמנות, טכנולוגיה ורגישות כדי ליצור חללים מרהיבים ופונקציונליים.</p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="toggle-btn" onclick="toggleContent(this)">
-                    <span> איך יש לשלב את ניהול מדיה חברתית באסטרטגיה השיווקית של עסק ?</span>
+                   <span>שאלה: מהם התחומים שאתם מתמחים בהם?</span>
                     <i class="fas fa-plus"></i>
                 </div>
                 <div class="toggle-content">
-                    <p>
-                        זיהוי קהל יעד: הבנת הקהל המטרה ואילו רשתות חברתיות הם פעילים בהן.
-                        יצירת תוכן איכותי: יצירת תוכן מרתק ומשובח שייצר אינטראקציה ושיתוף פעולה ברשתות החברתיות.
-                        שימוש בכלי פרסום: הפעלת פרסומים ממומנים דרך מדיה חברתית לקידום התוכן והגעה לקהל נוסף.
-                        פעילות רצופה: ניהול תוכן תדיר ופעילות רצופה לבניית קהל נאמן ולשמירה על קשר עם הלקוחות.
-                        ניתוח נתונים: שימוש בנתונים וכלים אנליטיים לניתוח התנהגות הקהל ומידע שיווקי, והתאמת האסטרטגיה
-                        לפי התוצאות.</p>
+                    <p>אנו מתמחים בתכנון ועיצוב פנים לבתים פרטיים, מבני ציבור וחללי עסקים. </p>
                 </div>
             </div>
             <div class="faq-item">
                 <div class="toggle-btn" onclick="toggleContent(this)">
-                    <span>מהם היתרונות של כרטיס ביקור דיגיטלי בהשוואה לכרטיס ביקור טרדיציונלי ?</span>
+                   <span>שאלה: איך אתם יוצרים חוויית מגורים משופרת?</span>
                     <i class="fas fa-plus"></i>
                 </div>
                 <div class="toggle-content">
-                    <p>יתרונות רבים כוללים אפשרות לעדכן את המידע בזמן אמת, האפשרות להוסיף קישורים לרשתות חברתיות ולאתר
-                        העסק, ואפשרות לשלוח את הכרטיס בקלות דרך מייל או מסרון.</p>
+                    <p>אנו משדרים רגישות ויוקרה דרך יצירת חללים שמתאימים לצרכי הלקוח ומשדרים תחושה של בית.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="toggle-btn" onclick="toggleContent(this)">
+                  <span>שאלה: מהם השלבים בתהליך תכנון פרויקט?</span>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="toggle-content">
+                    <p>השלבים כוללים ייעוץ אישי, תכנון מותאם אישית, ושלב יצירתי ששולב בין אמנות, טכנולוגיה ועיצוב.</p>
                 </div>
             </div>
 
 
         </div>
 
-    <div class="slider-container">
-        <h3 style="text-align: center;background-color: white;">לקוחות ממליצים</h3>
-        <div class="slider" id="slider"></div>
-        <button class="slider-button prev" onclick="changeSlide(-1)">&#9665;</button>
-        <button class="slider-button next" onclick="changeSlide(1)">&#9655;</button>
-    </div>
+        <div class="slider-container">
+            <h3 style="text-align: center;background-color: white;">לקוחות ממליצים</h3>
+            <div class="slider" id="slider"></div>
+            <button class="slider-button prev" onclick="changeSlide(-1)">&#9665;</button>
+            <button class="slider-button next" onclick="changeSlide(1)">&#9655;</button>
+        </div>
         <div class="footer">
-            <p>יפיע- נצרת 1695500- טלפון - +972 527539647</p>
+            <p>יפיע- נצרת 1695500- טלפון - +972528957836</p>
             <div>
-                <a href="https://www.facebook.com/yourfacebook" target="_blank"><i class="fab fa-facebook"></i></a>
-                <a href="https://www.instagram.com/yourinstagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.tiktok.com/@yourtiktok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://www.facebook.com/profile.php?id=100032267426602&locale=ar_AR" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="https://instagram.com/moatasem.khalilieh_arch?igshid=MzMyNGUyNmU2YQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.tiktok.com/@moatasem.kh_arch?_t=8i0kCVuXgW1&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
                 <!-- Add more social media icons as needed -->
             </div>
             <p>&copy; 2023 Eye On Media. כל הזכויות שמורות.</p>
@@ -656,6 +712,7 @@ color: white;;
     </div>
 
     <script>
+
         function toggleContent(btn) {
             // Toggle the 'show' class on the toggle-content div
             var toggleContent = btn.nextElementSibling;
@@ -689,7 +746,7 @@ color: white;;
         function addToContacts() {
             var contact = {
                 name: "Eye On Media",
-                phone: "+972544275526",
+                phone: "+972528957836",
                 email: "eye_onmedia@gmail.com"
             };
             // create a vcard file
@@ -706,201 +763,293 @@ color: white;;
         }
 
         function changeLanguage(language) {
-  // Implement language change logic here
-  // You may use external libraries or APIs for translation
+            // Implement language change logic here
+            // You may use external libraries or APIs for translation
 
-  // For example, you can change the document language attribute:
-  document.documentElement.lang = language;
+            // For example, you can change the document language attribute:
+            document.documentElement.lang = language;
 
-  // Close the language menu after selection
-  document.getElementById('language-menu').style.display = 'none';
-}
-function chooseLanguage() {
-  var menu = document.getElementById('language-menu');
-  menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
-}
-
-function changeLanguage(language) {
-  // Implement language change logic here
-  // You may use external libraries or APIs for translation
-
-  // For example, you can change the document language attribute:
-  document.documentElement.lang = language;
-
-  // Close the language menu after selection
-  document.getElementById('language-menu').style.display = 'none';
-}
-document.addEventListener('click', function(event) {
-        var languageMenu = document.getElementById('language-menu');
-        var languageButton = document.getElementById('language-menu-btn');
-
-        // Check if the click target is outside the language menu and button
-        if (event.target !== languageMenu && event.target !== languageButton) {
-            // Hide the language menu
-            languageMenu.style.display = 'none';
+            // Close the language menu after selection
+            document.getElementById('language-menu').style.display = 'none';
         }
-    });
+        function chooseLanguage() {
+            var menu = document.getElementById('language-menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function changeLanguage(language) {
+            // Implement language change logic here
+            // You may use external libraries or APIs for translation
+
+            // For example, you can change the document language attribute:
+            document.documentElement.lang = language;
+
+            // Close the language menu after selection
+            document.getElementById('language-menu').style.display = 'none';
+        }
+        document.addEventListener('click', function (event) {
+            var languageMenu = document.getElementById('language-menu');
+            var languageButton = document.getElementById('language-menu-btn');
+
+            // Check if the click target is outside the language menu and button
+            if (event.target !== languageMenu && event.target !== languageButton) {
+                // Hide the language menu
+                languageMenu.style.display = 'none';
+            }
+        });
     </script>
 
-<script>
-    const gallery = document.querySelector('.gallery');
-    let currentIndex = 0;
-    let initialX = 0;
-    let isDragging = false;
+    <script>
+        const gallery = document.querySelector('.gallery');
+        let currentIndex = 0;
+        let initialX = 0;
+        let isDragging = false;
 
-    const imageArray = [
-        'https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/403725270_1011495669936004_2598338113921723447_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=R990VHyEZysAX9t_oNW&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfDKYrJaJDEUc6FOxDx3i9oM0e-YNUfp5KFaq4CgZuGz4A&oe=657850D3',
-        'https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/403713937_1011495636602674_8685912819137191999_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=6OLUrKg-lNMAX-OVMm-&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfD-BQHjqRzteDqLvra0oIgsiFyNeUoMEQ3PATOoZUxWRA&oe=65783828',
-        'https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/405796913_1011495686602669_1727247685080338223_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=FqQEDubIMW0AX_3qYCW&_nc_ht=scontent.ftlv19-1.fna&oh=00_AfAJqM466-JcuTvvmlAG90woFKq7ob4WQwZMRfDKfnA5ew&oe=6578EF50'
-    ];
+        const imageArray = [
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403138780_1011495743269330_6104723034540259437_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=RDQbkdpu44QAX9PqXI_&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfARCEIeRUEQuTf-2-4u1di0Fuw8wChC0N9QPI8jugl5ZQ&oe=657AC9B2',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/405799265_1011495659936005_2940389452757371972_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=oHIdCDC2X-4AX8C8rmP&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCydcKnUuDoTIW7OsEFeXgoLmKFlEta6pBp0TeD2420qw&oe=6579C214',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403206905_1011495709936000_1294158851946207645_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=ZMy0aeG6HaEAX-yZyXX&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAWUnCGFZo-wUd5UkywVDmps2rI-YymeIooIcmMlqNb3g&oe=657A98E5',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/405793280_1011495696602668_2908312687926602602_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=V25GjAlwwC8AX9niS-5&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfDPfwLYXf5pzuZ2dA7_u0ceonMQqM1tX5UVFdaAl97c6Q&oe=657A4213',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403170171_1011495719935999_306095610166371448_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=-JDMYVbJp5EAX9b_5y0&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCpn_MxYLhbtoDhIHwv-NggPPV5CH7yYa4ADGUE1f53jA&oe=657A65AB',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403717417_1011495726602665_7900997241013125519_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=BvqgwWLb9YwAX_3uGtL&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAmfdY4fd4RhuZTt1lKx3ZpYyWRywukSqGjlA7KuMpv5w&oe=657B1A76',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403155918_1011495626602675_8297722053895369376_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=UE3z0zh1F0gAX8OSp53&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfDjTqK3SmA6aQxWyPTX1U4LNlRjNwhyqk2X2mFB0b_hSw&oe=657B78F9',
+            'https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/403725270_1011495669936004_2598338113921723447_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=R990VHyEZysAX9t_oNW&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfDKYrJaJDEUc6FOxDx3i9oM0e-YNUfp5KFaq4CgZuGz4A&oe=657850D3',
+            'https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/403713937_1011495636602674_8685912819137191999_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=6OLUrKg-lNMAX-OVMm-&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfD-BQHjqRzteDqLvra0oIgsiFyNeUoMEQ3PATOoZUxWRA&oe=65783828',
+            'https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/405796913_1011495686602669_1727247685080338223_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=FqQEDubIMW0AX_3qYCW&_nc_ht=scontent.ftlv19-1.fna&oh=00_AfAJqM466-JcuTvvmlAG90woFKq7ob4WQwZMRfDKfnA5ew&oe=6578EF50'
+        ];
 
-    function initGallery() {
-        imageArray.forEach(url => {
-            const img = document.createElement('img');
-            img.src = url;
-            gallery.appendChild(img);
-        });
+        function initGallery() {
+            imageArray.forEach(url => {
+                const img = document.createElement('img');
+                img.src = url;
+                gallery.appendChild(img);
+            });
 
-        // Attach touch event listeners
-        gallery.addEventListener('touchstart', touchStart);
-        gallery.addEventListener('touchmove', touchMove);
-        gallery.addEventListener('touchend', touchEnd);
+            // Attach touch event listeners
+            gallery.addEventListener('touchstart', touchStart);
+            gallery.addEventListener('touchmove', touchMove);
+            gallery.addEventListener('touchend', touchEnd);
 
-        showSlide(currentIndex);
-    }
+            showSlide(currentIndex);
+        }
 
-    function showSlide(index) {
-        const galleryImage = document.querySelector('.gallery img');
-        galleryImage.src = imageArray[index];
-        // Update the currentIndex
-        currentIndex = index;
-    }
+        function showSlide(index) {
+            const galleryImage = document.querySelector('.gallery img');
+            galleryImage.src = imageArray[index];
+            // Update the currentIndex
+            currentIndex = index;
+        }
 
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
-        showSlide(currentIndex);
-    }
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
+            showSlide(currentIndex);
+        }
 
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % imageArray.length;
-        showSlide(currentIndex);
-    }
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % imageArray.length;
+            showSlide(currentIndex);
+        }
 
-    function touchStart(e) {
-        initialX = e.touches[0].clientX;
-        isDragging = true;
-    }
+        function touchStart(e) {
+            initialX = e.touches[0].clientX;
+            isDragging = true;
+        }
 
-    function touchMove(e) {
-        if (isDragging) {
-            const deltaX = e.touches[0].clientX - initialX;
-            if (deltaX > 50) {
-                prevSlide();
-                isDragging = false;
-            } else if (deltaX < -50) {
-                nextSlide();
-                isDragging = false;
+        function touchMove(e) {
+            if (isDragging) {
+                const deltaX = e.touches[0].clientX - initialX;
+                if (deltaX > 50) {
+                    prevSlide();
+                    isDragging = false;
+                } else if (deltaX < -50) {
+                    nextSlide();
+                    isDragging = false;
+                }
             }
         }
-    }
 
-    function touchEnd() {
-        isDragging = false;
-    }
-
-    initGallery();
-    setInterval(() => {
-        nextSlide();
-    }, 5000); // Change the interval time as needed
-</script>
-
-<style>
-    .slider-container {
-    position: relative;
-    width: 80%;
-    margin: 50px auto;
-    overflow: hidden;
-}
-
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%;
-    box-sizing: border-box;
-    text-align: center;
-}
-
-.slide img {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 10px;
-}
-
-.slide h3 {
-    margin: 5px 0;
-}
-
-.stars {
-    color: #ffd700; /* gold color for stars */
-    margin: 5px 0;
-}
-
-.slider-button {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 20px;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-}
-
-.prev {
-    left: 10px;
-}
-
-.next {
-    right: 10px;
-}
-.slide p.subtitle {
-    margin: 5px 0;
-    font-style: italic;
-    color: #666; /* Adjust the color as needed */
-}
-</style>
-
-<script>
-    
-    const reviewsArray = [
-        {
-            name: 'יוסי הק.',
-            subtitle: 'בעל עסק בתחום הטכנולוגיה',
-            content: '"השירות שלהם בלתי רגיל! יצרנו יחסים מצוינים עם צוות השיווק וראינו תוצאות מדהימות במהירות. ממליץ בחום!"'
-        },
-        {
-            name: 'דניאלה',
-            subtitle: 'מנהלת בחברת פרסום',
-            content: '"קיבלנו כרטיס ביקור דיגיטלי מעוצב ומקצועי שגרם להכרזות שלנו להתפשט כאשר שילבנו אותו במדיה חברתית. התפקוד שלהם מדויק ופרופישנאלי!"'
-        },
-        {
-            name: 'אבי ז.',
-            subtitle: 'בעל חנות למכירת חומרי בניין',
-            content: '"הם עזרו לנו להבין את התחום הדיגיטלי ואיך למקד את מאמצי השיווק שלנו. היו יצירתיים, מקצועיים ומושקעים."'
+        function touchEnd() {
+            isDragging = false;
         }
-    ];
 
-    const slider = document.getElementById('slider');
-    let currentReviewIndex = 0;
+        initGallery();
+        setInterval(() => {
+            nextSlide();
+        }, 5000); // Change the interval time as needed
+    </script>
+    <script>
+        const gallery2 = document.querySelector('.gallery2');
+        let currentIndex2 = 0;
+        let initialX2 = 0;
+        let isDragging2 = false;
 
-    reviewsArray.forEach((review) => {
-        const slide = document.createElement('div');
-        slide.classList.add('slide');
+        const imageArray2 = [
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/319544670_2334446533399044_7836413977894820304_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=ZRszCFfMHa0AX_TFOgl&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfD7xbyjSgHgYEWv74D9UVBs0Wsk66rzKYi3HP0tMu5BVQ&oe=657AB259',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/319736936_1319867251890628_5292575087120481907_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=9wQabyUB_t8AX8N2tDv&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfB1mvdDqHgyG2LSkIisRl8fGIfCgbLcTJFlNM7Y_dHUqw&oe=657A9F4D',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320631306_1157536511539433_2229612356430371711_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=AU099xtO6fAAX9cGmpz&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAg7lm8zmwy5Bkaq4VHaVvS0rWDhv0j5OVPljzXR0dJ9w&oe=657B5EC9',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320294091_1179648309326956_92245036801179143_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=nrC-tCpOaJEAX94dkcp&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAA6zS62yHgd7XMxyxFn31FaEkexowpvoka_1EG-DkkMQ&oe=657A246E',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320005686_3301554150160808_8800759340622737071_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=G4UQoHUtnj4AX8w7syR&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfDs8E496MxUsHuh6JCyej8uWVgphEmE2CIWOyY3B0fcuA&oe=6579A6B7',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320669073_1045112073551159_8689082408285648676_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=BfsM7BZlbX0AX_vFxUZ&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAtQVlayM_DxFbjlRb5ePCTFg7fznKy-fV6qjZFLhogZw&oe=657A8F9B',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/319669234_1522484714917981_2025451435745095638_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=sq8BHHHJ8NcAX_6evXo&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCbenysoqVrdCXcQRilm9lzHVGRJM_6hUx3gn0N_KcOng&oe=657AAC04',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320389589_572466174878414_6675548429008414952_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=4hQN_q0OfjQAX-hLCs2&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfDGzmjCqw7cIcJYKLDXEzgDDyd-G0LuNagwONjZRXoaLw&oe=657ADF2F',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320519725_907410690424213_1436345038507972154_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=Q92HzNCXl-gAX-8HS7K&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfBlXXdPPw3fDiXsITGSuowfv57jBCqIv2nL066wszTIxw&oe=657A972A',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320080648_847815176544346_5023572296604230546_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=OOUgEnz0nOAAX9ZAu54&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCeEohTv1iX5Wy96hIEmxo0pAmVRdhcS3jtX9uD3ymHiw&oe=6579F586',
+        ];
 
-        slide.innerHTML = `
+        function initGallery2() {
+            imageArray2.forEach(url => {
+                const img = document.createElement('img');
+                img.src = url;
+                gallery2.appendChild(img);
+            });
+
+            // Attach touch event listeners
+            gallery2.addEventListener('touchstart', touchStart2);
+            gallery2.addEventListener('touchmove', touchMove2);
+            gallery2.addEventListener('touchend', touchEnd2);
+
+            showSlide2(currentIndex2);
+        }
+
+        function showSlide2(index) {
+            const galleryImage2 = document.querySelector('.gallery2 img');
+            galleryImage2.src = imageArray2[index];
+            // Update the currentIndex
+            currentIndex2 = index;
+        }
+
+        function prevSlide2() {
+            currentIndex2 = (currentIndex2 - 1 + imageArray2.length) % imageArray2.length;
+            showSlide2(currentIndex2);
+        }
+
+        function nextSlide2() {
+            debugger;
+            currentIndex2 = (currentIndex2 + 1) % imageArray2.length;
+            showSlide2(currentIndex2);
+        }
+
+        function touchStart2(e) {
+            initialX2 = e.touches[0].clientX;
+            isDragging2 = true;
+        }
+
+        function touchMove2(e) {
+            if (isDragging2) {
+                const deltaX2 = e.touches[0].clientX - initialX2;
+                if (deltaX2 > 50) {
+                    prevSlide2();
+                    isDragging2 = false;
+                } else if (deltaX2 < -50) {
+                    nextSlide2();
+                    isDragging2 = false;
+                }
+            }
+        }
+
+        function touchEnd2() {
+            isDragging2 = false;
+        }
+
+        initGallery2();
+        setInterval(() => {
+            nextSlide2();
+        }, 5000); // Change the interval time as needed
+    </script>
+
+    <style>
+        .slider-container {
+            position: relative;
+            width: 80%;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid rgb(255, 242, 54);
+            border-radius: 5%;
+            background-color: ghostwhite;
+        }
+
+        .slide img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .slide h3 {
+            margin: 5px 0;
+        }
+
+        .stars {
+            color: #ffd700;
+            /* gold color for stars */
+            margin: 5px 0;
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .slide p.subtitle {
+            margin: 5px 0;
+            font-style: italic;
+            color: #666;
+            /* Adjust the color as needed */
+        }
+    </style>
+
+    <script>
+
+        const reviewsArray = [
+            {
+                name: 'יוסי הק.',
+                subtitle: 'בעל בית בנהריה',
+                content: 'התמקצעות וייחודיות! התמקצעות מקצועית וייחודיות עם פרויקטים מרהיבים. המשרד יצר לנו חוויה עיצובית ופונקציונלית שהתאימה בדיוק לסגנון ולצרכים שלנו.'
+            },
+            {
+                name: 'דניאלה',
+                subtitle: 'בעלת חנות בגדים',
+                content: 'שירות אישי וייחודי. השירות שקיבלנו היה אישי ומקצועי. הצוות עבד יחד איתנו להבין את רצונינו ויצר פתרונות שהתאימו בצורה מושלמת לבית שלנו.'
+            },
+            {
+                name: 'אבי ז.',
+                subtitle: 'בעל חנות למכירת חומרי בניין',
+                content: 'אמינות ויציבות. עברנו תהליך של בניה חדשה עם המשרד והיינו מרוצים מאוד מהאמינות והיציבות של הצוות. תודה על יצירת הבית שתמיד חלמנו עליו.'
+            }
+        ];
+
+        const slider = document.getElementById('slider');
+        let currentReviewIndex = 0;
+
+        reviewsArray.forEach((review) => {
+            const slide = document.createElement('div');
+            slide.classList.add('slide');
+
+            slide.innerHTML = `
             <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" alt="${review.name}">
             <h3>${review.name}</h3>
             <p class="subtitle">${review.subtitle}</p>
@@ -908,25 +1057,26 @@ document.addEventListener('click', function(event) {
             <p>${review.content}</p>
         `;
 
-        slider.appendChild(slide);
-    });
-console.log(slider)
-    const totalSlides = document.querySelectorAll('.slide').length;
+            slider.appendChild(slide);
+        });
+        console.log(slider)
+        const totalSlides = document.querySelectorAll('.slide').length;
 
-    function changeSlide(direction) {
-    currentReviewIndex = (currentReviewIndex + direction + totalSlides) % totalSlides;
+        function changeSlide(direction) {
+            currentReviewIndex = (currentReviewIndex + direction + totalSlides) % totalSlides;
 
-    const translateValue = currentReviewIndex * 100 + '%';
-    slider.style.transform = 'translate(' + translateValue + ')';
-}
+            const translateValue = currentReviewIndex * 100 + '%';
+            slider.style.transform = 'translate(' + translateValue + ')';
+        }
 
 
 
-    // Automatic slide every 5 seconds
-    setInterval(() => {
-        changeSlide(1);
-    }, 5000);
-</script>
+        // Automatic slide every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
 
 </body>
+
 </html>
