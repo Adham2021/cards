@@ -1,0 +1,1433 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <title class="translatable" data-lang-hebrew="בונה יפו" data-lang-arabic="بوني يافو">בונה יפו
+    </title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #3f3f3f;
+        }
+
+        #whatsapp-icon {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            z-index: 1000;
+            animation: pulse 2s infinite;
+        }
+
+        #whatsapp-icon img {
+            width: 50px;
+            /* Adjust the size as needed */
+            height: auto;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            /* Add a border to the icon */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        #working-hours-status {
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .status-open {
+            background-color: #4CAF50;
+            /* Green */
+            color: #fff;
+            /* White */
+            padding: 5px 10px;
+            border-radius: 10px;
+            /* Rounded borders */
+        }
+
+        .status-close {
+            background-color: #e12d00;
+            /* red */
+            color: #fff;
+            /* White */
+            padding: 5px 10px;
+            border-radius: 10px;
+            /* Rounded borders */
+        }
+
+
+        #status-until {
+            color: white;
+        }
+
+        .cover-photo {
+            width: 100%;
+            height: 300px;
+            background-image: url('assets/images/files/byafo/cover.jpg');
+            background-size: cover;
+            background-position: center;
+            clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+        }
+
+
+        .profile {
+            text-align: center;
+            position: relative;
+            top: -75px;
+            /* Adjust based on your cover photo height */
+        }
+
+        .profile h2 {
+            font-size: 23px;
+            color: #ffffff;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInFromBottom 1s ease-out 0.5s forwards;
+            margin-top: -13px;
+
+        }
+
+        /* Style for the subtitle */
+        .profile .subtitle {
+            font-size: 14px;
+            color: #ffffff;
+            /* Adjust the color as needed */
+            margin-top: 5px;
+            /* Adjust the margin as needed */
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInFromBottom 1s ease-out 1s forwards;
+
+        }
+
+        @keyframes fadeInFromBottom {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .profile img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+
+        #working-hours-status {
+            padding: 5px;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: bold;
+            text-align: center;
+            animation: fadeInFromBottom 1s ease-out 1.5s forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        .add-to-contacts {
+            display: inline-flex;
+            align-items: center;
+            padding: 10px;
+            background-color: transparent;
+            border-radius: 5px;
+            border: 1px solid white;
+            color: #007bff;
+            text-decoration: none;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            animation: fadeInFromBottom 1s ease-out 2s forwards;
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        
+
+        .add-to-contacts span {
+            color: white;
+            ;
+        }
+
+        .add-to-contacts:hover {
+            background-color: #ffa600;
+            color: #fff;
+        }
+
+        .add-to-contacts i {
+            font-size: 18px;
+            margin-right: 5px;
+            color: white;
+        }
+
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: -47px;
+        }
+
+        .contact-icons a {
+            text-decoration: none;
+            color: #ffffff;
+            margin: 10px;
+            text-align: center;
+            font-size: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: color 0.3s ease;
+        }
+
+        .contact-icons i {
+            font-size: 24px;
+            margin-bottom: 5px;
+            color:#ffffff !important;
+        }
+
+        .contact-icons a:hover {
+            color: #007bff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(to top, #A6A6A6, #0097B2, #3D3D3D);
+            box-shadow: 0 0 10px rgb(63, 92, 255);
+
+        }
+
+        .toggle-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+
+        .toggle-content.show {
+            max-height: 1000px;
+        }
+
+        .toggle-btn {
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: #949581;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .toggle-btn:hover {
+            background-color: #d1e0ff;
+        }
+
+        .toggle-btn i {
+            font-size: 16px;
+        }
+
+
+
+
+        .service-item,
+        .faq-item,
+        .review {
+            margin-top: 10px;
+        }
+
+        .service-icon,
+        .faq-item label {
+            font-size: 24px;
+            margin-right: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .service-item:hover .service-icon,
+        .faq-item label:hover {
+            color: #007bff;
+        }
+
+        .service-text,
+        .faq-item p,
+        .review p,
+        .working-hours p,
+        .about-us p {
+            font-size: 16px;
+            color: white;
+        }
+
+        .faq-item label {
+            display: block;
+            padding: 10px;
+            background-color: #f0f0f0;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            text-align: left;
+        }
+
+        .faq-item label:hover {
+            background-color: #d1e0ff;
+        }
+
+        .faq-item p {
+            overflow: hidden;
+            transition: height 0.5s ease;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            height: auto;
+            color: black;
+
+        }
+
+        .service-item p {
+            overflow: hidden;
+            transition: height 0.5s ease;
+            background-color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            height: auto;
+            color: black;
+        }
+
+        .review {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .review img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            object-fit: cover;
+        }
+
+        .review .subtitle {
+            font-style: italic;
+            /* Italicize the subtitle */
+            color: #888;
+            /* Set a subdued color for the subtitle */
+        }
+
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 8px;
+        }
+
+        .star-rating i {
+            color: #ffd700;
+            /* Gold color for stars */
+            font-size: 18px;
+            margin-right: 2px;
+        }
+
+        .footer {
+            color: black;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: 0;
+        }
+
+        .social-icons a {
+            font-size: 20px;
+            color: #000;
+        }
+
+        .copyright p {
+            margin: 10px 0 0;
+            font-size: 14px;
+        }
+
+        .share-section {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .share-section p
+        {
+            background-color: white;
+    font-weight: bold;
+    border-radius: 10%;
+        }
+        .social-share-icons {
+            margin-top: 10px;
+        }
+
+        .share-icon {
+            display: inline-block;
+            margin: 0 10px;
+            font-size: 24px;
+            color: #333;
+            /* Adjust the color based on your design */
+            text-decoration: none;
+        }
+
+
+
+        .waze i {
+            color: #FCD516;
+            /* Google Maps color */
+        }
+
+        .facebook i {
+            color: #FCD516;
+        }
+
+        .whatsapp i {
+            color: #FCD516;
+        }
+
+        .phone i {
+            color: #FCD516;
+        }
+
+        .email i {
+            color: #FCD516;
+        }
+
+        .website i {
+            color: #FCD516;
+        }
+
+        .instagram i {
+            color: #FCD516;
+        }
+
+        .tiktok i {
+            color: #FCD516;
+        }
+
+        .working-hours,
+        .about-us,
+        .services,
+        .gallery-container,
+        .faq,
+        .reviews {
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid #ffffff;
+            padding-top: 20px;
+        }
+
+        .working-hours p {
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .gallery-container h4 {
+            background-color: burlywood;
+            border-radius: 10%;
+        }
+
+        .about-us h3,
+        .reviews h3,
+        .gallery-container h3,
+        .working-hours h3,
+        .faq h3,
+        .services h3 {
+            margin: 0 0px;
+            /* Adjust margin for better spacing */
+            display: inline-block;
+    border-bottom: 1px solid;
+    color: white;
+        }
+
+
+        .line {
+            flex-grow: 1;
+            border-top: 1px solid #000;
+            /* Adjust line styling as needed */
+        }
+
+
+        #language-menu {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            /* Light background color for the menu */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Optional: Add a subtle shadow */
+        }
+
+        #language-menu a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            /* Text color for the menu items */
+        }
+
+        #language-menu a:hover {
+            background-color: #e0e0e0;
+            /* Background color on hover */
+        }
+
+        #language-menu-btn {
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            color: #fff;
+            padding: 5px 10px;
+            border: 1px solid white;
+            cursor: pointer;
+            border-radius: 10%;
+        }
+
+        #language-flag {
+            margin-right: 5px;
+            width: 20px;
+            /* Adjust the size as needed */
+            height: auto;
+        }
+
+        .languages {
+            position: relative;
+            top: 20px;
+            margin-right: 10px;
+        }
+    </style>
+    <style>
+        .gallery-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .gallery,
+        .gallery2 {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            margin-top: 15px;
+        }
+
+        .gallery img,
+        .gallery2 img {
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease-in-out;
+        }
+
+
+        .arrow.left {
+            left: 10px;
+        }
+
+        .arrow.right {
+            right: 10px;
+        }
+    </style>
+    <style>
+        .reviews-slider {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .reviews {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .review {
+            width: 100%;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            font-size: 24px;
+            cursor: pointer;
+            user-select: none;
+            background: rgba(255, 255, 255, 0.7);
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 50%;
+        }
+
+        .image-container {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="cover-photo">
+        <div class="languages">
+            <button id="language-menu-btn" onclick="toggleLanguageMenu()">
+                <img id="language-flag" src="/assets/images/files/flags/israel.png">
+                <span id="selected-language">עברית</span>
+            </button>
+            <div id="language-menu">
+                <a href="#" onclick="changeLanguage('hebrew')">
+                    <img id="language-flag" src="/assets/images/files/flags/israel.png">
+                    עברית</a>
+                <a href="#" onclick="changeLanguage('arabic')">
+                    <img id="language-flag" src="/assets/images/files/flags/saudi-arabia.png">
+                    العربية</a>
+                <!-- <a href="#" onclick="changeLanguage('english')">
+                    <img id="language-flag" src="/assets/images/files/flags/united-kingdom.png">
+                    English</a> -->
+            </div>
+        </div>
+    </div>
+
+    <div id="whatsapp-icon">
+        <a onclick="sendWhatsAppMessage()">
+            <img src="/assets/images/files/whatsapp-icon.png">
+        </a>
+    </div>
+
+    <div class="container">
+        <div class="profile">
+            <div class="image-container">
+                <img id="animated-logo" src="assets/images/files/byafo/logo.png" style="border: 3px solid white;">
+            </div>
+            <h2 class="translatable" data-lang-hebrew="בונה יפו" data-lang-arabic="بوني يافو">בונה יפו
+            </h2>
+            <p class="subtitle translatable" data-lang-hebrew="הנדסה | בנייה | שיבוצים"
+                data-lang-arabic="خدمات هندسية |  بناء | ترميمات">
+                הנדסה | בנייה | שיבוצים
+            </p>
+
+            <p id="working-hours-status">
+                <span id="status-open" dir="ltr">Open</span>
+                <span id="status-until" dir="ltr"> until 21:00</span>
+            </p>
+            <a onclick="addToContacts()" class="add-to-contacts">
+                <i class="fas fa-phone"></i>
+                <span class="translatable" data-lang-hebrew="הוספה לאנשי קשר שלי"
+                    data-lang-arabic="إضافة إلى جهات الاتصال">
+                    הוספה לאנשי קשר שלי
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="contact-icons">
+            <a href="https://www.facebook.com/profile.php?id=100032267426602&locale=ar_AR" target="_blank"
+                class="facebook">
+                <i class="fab fa-facebook"></i>
+                <span class="translatable" data-lang-hebrew="פייסבוק" data-lang-arabic="الفيسبوك">
+                    פייסבוק
+                </span>
+            </a>
+            <a href="https://instagram.com/moatasem.khalilieh_arch?igshid=MzMyNGUyNmU2YQ==" target="_blank"
+                class="instagram">
+                <i class="fab fa-instagram"></i>
+                <span class="translatable" data-lang-hebrew="אינסגרם" data-lang-arabic="إنستغرام">
+                    אינסגרם
+                </span>
+            </a>
+            <a href="https://www.tiktok.com/@moatasem.kh_arch?_t=8i0kCVuXgW1&_r=1" target="_blank" class="tiktok">
+                <i class="fab fa-tiktok"></i>
+                <span class="translatable" data-lang-hebrew="טיקטוק" data-lang-arabic="تيك توك">
+                    טיקטוק
+                </span>
+
+            </a>
+            <a href="https://wa.me/+972528957836" target="_blank" class="whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span class="translatable" data-lang-hebrew="וואטסאפ" data-lang-arabic="واتساب">
+                    וואטסאפ
+                </span>
+
+            </a>
+            <a href="tel:+972528957836" class="phone">
+                <i class="fas fa-phone"></i>
+                <span class="translatable" data-lang-hebrew="חייגו אלינו" data-lang-arabic="اتصل بنا">
+                    חייגו אלינו
+                </span>
+
+            </a>
+            <a href="mailto:Moatasem97.kh@gmail.com" class="email">
+                <i class="fas fa-envelope"></i>
+                <span class="translatable" data-lang-hebrew="אימייל" data-lang-arabic="الايميل">
+                    אימייל
+                </span>
+
+            </a>
+            <a href="https://www.eye-on-media.com" target="_blank" class="website">
+                <i class="fas fa-globe"></i>
+                <span class="translatable"
+      data-lang-hebrew="אתר שלנו"
+      data-lang-arabic="موقعنا">
+   אתר שלנו
+</span>
+
+            </a>
+            <a href="https://ul.waze.com/ul?ll=32.68783290%2C35.24220010&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+                target="_blank" class="waze">
+                <i class="fab fa-waze"></i>
+                <span class="translatable" data-lang-hebrew="נווטו אלינו" data-lang-arabic="الوصول إلينا">
+                    נווטו אלינו
+                </span>
+
+            </a>
+        </div>
+
+        <div class="about-us">
+           
+            <h3 class="translatable" data-lang-hebrew="קצת עלינו" data-lang-arabic="قليلاً عنا">
+                קצת עלינו
+            </h3>
+
+           
+            <p class="translatable"
+                data-lang-hebrew="חברת בונה יפו בע”מ מביאה עימה נכסים והישגים רבים, ההופכים אותה לאי של יציבות כלכלית לאורך שנים. החברה מחזיקה בסיווג קבלני דרג ג’ -5 (בלתי מוגבל), המאפשר לה לבנות וליזום פרויקטים בהיקפים גדולים. בין הפרויקטים הרבים אותם בנתה החברה בשנים האחרונות נכללים מוסדות חינוך, מוסדות ציבוריים, מרכזים מסחריים וזאת לצד אלפי יחידות דיור ברחבי הארץ."
+                data-lang-arabic="شركة بوني يافو تحمل معها العديد من الأصول والإنجازات التي تجعلها جزيرة استقرار اقتصادي على مر السنين. الشركة تحمل تصنيف مقاول درجة 5 (غير محدود)، مما يتيح لها بناء وتنفيذ مشاريع بأطوال كبيرة. من بين المشاريع العديدة التي قامت بها الشركة في السنوات الأخيرة، تتضمن مؤسسات تعليمية، ومؤسسات عامة، ومراكز تجارية، إلى جانب آلاف وحدات سكنية في جميع أنحاء البلاد.">
+                חברת בונה יפו בע”מ מביאה עימה נכסים והישגים רבים, ההופכים אותה לאי של יציבות כלכלית לאורך שנים. החברה מחזיקה בסיווג קבלני דרג ג’ -5 (בלתי מוגבל), המאפשר לה לבנות וליזום פרויקטים בהיקפים גדולים. בין הפרויקטים הרבים אותם בנתה החברה בשנים האחרונות נכללים מוסדות חינוך, מוסדות ציבוריים, מרכזים מסחריים וזאת לצד אלפי יחידות דיור ברחבי הארץ.
+            </p>
+
+        </div>
+
+        <div class="services">
+            
+            <h3 class="services-title translatable" data-lang-hebrew="השירותים שלנו" data-lang-arabic="خدماتنا">
+                השירותים שלנו
+            </h3>
+
+            
+
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" data-lang-hebrew="תכנון ועיצוב פנים מותאם אישית"
+                        data-lang-arabic="تخطيط وتصميم داخلي حسب الطلب">
+                        תכנון ועיצוב פנים מותאם אישית
+                    </span>
+
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content">
+
+                    <p class="translatable"
+                        data-lang-hebrew="במשרדכם, אנו מתמחים ביצירת חללים ייחודיים ופונקציונליים. השירות כולל ייעוץ אישי ותכנון מותאם לכל לקוח, שמשלב אמנות, טכנולוגיה ורגישות ליצירת חוויית מגורים או עבודה משופרת."
+                        data-lang-arabic="في مكتبنا، نختص في إنشاء فضاءات فريدة ووظيفية. يشمل الخدمة استشارة شخصية وتخطيط مخصص لكل عميل، يجمع بين الفن والتكنولوجيا والحساسية لإنشاء تجربة سكنية أو عمل محسنة.">
+                        במשרדכם, אנו מתמחים ביצירת חללים ייחודיים ופונקציונליים. השירות כולל ייעוץ אישי ותכנון מותאם לכל
+                        לקוח, שמשלב אמנות, טכנולוגיה ורגישות ליצירת חוויית מגורים או עבודה משופרת.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" data-lang-hebrew="פתרונות מעוצבים לבנייה חדשה"
+                        data-lang-arabic="حلول مصممة للبناء الجديد">
+                        פתרונות מעוצבים לבנייה חדשה
+                    </span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="אתם מציעים פתרונות מעוצבים וייחודיים לבניית נכסים חדשים. השירות כולל שילוב של אמנות, טכנולוגיה ועיצוב ליצירת חללים שמשדרים רגישות ויוקרה."
+                        data-lang-arabic="تقدمون حلاول مصممة وفريدة لبناء الممتلكات الجديدة. الخدمة تشمل دمج بين الفن، التكنولوجيا والتصميم لإنشاء مساحات تنبعث منها الحساسية والفخامة.">
+                        אתם מציעים פתרונות מעוצבים וייחודיים לבניית נכסים חדשים. השירות כולל שילוב של אמנות, טכנולוגיה
+                        ועיצוב ליצירת חללים שמשדרים רגישות ויוקרה.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" data-lang-hebrew="שיפוצים ועיצוב פנים"
+                        data-lang-arabic="تجديد وتصميم داخلي">
+                        שיפוצים ועיצוב פנים
+                    </span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="עבודה עם לקוחות על שדרוג ושיפוצים של נכסים קיימים. אתם מתמקדים ביצירת חוויית מגורים או עבודה משופרת דרך שדרוג ועיצוב פנים מותאם לצרכי הלקוח."
+                        data-lang-arabic="العمل مع العملاء على ترقية وتجديد العقارات الحالية. أنتم تركزون على خلق تجربة سكنية أو عمل محسنة من خلال ترقية وتصميم داخلي مخصص لاحتياجات العميل.">
+                        עבודה עם לקוחות על שדרוג ושיפוצים של נכסים קיימים. אתם מתמקדים ביצירת חוויית מגורים או עבודה
+                        משופרת דרך שדרוג ועיצוב פנים מותאם לצרכי הלקוח.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="working-hours">
+            
+            <h3 class="translatable" data-lang-hebrew="שעות פעילות" data-lang-arabic="ساعات العمل">
+                שעות פעילות
+            </h3>
+            
+            <p class="translatable" data-lang-hebrew="יום שני-שישי: 08:00 - 17:00"
+                data-lang-arabic="الإثنين - الجمعة: 08:00 - 17:00">
+                יום שני-שישי: 08:00 - 17:00
+            </p>
+            <p class="translatable" data-lang-hebrew="יום שבת: סגור" data-lang-arabic="السبت: مغلق">
+                יום שבת: סגור
+            </p>
+            <p class="translatable" data-lang-hebrew="יום ראשון: 08:00 - 17:00" data-lang-arabic="الأحد: 08:00 - 17:00">
+                יום ראשון: 08:00 - 17:00
+            </p>
+        </div>
+
+        <div class="gallery-container">
+            
+            <h3 class="translatable" data-lang-hebrew="תמונות מהפרויקטים שלנו" data-lang-arabic="صور من مشاريعنا">
+                תמונות מהפרויקטים שלנו
+            </h3>
+            
+            <h4 class="translatable" data-lang-hebrew="1. תכנון ועיצוב פנים לבית בשטח של 90 מ״ר - יפיע"
+                data-lang-arabic="1. تخطيط وتصميم داخلي لمنزل بمساحة 90 متر مربع - يافة الناصرة">
+                1. תכנון ועיצוב פנים לבית בשטח של 90 מ״ר - יפיע
+            </h4>
+            <div class="gallery">
+                <!-- Images will be dynamically added here using JavaScript -->
+                <img
+                    src="https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/405796913_1011495686602669_1727247685080338223_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=FqQEDubIMW0AX_3qYCW&_nc_ht=scontent.ftlv19-1.fna&oh=00_AfAJqM466-JcuTvvmlAG90woFKq7ob4WQwZMRfDKfnA5ew&oe=6578EF50">
+            </div>
+
+            <div class="arrow right" onclick="prevSlide()">&#10094;</div>
+            <div class="arrow left" onclick="nextSlide()">&#10095;</div>
+        </div>
+        <div class="gallery-container">
+            <h4 class="translatable" data-lang-hebrew="2. תכנון + עיצוב פנים לקוטג' בשטח של 100 מ״ר - חיפה"
+                data-lang-arabic="2. تخطيط وتصميم داخلي لكوخ بمساحة 100 متر مربع - حيفا">
+                2. תכנון + עיצוב פנים לקוטג' בשטח של 100 מ״ר - חיפה
+            </h4>
+            <div class="gallery2">
+                <!-- Images will be dynamically added here using JavaScript -->
+                <img
+                    src="https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320080648_847815176544346_5023572296604230546_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=OOUgEnz0nOAAX9ZAu54&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCeEohTv1iX5Wy96hIEmxo0pAmVRdhcS3jtX9uD3ymHiw&oe=6579F586">
+            </div>
+
+            <div class="arrow right" onclick="prevSlide2()">&#10094;</div>
+            <div class="arrow left" onclick="nextSlide2()">&#10095;</div>
+        </div>
+
+        <div class="faq">
+            
+            <h3 class="translatable" data-lang-hebrew="שאלות & תשובות" data-lang-arabic="أسئلة وأجوبة">
+                שאלות & תשובות
+            </h3>
+            
+
+            <div class="faq-item">
+                <div class="toggle-btn" onclick="toggleContent(this)">
+                    <span class="translatable" data-lang-hebrew="שאלה: איך אתם מתמקדים ביצירת חללים ייחודיים?"
+                        data-lang-arabic="سؤال: كيف تركزون على إنشاء مساحات فريدة؟">
+                        שאלה: איך אתם מתמקדים ביצירת חללים ייחודי
+                        <i class="fas fa-plus"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="אנו מתמקדים בשילוב של אמנות, טכנולוגיה ורגישות כדי ליצור חללים מרהיבים ופונקציונליים."
+                        data-lang-arabic="نركز على دمج الفن، التكنولوجيا والحساسية لإنشاء فضاءات رائعة ووظيفية.">
+                        אנו מתמקדים בשילוב של אמנות, טכנולוגיה ורגישות כדי ליצור חללים מרהיבים ופונקציונליים.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="toggle-btn" onclick="toggleContent(this)">
+                    <span class="translatable" data-lang-hebrew="שאלה: מהם התחומים שאתם מתמחים בהם?"
+                        data-lang-arabic="سؤال: ما هي المجالات التي تختصون فيها؟">
+                        שאלה: מהם התחומים שאתם מתמחים בהם?
+                    </span>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="אנו מתמחים בתכנון ועיצוב פנים לבתים פרטיים, מבני ציבור וחללי עסקים."
+                        data-lang-arabic="نحن متخصصون في تخطيط وتصميم داخلي للمنازل الخاصة، المباني العامة ومساحات الأعمال.">
+                        אנו מתמחים בתכנון ועיצוב פנים ל
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="toggle-btn" onclick="toggleContent(this)">
+                    <span class="translatable" data-lang-hebrew="שאלה: איך אתם יוצרים חוויית מגורים משופרת?"
+                        data-lang-arabic="سؤال: كيف تخلقون تجربة سكنية محسنة؟">
+                        שאלה: איך אתם יוצרים חוויית מגורים משופרת?
+                    </span>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="אנו משדרים רגישות ויוקרה דרך יצירת חללים שמתאימים לצרכי הלקוח ומשדרים תחושה של בית."
+                        data-lang-arabic="نحن ننقل الحساسية والفخامة من خلال إنشاء فضاءات تتناسب مع احتياجات العميل وتنقل شعوراً بالمنزل.">
+                        אנו משדרים רגישות ויוקרה דרך יצירת חללים שמתאימים לצרכי הלקוח ומשדרים תחושה של בית.
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="toggle-btn" onclick="toggleContent(this)">
+                    <span class="translatable" data-lang-hebrew="שאלה: מהם השלבים בתהליך תכנון פרויקט?"
+                        data-lang-arabic="سؤال: ما هي المراحل في عملية تخطيط المشروع؟">
+                        שאלה: מהם השלבים בתהליך תכנון פרויקט?
+                    </span>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="השלבים כוללים ייעוץ אישי, תכנון מותאם אישית, ושלב יצירתי ששולב בין אמנות, טכנולוגיה ועיצוב."
+                        data-lang-arabic="تشمل المراحل استشارات شخصية وتخطيط مخصص، ودمج إبداعي يجمع بين الفن، التكنولوجيا والتصميم.">
+                        השלבים כוללים ייעוץ אישי, תכנון מותאם אישית, ושלב יצירתי ששולב בין אמנות, טכנולוגיה ועיצוב.
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="slider-container">
+            <h3 class="translatable" style="text-align: center; background-color: white;"
+                data-lang-hebrew="לקוחות ממליצים" data-lang-arabic="تقييمات الزبائن">
+                לקוחות ממליצים
+            </h3>
+            <div class="slider" id="slider"></div>
+            <button class="slider-button prev" onclick="changeSlide(-1)">&#9665;</button>
+            <button class="slider-button next" onclick="changeSlide(1)">&#9655;</button>
+        </div>
+
+        <div class="share-section">
+            <p class="translatable" 
+            data-lang-arabic="شارك هذا الكرت :"
+            data-lang-hebrew="שתף את הכרטיס"
+            >שתף את הרטיס :</p>
+            <div class="social-share-icons">
+                <a class="share-icon" id="whatsapp-share" onclick="shareOn('whatsapp')"><img style="width: 25px;"
+                        src="/assets/images/files/whatsapp-icon.png"> </a>
+                <a class="share-icon" id="facebook-share" onclick="shareOn('facebook')"><img style="width: 25px;"
+                        src="/assets/images/files/facebook-icon.png"> </a>
+                <a class="share-icon" id="telegram-share" onclick="shareOn('telegram')"><img style="width: 25px;"
+                        src="/assets/images/files/telegram-icon.png"> </a>
+                <a class="share-icon" id="messenger-share" onclick="shareOn('messenger')"><img style="width: 25px;"
+                        src="/assets/images/files/messenger-icon.png"> </a>
+
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="copyright">
+                <p>Built with <span style="color: red;">♥</span> by <a href="https://www.eye-on-media.com/"
+                        target="_blank">Eye on Media</a></p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/people/Eye-On-Media/100092701628022/?mibextid=PzaGJu" target="_blank"><i
+                        class="fab fa-facebook"></i></a>
+                <a href="https://www.facebook.com/people/Eye-On-Media/100092701628022/?mibextid=PzaGJu" target="_blank"><i
+                        class="fab fa-instagram"></i></a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            // Call the function on page load
+            updateWorkingHoursStatus();
+        });
+
+        function shareOn(type) {
+            
+            const text = 'Check out this awesome website!';
+            const url = window.location.href;
+            if (type === 'facebook') {
+                const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+                window.open(facebookShareURL, '_blank');
+            }
+            if (type === 'telegram') {
+
+                const telegramShareURL = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+                window.open(telegramShareURL, '_blank');
+
+            }
+            if (type === 'messenger') {
+
+                const messengerShareURL = `https://www.facebook.com/dialog/send?link=${encodeURIComponent(url)}&app_id=123456789&redirect_uri=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`;
+    window.open(messengerShareURL, '_blank');
+            }
+            if (type === 'whatsapp') {
+
+                const whatsappShareURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)} ${encodeURIComponent(url)}`;
+    window.open(whatsappShareURL, '_blank');
+
+            }
+        }
+        changeLanguage(getLanguage(), false)
+
+        function updateWorkingHoursStatus() {
+            const now = new Date();
+            const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
+  
+            const workingHours = {
+                0: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Monday
+                1: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Monday
+                2: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Tuesday
+                3: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Wednesday
+                4: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Thursday
+                5: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Friday
+                6: 'Closed, Open at 08:00' // Saturday
+            };
+
+            const statusOpenElement = document.getElementById('status-open');
+            const statusUntilElement = document.getElementById('status-until');
+
+            const currentLanguage = getLanguage();
+
+            if (workingHours[dayOfWeek].includes('Closed')) {
+                if (currentLanguage === 'hebrew') {
+                    statusOpenElement.textContent = 'סגור';
+                    statusUntilElement.textContent = ' נפתח ב- 08:00';
+                } else if (currentLanguage === 'arabic') {
+                    statusOpenElement.textContent = 'مغلق';
+                    statusUntilElement.textContent = ' يفتح في الساعة 08:00';
+                }
+
+                statusOpenElement.classList.add('status-close');
+                statusOpenElement.classList.remove('status-open');
+            }
+
+            else {
+                if (currentLanguage === 'hebrew') {
+                    statusOpenElement.textContent = 'פתוח';
+                    statusUntilElement.textContent = ' עד 17:00';
+                } else if (currentLanguage === 'arabic') {
+                    statusOpenElement.textContent = 'مفتوح';
+                    statusUntilElement.textContent = ' حتى 17:00';
+                }
+
+                statusOpenElement.classList.add('status-open');
+                statusOpenElement.classList.remove('status-close');
+            }
+        }
+
+
+        function sendWhatsAppMessage() {
+            const whatsappLink = document.getElementById("whatsapp-link");
+            const phoneNumber = '+972528957836';
+
+            // Replace 'YOUR_DEFAULT_MESSAGE' with your desired default message
+            const defaultMessage = encodeURIComponent('שלום , אשמח לעוד פרטים...');
+
+            const whatsappApi = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${defaultMessage}`;
+            window.open(whatsappApi, '_blank');
+        }
+        function toggleContent(btn) {
+            // Toggle the 'show' class on the toggle-content div
+            var toggleContent = btn.nextElementSibling;
+            toggleContent.classList.toggle('show');
+
+            // Toggle the icon based on the 'show' class
+            var icon = btn.querySelector('i');
+            if (toggleContent.classList.contains('show')) {
+                icon.classList.remove('fa-plus');
+                icon.classList.add('fa-minus');
+            } else {
+                icon.classList.remove('fa-minus');
+                icon.classList.add('fa-plus');
+            }
+        }
+        function toggleService(btn) {
+            // Toggle the 'show' class on the toggle-content div
+            var toggleContent = btn.nextElementSibling;
+            toggleContent.classList.toggle('show');
+
+            // Toggle the icon based on the 'show' class
+            var icon = btn.querySelector('i');
+            if (toggleContent.classList.contains('show')) {
+                icon.classList.remove('fa-angle-down');
+                icon.classList.add('fa-angle-up');
+            } else {
+                icon.classList.remove('fa-angle-up');
+                icon.classList.add('fa-angle-down');
+            }
+        }
+        function addToContacts() {
+            var contact = {
+                name: "בונה יפו - אדריכאל",
+                phone: "+972528957836",
+                email: "Moatasem97.kh@gmail.com"
+            };
+            // create a vcard file
+            var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
+            var blob = new Blob([vcard], { type: "text/vcard" });
+            var url = URL.createObjectURL(blob);
+
+            const newLink = document.createElement('a');
+            newLink.download = contact.name + ".vcf";
+            newLink.textContent = contact.name;
+            newLink.href = url;
+
+            newLink.click();
+        }
+
+
+
+
+        function changeLanguage(language, byClickButton = true) {
+            const languageData = {
+                hebrew: { flag: "/assets/images/files/flags/israel.png", text: "עברית" },
+                arabic: { flag: "/assets/images/files/flags/saudi-arabia.png", text: "العربية" },
+                english: { flag: "/assets/images/files/flags/united-kingdom.png", text: "English" },
+            };
+            const selectedLanguage = languageData[language];
+            localStorage.setItem('preferredLanguage', language);
+            document.getElementById("selected-language").innerText = selectedLanguage.text;
+            document.getElementById("language-menu-btn").getElementsByTagName("img")[0].src = selectedLanguage.flag;
+
+            // Additional logic to change content or perform actions based on the selected language
+            updateContent(language);
+            updateWorkingHoursStatus()
+
+            if (byClickButton) {
+                toggleLanguageMenu();
+            }
+        }
+        function getLanguage() {
+            return localStorage.getItem('preferredLanguage') || 'hebrew'; // Default language is Hebrew
+        }
+        function toggleLanguageMenu() {
+            var languageMenu = document.getElementById("language-menu");
+            languageMenu.style.display = (languageMenu.style.display === "block") ? "none" : "block";
+        }
+
+        function updateContent(language) {
+            const translatableElements = document.querySelectorAll('.translatable');
+
+            translatableElements.forEach(element => {
+                const translatedText = element.dataset[`lang${language.charAt(0).toUpperCase()}${language.slice(1)}`];
+                if (translatedText) {
+                    if (element.tagName.toLowerCase() === 'p' || element.tagName.toLowerCase() === 'span') {
+                        element.innerText = translatedText;
+                    } else {
+                        // Assuming other elements might have innerText as well
+                        element.innerText = translatedText;
+                    }
+                }
+            });
+        }
+
+    </script>
+
+    <script>
+        const gallery = document.querySelector('.gallery');
+        let currentIndex = 0;
+        let initialX = 0;
+        let isDragging = false;
+
+        const imageArray = [
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403138780_1011495743269330_6104723034540259437_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=RDQbkdpu44QAX9PqXI_&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfARCEIeRUEQuTf-2-4u1di0Fuw8wChC0N9QPI8jugl5ZQ&oe=657AC9B2',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/405799265_1011495659936005_2940389452757371972_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=oHIdCDC2X-4AX8C8rmP&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCydcKnUuDoTIW7OsEFeXgoLmKFlEta6pBp0TeD2420qw&oe=6579C214',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403206905_1011495709936000_1294158851946207645_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=ZMy0aeG6HaEAX-yZyXX&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAWUnCGFZo-wUd5UkywVDmps2rI-YymeIooIcmMlqNb3g&oe=657A98E5',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/405793280_1011495696602668_2908312687926602602_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=V25GjAlwwC8AX9niS-5&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfDPfwLYXf5pzuZ2dA7_u0ceonMQqM1tX5UVFdaAl97c6Q&oe=657A4213',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403170171_1011495719935999_306095610166371448_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=-JDMYVbJp5EAX9b_5y0&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCpn_MxYLhbtoDhIHwv-NggPPV5CH7yYa4ADGUE1f53jA&oe=657A65AB',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403717417_1011495726602665_7900997241013125519_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=BvqgwWLb9YwAX_3uGtL&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAmfdY4fd4RhuZTt1lKx3ZpYyWRywukSqGjlA7KuMpv5w&oe=657B1A76',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403155918_1011495626602675_8297722053895369376_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=UE3z0zh1F0gAX8OSp53&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfDjTqK3SmA6aQxWyPTX1U4LNlRjNwhyqk2X2mFB0b_hSw&oe=657B78F9',
+            'https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/403725270_1011495669936004_2598338113921723447_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=R990VHyEZysAX9t_oNW&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfDKYrJaJDEUc6FOxDx3i9oM0e-YNUfp5KFaq4CgZuGz4A&oe=657850D3',
+            'https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/403713937_1011495636602674_8685912819137191999_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=6OLUrKg-lNMAX-OVMm-&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfD-BQHjqRzteDqLvra0oIgsiFyNeUoMEQ3PATOoZUxWRA&oe=65783828',
+            'https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/405796913_1011495686602669_1727247685080338223_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=FqQEDubIMW0AX_3qYCW&_nc_ht=scontent.ftlv19-1.fna&oh=00_AfAJqM466-JcuTvvmlAG90woFKq7ob4WQwZMRfDKfnA5ew&oe=6578EF50'
+        ];
+
+        function initGallery() {
+            imageArray.forEach(url => {
+                const img = document.createElement('img');
+                img.src = url;
+                gallery.appendChild(img);
+            });
+
+            // Attach touch event listeners
+            gallery.addEventListener('touchstart', touchStart);
+            gallery.addEventListener('touchmove', touchMove);
+            gallery.addEventListener('touchend', touchEnd);
+
+            showSlide(currentIndex);
+        }
+
+        function showSlide(index) {
+            const galleryImage = document.querySelector('.gallery img');
+            galleryImage.src = imageArray[index];
+            // Update the currentIndex
+            currentIndex = index;
+        }
+
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
+            showSlide(currentIndex);
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % imageArray.length;
+            showSlide(currentIndex);
+        }
+
+        function touchStart(e) {
+            initialX = e.touches[0].clientX;
+            isDragging = true;
+        }
+
+        function touchMove(e) {
+            if (isDragging) {
+                const deltaX = e.touches[0].clientX - initialX;
+                if (deltaX > 50) {
+                    prevSlide();
+                    isDragging = false;
+                } else if (deltaX < -50) {
+                    nextSlide();
+                    isDragging = false;
+                }
+            }
+        }
+
+        function touchEnd() {
+            isDragging = false;
+        }
+
+        initGallery();
+        setInterval(() => {
+            nextSlide();
+        }, 5000); // Change the interval time as needed
+    </script>
+    <script>
+        const gallery2 = document.querySelector('.gallery2');
+        let currentIndex2 = 0;
+        let initialX2 = 0;
+        let isDragging2 = false;
+
+        const imageArray2 = [
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/319544670_2334446533399044_7836413977894820304_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=ZRszCFfMHa0AX_TFOgl&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfD7xbyjSgHgYEWv74D9UVBs0Wsk66rzKYi3HP0tMu5BVQ&oe=657AB259',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/319736936_1319867251890628_5292575087120481907_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=9wQabyUB_t8AX8N2tDv&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfB1mvdDqHgyG2LSkIisRl8fGIfCgbLcTJFlNM7Y_dHUqw&oe=657A9F4D',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320631306_1157536511539433_2229612356430371711_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=AU099xtO6fAAX9cGmpz&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAg7lm8zmwy5Bkaq4VHaVvS0rWDhv0j5OVPljzXR0dJ9w&oe=657B5EC9',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320294091_1179648309326956_92245036801179143_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=nrC-tCpOaJEAX94dkcp&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAA6zS62yHgd7XMxyxFn31FaEkexowpvoka_1EG-DkkMQ&oe=657A246E',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320005686_3301554150160808_8800759340622737071_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=G4UQoHUtnj4AX8w7syR&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfDs8E496MxUsHuh6JCyej8uWVgphEmE2CIWOyY3B0fcuA&oe=6579A6B7',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320669073_1045112073551159_8689082408285648676_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=BfsM7BZlbX0AX_vFxUZ&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAtQVlayM_DxFbjlRb5ePCTFg7fznKy-fV6qjZFLhogZw&oe=657A8F9B',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/319669234_1522484714917981_2025451435745095638_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=sq8BHHHJ8NcAX_6evXo&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCbenysoqVrdCXcQRilm9lzHVGRJM_6hUx3gn0N_KcOng&oe=657AAC04',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320389589_572466174878414_6675548429008414952_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=4hQN_q0OfjQAX-hLCs2&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfDGzmjCqw7cIcJYKLDXEzgDDyd-G0LuNagwONjZRXoaLw&oe=657ADF2F',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320519725_907410690424213_1436345038507972154_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=Q92HzNCXl-gAX-8HS7K&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfBlXXdPPw3fDiXsITGSuowfv57jBCqIv2nL066wszTIxw&oe=657A972A',
+            'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320080648_847815176544346_5023572296604230546_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=OOUgEnz0nOAAX9ZAu54&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCeEohTv1iX5Wy96hIEmxo0pAmVRdhcS3jtX9uD3ymHiw&oe=6579F586',
+        ];
+
+        function initGallery2() {
+            imageArray2.forEach(url => {
+                const img = document.createElement('img');
+                img.src = url;
+                gallery2.appendChild(img);
+            });
+
+            // Attach touch event listeners
+            gallery2.addEventListener('touchstart', touchStart2);
+            gallery2.addEventListener('touchmove', touchMove2);
+            gallery2.addEventListener('touchend', touchEnd2);
+
+            showSlide2(currentIndex2);
+        }
+
+        function showSlide2(index) {
+            const galleryImage2 = document.querySelector('.gallery2 img');
+            galleryImage2.src = imageArray2[index];
+            // Update the currentIndex
+            currentIndex2 = index;
+        }
+
+        function prevSlide2() {
+            currentIndex2 = (currentIndex2 - 1 + imageArray2.length) % imageArray2.length;
+            showSlide2(currentIndex2);
+        }
+
+        function nextSlide2() {
+            currentIndex2 = (currentIndex2 + 1) % imageArray2.length;
+            showSlide2(currentIndex2);
+        }
+
+        function touchStart2(e) {
+            initialX2 = e.touches[0].clientX;
+            isDragging2 = true;
+        }
+
+        function touchMove2(e) {
+            if (isDragging2) {
+                const deltaX2 = e.touches[0].clientX - initialX2;
+                if (deltaX2 > 50) {
+                    prevSlide2();
+                    isDragging2 = false;
+                } else if (deltaX2 < -50) {
+                    nextSlide2();
+                    isDragging2 = false;
+                }
+            }
+        }
+
+        function touchEnd2() {
+            isDragging2 = false;
+        }
+
+        initGallery2();
+        setInterval(() => {
+            nextSlide2();
+        }, 5000); // Change the interval time as needed
+    </script>
+
+    <style>
+        .slider-container {
+            position: relative;
+            width: 80%;
+            margin: 50px auto;
+            overflow: hidden;
+        }
+
+        .slider {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .slide {
+            min-width: 100%;
+            box-sizing: border-box;
+            text-align: center;
+            border: 1px solid rgb(255, 242, 54);
+            border-radius: 5%;
+            background-color: ghostwhite;
+        }
+
+        .slide img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .slide h3 {
+            margin: 5px 0;
+        }
+
+        .stars {
+            color: #ffd700;
+            /* gold color for stars */
+            margin: 5px 0;
+        }
+
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 20px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+
+        .slide p.subtitle {
+            margin: 5px 0;
+            font-style: italic;
+            color: #666;
+            /* Adjust the color as needed */
+        }
+    </style>
+
+    <script>
+
+        const reviewsArray = [
+            {
+                name: 'יוסי הק.',
+                subtitle: 'בעל בית בנהריה',
+                content: 'התמקצעות וייחודיות! התמקצעות מקצועית וייחודיות עם פרויקטים מרהיבים. המשרד יצר לנו חוויה עיצובית ופונקציונלית שהתאימה בדיוק לסגנון ולצרכים שלנו.'
+            },
+            {
+                name: 'דניאלה',
+                subtitle: 'בעלת חנות בגדים',
+                content: 'שירות אישי וייחודי. השירות שקיבלנו היה אישי ומקצועי. הצוות עבד יחד איתנו להבין את רצונינו ויצר פתרונות שהתאימו בצורה מושלמת לבית שלנו.'
+            },
+            {
+                name: 'אבי ז.',
+                subtitle: 'בעל חנות למכירת חומרי בניין',
+                content: 'אמינות ויציבות. עברנו תהליך של בניה חדשה עם המשרד והיינו מרוצים מאוד מהאמינות והיציבות של הצוות. תודה על יצירת הבית שתמיד חלמנו עליו.'
+            }
+        ];
+
+        const slider = document.getElementById('slider');
+        let currentReviewIndex = 0;
+
+        reviewsArray.forEach((review) => {
+            const slide = document.createElement('div');
+            slide.classList.add('slide');
+
+            slide.innerHTML = `
+            <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" alt="${review.name}">
+            <h3>${review.name}</h3>
+            <p class="subtitle">${review.subtitle}</p>
+            <div class="stars">★★★★★</div>
+            <p>${review.content}</p>
+        `;
+
+            slider.appendChild(slide);
+        });
+        console.log(slider)
+        const totalSlides = document.querySelectorAll('.slide').length;
+
+        function changeSlide(direction) {
+            currentReviewIndex = (currentReviewIndex + direction + totalSlides) % totalSlides;
+
+            const translateValue = currentReviewIndex * 100 + '%';
+            slider.style.transform = 'translate(' + translateValue + ')';
+        }
+
+
+
+        // Automatic slide every 5 seconds
+        setInterval(() => {
+            changeSlide(1);
+        }, 5000);
+    </script>
+
+</body>
+
+</html>
