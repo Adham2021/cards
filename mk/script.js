@@ -38,7 +38,6 @@ function updateWorkingHoursStatus() {
     const now = new Date();
     const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
 
-    debugger;
     const workingHours = {
         0: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Monday
         1: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Monday
@@ -365,7 +364,7 @@ const reviewsArray = [
         content: 'אמינות ויציבות. עברנו תהליך של בניה חדשה עם המשרד והיינו מרוצים מאוד מהאמינות והיציבות של הצוות. תודה על יצירת הבית שתמיד חלמנו עליו.'
     }
 ];
-debugger
+
 let currentReviewIndex = 0;
 const slider = document.getElementById('slider');
 
@@ -401,3 +400,13 @@ setInterval(() => {
     changeSlide(1);
 }, 5000);
 
+document.getElementById('scan-icon').addEventListener('click', function() {
+    // Slide up the barcode dialog
+    document.getElementById('barcode-dialog').style.transform = 'translateY(0)';
+    document.getElementById('barcode-dialog').style.display = 'block';
+});
+
+document.getElementById('close-dialog').addEventListener('click', function() {
+    // Slide down the barcode dialog
+    document.getElementById('barcode-dialog').style.transform = 'translateY(100%)';
+});

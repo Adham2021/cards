@@ -40,6 +40,35 @@
         </a>
     </div>
 
+    <div id="scan-icon" class="sticky-icon">
+        <img src="/assets/images/files/qr-code.png" alt="Scan">
+    </div>
+
+    <!-- Barcode slider -->
+    <div id="barcode-dialog">
+        <!-- Add your barcode image here -->
+        <button id="close-dialog">X</button>
+        <p class="dialog-text">סרוק את הברקוד לשיתוף הכרטיס</p>
+        <img src="assets/images/files/mk/barcode.jpg" alt="Barcode">
+        <div class="share-section">
+            <p class="translatable" 
+            data-lang-arabic="شارك هذا الكرت :"
+            data-lang-hebrew="שתף את הכרטיס"
+            >או שתף את הרטיס :</p>
+            <div class="social-share-icons">
+                <a class="share-icon" id="whatsapp-share" onclick="shareOn('whatsapp')"><img style="width: 25px;"
+                        src="/assets/images/files/whatsapp-icon.png"> </a>
+                <a class="share-icon" id="facebook-share" onclick="shareOn('facebook')"><img style="width: 25px;"
+                        src="/assets/images/files/facebook-icon.png"> </a>
+                <a class="share-icon" id="telegram-share" onclick="shareOn('telegram')"><img style="width: 25px;"
+                        src="/assets/images/files/telegram-icon.png"> </a>
+                <a class="share-icon" id="messenger-share" onclick="shareOn('messenger')"><img style="width: 25px;"
+                        src="/assets/images/files/messenger-icon.png"> </a>
+
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <div class="profile">
             <div class="image-container">

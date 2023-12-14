@@ -23,6 +23,25 @@ body {
     /* Add a border to the icon */
 }
 
+#scan-icon {
+    width: 50px; /* Adjust the size of the circle */
+    height: 50px; /* Adjust the size of the circle */
+    background-color: #c78c20; /* Set the background color to red for the circle */
+    border-radius: 50%; /* Create a circular shape */
+    overflow: hidden; /* Ensure the image stays within the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+#scan-icon img {
+    width: 70%; /* Make the image take up the full width of the circle */
+    height: auto;
+    display: block; /* Remove any extra spacing below the image */
+    border-radius: 50%; /* Ensure the image takes on the shape of the circle */
+}
+
 @keyframes pulse {
     0% {
         transform: scale(1);
@@ -644,3 +663,40 @@ border-radius: 10%;
     color: #666;
 }
 
+.sticky-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#barcode-dialog {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%);
+    text-align: center;
+    height: 57%;
+    z-index: 99999999;
+}
+
+#barcode-dialog img {
+    max-width: 100%;
+    height: auto;
+}
+
+.dialog-text {
+    margin-top: 10px;
+}
+
+#close-dialog {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
