@@ -400,7 +400,9 @@ setInterval(() => {
     changeSlide(1);
 }, 5000);
 
+
 document.getElementById('scan-icon').addEventListener('click', function() {
+  
     // Slide up the barcode dialog
     document.getElementById('barcode-dialog').style.transform = 'translateY(0)';
     document.getElementById('barcode-dialog').style.display = 'block';
@@ -409,4 +411,20 @@ document.getElementById('scan-icon').addEventListener('click', function() {
 document.getElementById('close-dialog').addEventListener('click', function() {
     // Slide down the barcode dialog
     document.getElementById('barcode-dialog').style.transform = 'translateY(100%)';
+});
+
+// Close the dialog when clicking outside
+document.addEventListener('click', function(event) {
+    const barcodeDialog = document.getElementById('barcode-dialog');
+    const clickedElement = event.target;
+
+    if (!clickedElement.alt=="Scan" || clickedElement.alt == undefined) {
+        // Clicked outside the open dialog
+        document.getElementById('barcode-dialog').style.transform = 'translateY(100%)';
+    }
+});
+
+// Prevent clicks inside the dialog from closing it
+document.getElementById('barcode-dialog').addEventListener('click', function(event) {
+    event.stopPropagation();
 });
