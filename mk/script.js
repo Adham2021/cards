@@ -31,6 +31,10 @@ window.open(messengerShareURL, '_blank');
 window.open(whatsappShareURL, '_blank');
 
     }
+    if (type === 'linkedin') {
+        const linkedinShareURL = `https://www.linkedin.com/shareArticle?url=${encodeURIComponent(url)}&title=${encodeURIComponent(text)}`;
+        window.open(linkedinShareURL, '_blank');
+    }
 }
 changeLanguage(getLanguage(), false)
 

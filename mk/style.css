@@ -109,7 +109,7 @@ body {
 .profile h2 {
     font-size: 23px;
     color: #ffffff;
-    margin-bottom: 5px;
+    margin-top: 0px;
     opacity: 0;
     transform: translateY(50px);
     animation: fadeInFromBottom 1s ease-out 0.5s forwards;
@@ -360,25 +360,28 @@ body {
     margin-right: 2px;
 }
 
-.footer {
-    color: black;
-    padding: 20px;
-    text-align: center;
-}
 
 .contact-info p {
     margin: 0;
 }
 
-.social-icons a {
-    font-size: 20px;
-    color: #000;
-}
-
-.copyright p {
-    margin: 10px 0 0;
-    font-size: 14px;
-}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  footer p {
+    font-size: 13px;
+  }
+  .social-icons {
+    margin-top: 10px;
+  }
+  .social-icons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
 
 .share-section {
     text-align: center;
@@ -393,16 +396,6 @@ border-radius: 10%;
 .social-share-icons {
     margin-top: 10px;
 }
-
-.share-icon {
-    display: inline-block;
-    margin: 0 10px;
-    font-size: 24px;
-    color: #333;
-    /* Adjust the color based on your design */
-    text-decoration: none;
-}
-
 
 
 .waze i {
@@ -700,3 +693,48 @@ border-radius: 10%;
     left: 10px;
     cursor: pointer;
 }
+
+.share-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.share-icon {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.facebook-share {
+    background-color: #1877f2; /* Facebook blue */
+    color: #fff;
+}
+
+.telegram-share {
+    background-color: #0088cc; /* Telegram blue */
+    color: #fff;
+}
+
+.linkedin-share {
+    background-color: #0077b5; /* LinkedIn blue */
+    color: #fff;
+}
+
+.messenger-share {
+    background-color: #00aaff; /* Messenger blue */
+    color: #fff;
+}
+.whatsapp-share {
+    background-color: #25D366; /* WhatsApp green */
+    color: #fff;
+}
+.heart {
+    color: red;
+  }
+  .eyeonmedia{
+    color:white
+  }
