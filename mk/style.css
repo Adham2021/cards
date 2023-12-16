@@ -673,7 +673,7 @@ border-radius: 10%;
     transition: transform 0.3s ease-in-out;
     transform: translateY(100%);
     text-align: center;
-    height: 50%;
+    height: 57%;
     z-index: 99999999;
 }
 
