@@ -199,16 +199,17 @@ let initialX = 0;
 let isDragging = false;
 
 const imageArray = [
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403138780_1011495743269330_6104723034540259437_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=RDQbkdpu44QAX9PqXI_&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfARCEIeRUEQuTf-2-4u1di0Fuw8wChC0N9QPI8jugl5ZQ&oe=657AC9B2',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/405799265_1011495659936005_2940389452757371972_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=oHIdCDC2X-4AX8C8rmP&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCydcKnUuDoTIW7OsEFeXgoLmKFlEta6pBp0TeD2420qw&oe=6579C214',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403206905_1011495709936000_1294158851946207645_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=ZMy0aeG6HaEAX-yZyXX&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAWUnCGFZo-wUd5UkywVDmps2rI-YymeIooIcmMlqNb3g&oe=657A98E5',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/405793280_1011495696602668_2908312687926602602_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=V25GjAlwwC8AX9niS-5&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfDPfwLYXf5pzuZ2dA7_u0ceonMQqM1tX5UVFdaAl97c6Q&oe=657A4213',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403170171_1011495719935999_306095610166371448_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=-JDMYVbJp5EAX9b_5y0&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCpn_MxYLhbtoDhIHwv-NggPPV5CH7yYa4ADGUE1f53jA&oe=657A65AB',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403717417_1011495726602665_7900997241013125519_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=BvqgwWLb9YwAX_3uGtL&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAmfdY4fd4RhuZTt1lKx3ZpYyWRywukSqGjlA7KuMpv5w&oe=657B1A76',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/403155918_1011495626602675_8297722053895369376_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=UE3z0zh1F0gAX8OSp53&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfDjTqK3SmA6aQxWyPTX1U4LNlRjNwhyqk2X2mFB0b_hSw&oe=657B78F9',
-    'https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/403725270_1011495669936004_2598338113921723447_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=R990VHyEZysAX9t_oNW&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfDKYrJaJDEUc6FOxDx3i9oM0e-YNUfp5KFaq4CgZuGz4A&oe=657850D3',
-    'https://scontent.ftlv19-2.fna.fbcdn.net/v/t39.30808-6/403713937_1011495636602674_8685912819137191999_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=6OLUrKg-lNMAX-OVMm-&_nc_ht=scontent.ftlv19-2.fna&oh=00_AfD-BQHjqRzteDqLvra0oIgsiFyNeUoMEQ3PATOoZUxWRA&oe=65783828',
-    'https://scontent.ftlv19-1.fna.fbcdn.net/v/t39.30808-6/405796913_1011495686602669_1727247685080338223_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=FqQEDubIMW0AX_3qYCW&_nc_ht=scontent.ftlv19-1.fna&oh=00_AfAJqM466-JcuTvvmlAG90woFKq7ob4WQwZMRfDKfnA5ew&oe=6578EF50'
+    'https://i.imgur.com/M2MdiJv.jpg',
+    'https://i.imgur.com/pRcAbQj.jpg',
+    'https://i.imgur.com/AQ4RM76.jpg',
+    'https://i.imgur.com/nDUVkJK.jpg',
+    'https://i.imgur.com/mCEnphz.jpg',
+    'https://i.imgur.com/00ttFnj.jpg',
+    'https://i.imgur.com/zgkKUj5.jpg',
+    'https://i.imgur.com/9tNhABY.jpg',
+    'https://i.imgur.com/BnfLdIw.jpg',
+    'https://i.imgur.com/eWbJfiQ.jpg'
+
 ];
 
 function initGallery() {
@@ -277,16 +278,16 @@ let initialX2 = 0;
 let isDragging2 = false;
 
 const imageArray2 = [
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/319544670_2334446533399044_7836413977894820304_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=ZRszCFfMHa0AX_TFOgl&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfD7xbyjSgHgYEWv74D9UVBs0Wsk66rzKYi3HP0tMu5BVQ&oe=657AB259',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/319736936_1319867251890628_5292575087120481907_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=9wQabyUB_t8AX8N2tDv&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfB1mvdDqHgyG2LSkIisRl8fGIfCgbLcTJFlNM7Y_dHUqw&oe=657A9F4D',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320631306_1157536511539433_2229612356430371711_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=AU099xtO6fAAX9cGmpz&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAg7lm8zmwy5Bkaq4VHaVvS0rWDhv0j5OVPljzXR0dJ9w&oe=657B5EC9',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320294091_1179648309326956_92245036801179143_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=nrC-tCpOaJEAX94dkcp&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAA6zS62yHgd7XMxyxFn31FaEkexowpvoka_1EG-DkkMQ&oe=657A246E',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320005686_3301554150160808_8800759340622737071_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=G4UQoHUtnj4AX8w7syR&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfDs8E496MxUsHuh6JCyej8uWVgphEmE2CIWOyY3B0fcuA&oe=6579A6B7',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320669073_1045112073551159_8689082408285648676_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=BfsM7BZlbX0AX_vFxUZ&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfAtQVlayM_DxFbjlRb5ePCTFg7fznKy-fV6qjZFLhogZw&oe=657A8F9B',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/319669234_1522484714917981_2025451435745095638_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=sq8BHHHJ8NcAX_6evXo&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCbenysoqVrdCXcQRilm9lzHVGRJM_6hUx3gn0N_KcOng&oe=657AAC04',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320389589_572466174878414_6675548429008414952_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=4hQN_q0OfjQAX-hLCs2&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfDGzmjCqw7cIcJYKLDXEzgDDyd-G0LuNagwONjZRXoaLw&oe=657ADF2F',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320519725_907410690424213_1436345038507972154_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=Q92HzNCXl-gAX-8HS7K&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfBlXXdPPw3fDiXsITGSuowfv57jBCqIv2nL066wszTIxw&oe=657A972A',
-    'https://scontent.fsdv2-1.fna.fbcdn.net/v/t39.30808-6/320080648_847815176544346_5023572296604230546_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=dd5e9f&_nc_ohc=OOUgEnz0nOAAX9ZAu54&_nc_ht=scontent.fsdv2-1.fna&oh=00_AfCeEohTv1iX5Wy96hIEmxo0pAmVRdhcS3jtX9uD3ymHiw&oe=6579F586',
+    'https://i.imgur.com/XRS5LAS.jpg',
+    'https://i.imgur.com/5URyQqT.jpg',
+    'https://i.imgur.com/xjav5NG.jpg',
+    'https://i.imgur.com/raieYQr.jpg',
+    'https://i.imgur.com/KRRakqv.jpg',
+    'https://i.imgur.com/6Ao8X16.jpg',
+    'https://i.imgur.com/0IkJITw.jpg',
+    'https://i.imgur.com/IAy2Nz7.jpg',
+    'https://i.imgur.com/G6nzhbH.jpg',
+    'https://i.imgur.com/6Z3z2en.jpg'
 ];
 
 function initGallery2() {
