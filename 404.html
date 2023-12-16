@@ -1,72 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error - Page Not Found</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arvo', serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 Not Found</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
 
-        .page_404 {
-            padding: 40px 0;
-            background: #fff;
-        }
+    .container {
+      text-align: center;
+    }
 
-        .page_404 img {
-            width: 100%;
-        }
+    .error-code {
+      font-size: 8em;
+      font-weight: bold;
+      color: #555;
+    }
 
-        .four_zero_four_bg {
-            background-image: url(https://i.gifer.com/7iJM.gif);
-            height: 400px;
-            background-position: center;
-        }
+    .error-message {
+      font-size: 1.5em;
+      color: #777;
+      margin-bottom: 20px;
+    }
 
-        .four_zero_four_bg h1 {
-            font-size: 80px;
-            text-align: center;
-        }
+    .back-link {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      border: 2px solid #333;
+      padding: 10px 20px;
+      border-radius: 5px;
+      display: inline-block;
+      transition: background-color 0.3s, color 0.3s;
+    }
 
-        .four_zero_four_bg h3 {
-            font-size: 80px;
-            text-align: center;
-        }
-
-        .contant_box_404 {
-            margin-top: -50px;
-        }
-
-        .link_404 {
-            color: #fff!important;
-            padding: 10px 20px;
-            background: black;
-            margin: 20px 0;
-            display: inline-block;
-        }
-    </style>
+    .back-link:hover {
+      background-color: #333;
+      color: #fff;
+    }
+  </style>
 </head>
 <body>
-    <section class="page_404">
-        <div class="container">
-            <div class="row">    
-                <div class="col-sm-12 ">
-                    <div class="col-sm-10 col-sm-offset-1 text-center">
-                        <div class="four_zero_four_bg">
-                            <h1 class="text-center">404</h1>
-                        </div>
-                        <div class="contant_box_404">
-                            <h3 class="h2">Looks like you're lost</h3>
-                            <p>The page you are looking for is not available!</p>
-                            <a href="/" class="link_404">Go to Home</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+
+  <div class="container">
+    <div class="error-code">404</div>
+    <div class="error-message">Oops! Page not found.</div>
+    <p>The page you are looking for might be in another castle.</p>
+    <a href="/" class="back-link">Go back home</a>
+  </div>
+
 </body>
 </html>

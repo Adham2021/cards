@@ -33,13 +33,12 @@ body {
     align-items: center;
     justify-content: center;
     z-index: 1000;
+    bottom: 3%;
 }
 
-#scan-icon img {
-    width: 70%; /* Make the image take up the full width of the circle */
-    height: auto;
-    display: block; /* Remove any extra spacing below the image */
-    border-radius: 50%; /* Ensure the image takes on the shape of the circle */
+#scan-icon i {
+    color:white;
+    font-size: 25px;
 }
 
 @keyframes pulse {
@@ -150,7 +149,7 @@ body {
     font-size: 15px;
     font-weight: bold;
     text-align: center;
-    animation: fadeInFromBottom 1s ease-out 2.3s forwards;
+    animation: fadeInFromBottom 1s ease-out 1.5s forwards;
     opacity: 0;
     transform: translateY(50px);
 }
@@ -165,7 +164,7 @@ body {
     color: #007bff;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease;
-    animation: fadeInFromBottom 1s ease-out 1.5s forwards;
+    animation: fadeInFromBottom 1s ease-out 2s forwards;
     opacity: 0;
     transform: translateY(50px);
 }
@@ -500,7 +499,7 @@ border-radius: 10%;
 #language-menu-btn {
     display: flex;
     align-items: center;
-    background-color: transparent;
+    background-color: #ffc8426b;
     color: #fff;
     padding: 5px 10px;
     border: 1px solid white;

@@ -419,10 +419,9 @@ document.getElementById('close-dialog').addEventListener('click', function() {
 
 // Close the dialog when clicking outside
 document.addEventListener('click', function(event) {
-    const barcodeDialog = document.getElementById('barcode-dialog');
     const clickedElement = event.target;
 
-    if (!clickedElement.alt=="Scan" || clickedElement.alt == undefined) {
+    if (clickedElement.className!=="fas fa-qrcode") {
         // Clicked outside the open dialog
         document.getElementById('barcode-dialog').style.transform = 'translateY(100%)';
     }
