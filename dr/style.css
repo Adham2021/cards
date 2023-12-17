@@ -387,10 +387,28 @@ body {
 }
 
 
-.contact-icons i { 
-    color: white !important;
+.contact-icons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
 }
 
+.contact-icons a {
+    flex: 0 1 calc(25% - 20px);
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff; /* Adjust the color as needed */
+}
+
+.contact-icons i {
+    font-size: 24px; /* Adjust the font size as needed */
+    margin-bottom: 8px;
+    color: white;
+}
+
+.contact-icons span {
+    font-size: 14px; /* Adjust the font size as needed */
+}
 #language-menu-btn {
     background-color: #3b3a3a6b;
 }
