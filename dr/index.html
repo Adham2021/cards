@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css"> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <link rel="icon" href="assets/images/files/dr/logo.jpg" type="image/x-icon">
+    <title class="translatable" data-lang-hebrew="ג'יהאד עבד אלגני" data-lang-arabic="جهاد عبد الغني">ג'יהאד עבד אלגני
+    </title>
+
+</head>
+
+<body>
+
+    <div class="cover-photo">
+        <div class="languages">
+            <button id="language-menu-btn" onclick="toggleLanguageMenu()">
+                <img id="language-flag" src="/assets/images/files/flags/israel.png">
+                <span id="selected-language">עברית</span>
+            </button>
+            <div id="language-menu">
+                <a href="#" onclick="changeLanguage('hebrew')">
+                    <img id="language-flag" src="/assets/images/files/flags/israel.png">
+                    עברית</a>
+                <a href="#" onclick="changeLanguage('arabic')">
+                    <img id="language-flag" src="/assets/images/files/flags/saudi-arabia.png">
+                    العربية</a>
+                 <a href="#" onclick="changeLanguage('english')">
+                    <img id="language-flag" src="/assets/images/files/flags/united-kingdom.png">
+                    English</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="whatsapp-icon">
+        <a onclick="sendWhatsAppMessage()">
+            <img src="/assets/images/files/whatsapp-icon.png">
+        </a>
+    </div>
+
+    <div id="scan-icon" class="sticky-icon">
+        <i class="fas fa-qrcode"></i>
+    </div>
+
+    <!-- Barcode slider -->
+    <div id="barcode-dialog">
+        <!-- Add your barcode image here -->
+        <button id="close-dialog" class="close-btn"><i class="fas fa-times"></i></button>
+        <p class="dialog-text translatable" 
+        data-lang-hebrew=" סרוק את ה- QR לשיתוף הכרטיס" 
+        data-lang-arabic="قم بمسح الـ QR لمشاركة الكرت"
+        >
+           
+        </p>
+        <img src="assets/images/files/dr/barcode.jpg" alt="Barcode">
+        <div class="share-section">
+            <p class="translatable" 
+            data-lang-arabic="او قم بمشاركة هذا الكرت :"
+            data-lang-hebrew="או שתף את הכרטיס :"
+            >או שתף את הכרטיס :</p>
+           
+            <div class="share-icons">
+                <a class="share-icon whatsapp-share" onclick="shareOn('whatsapp')"><i class="fab fa-whatsapp"></i></a>
+                <a class="share-icon facebook-share" onclick="shareOn('facebook')"><i class="fab fa-facebook-f"></i></a>
+                <a class="share-icon telegram-share" onclick="shareOn('telegram')"><i class="fab fa-telegram"></i></a>
+                <a class="share-icon linkedin-share" onclick="shareOn('linkedin')"><i class="fab fa-linkedin-in"></i></a>
+                <a class="share-icon messenger-share" onclick="shareOn('messenger')"><i class="fab fa-facebook-messenger"></i></a>
+            </div>            
+        </div>
+    </div>
+    <div class="container">
+        <div class="profile">
+            <div class="image-container">
+                <img id="animated-logo" src="assets/images/files/dr/logo.jpg" style="border: 3px solid white;">
+            </div>
+            <h2 class="translatable" data-lang-hebrew="ג'יהאד עבד אלגני" data-lang-arabic="جهاد عبد الغني">ג'יהאד עבד אלגני
+            </h2>
+            <p class="subtitle translatable" data-lang-hebrew="השתלת שיניים | הלבנה | ציפוי חרסינה"
+                data-lang-arabic="زراعة الاسنان | تبييض | معالجة عصب">
+
+            </p>
+
+            <p id="working-hours-status">
+                <span id="status-open" dir="ltr">Open</span>
+                <span id="status-until" dir="ltr"> until 21:00</span>
+            </p>
+            <a onclick="addToContacts()" class="add-to-contacts">
+                <i class="fas fa-phone"></i>
+                <span class="translatable" data-lang-hebrew="הוספה לאנשי קשר שלי"
+                    data-lang-arabic="إضافة إلى جهات الاتصال">
+                    הוספה לאנשי קשר שלי
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="contact-icons">
+            <a href="https://www.facebook.com/profile.php?id=100032267426602&locale=ar_AR" target="_blank"
+                class="facebook">
+                <i class="fab fa-facebook"></i>
+                <span class="translatable" data-lang-hebrew="פייסבוק" data-lang-arabic="الفيسبوك">
+                    פייסבוק
+                </span>
+            </a>
+            <a href="https://instagram.com/moatasem.khalilieh_arch?igshid=MzMyNGUyNmU2YQ==" target="_blank"
+                class="instagram">
+                <i class="fab fa-instagram"></i>
+                <span class="translatable" data-lang-hebrew="אינסגרם" data-lang-arabic="إنستغرام">
+                    אינסגרם
+                </span>
+            </a>
+            <a href="https://www.tiktok.com/@moatasem.kh_arch?_t=8i0kCVuXgW1&_r=1" target="_blank" class="tiktok">
+                <i class="fab fa-tiktok"></i>
+                <span class="translatable" data-lang-hebrew="טיקטוק" data-lang-arabic="تيك توك">
+                    טיקטוק
+                </span>
+
+            </a>
+            <a href="https://wa.me/+972528957836" target="_blank" class="whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span class="translatable" data-lang-hebrew="וואטסאפ" data-lang-arabic="واتساب">
+                    וואטסאפ
+                </span>
+
+            </a>
+            <a href="tel:+972528957836" class="phone">
+                <i class="fas fa-phone"></i>
+                <span class="translatable" data-lang-hebrew="חייגו אלינו" data-lang-arabic="اتصل بنا">
+                    חייגו אלינו
+                </span>
+
+            </a>
+            <a href="mailto:Moatasem97.kh@gmail.com" class="email">
+                <i class="fas fa-envelope"></i>
+                <span class="translatable" data-lang-hebrew="אימייל" data-lang-arabic="الايميل">
+                    אימייל
+                </span>
+
+            </a>
+            <a href="https://www.eye-on-media.com" target="_blank" class="website">
+                <i class="fas fa-globe"></i>
+                <span class="translatable"
+      data-lang-hebrew="אתר שלנו"
+      data-lang-arabic="موقعنا">
+   אתר שלנו
+</span>
+
+            </a>
+            <a href="https://ul.waze.com/ul?ll=32.68783290%2C35.24220010&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+                target="_blank" class="waze">
+                <i class="fab fa-waze"></i>
+                <span class="translatable" data-lang-hebrew="נווטו אלינו" data-lang-arabic="الوصول إلينا">
+                    נווטו אלינו
+                </span>
+
+            </a>
+        </div>
+
+        <div class="about-us">
+            <h3 class="translatable" data-lang-hebrew="קצת עליי" data-lang-arabic="قليلاً عني">
+               
+            </h3>
+
+            <p class="translatable"
+                data-lang-hebrew="רופא שיניים עם 25 שנות ניסיון בתחום רפואת השיניים, נציג בקטגוריית השיקום הפה והתחזוקה השיניים מטעם האוניברסיטה העברית בהדסה-עין כרם וחבר מוסמך בתחום זה על ידי משרד הבריאות. דר גיהאד עומד בתפקידים מרבים, כולל את תפקידו כחבר בסגל הוראה ומדריך לסטודנטים בפקולטה לרפואת שיניים באוניברסיטה העברית הדסה-עין כרם, מנהל קופת החולים (מכבי-דן) בנצרת העליונה, ומנהל מחלקת השיקום בבית החולים בוריה."
+                data-lang-arabic="طبيب اسنان مع خبرة 25 سنة في طب الأسنان, حاصل على لقب مُختص بمجال الترميمات والتعويضات السنية (שיקום הפה) من قبل الجامعة العبرية هداسا-عين كارم وعضو مُثبّت في هذا المجال من قبل وزارة الصحة, دكتور جهاد شغل ويشغل عدة مناصب مرموقة منها, عضو هيئة تدريس ومرشد لطلاب طب الاسنان في الجامعة العبرية هداسا عين كارم, مدير صندوق المرضى (مكابي-دنت) الناصرة العليا, مدير قسم الترميمات في مستشفى بوريا.">
+                
+            </p>
+
+        </div>
+
+        <div class="services">
+            <div class="line"></div>
+            <h3 class="services-title translatable" data-lang-hebrew="השירותים שלנו" data-lang-arabic="خدماتنا">
+                השירותים שלנו
+            </h3>
+
+            <div class="line"></div>
+
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" data-lang-hebrew="תכנון ועיצוב פנים מותאם אישית"
+                        data-lang-arabic="تخطيط وتصميم داخلي حسب الطلب">
+                        תכנון ועיצוב פנים מותאם אישית
+                    </span>
+
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content">
+
+                    <p class="translatable"
+                        data-lang-hebrew="במשרדכם, אנו מתמחים ביצירת חללים ייחודיים ופונקציונליים. השירות כולל ייעוץ אישי ותכנון מותאם לכל לקוח, שמשלב אמנות, טכנולוגיה ורגישות ליצירת חוויית מגורים או עבודה משופרת."
+                        data-lang-arabic="في مكتبنا، نختص في إنشاء فضاءات فريدة ووظيفية. يشمل الخدمة استشارة شخصية وتخطيط مخصص لكل عميل، يجمع بين الفن والتكنولوجيا والحساسية لإنشاء تجربة سكنية أو عمل محسنة.">
+                        במשרדכם, אנו מתמחים ביצירת חללים ייחודיים ופונקציונליים. השירות כולל ייעוץ אישי ותכנון מותאם לכל
+                        לקוח, שמשלב אמנות, טכנולוגיה ורגישות ליצירת חוויית מגורים או עבודה משופרת.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" data-lang-hebrew="פתרונות מעוצבים לבנייה חדשה"
+                        data-lang-arabic="حلول مصممة للبناء الجديد">
+                        פתרונות מעוצבים לבנייה חדשה
+                    </span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="אתם מציעים פתרונות מעוצבים וייחודיים לבניית נכסים חדשים. השירות כולל שילוב של אמנות, טכנולוגיה ועיצוב ליצירת חללים שמשדרים רגישות ויוקרה."
+                        data-lang-arabic="تقدمون حلاول مصممة وفريدة لبناء الممتلكات الجديدة. الخدمة تشمل دمج بين الفن، التكنولوجيا والتصميم لإنشاء مساحات تنبعث منها الحساسية والفخامة.">
+                        אתם מציעים פתרונות מעוצבים וייחודיים לבניית נכסים חדשים. השירות כולל שילוב של אמנות, טכנולוגיה
+                        ועיצוב ליצירת חללים שמשדרים רגישות ויוקרה.
+                    </p>
+                </div>
+            </div>
+
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" data-lang-hebrew="שיפוצים ועיצוב פנים"
+                        data-lang-arabic="تجديد وتصميم داخلي">
+                        שיפוצים ועיצוב פנים
+                    </span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="עבודה עם לקוחות על שדרוג ושיפוצים של נכסים קיימים. אתם מתמקדים ביצירת חוויית מגורים או עבודה משופרת דרך שדרוג ועיצוב פנים מותאם לצרכי הלקוח."
+                        data-lang-arabic="العمل مع العملاء على ترقية وتجديد العقارات الحالية. أنتم تركزون على خلق تجربة سكنية أو عمل محسنة من خلال ترقية وتصميم داخلي مخصص لاحتياجات العميل.">
+                        עבודה עם לקוחות על שדרוג ושיפוצים של נכסים קיימים. אתם מתמקדים ביצירת חוויית מגורים או עבודה
+                        משופרת דרך שדרוג ועיצוב פנים מותאם לצרכי הלקוח.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="working-hours">
+            <div class="line"></div>
+            <h3 class="translatable" data-lang-hebrew="שעות פעילות" data-lang-arabic="ساعات العمل">
+                שעות פעילות
+            </h3>
+            <div class="line"></div>
+            <p class="translatable" data-lang-hebrew="יום שני-שישי: 08:00 - 17:00"
+                data-lang-arabic="الإثنين - الجمعة: 08:00 - 17:00">
+                יום שני-שישי: 08:00 - 17:00
+            </p>
+            <p class="translatable" data-lang-hebrew="יום שבת: סגור" data-lang-arabic="السبت: مغلق">
+                יום שבת: סגור
+            </p>
+            <p class="translatable" data-lang-hebrew="יום ראשון: 08:00 - 17:00" data-lang-arabic="الأحد: 08:00 - 17:00">
+                יום ראשון: 08:00 - 17:00
+            </p>
+        </div>
+
+        <div class="gallery-container">
+            <div class="line"></div>
+            <h3 class="translatable" data-lang-hebrew="תמונות מהפרויקטים שלנו" data-lang-arabic="صور من مشاريعنا">
+                תמונות מהפרויקטים שלנו
+            </h3>
+            <div class="line"></div>
+            <h4 class="translatable" data-lang-hebrew="1. תכנון ועיצוב פנים לבית בשטח של 90 מ״ר - יפיע"
+                data-lang-arabic="1. تخطيط وتصميم داخلي لمنزل بمساحة 90 متر مربع - يافة الناصرة">
+                1. תכנון ועיצוב פנים לבית בשטח של 90 מ״ר - יפיע
+            </h4>
+            <div class="gallery">
+                <!-- Images will be dynamically added here using JavaScript -->
+                <img
+                    src="https://i.imgur.com/eWbJfiQ.jpg">
+            </div>
+
+            <div class="arrow right" onclick="prevSlide()">&#10094;</div>
+            <div class="arrow left" onclick="nextSlide()">&#10095;</div>
+        </div>
+        <div class="gallery-container">
+            <h4 class="translatable" data-lang-hebrew="2. תכנון + עיצוב פנים לקוטג' בשטח של 100 מ״ר - חיפה"
+                data-lang-arabic="2. تخطيط وتصميم داخلي لكوخ بمساحة 100 متر مربع - حيفا">
+                2. תכנון + עיצוב פנים לקוטג' בשטח של 100 מ״ר - חיפה
+            </h4>
+            <div class="gallery2">
+                <!-- Images will be dynamically added here using JavaScript -->
+                <img
+                    src="https://i.imgur.com/6Z3z2en.jpg">
+            </div>
+
+            <div class="arrow right" onclick="prevSlide2()">&#10094;</div>
+            <div class="arrow left" onclick="nextSlide2()">&#10095;</div>
+        </div>
+
+        <div class="faq">
+            <div class="line"></div>
+            <h3 class="translatable" data-lang-hebrew="שאלות & תשובות" data-lang-arabic="أسئلة وأجوبة">
+                שאלות & תשובות
+            </h3>
+            <div class="line"></div>
+
+            <div class="faq-item">
+                <div class="toggle-btn" onclick="toggleContent(this)">
+                    <span class="translatable" data-lang-hebrew="שאלה: איך אתם מתמקדים ביצירת חללים ייחודיים?"
+                        data-lang-arabic="سؤال: كيف تركزون على إنشاء مساحات فريدة؟">
+                    </span>
+                        <i class="fas fa-plus"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="אנו מתמקדים בשילוב של אמנות, טכנולוגיה ורגישות כדי ליצור חללים מרהיבים ופונקציונליים."
+                        data-lang-arabic="نركز على دمج الفن، التكنولوجيا والحساسية لإنشاء فضاءات رائعة ووظيفية.">
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="toggle-btn" onclick="toggleContent(this)">
+                    <span class="translatable" data-lang-hebrew="שאלה: מהם התחומים שאתם מתמחים בהם?"
+                        data-lang-arabic="سؤال: ما هي المجالات التي تختصون فيها؟">
+                    </span>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="אנו מתמחים בתכנון ועיצוב פנים לבתים פרטיים, מבני ציבור וחללי עסקים."
+                        data-lang-arabic="نحن متخصصون في تخطيط وتصميم داخلي للمنازل الخاصة، المباني العامة ومساحات الأعمال.">
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="toggle-btn" onclick="toggleContent(this)">
+                    <span class="translatable" data-lang-hebrew="שאלה: איך אתם יוצרים חוויית מגורים משופרת?"
+                        data-lang-arabic="سؤال: كيف تخلقون تجربة سكنية محسنة؟">
+                    </span>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="אנו משדרים רגישות ויוקרה דרך יצירת חללים שמתאימים לצרכי הלקוח ומשדרים תחושה של בית."
+                        data-lang-arabic="نحن ننقل الحساسية والفخامة من خلال إنشاء فضاءات تتناسب مع احتياجات العميل وتنقل شعوراً بالمنزل.">
+                    </p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="toggle-btn" onclick="toggleContent(this)">
+                    <span class="translatable" data-lang-hebrew="שאלה: מהם השלבים בתהליך תכנון פרויקט?"
+                        data-lang-arabic="سؤال: ما هي المراحل في عملية تخطيط المشروع؟">
+                    </span>
+                    <i class="fas fa-plus"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="השלבים כוללים ייעוץ אישי, תכנון מותאם אישית, ושלב יצירתי ששולב בין אמנות, טכנולוגיה ועיצוב."
+                        data-lang-arabic="تشمل المراحل استشارات شخصية وتخطيط مخصص، ودمج إبداعي يجمع بين الفن، التكنولوجيا والتصميم.">
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="slider-container">
+            <h3 class="translatable" style="text-align: center; background-color: white;"
+                data-lang-hebrew="לקוחות ממליצים" data-lang-arabic="تقييمات الزبائن">
+            </h3>
+            <div class="slider" id="slider"></div>
+            <button class="slider-button prev" onclick="changeSlide(-1)">&#9665;</button>
+            <button class="slider-button next" onclick="changeSlide(1)">&#9655;</button>
+        </div>
+
+        <div class="share-section">
+            <p class="translatable" 
+            data-lang-arabic="شارك هذا الكرت :"
+            data-lang-hebrew="שתף את הכרטיס"
+            ></p>
+           
+            <div class="share-icons">
+                <a class="share-icon whatsapp-share" onclick="shareOn('whatsapp')"><i class="fab fa-whatsapp"></i></a>
+                <a class="share-icon facebook-share" onclick="shareOn('facebook')"><i class="fab fa-facebook-f"></i></a>
+                <a class="share-icon telegram-share" onclick="shareOn('telegram')"><i class="fab fa-telegram"></i></a>
+                <a class="share-icon linkedin-share" onclick="shareOn('linkedin')"><i class="fab fa-linkedin-in"></i></a>
+                <a class="share-icon messenger-share" onclick="shareOn('messenger')"><i class="fab fa-facebook-messenger"></i></a>
+            </div>            
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+    <footer>
+        <p>Built with <i class="heart fas fa-heart"></i> by <a href="https://www.eye-on-media.com/" target="_blank" class="eyeonmedia"> Eye On Media</a> 2023</p>
+        <div class="social-icons">
+          <!-- Replace # with your actual social media links -->
+          <a href="https://www.facebook.com/people/Eye-On-Media/100092701628022/?mibextid=PzaGJu" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.eye-on-media.com/" target="_blank"><i class="fas fa-globe"></i></a>
+          <a href="https://instagram.com/ionmedia.il?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </footer>     
+</body>
+</html>
