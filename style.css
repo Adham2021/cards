@@ -1,0 +1,369 @@
+
+#whatsapp-icon {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    z-index: 1000;
+    animation: pulse 2s infinite;
+}
+
+#whatsapp-icon img {
+    width: 50px;
+    /* Adjust the size as needed */
+    height: auto;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    /* Add a border to the icon */
+}
+
+#scan-icon {
+    width: 50px; /* Adjust the size of the circle */
+    height: 50px; /* Adjust the size of the circle */
+    background-color: #c78c20; /* Set the background color to red for the circle */
+    border-radius: 50%; /* Create a circular shape */
+    overflow: hidden; /* Ensure the image stays within the circle */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    bottom: 3%;
+    border: 2px solid white;
+    animation: pulse 2s infinite;
+}
+
+#scan-icon i {
+    color:white;
+    font-size: 25px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#working-hours-status {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.status-open {
+    background-color: #4CAF50;
+    /* Green */
+    color: #fff;
+    /* White */
+    padding: 5px 10px;
+    border-radius: 10px;
+    /* Rounded borders */
+}
+
+.status-close {
+    background-color: #e12d00;
+    /* red */
+    color: #fff;
+    /* White */
+    padding: 5px 10px;
+    border-radius: 10px;
+    /* Rounded borders */
+}
+
+
+#status-until {
+    color: white;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+  }
+  footer p {
+    font-size: 13px;
+  }
+  .heart {
+    color: red;
+  }
+  .eyeonmedia{
+    color:white
+  }
+  .social-icons {
+    margin-top: 10px;
+  }
+  .social-icons a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+  }
+
+  #language-menu {
+    display: none;
+    position: absolute;
+    background-color: #fff;
+    /* Light background color for the menu */
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Optional: Add a subtle shadow */
+}
+
+#language-menu a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    /* Text color for the menu items */
+}
+
+#language-menu a:hover {
+    background-color: #e0e0e0;
+    /* Background color on hover */
+}
+
+#language-menu-btn {
+    display: flex;
+    align-items: center;
+    background-color: #ffc8426b;
+    color: #fff;
+    padding: 5px 10px;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 10%;
+}
+
+#language-flag {
+    margin-right: 5px;
+    width: 20px;
+    /* Adjust the size as needed */
+    height: auto;
+}
+
+.languages {
+    position: relative;
+    top: 20px;
+    margin-right: 10px;
+}
+.sticky-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+}
+
+#barcode-dialog {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%);
+    text-align: center;
+    height: 57%;
+    z-index: 99999999;
+}
+
+#barcode-dialog img {
+    max-width: 100%;
+    height: auto;
+}
+
+.dialog-text {
+    margin-top: 10px;
+}
+
+#close-dialog {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    cursor: pointer;
+}
+
+.share-icons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.share-icon {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    text-align: center;
+    text-decoration: none;
+}
+
+.facebook-share {
+    background-color: #1877f2; /* Facebook blue */
+    color: #fff;
+}
+
+.telegram-share {
+    background-color: #0088cc; /* Telegram blue */
+    color: #fff;
+}
+
+.linkedin-share {
+    background-color: #0077b5; /* LinkedIn blue */
+    color: #fff;
+}
+
+.messenger-share {
+    background-color: #00aaff; /* Messenger blue */
+    color: #fff;
+}
+.whatsapp-share {
+    background-color: #25D366; /* WhatsApp green */
+    color: #fff;
+}
+
+.share-section {
+    text-align: center;
+    margin-top: 20px;
+}
+.share-section p
+{
+    background-color: white;
+font-weight: bold;
+border-radius: 10%;
+}
+.social-share-icons {
+    margin-top: 10px;
+}
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+#working-hours-status {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    animation: fadeInFromBottom 1s ease-out 1.5s forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.add-to-contacts {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+    background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid white;
+    color: #007bff;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: fadeInFromBottom 1s ease-out 2s forwards;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+
+.add-to-contacts span {
+    color: white;
+    ;
+}
+
+.add-to-contacts:hover {
+    background-color: #ffa600;
+    color: #fff;
+}
+
+.add-to-contacts i {
+    font-size: 18px;
+    margin-right: 5px;
+    color: white;
+}
+
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: -47px;
+}
+
+.contact-icons a {
+    text-decoration: none;
+    color: #ffffff;
+    margin: 10px;
+    text-align: center;
+    font-size: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+
+.contact-icons i {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.contact-icons a:hover {
+    color: #007bff;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: linear-gradient(to bottom, #000000, #FCD516);
+    box-shadow: 0 0 10px rgb(255 235 0);
+}
+
+
+.profile {
+    text-align: center;
+    position: relative;
+    top: -75px;
+    /* Adjust based on your cover photo height */
+}
+
+.profile h2 {
+    font-size: 23px;
+    color: #ffffff;
+    margin-top: 0px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInFromBottom 1s ease-out 0.5s forwards;
+
+}
+
+/* Style for the subtitle */
+.profile .subtitle {
+    font-size: 14px;
+    color: #ffffff;
+    /* Adjust the color as needed */
+    margin-top: 5px;
+    /* Adjust the margin as needed */
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInFromBottom 1s ease-out 1s forwards;
+
+}
+
+@keyframes fadeInFromBottom {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
