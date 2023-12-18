@@ -163,12 +163,12 @@
         </div>
 
         <div class="about-us">
-            <div class="line"></div>
+           
             <h3 class="translatable" data-lang-hebrew="קצת עלינו" data-lang-arabic="قليلاً عنا">
                 קצת עלינו
             </h3>
 
-            <div class="line"></div>
+           
             <p class="translatable"
                 data-lang-hebrew="אנו במשרדנו מתמחים בתכנון ועיצוב פנים עם דגש על יצירת חללים ייחודיים ופונקציונליים. במשרד מציעים פתרונות מעוצבים אישית המשלבים אמנות, טכנולוגיה ורגישות לסביבה ולצרכי הלקוח. בין אם זה בנייה חדשה, שיפוץ או עיצוב פנים, ומתמקדים ביצירת חוויית מגורים או עבודה משופרת ללקוחותינו"
                 data-lang-arabic="نحن في مكتبنا متخصصون في التخطيط وتصميم الداخلي مع التركيز على إنشاء مساحات فريدة ووظيفية. نقدم في المكتب حلاول تصميم شخصية تجمع بين الفن والتكنولوجيا والحساسية للبيئة واحتياجات العميل. سواء كان ذلك بناءً جديدًا، أو تجديد أو تصميم داخلي، نركز على إنشاء تجربة سكنية أو عمل محسنة لعملائنا">
@@ -180,12 +180,12 @@
         </div>
 
         <div class="services">
-            <div class="line"></div>
+           
             <h3 class="services-title translatable" data-lang-hebrew="השירותים שלנו" data-lang-arabic="خدماتنا">
                 השירותים שלנו
             </h3>
 
-            <div class="line"></div>
+           
 
             <div class="service-item">
                 <div class="toggle-btn" onclick="toggleService(this)">
@@ -245,11 +245,11 @@
         </div>
 
         <div class="working-hours">
-            <div class="line"></div>
+           
             <h3 class="translatable" data-lang-hebrew="שעות פעילות" data-lang-arabic="ساعات العمل">
                 שעות פעילות
             </h3>
-            <div class="line"></div>
+           
             <p class="translatable" data-lang-hebrew="יום שני-שישי: 08:00 - 17:00"
                 data-lang-arabic="الإثنين - الجمعة: 08:00 - 17:00">
                 יום שני-שישי: 08:00 - 17:00
@@ -263,23 +263,23 @@
         </div>
 
         <div class="gallery-container">
-            <div class="line"></div>
+           
             <h3 class="translatable" data-lang-hebrew="תמונות מהפרויקטים שלנו" data-lang-arabic="صور من مشاريعنا">
                 תמונות מהפרויקטים שלנו
             </h3>
-            <div class="line"></div>
+           
             <h4 class="translatable" data-lang-hebrew="1. תכנון ועיצוב פנים לבית בשטח של 90 מ״ר - יפיע"
                 data-lang-arabic="1. تخطيط وتصميم داخلي لمنزل بمساحة 90 متر مربع - يافة الناصرة">
                 1. תכנון ועיצוב פנים לבית בשטח של 90 מ״ר - יפיע
             </h4>
-            <div class="gallery">
+            <div class="gallery1">
                 <!-- Images will be dynamically added here using JavaScript -->
                 <img
                     src="https://i.imgur.com/eWbJfiQ.jpg">
             </div>
 
-            <div class="arrow right" onclick="prevSlide()">&#10094;</div>
-            <div class="arrow left" onclick="nextSlide()">&#10095;</div>
+            <div class="arrow right" onclick="prevSlide(1)">&#10094;</div>
+            <div class="arrow left" onclick="nextSlide(1)">&#10095;</div>
         </div>
         <div class="gallery-container">
             <h4 class="translatable" data-lang-hebrew="2. תכנון + עיצוב פנים לקוטג' בשטח של 100 מ״ר - חיפה"
@@ -292,16 +292,30 @@
                     src="https://i.imgur.com/6Z3z2en.jpg">
             </div>
 
-            <div class="arrow right" onclick="prevSlide2()">&#10094;</div>
-            <div class="arrow left" onclick="nextSlide2()">&#10095;</div>
+            <div class="arrow right" onclick="prevSlide(2)">&#10094;</div>
+            <div class="arrow left" onclick="nextSlide(2)">&#10095;</div>
+        </div>
+
+        <div class="gallery-container">
+            <h4 class="translatable" data-lang-hebrew="3.תכנון ועיצוב פנים לבית קפה בשטח של 60 מ״ר.ערערה."
+                data-lang-arabic="3. تخطيط وتصميم داخلي لمقهى بمساحة 60 متر مربع عرعرة.">
+            </h4>
+            <div class="gallery3">
+                <!-- Images will be dynamically added here using JavaScript -->
+                <img
+                    src="https://i.imgur.com/piAcSBa.jpg">
+            </div>
+
+            <div class="arrow right" onclick="prevSlide(3)">&#10094;</div>
+            <div class="arrow left" onclick="nextSlide(3)">&#10095;</div>
         </div>
 
         <div class="faq">
-            <div class="line"></div>
+           
             <h3 class="translatable" data-lang-hebrew="שאלות & תשובות" data-lang-arabic="أسئلة وأجوبة">
                 שאלות & תשובות
             </h3>
-            <div class="line"></div>
+           
 
             <div class="faq-item">
                 <div class="toggle-btn" onclick="toggleContent(this)">
@@ -362,14 +376,14 @@
 
         </div>
 
-        <div class="slider-container">
+        <!-- <div class="slider-container">
             <h3 class="translatable" style="text-align: center; background-color: white;"
                 data-lang-hebrew="לקוחות ממליצים" data-lang-arabic="تقييمات الزبائن">
             </h3>
             <div class="slider" id="slider"></div>
             <button class="slider-button prev" onclick="changeSlide(-1)">&#9665;</button>
             <button class="slider-button next" onclick="changeSlide(1)">&#9655;</button>
-        </div>
+        </div> -->
 
         <div class="share-section">
             <p class="translatable" 

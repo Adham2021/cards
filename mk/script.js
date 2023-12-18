@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function shareOn(type) {
-    
+
     const text = 'Check out this awesome website!';
     const url = window.location.href;
     if (type === 'facebook') {
@@ -23,12 +23,12 @@ function shareOn(type) {
     if (type === 'messenger') {
 
         const messengerShareURL = `https://www.facebook.com/dialog/send?link=${encodeURIComponent(url)}&app_id=123456789&redirect_uri=${encodeURIComponent(url)}&quote=${encodeURIComponent(text)}`;
-window.open(messengerShareURL, '_blank');
+        window.open(messengerShareURL, '_blank');
     }
     if (type === 'whatsapp') {
 
         const whatsappShareURL = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)} ${encodeURIComponent(url)}`;
-window.open(whatsappShareURL, '_blank');
+        window.open(whatsappShareURL, '_blank');
 
     }
     if (type === 'linkedin') {
@@ -193,242 +193,259 @@ function updateContent(language) {
 
 
 
-const gallery = document.querySelector('.gallery');
 let currentIndex = 0;
+let currentIndex2 = 0;
+let currentIndex3 = 0;
+
 let initialX = 0;
+let initialX2 = 0;
+let initialX3 = 0;
+
 let isDragging = false;
+let isDragging2 = false;
+let isDragging3 = false;
 
 const imageArray = [
-    'https://i.imgur.com/M2MdiJv.jpg',
-    'https://i.imgur.com/pRcAbQj.jpg',
-    'https://i.imgur.com/AQ4RM76.jpg',
-    'https://i.imgur.com/nDUVkJK.jpg',
-    'https://i.imgur.com/mCEnphz.jpg',
-    'https://i.imgur.com/00ttFnj.jpg',
-    'https://i.imgur.com/zgkKUj5.jpg',
-    'https://i.imgur.com/9tNhABY.jpg',
-    'https://i.imgur.com/BnfLdIw.jpg',
-    'https://i.imgur.com/eWbJfiQ.jpg'
+    //gallery1
+    [
+        'https://i.imgur.com/M2MdiJv.jpg',
+        'https://i.imgur.com/pRcAbQj.jpg',
+        'https://i.imgur.com/AQ4RM76.jpg',
+        'https://i.imgur.com/nDUVkJK.jpg',
+        'https://i.imgur.com/mCEnphz.jpg',
+        'https://i.imgur.com/00ttFnj.jpg',
+        'https://i.imgur.com/zgkKUj5.jpg',
+        'https://i.imgur.com/9tNhABY.jpg',
+        'https://i.imgur.com/BnfLdIw.jpg',
+        'https://i.imgur.com/eWbJfiQ.jpg'
+
+    ],
+    //gallery2
+    [
+        'https://i.imgur.com/XRS5LAS.jpg',
+        'https://i.imgur.com/5URyQqT.jpg',
+        'https://i.imgur.com/xjav5NG.jpg',
+        'https://i.imgur.com/raieYQr.jpg',
+        'https://i.imgur.com/KRRakqv.jpg',
+        'https://i.imgur.com/6Ao8X16.jpg',
+        'https://i.imgur.com/0IkJITw.jpg',
+        'https://i.imgur.com/IAy2Nz7.jpg',
+        'https://i.imgur.com/G6nzhbH.jpg',
+        'https://i.imgur.com/6Z3z2en.jpg'
+    ],
+
+    //gallery3
+
+    [
+        'https://i.imgur.com/Mr3zp6G.jpg',
+        'https://i.imgur.com/ITO0oga.jpg',
+        'https://i.imgur.com/U4ISrZW.jpg',
+        'https://i.imgur.com/ttJq0WS.jpg',
+        'https://i.imgur.com/ztwMqHQ.jpg',
+        'https://i.imgur.com/piAcSBa.jpg'
+    ]
 
 ];
 
-function initGallery() {
-    imageArray.forEach(url => {
+function initGallery(gal) {
+    const gallery = document.querySelector('.gallery'+gal);
+    imageArray[gal-1].forEach(url => {
         const img = document.createElement('img');
         img.src = url;
         gallery.appendChild(img);
     });
 
     // Attach touch event listeners
-    gallery.addEventListener('touchstart', touchStart);
-    gallery.addEventListener('touchmove', touchMove);
+   
+    gallery.addEventListener('touchstart', (e) => touchStart(e, gal));
+    gallery.addEventListener('touchmove', (e) => touchMove(e, gal));
     gallery.addEventListener('touchend', touchEnd);
-
-    showSlide(currentIndex);
+    gallery.galleryNumber=gal-1;
+    if(gal==1)
+    showSlide(currentIndex,gallery);
+    if(gal==2)
+    showSlide(currentIndex2,gallery);
+    if(gal==3)
+    showSlide(currentIndex3,gallery);
+ 
 }
 
-function showSlide(index) {
-    const galleryImage = document.querySelector('.gallery img');
-    galleryImage.src = imageArray[index];
-    // Update the currentIndex
-    currentIndex = index;
+// Function to show a slide in a specific gallery
+function showSlide(index, galleryElement) {
+    const galleryImage = galleryElement.querySelector('img');
+    galleryImage.src = imageArray[galleryElement.galleryNumber][index];
+    // Update the currentIndex for the specific gallery
+    galleryElement.currentIndex = index;
 }
 
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
-    showSlide(currentIndex);
+// Function to move to the previous slide in a specific gallery
+function prevSlide(galleryNumber) {
+    const galleryElement = document.querySelector('.gallery' + galleryNumber);
+
+    galleryElement.currentIndex = (galleryElement.currentIndex - 1 + imageArray[galleryNumber - 1].length) % imageArray[galleryNumber - 1].length;
+    galleryElement.galleryNumber=galleryNumber-1
+    showSlide(galleryElement.currentIndex, galleryElement);
 }
 
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % imageArray.length;
-    showSlide(currentIndex);
+// Function to move to the next slide in a specific gallery
+function nextSlide(galleryNumber) {
+    const galleryElement = document.querySelector('.gallery' + galleryNumber );
+
+    galleryElement.currentIndex = (galleryElement.currentIndex + 1) % imageArray[galleryNumber - 1].length;
+    galleryElement.galleryNumber=galleryNumber-1
+    showSlide(galleryElement.currentIndex, galleryElement);
 }
 
-function touchStart(e) {
-    initialX = e.touches[0].clientX;
-    isDragging = true;
+
+function touchStart(e, galleryNumber) {
+    switch (galleryNumber) {
+        case 1:
+            initialX = e.touches[0].clientX;
+            isDragging = true;
+            break;
+        case 2:
+            initialX2 = e.touches[0].clientX;
+            isDragging2 = true;
+            break;
+        case 3:
+            initialX3 = e.touches[0].clientX;
+            isDragging3 = true;
+            break;
+        default:
+            break;
+    }
 }
 
-function touchMove(e) {
+
+// Touch move function
+function touchMove(e, galleryNumber) {
+    let initialX, isDragging;
+
+    switch (galleryNumber) {
+        case 1:
+            initialX = initialX;
+            isDragging = isDragging;
+            break;
+        case 2:
+            initialX = initialX2;
+            isDragging = isDragging2;
+            break;
+        case 3:
+            initialX = initialX3;
+            isDragging = isDragging3;
+            break;
+        default:
+            break;
+    }
+
     if (isDragging) {
         const deltaX = e.touches[0].clientX - initialX;
         if (deltaX > 50) {
-            prevSlide();
+            prevSlide(galleryNumber);
             isDragging = false;
         } else if (deltaX < -50) {
-            nextSlide();
+            nextSlide(galleryNumber);
             isDragging = false;
         }
     }
 }
 
+
+// Touch end function
 function touchEnd() {
     isDragging = false;
-}
-
-initGallery();
-setInterval(() => {
-    nextSlide();
-}, 5000); // Change the interval time as needed
-
-
-const gallery2 = document.querySelector('.gallery2');
-let currentIndex2 = 0;
-let initialX2 = 0;
-let isDragging2 = false;
-
-const imageArray2 = [
-    'https://i.imgur.com/XRS5LAS.jpg',
-    'https://i.imgur.com/5URyQqT.jpg',
-    'https://i.imgur.com/xjav5NG.jpg',
-    'https://i.imgur.com/raieYQr.jpg',
-    'https://i.imgur.com/KRRakqv.jpg',
-    'https://i.imgur.com/6Ao8X16.jpg',
-    'https://i.imgur.com/0IkJITw.jpg',
-    'https://i.imgur.com/IAy2Nz7.jpg',
-    'https://i.imgur.com/G6nzhbH.jpg',
-    'https://i.imgur.com/6Z3z2en.jpg'
-];
-
-function initGallery2() {
-    imageArray2.forEach(url => {
-        const img = document.createElement('img');
-        img.src = url;
-        gallery2.appendChild(img);
-    });
-
-    // Attach touch event listeners
-    gallery2.addEventListener('touchstart', touchStart2);
-    gallery2.addEventListener('touchmove', touchMove2);
-    gallery2.addEventListener('touchend', touchEnd2);
-
-    showSlide2(currentIndex2);
-}
-
-function showSlide2(index) {
-    const galleryImage2 = document.querySelector('.gallery2 img');
-    galleryImage2.src = imageArray2[index];
-    // Update the currentIndex
-    currentIndex2 = index;
-}
-
-function prevSlide2() {
-    currentIndex2 = (currentIndex2 - 1 + imageArray2.length) % imageArray2.length;
-    showSlide2(currentIndex2);
-}
-
-function nextSlide2() {
-    currentIndex2 = (currentIndex2 + 1) % imageArray2.length;
-    showSlide2(currentIndex2);
-}
-
-function touchStart2(e) {
-    initialX2 = e.touches[0].clientX;
-    isDragging2 = true;
-}
-
-function touchMove2(e) {
-    if (isDragging2) {
-        const deltaX2 = e.touches[0].clientX - initialX2;
-        if (deltaX2 > 50) {
-            prevSlide2();
-            isDragging2 = false;
-        } else if (deltaX2 < -50) {
-            nextSlide2();
-            isDragging2 = false;
-        }
-    }
-}
-
-function touchEnd2() {
     isDragging2 = false;
+    isDragging3 = false;
 }
 
-initGallery2();
-setInterval(() => {
-    nextSlide2();
-}, 5000); // Change the interval time as needed
+initGallery(1);
+initGallery(2);
+initGallery(3);
+
+// Set up intervals for each gallery
+const interval1 = setInterval(() => nextSlide(1), 5000);
+const interval2 = setInterval(() => nextSlide(2), 5000);
+const interval3 = setInterval(() => nextSlide(3), 5000);
 
 
 
+// const reviewsArray = [
+//     {
+//         name: 'יוסי הק.',
+//         subtitle: 'בעל בית בנהריה',
+//         content: 'התמקצעות וייחודיות! התמקצעות מקצועית וייחודיות עם פרויקטים מרהיבים. המשרד יצר לנו חוויה עיצובית ופונקציונלית שהתאימה בדיוק לסגנון ולצרכים שלנו.'
+//     },
+//     {
+//         name: 'דניאלה',
+//         subtitle: 'בעלת חנות בגדים',
+//         content: 'שירות אישי וייחודי. השירות שקיבלנו היה אישי ומקצועי. הצוות עבד יחד איתנו להבין את רצונינו ויצר פתרונות שהתאימו בצורה מושלמת לבית שלנו.'
+//     },
+//     {
+//         name: 'אבי ז.',
+//         subtitle: 'בעל חנות למכירת חומרי בניין',
+//         content: 'אמינות ויציבות. עברנו תהליך של בניה חדשה עם המשרד והיינו מרוצים מאוד מהאמינות והיציבות של הצוות. תודה על יצירת הבית שתמיד חלמנו עליו.'
+//     }
+// ];
 
-const reviewsArray = [
-    {
-        name: 'יוסי הק.',
-        subtitle: 'בעל בית בנהריה',
-        content: 'התמקצעות וייחודיות! התמקצעות מקצועית וייחודיות עם פרויקטים מרהיבים. המשרד יצר לנו חוויה עיצובית ופונקציונלית שהתאימה בדיוק לסגנון ולצרכים שלנו.'
-    },
-    {
-        name: 'דניאלה',
-        subtitle: 'בעלת חנות בגדים',
-        content: 'שירות אישי וייחודי. השירות שקיבלנו היה אישי ומקצועי. הצוות עבד יחד איתנו להבין את רצונינו ויצר פתרונות שהתאימו בצורה מושלמת לבית שלנו.'
-    },
-    {
-        name: 'אבי ז.',
-        subtitle: 'בעל חנות למכירת חומרי בניין',
-        content: 'אמינות ויציבות. עברנו תהליך של בניה חדשה עם המשרד והיינו מרוצים מאוד מהאמינות והיציבות של הצוות. תודה על יצירת הבית שתמיד חלמנו עליו.'
-    }
-];
-
-let currentReviewIndex = 0;
-const slider = document.getElementById('slider');
-
-
-reviewsArray.forEach((review) => {
-    const slide = document.createElement('div');
-    slide.classList.add('slide');
-
-    slide.innerHTML = `
-    <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" alt="${review.name}">
-    <h3>${review.name}</h3>
-    <p class="subtitle">${review.subtitle}</p>
-    <div class="stars">★★★★★</div>
-    <p>${review.content}</p>
-`;
-
-    slider.appendChild(slide);
-});
-
-const totalSlides = document.querySelectorAll('.slide').length;
-
-function changeSlide(direction) {
-    currentReviewIndex = (currentReviewIndex + direction + totalSlides) % totalSlides;
-
-    const translateValue = currentReviewIndex * 100 + '%';
-    slider.style.transform = 'translate(' + translateValue + ')';
-}
+// let currentReviewIndex = 0;
+// const slider = document.getElementById('slider');
 
 
+// reviewsArray.forEach((review) => {
+//     const slide = document.createElement('div');
+//     slide.classList.add('slide');
 
-// Automatic slide every 5 seconds
-setInterval(() => {
-    changeSlide(1);
-}, 5000);
+//     slide.innerHTML = `
+//     <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" alt="${review.name}">
+//     <h3>${review.name}</h3>
+//     <p class="subtitle">${review.subtitle}</p>
+//     <div class="stars">★★★★★</div>
+//     <p>${review.content}</p>
+// `;
+
+//     slider.appendChild(slide);
+// });
+
+// const totalSlides = document.querySelectorAll('.slide').length;
+
+// function changeSlide(direction) {
+//     currentReviewIndex = (currentReviewIndex + direction + totalSlides) % totalSlides;
+
+//     const translateValue = currentReviewIndex * 100 + '%';
+//     slider.style.transform = 'translate(' + translateValue + ')';
+// }
 
 
-document.getElementById('scan-icon').addEventListener('click', function() {
-  
+
+// // Automatic slide every 5 seconds
+// setInterval(() => {
+//     changeSlide(1);
+// }, 5000);
+
+
+document.getElementById('scan-icon').addEventListener('click', function () {
+
     // Slide up the barcode dialog
     document.getElementById('barcode-dialog').style.transform = 'translateY(0)';
     document.getElementById('barcode-dialog').style.display = 'block';
 });
 
-document.getElementById('close-dialog').addEventListener('click', function() {
+document.getElementById('close-dialog').addEventListener('click', function () {
     // Slide down the barcode dialog
     document.getElementById('barcode-dialog').style.transform = 'translateY(100%)';
 });
 
 // Close the dialog when clicking outside
-document.addEventListener('click', function(event) {
+document.addEventListener('click', function (event) {
     const clickedElement = event.target;
 
-    if (clickedElement.className!=="fas fa-qrcode") {
+    if (clickedElement.className !== "fas fa-qrcode") {
         // Clicked outside the open dialog
         document.getElementById('barcode-dialog').style.transform = 'translateY(100%)';
     }
 });
 
 // Prevent clicks inside the dialog from closing it
-document.getElementById('barcode-dialog').addEventListener('click', function(event) {
+document.getElementById('barcode-dialog').addEventListener('click', function (event) {
     event.stopPropagation();
 });
