@@ -16,6 +16,10 @@ $(document).ready(function () {
         $(this).toggleClass("active");
         $("#panel-hours").slideToggle("slow");
     });
+    $(".qa-content").on("click", function () {
+        $(this).toggleClass("active");
+        $(this).nextAll(".qa-panel:first").slideToggle("slow");
+    });
 });
 function shareOn(type) {
     

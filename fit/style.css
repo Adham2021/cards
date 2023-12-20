@@ -12,7 +12,7 @@ body {
     position: relative;
     overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
     width: 100%;
-    height: 300px;
+    height: 250px;
 }
 .cover-photo::before {
     content: "";
@@ -350,7 +350,9 @@ body {
 
 .container {
     box-shadow: none;
-    background-position: center; /* Adjust the position as needed */
+    background-position: center;
+    background-color: #99009b !important;
+    background: none;
 }
 
 
@@ -398,7 +400,7 @@ body {
     text-align: center;
     background-color: transparent;
     border: solid 1px #ff00e0;
-    font-size: 18px;
+    font-size: 20px;
     color: white;
     font-weight: bold;
     cursor: pointer;
@@ -407,9 +409,11 @@ body {
     justify-content: space-between;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
-
+.qa-content{
+    border: solid 1px white;
+}
 .toggle-panel {
-    padding: 20px;
+    padding: 5px;
     display: none;
     text-align: left;
     background-color: rgba(255,255,255,0.92);
@@ -420,23 +424,16 @@ body {
     font-weight: bold;
 }
 
-.service-list {
+.service-list .qa-list{
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
-.service-list li {
+.service-list li .qa-list li{
     display: flex;
     align-items: center;
     font-weight: bold;
-}
-
-.service-list li::before {
-    content: "\2022";
-    color: #ff00e0;
-    font-size: 24px;
-    margin-right: 10px;
 }
 
 .arrow-icon {
@@ -447,4 +444,8 @@ body {
 
 .toggle-content.active .arrow-icon {
     transform: rotate(90deg);
+}
+svg {
+    width: 100%;
+    height: 25px; /* Adjust the height as needed */
 }

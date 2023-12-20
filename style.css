@@ -323,8 +323,6 @@ font-weight: bold;
 
 .container {
     max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
     background: linear-gradient(to bottom, #000000, #FCD516);
     box-shadow: 0 0 10px rgb(255 235 0);
 }
