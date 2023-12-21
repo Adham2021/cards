@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #000;
+    background:url("assets/images/files/mk/background.jpg") !important;
 }
 
 
@@ -14,7 +14,7 @@ body {
     background-image: url('assets/images/files/mk/cover.jpg');
     background-size: cover;
     background-position: center;
-    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 100%, 0 80%);
 }
 
 
@@ -34,10 +34,17 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #949581;
+    border: 1px solid white;
     border-radius: 5px;
     margin-top: 20px;
+    background-color: rgba(85, 85, 85, 0.5) !important;
     transition: background-color 0.3s ease;
+    color: white;
+    font-weight: bold;
+}
+
+#language-menu-btn {
+    background-color: #9f9f9f6b !important;
 }
 
 .toggle-btn:hover {
@@ -68,13 +75,19 @@ body {
 
 .service-text,
 .faq-item p,
-.review p,
+.review p
+{
+    font-size: 19px;
+    color: white;
+
+}
 .working-hours p,
 .about-us p {
-    font-size: 16px;
+    font-size: 19px;
     color: white;
-}
+    background-color: rgb(57 57 57 / 50%) !important;
 
+}
 .faq-item label {
     display: block;
     padding: 10px;
@@ -367,4 +380,27 @@ body {
     margin: 5px 0;
     font-style: italic;
     color: #666;
+}
+.profile .subtitle{
+    font-size: 18px !important;
+    color: #ffffff;
+    font-weight: bold !important;
+}
+
+.profile h2 { 
+    font-family: serif;
+    font-size: 25px !important;
+}
+
+.container {
+    background: url("assets/images/files/mk/background.jpg") !important;
+    box-shadow: 0 0 10px #ff8f80 !important;
+}
+
+.contact-icons i {
+    color: #ffe34e;
+}
+
+.add-to-contacts { 
+    background-color: rgb(255 240 34 / 50%) !important;
 }

@@ -207,17 +207,20 @@ let isDragging3 = false;
 
 const imageArray = [
     //gallery1
-    [
-        'https://i.imgur.com/M2MdiJv.jpg',
-        'https://i.imgur.com/pRcAbQj.jpg',
-        'https://i.imgur.com/AQ4RM76.jpg',
-        'https://i.imgur.com/nDUVkJK.jpg',
-        'https://i.imgur.com/mCEnphz.jpg',
-        'https://i.imgur.com/00ttFnj.jpg',
-        'https://i.imgur.com/zgkKUj5.jpg',
-        'https://i.imgur.com/9tNhABY.jpg',
-        'https://i.imgur.com/BnfLdIw.jpg',
-        'https://i.imgur.com/eWbJfiQ.jpg'
+    [       
+        'https://i.imgur.com/D0irBOT.jpg',
+        'https://i.imgur.com/T74uKX6.jpg',
+        'https://i.imgur.com/ku8gN9f.jpg',
+        'https://i.imgur.com/5l8sO42.jpg',
+        'https://i.imgur.com/17URgE1.jpg',
+        'https://i.imgur.com/oNzmgzN.jpg',
+        'https://i.imgur.com/cTL00o7.jpg',
+        'https://i.imgur.com/54GniIP.jpg',
+        'https://i.imgur.com/29kA20r.jpg',
+        'https://i.imgur.com/syTyzgK.jpg',
+        'https://i.imgur.com/FHIx6Sv.jpg',
+        'https://i.imgur.com/NmE7NyR.jpg',
+        'https://i.imgur.com/ISCp723.jpg'
 
     ],
     //gallery2
