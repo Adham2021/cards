@@ -233,6 +233,7 @@ footer {
 .share-section {
     text-align: center;
     margin-top: 30px;
+    margin-bottom:10px;
 }
 .share-section p
 {
@@ -325,6 +326,7 @@ font-weight: bold;
     max-width: 600px;
     background: linear-gradient(to bottom, #000000, #FCD516);
     box-shadow: 0 0 10px rgb(255 235 0);
+    margin: 0 auto;
 }
 
 

@@ -5,6 +5,15 @@ const app = express();
 const PORT = 3000; // You can use any available port
 const path = require('path');
 
+// Redirect middleware for www to non-www or vice versa
+app.use((req, res, next) => {
+  const host = req.headers.host;
+  if (host.startsWith('www.')) {
+    const newHost = host.substring(4); // Remove 'www.' from the beginning
+    return res.redirect(301, `http://${newHost}${req.url}`);
+  }
+  next();
+});
 
 // Body parser middleware to parse form data
 app.use(express.urlencoded({ extended: true }));

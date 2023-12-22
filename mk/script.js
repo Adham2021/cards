@@ -43,12 +43,12 @@ function updateWorkingHoursStatus() {
     const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
 
     const workingHours = {
-        0: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Monday
-        1: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Monday
-        2: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Tuesday
-        3: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Wednesday
-        4: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Thursday
-        5: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Friday
+        0: now.getHours() < 8 || now.getHours() > 16 ? 'Closed, Open at 08:00' : 'Open until 16:00', // Monday
+        1: now.getHours() < 8 || now.getHours() > 16 ? 'Closed, Open at 08:00' : 'Open until 16:00', // Monday
+        2: now.getHours() < 8 || now.getHours() > 16 ? 'Closed, Open at 08:00' : 'Open until 16:00', // Tuesday
+        3: now.getHours() < 8 || now.getHours() > 16 ? 'Closed, Open at 08:00' : 'Open until 16:00', // Wednesday
+        4: now.getHours() < 8 || now.getHours() > 16 ? 'Closed, Open at 08:00' : 'Open until 16:00', // Thursday
+        5: now.getHours() < 8 || now.getHours() > 16 ? 'Closed, Open at 08:00 on Sun' : 'Open until 16:00', // Friday
         6: 'Closed, Open at 08:00' // Saturday
     };
 
@@ -60,28 +60,44 @@ function updateWorkingHoursStatus() {
     if (workingHours[dayOfWeek].includes('Closed')) {
         if (currentLanguage === 'hebrew') {
             statusOpenElement.textContent = 'סגור';
+            if(dayOfWeek==5){
+                statusUntilElement.textContent = 'נפתח ב 08:00 יום א`';
+            }
+            else{
             statusUntilElement.textContent = ' נפתח ב- 08:00';
+            }
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مغلق';
-            statusUntilElement.textContent = ' يفتح في الساعة 08:00';
-        }
+            if(dayOfWeek==5){
+            statusUntilElement.textContent = 'يفتح في الساعة 08:00 يوم الأحد';
+            }
+            else { 
+                statusUntilElement.textContent = ' يفتح في الساعة 08:00';
 
+            }
+        } else if (currentLanguage === 'english') {
+            statusOpenElement.textContent = 'Closed';
+            statusUntilElement.textContent = ' Opens at 08:00';
+        }
+    
         statusOpenElement.classList.add('status-close');
         statusOpenElement.classList.remove('status-open');
-    }
-
-    else {
+    } else {
         if (currentLanguage === 'hebrew') {
             statusOpenElement.textContent = 'פתוח';
-            statusUntilElement.textContent = ' עד 17:00';
+            statusUntilElement.textContent = ' עד 16:00';
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مفتوح';
-            statusUntilElement.textContent = ' حتى 17:00';
+            statusUntilElement.textContent = ' حتى 16:00';
+        } else if (currentLanguage === 'english') {
+            statusOpenElement.textContent = 'Open';
+            statusUntilElement.textContent = ' Until 16:00';
         }
-
+    
         statusOpenElement.classList.add('status-open');
         statusOpenElement.classList.remove('status-close');
     }
+    
 }
 
 
@@ -153,19 +169,30 @@ function changeLanguage(language, byClickButton = true) {
         arabic: { flag: "/assets/images/files/flags/saudi-arabia.png", text: "العربية" },
         english: { flag: "/assets/images/files/flags/united-kingdom.png", text: "English" },
     };
+
     const selectedLanguage = languageData[language];
     localStorage.setItem('preferredLanguage', language);
-    document.getElementById("selected-language").innerText = selectedLanguage.text;
-    document.getElementById("language-menu-btn").getElementsByTagName("img")[0].src = selectedLanguage.flag;
+
+    $("#selected-language").text(selectedLanguage.text);
+    $("#language-menu-btn img").attr('src', selectedLanguage.flag);
 
     // Additional logic to change content or perform actions based on the selected language
     updateContent(language);
-    updateWorkingHoursStatus()
+    updateWorkingHoursStatus();
+
+    if (language === 'english') {
+        // Set the page direction to LTR for English
+        $('html').attr('dir', 'ltr');
+    } else {
+        // Reset the page direction for Hebrew and Arabic
+        $('html').attr('dir', 'rtl');
+    }
 
     if (byClickButton) {
         toggleLanguageMenu();
     }
 }
+
 function getLanguage() {
     return localStorage.getItem('preferredLanguage') || 'hebrew'; // Default language is Hebrew
 }
