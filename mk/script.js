@@ -262,19 +262,7 @@ const imageArray = [
         'https://i.imgur.com/IAy2Nz7.jpg',
         'https://i.imgur.com/G6nzhbH.jpg',
         'https://i.imgur.com/6Z3z2en.jpg'
-    ],
-
-    //gallery3
-
-    [
-        'https://i.imgur.com/Mr3zp6G.jpg',
-        'https://i.imgur.com/ITO0oga.jpg',
-        'https://i.imgur.com/U4ISrZW.jpg',
-        'https://i.imgur.com/ttJq0WS.jpg',
-        'https://i.imgur.com/ztwMqHQ.jpg',
-        'https://i.imgur.com/piAcSBa.jpg'
     ]
-
 ];
 
 function initGallery(gal) {
@@ -295,8 +283,6 @@ function initGallery(gal) {
     showSlide(currentIndex,gallery);
     if(gal==2)
     showSlide(currentIndex2,gallery);
-    if(gal==3)
-    showSlide(currentIndex3,gallery);
  
 }
 
@@ -360,9 +346,6 @@ function touchMove(e, galleryNumber) {
             initialX = initialX2;
             isDragging = isDragging2;
             break;
-        case 3:
-            initialX = initialX3;
-            isDragging = isDragging3;
             break;
         default:
             break;
@@ -385,18 +368,14 @@ function touchMove(e, galleryNumber) {
 function touchEnd() {
     isDragging = false;
     isDragging2 = false;
-    isDragging3 = false;
 }
 
 initGallery(1);
 initGallery(2);
-initGallery(3);
 
 // Set up intervals for each gallery
 const interval1 = setInterval(() => nextSlide(1), 5000);
 const interval2 = setInterval(() => nextSlide(2), 5000);
-const interval3 = setInterval(() => nextSlide(3), 5000);
-
 
 
 // const reviewsArray = [
@@ -478,4 +457,43 @@ document.addEventListener('click', function (event) {
 // Prevent clicks inside the dialog from closing it
 document.getElementById('barcode-dialog').addEventListener('click', function (event) {
     event.stopPropagation();
+});
+
+$(document).ready(function () {
+    const $videoContainer = $('#video-container');
+    const $video = $('#video');
+    const $overlay = $('#overlay');
+    const $playIcon = $('#play-icon');
+
+    $playIcon.on('click', function () {
+        $video.get(0).play();
+        $video.attr('controls', 'true');
+        $overlay.hide();
+        $videoContainer.addClass('playing');
+    });
+
+    $video.on('click', function () {
+        if ($video.get(0).paused) {
+            $video.get(0).play();
+            $videoContainer.addClass('playing');
+        } else {
+            $video.get(0).pause();
+            $videoContainer.removeClass('playing');
+        }
+    });
+
+    $video.on('pause', function () {
+        $overlay.show();
+        $videoContainer.removeClass('playing');
+    });
+
+    $video.on('ended', function () {
+        $videoContainer.removeClass('playing');
+        $overlay.show();
+    });
+
+    // Prevent the default behavior of scrolling to the top when the video finishes
+    $video.on('ended', function (e) {
+        e.preventDefault();
+    });
 });
