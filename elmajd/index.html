@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+    <link rel="icon" href="assets/images/files/elmajd/logo.png" type="image/x-icon">
+    <title class="translatable" data-lang-hebrew="אלמג'ד שירותי רכב וגרירה בע''מ" data-lang-arabic="المجد لخدمات السيارات والجر م.ض">אלמג'ד שירותי רכב וגרירה בע''מ
+    </title>
+
+</head>
+
+<body>
+
+    <div class="cover-photo">
+        <div class="languages">
+            <button id="language-menu-btn" onclick="toggleLanguageMenu()">
+                <img id="language-flag" src="/assets/images/files/flags/israel.png">
+                <span id="selected-language">עברית</span>
+            </button>
+            <div id="language-menu">
+                <a href="#" onclick="changeLanguage('hebrew')">
+                    <img id="language-flag" src="/assets/images/files/flags/israel.png">
+                    עברית</a>
+                <a href="#" onclick="changeLanguage('arabic')">
+                    <img id="language-flag" src="/assets/images/files/flags/saudi-arabia.png">
+                    العربية</a>
+                
+            </div>
+        </div>
+    </div>
+
+    <div id="whatsapp-icon">
+        <a onclick="sendWhatsAppMessage()">
+            <img src="/assets/images/files/whatsapp-icon.png">
+        </a>
+    </div>
+
+    <div id="scan-icon" class="sticky-icon">
+        <i class="fas fa-qrcode"></i>
+    </div>
+
+    <!-- Barcode slider -->
+    <div id="barcode-dialog">
+        <!-- Add your barcode image here -->
+        <button id="close-dialog" class="close-btn"><i class="fas fa-times"></i></button>
+        <h3 class="dialog-text translatable" 
+        data-lang-hebrew=" סרוק את ה- QR לשיתוף הכרטיס" 
+        data-lang-arabic="قم بمسح الـ QR لمشاركة الكرت"
+        >
+           
+    </h3>
+        <img style="width: 50%;" src="assets/images/files/elmajd/barcode.png" alt="Barcode">
+        <div class="share-section">
+            <h2 class="translatable" style="color:black" 
+            data-lang-arabic="او قم بمشاركة هذا الكرت مع الاصدقاء"
+            data-lang-hebrew="או שתף את הכרטיס שלי עם חברים :"
+            >או שתף את הכרטיס שלי עם חברים :</h2>
+           
+            <div class="share-icons">
+                <a class="share-icon whatsapp-share" onclick="shareOn('whatsapp')"><i class="fab fa-whatsapp"></i></a>
+                <a class="share-icon facebook-share" onclick="shareOn('facebook')"><i class="fab fa-facebook-f"></i></a>
+                <a class="share-icon telegram-share" onclick="shareOn('telegram')"><i class="fab fa-telegram"></i></a>
+                <a class="share-icon linkedin-share" onclick="shareOn('linkedin')"><i class="fab fa-linkedin-in"></i></a>
+                <a class="share-icon messenger-share" onclick="shareOn('messenger')"><i class="fab fa-facebook-messenger"></i></a>
+            </div>            
+        </div>
+    </div>
+    <div style="box-shadow: 0px -10px 10px -10px #ffe14c !important;">
+        <section >
+        <div class="profile">
+            <div class="image-container">
+                <img id="animated-logo" src="assets/images/files/elmajd/logo.png" style="border: 3px solid white;">
+            </div>
+            <h2 class="translatable" data-lang-hebrew="אלמג'ד שירותי רכב וגרירה בע''מ" data-lang-arabic="المجد لخدمات السيارات والجر م.ض">אלמג'ד שירותי רכב וגרירה בע''מ
+            </h2>
+            <p class="subtitle translatable" data-lang-hebrew="גרירה וחילוץ | שירותי רכב | ועוד.."
+                data-lang-arabic="خدمات جر | خدمات كل انواع السيارات | والمزيد...">
+
+            </p>
+
+            <p id="working-hours-status" style="display:none">
+                <span id="status-open" dir="ltr">Open</span>
+                <span id="status-until" dir="ltr"> until 21:00</span>
+            </p>
+            <a onclick="addToContacts()" class="add-to-contacts">
+                <i class="fas fa-plus"></i>
+                <span class="translatable" data-lang-hebrew=" הוספה לאנשי קשר שלי"
+                    data-lang-arabic=" إضافة إلى جهات الاتصال">
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <div class="contact-icons">
+            
+           
+          
+            <a href="tel:+972525007464" class="phone">
+                <i class="fas fa-phone"></i>
+                <span class="translatable" data-lang-hebrew="טלפון 1" data-lang-arabic="تلفون 1">
+                    
+                </span>
+
+            </a>
+            <a href="tel:+972504822388" class="phone">
+                <i class="fas fa-phone"></i>
+                <span class="translatable" data-lang-hebrew="טלפון 2" data-lang-arabic="تلفون 2">
+                    
+                </span>
+
+            </a>
+            <a href="https://wa.me/+972525007464" target="_blank" class="whatsapp">
+                <i class="fab fa-whatsapp"></i>
+                <span class="translatable" data-lang-hebrew="וואטסאפ" data-lang-arabic="واتساب">
+                </span>
+
+            </a>
+            <a href="mailto:infoalmjd@gmail.com" class="email">
+                <i class="fas fa-envelope"></i>
+                <span class="translatable" data-lang-hebrew="אימייל" data-lang-arabic="الايميل">
+                </span>
+            </a>
+
+        </div>
+
+        <div class="about-us">
+            <h2 class="translatable" data-lang-hebrew="קצת עלינו" data-lang-arabic="قليلا عنّا">
+               
+            </h2>
+
+            <p class="translatable"
+                data-lang-hebrew="אנו בחברת אלמג'ד בע''מ מתמחים בספק שירותי דרך כוללים לכל סוגי הרכבים, כולל רכבים קלים, רכבים כבדים, ואופנועים. תוכל לסמוך על צוות המקצוענים שלנו לספק שירותי גרירה, העברת דלק, החלפה/טעינת סוללות, פתיחת הרכב, החלפת צמיגים ואחסון של הרכב בצורה יעילה ומהירה."
+                data-lang-arabic="نحن شركة المجد م.ض متخصصة في تقديم خدمات الطريق الشاملة لجميع أنواع السيارات، بما في ذلك السيارات الخفيفة، السيارات الثقيلة، والدراجات النارية. يمكنك الاعتماد على فريقنا المحترف لتقديم خدمات الجر، توصيل الوقود، تغيير/شحن البطاريات، فتح المركبة، تغيير البنشر، وتخزين المركبة بكفاءة وفعالية.">           
+            </p>
+
+        </div>
+
+
+    
+        <div class="toggle-container">
+            <div class="toggle-content" id="flip-services">
+                <span class="services-title translatable" data-lang-hebrew="השירותים שלנו:" data-lang-arabic="انواع الخدمات:"></span>
+                <i class="arrow-icon fas fa-angle-down"></i>
+            </div>
+            <div class="toggle-panel" id="panel-services" style="text-align: right;">
+                <ul class="service-list">
+                    <li class="translatable" data-lang-hebrew="גרירת רכבים (כולל משאיות ואופנועים)" data-lang-arabic="خدمات الجر (بما في ذلك الشاحنات والدراجات النارية)"></li>                   
+                    <li class="translatable" data-lang-hebrew="שירותי דלק" data-lang-arabic="خدمات توصيل الوقود"></li>
+                    <li class="translatable" data-lang-hebrew="החלפה/טעינת סוללות" data-lang-arabic="خدمات تغيير/شحن البطاريات"></li>
+                    <li class="translatable" data-lang-hebrew="פתיחת הרכב" data-lang-arabic="خدمات فتح المركبة"></li>
+                    <li class="translatable" data-lang-hebrew="החלפת צמיגים" data-lang-arabic="خدمات تغيير البنشر"></li>
+                    <li class="translatable" data-lang-hebrew="אחסון הרכב" data-lang-arabic="خدمات تخزين المركبة"></li>
+                    <li class="translatable" data-lang-hebrew="שירותי תחזוקה" data-lang-arabic="خدمات الصيانة"></li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="toggle-container">
+            <div class="toggle-content" id="flip-hours">
+                <span class="hours-title translatable" data-lang-hebrew="שעות פעילות ויצירת קשר:" data-lang-arabic="ساعات العمل وتفاصيل الاتصال"></span>
+                <i class="arrow-icon fas fa-angle-down"></i>
+            </div>
+            <div class="toggle-panel" id="panel-hours">
+                <p class="translatable" data-lang-hebrew="כל יום: 24/7, צוותנו זמין לשירותך."
+                    data-lang-arabic="كل يوم: 24/7، فريقنا متاح لخدمتك."></p>
+                <h1 class="translatable" data-lang-hebrew="יצירת קשר:"
+                    data-lang-arabic="تفاصيل الاتصال:"></h1>
+                <p class="translatable" data-lang-hebrew="טלפון 1:"
+                    data-lang-arabic="هاتف 1:">
+                </p>
+                <a href="tel:+972525007464" style="color: black;">052-500-7464</a>
+                <p class="translatable" data-lang-hebrew="טלפון 2:"
+                    data-lang-arabic="هاتف 2:"></p>
+                    <a href="tel:+972504822388" style="color: black;">050-482-2388</a>
+                <p class="translatable" data-lang-hebrew="אימייל:"
+                    data-lang-arabic="البريد الإلكتروني:"></p>
+                    <a href="mailto:infoalmjd@gmail.com" style="color: black;">infoalmjd@gmail.com</a>
+            </div>
+            
+        </div>
+        
+<br>
+
+</section>
+
+<!-- <section class="faq">
+    <h2 class="qa-title translatable" data-lang-hebrew="שאלות ותשובות" data-lang-arabic="أسئلة وأجوبة"></h2>
+    <div class="toggle-container">
+        <div class="toggle-content qa-content" >
+            <span class="qa-title translatable" data-lang-hebrew="איך אני נרשם לשיעורים?" data-lang-arabic="أسئلة وأجوبة"></span>
+            <i style="color:white" class="arrow-icon fas fa-angle-down"></i>
+        </div>
+        <div class="toggle-panel qa-panel" >
+         
+            <p style="text-align: right;" class="translatable" data-lang-hebrew="כדי להירשם לשיעורים, אתה יכול לבקר באתר האינטרנט שלנו ולהשתמש בטופס ההרשמה המקוון או לבקר בדלפק הקבלה שלנו במהלך שעות העבודה.
+            " data-lang-arabic="ال:00">
+            </p>
+
+          
+        </div>
+    </div>
+    <div class="toggle-container">
+        <div class="toggle-content qa-content" >
+            <span class="qa-title translatable" data-lang-hebrew="איך אני נרשם לשיעורים?" data-lang-arabic="أسئلة وأجوبة"></span>
+            <i style="color:white" class="arrow-icon fas fa-angle-down"></i>
+        </div>
+        <div class="toggle-panel qa-panel" >
+         
+            <p style="text-align: right;" class="translatable" data-lang-hebrew="כדי להירשם לשיעורים, אתה יכול לבקר באתר האינטרנט שלנו ולהשתמש בטופס ההרשמה המקוון או לבקר בדלפק הקבלה שלנו במהלך שעות העבודה.
+            " data-lang-arabic="ال:00">
+            </p>
+
+          
+        </div>
+    </div>
+    <div class="toggle-container">
+        <div class="toggle-content qa-content" >
+            <span class="qa-title translatable" data-lang-hebrew="איך אני נרשם לשיעורים?" data-lang-arabic="أسئلة وأجوبة"></span>
+            <i style="color:white" class="arrow-icon fas fa-angle-down"></i>
+        </div>
+        <div class="toggle-panel qa-panel" >
+         
+            <p style="text-align: right;" class="translatable" data-lang-hebrew="כדי להירשם לשיעורים, אתה יכול לבקר באתר האינטרנט שלנו ולהשתמש בטופס ההרשמה המקוון או לבקר בדלפק הקבלה שלנו במהלך שעות העבודה.
+            " data-lang-arabic="ال:00">
+            </p>
+
+          
+        </div>
+    </div>
+    <div class="toggle-container">
+        <div class="toggle-content qa-content" >
+            <span class="qa-title translatable" data-lang-hebrew="איך אני נרשם לשיעורים?" data-lang-arabic="أسئلة وأجوبة"></span>
+            <i style="color:white" class="arrow-icon fas fa-angle-down"></i>
+        </div>
+        <div class="toggle-panel qa-panel" >
+         
+            <p style="text-align: right;" class="translatable" data-lang-hebrew="כדי להירשם לשיעורים, אתה יכול לבקר באתר האינטרנט שלנו ולהשתמש בטופס ההרשמה המקוון או לבקר בדלפק הקבלה שלנו במהלך שעות העבודה.
+            " data-lang-arabic="ال:00">
+            </p>
+
+          
+        </div>
+    </div>
+    <div class="toggle-container">
+        <div class="toggle-content qa-content" >
+            <span class="qa-title translatable" data-lang-hebrew="איך אני נרשם לשיעורים?" data-lang-arabic="أسئلة وأجوبة"></span>
+            <i style="color:white" class="arrow-icon fas fa-angle-down"></i>
+        </div>
+        <div class="toggle-panel qa-panel" >
+         
+            <p style="text-align: right;" class="translatable" data-lang-hebrew="כדי להירשם לשיעורים, אתה יכול לבקר באתר האינטרנט שלנו ולהשתמש בטופס ההרשמה המקוון או לבקר בדלפק הקבלה שלנו במהלך שעות העבודה.
+            " data-lang-arabic="ال:00">
+            </p>
+
+          
+        </div>
+    </div>
+</section> -->
+<div class="gallery-container">
+    <h2 class="translatable" 
+    data-lang-arabic="معرض الصور"
+    data-lang-hebrew="גלריית תמונות"
+    ></h2>
+</div>
+
+<div id="gallery" class="container-fluid">
+    <a data-fancybox="images" href="https://i.imgur.com/LL5DOFp.png">
+      <img src="https://i.imgur.com/LL5DOFp.png" class="img-responsive" alt="Image 1">
+    </a>
+    <a data-fancybox="images" href="https://i.imgur.com/NsZPZua.jpg">
+      <img src="https://i.imgur.com/NsZPZua.jpg" class="img-responsive" alt="Image 2">
+    </a>
+    <a data-fancybox="images" href="https://i.imgur.com/Fv5IZmL.png">
+      <img src="https://i.imgur.com/Fv5IZmL.png" class="img-responsive" alt="Image 3">
+    </a>
+    <a data-fancybox="images" href="https://i.imgur.com/1OvjOA6.jpg">
+      <img src="https://i.imgur.com/1OvjOA6.jpg" class="img-responsive" alt="Image 4">
+    </a>
+    <a data-fancybox="images" href="https://i.imgur.com/4Z5BdCC.jpg">
+      <img src="https://i.imgur.com/4Z5BdCC.jpg" class="img-responsive" alt="Image 5">
+    </a>
+  </div>
+
+<section >
+
+
+        <div class="share-section">
+            <h2 class="translatable" 
+            data-lang-arabic="شارك الكرت الخاص بي مع الاصدقاء"
+            data-lang-hebrew="שתף את הכרטיס שלי עם חברים"
+            ></h2>
+           
+            <div class="share-icons">
+                <a class="share-icon whatsapp-share" onclick="shareOn('whatsapp')"><i class="fab fa-whatsapp"></i></a>
+                <a class="share-icon facebook-share" onclick="shareOn('facebook')"><i class="fab fa-facebook-f"></i></a>
+                <a class="share-icon telegram-share" onclick="shareOn('telegram')"><i class="fab fa-telegram"></i></a>
+                <a class="share-icon linkedin-share" onclick="shareOn('linkedin')"><i class="fab fa-linkedin-in"></i></a>
+                <a class="share-icon messenger-share" onclick="shareOn('messenger')"><i class="fab fa-facebook-messenger"></i></a>
+            </div>            
+        </div>
+    </section>
+    </div>
+    <script src="script.js"></script>
+    <footer>
+        <p>Built with <i class="heart fas fa-heart"></i> by <a href="https://www.eye-on-media.com/" target="_blank" class="eyeonmedia"> Eye On Media</a> 2023</p>
+        <div class="social-icons">
+          <!-- Replace # with your actual social media links -->
+          <a href="https://www.facebook.com/people/Eye-On-Media/100092701628022/?mibextid=PzaGJu" target="_blank"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.eye-on-media.com/" target="_blank"><i class="fas fa-globe"></i></a>
+          <a href="https://instagram.com/ionmedia.il?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </footer>     
+</body>
+</html>
