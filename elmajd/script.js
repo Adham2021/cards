@@ -7,7 +7,8 @@ var t=  $("#facebook").val()
 });
 
 $(document).ready(function () {
-    $("#flip-services").on("click", function () {
+    $("#flip-services").on("click", function (e) {
+        e.preventDefault();
         $(this).toggleClass("active");
         $("#panel-services").slideToggle("slow");
     });
@@ -164,6 +165,14 @@ function addToContacts() {
 
 
 function changeLanguage(language, byClickButton = true) {
+    if(language==='arabic'){
+        $(".arabicContacts").show();
+        $(".hebrewContacts").hide();
+    }
+    else { 
+        $(".hebrewContacts").show();
+        $(".arabicContacts").hide();
+    }
     const languageData = {
         hebrew: { flag: "/assets/images/files/flags/israel.png", text: "עברית" },
         arabic: { flag: "/assets/images/files/flags/saudi-arabia.png", text: "العربية" },
@@ -191,6 +200,7 @@ function toggleLanguageMenu() {
 }
 
 function updateContent(language) {
+
     const translatableElements = document.querySelectorAll('.translatable');
 
     translatableElements.forEach(element => {
