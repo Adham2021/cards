@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #105A5B;
+    background-color: #37383C;
 }
 
 
@@ -45,10 +45,14 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    background-color: #949581;
+    border: 1px solid white;
     border-radius: 5px;
     margin-top: 20px;
+    background-color: rgba(85, 85, 85, 0.5) !important;
     transition: background-color 0.3s ease;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
 }
 
 .toggle-btn:hover {
@@ -80,11 +84,10 @@ body {
 .service-text,
 .faq-item p,
 .review p,
-.working-hours p,
-.about-us p {
-    font-size: 16px;
+.working-hours p
+{
+    font-size: 19px;
     color: white;
-    background-color: rgba(16, 90, 91, 0.7);
 }
 
 .faq-item label {
@@ -381,7 +384,7 @@ body {
 
 .container {
     background: url("assets/images/files/dr/background.jpg");
-    box-shadow: 0 0 10px rgb(0 217 227);
+    box-shadow: 0 0 10px white;
     background-position: center; /* Adjust the position as needed */
     background-size: 177%;
 }
@@ -414,5 +417,13 @@ body {
 }
 
 #scan-icon{
-    background-color: #105A5B;
+    background-color: white;
+}
+#scan-icon i{
+    color: black;
+}
+.about-us p {
+    font-size: 19px;
+    color: white;
+    animation: slideFromBottom 1.6s ease-out forwards;
 }

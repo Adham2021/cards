@@ -5,11 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="style.css"> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <link rel="icon" href="assets/images/files/dr/logo.jpg" type="image/x-icon">
-    <title class="translatable" data-lang-hebrew="ג'יהאד עבד אלגני" data-lang-arabic="جهاد عبد الغني">ג'יהאד עבד אלגני
+    <title class="translatable" data-lang-hebrew="" data-lang-arabic="جهاد عبد الغني">
     </title>
 
 </head>
@@ -29,9 +31,9 @@
                 <a href="#" onclick="changeLanguage('arabic')">
                     <img id="language-flag" src="/assets/images/files/flags/saudi-arabia.png">
                     العربية</a>
-                 <a href="#" onclick="changeLanguage('english')">
+                <!-- <a href="#" onclick="changeLanguage('english')">
                     <img id="language-flag" src="/assets/images/files/flags/united-kingdom.png">
-                    English</a>
+                    English</a> -->
             </div>
         </div>
     </div>
@@ -50,26 +52,24 @@
     <div id="barcode-dialog">
         <!-- Add your barcode image here -->
         <button id="close-dialog" class="close-btn"><i class="fas fa-times"></i></button>
-        <p class="dialog-text translatable" 
-        data-lang-hebrew=" סרוק את ה- QR לשיתוף הכרטיס" 
-        data-lang-arabic="قم بمسح الـ QR لمشاركة الكرت"
-        >
-           
+        <p class="dialog-text translatable" data-lang-hebrew=" סרוק את ה- QR לשיתוף הכרטיס"
+            data-lang-arabic="قم بمسح الـ QR لمشاركة الكرت">
+
         </p>
         <img src="assets/images/files/dr/barcode.jpg" alt="Barcode">
         <div class="share-section">
-            <p class="translatable" 
-            data-lang-arabic="او قم بمشاركة هذا الكرت :"
-            data-lang-hebrew="או שתף את הכרטיס :"
-            >או שתף את הכרטיס :</p>
-           
+            <p class="translatable" data-lang-arabic="او قم بمشاركة هذا الكرت :" data-lang-hebrew="או שתף את הכרטיס :">
+                או שתף את הכרטיס :</p>
+
             <div class="share-icons">
                 <a class="share-icon whatsapp-share" onclick="shareOn('whatsapp')"><i class="fab fa-whatsapp"></i></a>
                 <a class="share-icon facebook-share" onclick="shareOn('facebook')"><i class="fab fa-facebook-f"></i></a>
                 <a class="share-icon telegram-share" onclick="shareOn('telegram')"><i class="fab fa-telegram"></i></a>
-                <a class="share-icon linkedin-share" onclick="shareOn('linkedin')"><i class="fab fa-linkedin-in"></i></a>
-                <a class="share-icon messenger-share" onclick="shareOn('messenger')"><i class="fab fa-facebook-messenger"></i></a>
-            </div>            
+                <a class="share-icon linkedin-share" onclick="shareOn('linkedin')"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a class="share-icon messenger-share" onclick="shareOn('messenger')"><i
+                        class="fab fa-facebook-messenger"></i></a>
+            </div>
         </div>
     </div>
     <div class="container">
@@ -77,7 +77,7 @@
             <div class="image-container">
                 <img id="animated-logo" src="assets/images/files/dr/logo.jpg" style="border: 3px solid white;">
             </div>
-            <h2 class="translatable" data-lang-hebrew="ג'יהאד עבד אלגני" data-lang-arabic="جهاد عبد الغني">ג'יהאד עבד אלגני
+            <h2 class="translatable" data-lang-hebrew="ד''ר ג'האד עבד אלגני" data-lang-arabic="د.جهاد عبد الغني">
             </h2>
             <p class="subtitle translatable" data-lang-hebrew="השתלת שיניים | הלבנה | ציפוי חרסינה"
                 data-lang-arabic="زراعة الاسنان | تبييض | معالجة عصب">
@@ -89,7 +89,7 @@
                 <span id="status-until" dir="ltr"> until 21:00</span>
             </p>
             <a onclick="addToContacts()" class="add-to-contacts">
-                <i class="fas fa-phone"></i>
+                <i class="fas fa-plus"></i>
                 <span class="translatable" data-lang-hebrew="הוספה לאנשי קשר שלי"
                     data-lang-arabic="إضافة إلى جهات الاتصال">
                     הוספה לאנשי קשר שלי
@@ -101,42 +101,40 @@
 
 
         <div class="contact-icons">
-            <a href="https://www.facebook.com/profile.php?id=100032267426602&locale=ar_AR" target="_blank"
-                class="facebook">
+            <a href="#" target="_blank" class="facebook">
                 <i class="fab fa-facebook"></i>
                 <span class="translatable" data-lang-hebrew="פייסבוק" data-lang-arabic="الفيسبوك">
                     פייסבוק
                 </span>
             </a>
-            <a href="https://instagram.com/moatasem.khalilieh_arch?igshid=MzMyNGUyNmU2YQ==" target="_blank"
-                class="instagram">
+            <a href="#" target="_blank" class="instagram">
                 <i class="fab fa-instagram"></i>
                 <span class="translatable" data-lang-hebrew="אינסגרם" data-lang-arabic="إنستغرام">
                     אינסגרם
                 </span>
             </a>
-            <a href="https://www.tiktok.com/@moatasem.kh_arch?_t=8i0kCVuXgW1&_r=1" target="_blank" class="tiktok">
+            <a href="#" target="_blank" class="tiktok">
                 <i class="fab fa-tiktok"></i>
                 <span class="translatable" data-lang-hebrew="טיקטוק" data-lang-arabic="تيك توك">
                     טיקטוק
                 </span>
 
             </a>
-            <a href="https://wa.me/+972528957836" target="_blank" class="whatsapp">
+            <a href="https://wa.me/+972527539647" target="_blank" class="whatsapp">
                 <i class="fab fa-whatsapp"></i>
                 <span class="translatable" data-lang-hebrew="וואטסאפ" data-lang-arabic="واتساب">
                     וואטסאפ
                 </span>
 
             </a>
-            <a href="tel:+972528957836" class="phone">
+            <a href="tel:+9727539647" class="phone">
                 <i class="fas fa-phone"></i>
                 <span class="translatable" data-lang-hebrew="חייגו אלינו" data-lang-arabic="اتصل بنا">
                     חייגו אלינו
                 </span>
 
             </a>
-            <a href="mailto:Moatasem97.kh@gmail.com" class="email">
+            <a href="#" class="email">
                 <i class="fas fa-envelope"></i>
                 <span class="translatable" data-lang-hebrew="אימייל" data-lang-arabic="الايميل">
                     אימייל
@@ -145,10 +143,8 @@
             </a>
             <a href="https://www.eye-on-media.com" target="_blank" class="website">
                 <i class="fas fa-edit"></i>
-                <span class="translatable"
-      data-lang-hebrew="קבעו פגישה"
-      data-lang-arabic="تعيين موعد">
-</span>
+                <span class="translatable" data-lang-hebrew="קבעו פגישה" data-lang-arabic="تعيين موعد">
+                </span>
 
             </a>
             <a href="https://ul.waze.com/ul?ll=32.68783290%2C35.24220010&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
@@ -162,88 +158,96 @@
 
         <div class="about-us">
             <h3 class="translatable" data-lang-hebrew="קצת עליי" data-lang-arabic="قليلاً عني">
-               
+
             </h3>
 
             <p class="translatable"
                 data-lang-hebrew="רופא שיניים עם 10 שנות ניסיון בתחום רפואת השיניים, נציג בקטגוריית השיקום הפה והתחזוקה השיניים מטעם האוניברסיטה העברית בהדסה-עין כרם וחבר מוסמך בתחום זה על ידי משרד הבריאות. דר גיהאד עומד בתפקידים מרבים, כולל את תפקידו כחבר בסגל הוראה ומדריך לסטודנטים בפקולטה לרפואת שיניים באוניברסיטה העברית הדסה-עין כרם, מנהל קופת החולים (מכבי-דן) בנצרת העליונה, ומנהל מחלקת השיקום בבית החולים בוריה."
                 data-lang-arabic="طبيب اسنان مع خبرة 10 سنوات  في طب الأسنان, حاصل على لقب مُختص بمجال الترميمات والتعويضات السنية (שיקום הפה) من قبل الجامعة العبرية هداسا-عين كارم وعضو مُثبّت في هذا المجال من قبل وزارة الصحة, دكتور جهاد شغل ويشغل عدة مناصب مرموقة منها, عضو هيئة تدريس ومرشد لطلاب طب الاسنان في الجامعة العبرية هداسا عين كارم, مدير صندوق المرضى (مكابي-دنت) الناصرة العليا, مدير قسم الترميمات في مستشفى بوريا.">
-                
+
             </p>
 
         </div>
 
         <div class="services">
-            <div class="line"></div>
+
             <h3 class="services-title translatable" data-lang-hebrew="השירותים שלנו" data-lang-arabic="خدماتنا">
                 השירותים שלנו
             </h3>
 
-            <div class="line"></div>
+
 
             <div class="service-item">
                 <div class="toggle-btn" onclick="toggleService(this)">
-                    <span class="service-text translatable" data-lang-hebrew="תכנון ועיצוב פנים מותאם אישית"
-                        data-lang-arabic="تخطيط وتصميم داخلي حسب الطلب">
-                        תכנון ועיצוב פנים מותאם אישית
-                    </span>
-
-                    <i class="fas fa-angle-down"></i>
-                </div>
-                <div class="toggle-content">
-
-                    <p class="translatable"
-                        data-lang-hebrew="במשרדכם, אנו מתמחים ביצירת חללים ייחודיים ופונקציונליים. השירות כולל ייעוץ אישי ותכנון מותאם לכל לקוח, שמשלב אמנות, טכנולוגיה ורגישות ליצירת חוויית מגורים או עבודה משופרת."
-                        data-lang-arabic="في مكتبنا، نختص في إنشاء فضاءات فريدة ووظيفية. يشمل الخدمة استشارة شخصية وتخطيط مخصص لكل عميل، يجمع بين الفن والتكنولوجيا والحساسية لإنشاء تجربة سكنية أو عمل محسنة.">
-                        במשרדכם, אנו מתמחים ביצירת חללים ייחודיים ופונקציונליים. השירות כולל ייעוץ אישי ותכנון מותאם לכל
-                        לקוח, שמשלב אמנות, טכנולוגיה ורגישות ליצירת חוויית מגורים או עבודה משופרת.
-                    </p>
-                </div>
-            </div>
-
-            <div class="service-item">
-                <div class="toggle-btn" onclick="toggleService(this)">
-                    <span class="service-text translatable" data-lang-hebrew="פתרונות מעוצבים לבנייה חדשה"
-                        data-lang-arabic="حلول مصممة للبناء الجديد">
-                        פתרונות מעוצבים לבנייה חדשה
+                    <span class="service-text translatable" data-lang-hebrew="השתלות שיניים - השתלת עצם"
+                        data-lang-arabic="زراعة الأسنان - زرع العظم">
                     </span>
                     <i class="fas fa-angle-down"></i>
                 </div>
                 <div class="toggle-content">
                     <p class="translatable"
-                        data-lang-hebrew="אתם מציעים פתרונות מעוצבים וייחודיים לבניית נכסים חדשים. השירות כולל שילוב של אמנות, טכנולוגיה ועיצוב ליצירת חללים שמשדרים רגישות ויוקרה."
-                        data-lang-arabic="تقدمون حلاول مصممة وفريدة لبناء الممتلكات الجديدة. الخدمة تشمل دمج بين الفن، التكنولوجيا والتصميم لإنشاء مساحات تنبعث منها الحساسية والفخامة.">
-                        אתם מציעים פתרונות מעוצבים וייחודיים לבניית נכסים חדשים. השירות כולל שילוב של אמנות, טכנולוגיה
-                        ועיצוב ליצירת חללים שמשדרים רגישות ויוקרה.
+                        data-lang-hebrew="השתלים הינם בעצם תחליף לשורשי השיניים שנעקרו או אבדו ומוחדרים אل اللثة על מנת לربط الأسنان الاصطناعية إليها. العملية تتم بطريقة جراحية بسيطة جدًا وبدون أي ألم على الإطلاق."
+                        data-lang-arabic="الزرعات هي بديل لجذور الأسنان التي تم استخراجها أو فقدت، وتُثبت في اللثة لربطها بأسنان صناعية. يتم العملية بطريقة جراحية بسيطة جدًا وبدون أي ألم على الإطلاق.">
                     </p>
                 </div>
             </div>
 
+
             <div class="service-item">
                 <div class="toggle-btn" onclick="toggleService(this)">
-                    <span class="service-text translatable" data-lang-hebrew="שיפוצים ועיצוב פנים"
-                        data-lang-arabic="تجديد وتصميم داخلي">
-                        שיפוצים ועיצוב פנים
+                    <span class="service-text translatable" data-lang-hebrew="ציפויי שיניים וכתרים"
+                        data-lang-arabic="تغطية وتاج الأسنان">
                     </span>
                     <i class="fas fa-angle-down"></i>
                 </div>
                 <div class="toggle-content">
                     <p class="translatable"
-                        data-lang-hebrew="עבודה עם לקוחות על שדרוג ושיפוצים של נכסים קיימים. אתם מתמקדים ביצירת חוויית מגורים או עבודה משופרת דרך שדרוג ועיצוב פנים מותאם לצרכי הלקוח."
-                        data-lang-arabic="العمل مع العملاء على ترقية وتجديد العقارات الحالية. أنتم تركزون على خلق تجربة سكنية أو عمل محسنة من خلال ترقية وتصميم داخلي مخصص لاحتياجات العميل.">
-                        עבודה עם לקוחות על שדרוג ושיפוצים של נכסים קיימים. אתם מתמקדים ביצירת חוויית מגורים או עבודה
-                        משופרת דרך שדרוג ועיצוב פנים מותאם לצרכי הלקוח.
+                        data-lang-hebrew="ציפויי שיניים וכתרים הם טכניקות לשיפור המראה והפונקציות של השיניים. הם יכולים לשמש לתיקון יצירתית, שיפור גוון, צורה וגודל, וגם לתיקונים רפורמטיביים כמו תיקוני שברים ופגיעות פנימיות."
+                        data-lang-arabic="تغطية وتاج الأسنان هما تقنيتان لتحسين مظهر ووظائف الأسنان. يمكن استخدامهما للتصحيح التجميلي، وتحسين اللون والشكل والحجم، وأيضًا للتصحيحات الإصلاحية مثل إصلاح الكسور والإصابات الداخلية.">
                     </p>
                 </div>
             </div>
+
+            <!-- Second service-item -->
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" data-lang-hebrew="טיפול בשיניים פגועות עקב עששת או שבר"
+                        data-lang-arabic="علاج الأسنان المتضررة بسبب التسوس أو الكسر">
+                    </span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="טיפול בשיניים פגועות עקב עששת או שבר אפשר לטפל באמצאות כתרים או ציפויים. השימוש בכתר או בציפויי נגזר מגודל הנגע או הנזק שקיים בשן. בכל מקרה הכתרים והציפויים עשויים מחרסינות הייטקיות המתאפיינות בחוזק גבוה יחד עם אסתטיקה מרבית."
+                        data-lang-arabic="يمكن علاج الأسنان التالفة بسبب التسوس أو الكسر عن طريق استخدام تيجان أو طبقات. يتم اختيار نوع التغطية أو التاج بناءً على حجم الضرر أو الضرر الذي يحدث في السن. في كل الحالات، تتميز التيجان والطبقات بالقوة العالية والجمالية.">
+                    </p>
+                </div>
+            </div>
+            <!-- Third service-item -->
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" data-lang-hebrew="כירוגיה לשיקום הפה"
+                        data-lang-arabic="جراحة استعادة الفم">
+                    </span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content">
+                    <p class="translatable"
+                        data-lang-hebrew="במסגרת ההכנה לשיקום הפה מתבצעות עקירות כירורגיות מורכבות, ניתוחי חניכיים, השתלות שיניים ביום אחד, השתלה מידית לאחר עקירה וביצוע ניתוחי סינוס שמרניים ללא ניתוח פולשני בשיטה חדישה."
+                        data-lang-arabic="في إطار استعادة الفم، يتم إجراء عمليات جراحية معقدة، مثل استخراج الأسنان، وجراحة الفكين، وزراعة الأسنان في يوم واحد، والزراعة فورًا بعد الاستخراج، وإجراء عمليات الجيوب الأنفية بطريقة حديثة دون جراحة تسللية.">
+                    </p>
+                </div>
+            </div>
+
+
         </div>
 
         <div class="working-hours">
-            <div class="line"></div>
+
             <h3 class="translatable" data-lang-hebrew="שעות פעילות" data-lang-arabic="ساعات العمل">
                 שעות פעילות
             </h3>
-            <div class="line"></div>
+
             <p class="translatable" data-lang-hebrew="יום שני-שישי: 08:00 - 17:00"
                 data-lang-arabic="الإثنين - الجمعة: 08:00 - 17:00">
                 יום שני-שישי: 08:00 - 17:00
@@ -252,111 +256,129 @@
                 יום שבת: סגור
             </p>
             <p class="translatable" data-lang-hebrew="יום ראשון: 08:00 - 17:00" data-lang-arabic="الأحد: 08:00 - 17:00">
-                יום ראשון: 08:00 - 17:00
+                יום ראשון: 08:00 - 16:00
             </p>
         </div>
 
-        <div class="gallery-container">
-            <div class="line"></div>
-            <h3 class="translatable" data-lang-hebrew="תמונות מהפרויקטים שלנו" data-lang-arabic="صور من مشاريعنا">
-                תמונות מהפרויקטים שלנו
-            </h3>
-            <div class="line"></div>
-            <h4 class="translatable" data-lang-hebrew="1. תכנון ועיצוב פנים לבית בשטח של 90 מ״ר - יפיע"
-                data-lang-arabic="1. تخطيط وتصميم داخلي لمنزل بمساحة 90 متر مربع - يافة الناصرة">
-                1. תכנון ועיצוב פנים לבית בשטח של 90 מ״ר - יפיע
-            </h4>
-            <div class="gallery">
-                <!-- Images will be dynamically added here using JavaScript -->
-                <img
-                    src="https://i.imgur.com/eWbJfiQ.jpg">
-            </div>
 
-            <div class="arrow right" onclick="prevSlide()">&#10094;</div>
-            <div class="arrow left" onclick="nextSlide()">&#10095;</div>
+        <div class="gallery-container">
+            <h2 style="color: white;" class="translatable" data-lang-arabic="معرض الصور" data-lang-hebrew="גלריית תמונות"></h2>
         </div>
-        <div class="gallery-container">
-            <h4 class="translatable" data-lang-hebrew="2. תכנון + עיצוב פנים לקוטג' בשטח של 100 מ״ר - חיפה"
-                data-lang-arabic="2. تخطيط وتصميم داخلي لكوخ بمساحة 100 متر مربع - حيفا">
-                2. תכנון + עיצוב פנים לקוטג' בשטח של 100 מ״ר - חיפה
-            </h4>
-            <div class="gallery2">
-                <!-- Images will be dynamically added here using JavaScript -->
-                <img
-                    src="https://i.imgur.com/6Z3z2en.jpg">
-            </div>
 
-            <div class="arrow right" onclick="prevSlide2()">&#10094;</div>
-            <div class="arrow left" onclick="nextSlide2()">&#10095;</div>
+        <div id="gallery" class="container-fluid">
+            <a data-fancybox="images" href="assets/images/files/dr/g3.jpg">
+                <img src="assets/images/files/dr/g3.jpg" class="img-responsive" alt="Image 1">
+            </a>
+            <a data-fancybox="images" href="assets/images/files/dr/g1.jpg">
+                <img src="assets/images/files/dr/g1.jpg" class="img-responsive" alt="Image 2">
+            </a>
+            <a data-fancybox="images" href="assets/images/files/dr/g2.jpg">
+                <img src="assets/images/files/dr/g2.jpg" class="img-responsive" alt="Image 3">
+            </a>
+            <a data-fancybox="images" href="assets/images/files/dr/g4.jpg">
+                <img src="assets/images/files/dr/g4.jpg" class="img-responsive" alt="Image 4">
+            </a>
+            <a data-fancybox="images" href="assets/images/files/dr/g5.jpg">
+                <img src="assets/images/files/dr/g5.jpg" class="img-responsive" alt="Image 5">
+            </a>
+            <a data-fancybox="images" href="assets/images/files/dr/g6.jpg">
+                <img src="assets/images/files/dr/g6.jpg" class="img-responsive" alt="Image 6">
+            </a>
+            
         </div>
 
         <div class="faq">
-            <div class="line"></div>
+
             <h3 class="translatable" data-lang-hebrew="שאלות & תשובות" data-lang-arabic="أسئلة وأجوبة">
                 שאלות & תשובות
             </h3>
-            <div class="line"></div>
 
-            <div class="faq-item">
-                <div class="toggle-btn" onclick="toggleContent(this)">
-                    <span class="translatable" data-lang-hebrew="שאלה: איך אתם מתמקדים ביצירת חללים ייחודיים?"
-                        data-lang-arabic="سؤال: كيف تركزون على إنشاء مساحات فريدة؟">
-                    </span>
-                        <i class="fas fa-plus"></i>
-                </div>
-                <div class="toggle-content">
-                    <p class="translatable"
-                        data-lang-hebrew="אנו מתמקדים בשילוב של אמנות, טכנולוגיה ורגישות כדי ליצור חללים מרהיבים ופונקציונליים."
-                        data-lang-arabic="نركز على دمج الفن، التكنولوجيا والحساسية لإنشاء فضاءات رائعة ووظيفية.">
-                    </p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="toggle-btn" onclick="toggleContent(this)">
-                    <span class="translatable" data-lang-hebrew="שאלה: מהם התחומים שאתם מתמחים בהם?"
-                        data-lang-arabic="سؤال: ما هي المجالات التي تختصون فيها؟">
-                    </span>
-                    <i class="fas fa-plus"></i>
-                </div>
-                <div class="toggle-content">
-                    <p class="translatable"
-                        data-lang-hebrew="אנו מתמחים בתכנון ועיצוב פנים לבתים פרטיים, מבני ציבור וחללי עסקים."
-                        data-lang-arabic="نحن متخصصون في تخطيط وتصميم داخلي للمنازل الخاصة، المباني العامة ومساحات الأعمال.">
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="toggle-btn" onclick="toggleContent(this)">
-                    <span class="translatable" data-lang-hebrew="שאלה: איך אתם יוצרים חוויית מגורים משופרת?"
-                        data-lang-arabic="سؤال: كيف تخلقون تجربة سكنية محسنة؟">
-                    </span>
-                    <i class="fas fa-plus"></i>
-                </div>
-                <div class="toggle-content">
-                    <p class="translatable"
-                        data-lang-hebrew="אנו משדרים רגישות ויוקרה דרך יצירת חללים שמתאימים לצרכי הלקוח ומשדרים תחושה של בית."
-                        data-lang-arabic="نحن ننقل الحساسية والفخامة من خلال إنشاء فضاءات تتناسب مع احتياجات العميل وتنقل شعوراً بالمنزل.">
-                    </p>
-                </div>
-            </div>
-            <div class="faq-item">
-                <div class="toggle-btn" onclick="toggleContent(this)">
-                    <span class="translatable" data-lang-hebrew="שאלה: מהם השלבים בתהליך תכנון פרויקט?"
-                        data-lang-arabic="سؤال: ما هي المراحل في عملية تخطيط المشروع؟">
-                    </span>
-                    <i class="fas fa-plus"></i>
-                </div>
-                <div class="toggle-content">
-                    <p class="translatable"
-                        data-lang-hebrew="השלבים כוללים ייעוץ אישי, תכנון מותאם אישית, ושלב יצירתי ששולב בין אמנות, טכנולוגיה ועיצוב."
-                        data-lang-arabic="تشمل المراحل استشارات شخصية وتخطيط مخصص، ودمج إبداعي يجمع بين الفن، التكنولوجيا والتصميم.">
-                    </p>
-                </div>
-            </div>
+<!-- FAQ Item 1 -->
+<div class="faq-item">
+    <div class="toggle-btn" onclick="toggleContent(this)">
+        <span class="translatable" data-lang-hebrew="שאלה: מהם השלבים המרכזיים בטיפולי שיניים?"
+            data-lang-arabic="سؤال: ما هي العناصر الرئيسية في علاجات الأسنان؟">
+        </span>
+        <i class="fas fa-plus"></i>
+    </div>
+    <div class="toggle-content">
+        <p class="translatable"
+            data-lang-hebrew="השלב המרכזי בטיפולי שיניים כולל שילוב של ניקוי יומיומי, טיפול גומי, ופרקטיקה יסודית של הנחייה ודאגה לבריאות הפה."
+            data-lang-arabic="العناصر الرئيسية في علاجات الأسنان تشمل مزيجًا من التنظيف اليومي، وعلاج اللثة، وتوجيهات دقيقة ورعاية لصحة الفم.">
+        </p>
+    </div>
+</div>
+
+<!-- FAQ Item 2 -->
+<div class="faq-item">
+    <div class="toggle-btn" onclick="toggleContent(this)">
+        <span class="translatable" data-lang-hebrew="שאלה: איך ניתן לשמור על שיניים לבנות ובריאות?"
+            data-lang-arabic="سؤال: كيف يمكن الحفاظ على أسنان بيضاء وصحية؟">
+        </span>
+        <i class="fas fa-plus"></i>
+    </div>
+    <div class="toggle-content">
+        <p class="translatable"
+            data-lang-hebrew="כדי לשמור על שיניים לבנות ובריאות، יש לצמצם צריכת משקאות מתוקים, לבצע ניקוי שיניים יומי, ולקבוע בדיקות תקופתיות אצל רופא השיניים."
+            data-lang-arabic="للحفاظ على أسنان بيضاء وصحية، يجب تقليل استهلاك المشروبات السكرية، وأداء تنظيف يومي للأسنان، وجدولة فحوصات منتظمة مع طبيب الأسنان.">
+        </p>
+    </div>
+</div>
+
+<!-- FAQ Item 3 -->
+<div class="faq-item">
+    <div class="toggle-btn" onclick="toggleContent(this)">
+        <span class="translatable" data-lang-hebrew="שאלה: מהם טיפולי השתלת השיניים?"
+            data-lang-arabic="سؤال: ما هي علاجات زراعة الأسنان؟">
+        </span>
+        <i class="fas fa-plus"></i>
+    </div>
+    <div class="toggle-content">
+        <p class="translatable"
+            data-lang-hebrew="טיפולי השתלת השיניים כוללים תהליכים כמו עקירת שיניים, השתלה מתוך הלסת ביום אחד, ושימור וטיפוח של השתלה."
+            data-lang-arabic="علاجات زراعة الأسنان تشمل إجراءات مثل استخراج الأسنان، وزراعة من اللثة في يوم واحد، والمحافظة والعناية بزراعة الأسنان.">
+        </p>
+    </div>
+</div>
+
+<!-- FAQ Item 4 -->
+<div class="faq-item">
+    <div class="toggle-btn" onclick="toggleContent(this)">
+        <span class="translatable" data-lang-hebrew="שאלה: מהם התרומים של הטיפול בשיניים לבריאות הגוף בכלל?"
+            data-lang-arabic="سؤال: ما هي إسهامات علاج الأسنان في صحة الجسم بشكل عام؟">
+        </span>
+        <i class="fas fa-plus"></i>
+    </div>
+    <div class="toggle-content">
+        <p class="translatable"
+            data-lang-hebrew="טיפול השיניים משפיע על صحת הגוף בכלל, כולל הפחתת סיכוני מחלות לב, ירידה בסיכון לזיהום ושיפור כללי באיכות חיים."
+            data-lang-arabic="علاج الأسنان يؤثر على صحة الجسم بشكل عام، بما في ذلك تقليل مخاطر أمراض القلب، وتقليل مخاطر العدوى، وتحسين الجودة العامة للحياة.">
+        </p>
+    </div>
+</div>
+
+<!-- FAQ Item 5 -->
+<div class="faq-item">
+    <div class="toggle-btn" onclick="toggleContent(this)">
+        <span class="translatable" data-lang-hebrew="שאלה: כיצד ניתן להפחית כאב במהלך השתלת שיניים?"
+            data-lang-arabic="سؤال: كيف يمكن تقليل الألم أثناء زراعة الأسنان؟">
+        </span>
+        <i class="fas fa-plus"></i>
+    </div>
+    <div class="toggle-content">
+        <p class="translatable"
+            data-lang-hebrew="להפחית כאב במהלך השתלת השיניים, מומלץ לעקוב אחר הוראות רופא השיניים, לקחת תרומות כזו כגון כוס מקררת ולנוח בשקט בעקבות הפרוצדורה."
+            data-lang-arabic="لتقليل الألم أثناء زراعة الأسنان، من المستحسن اتباع تعليمات طبيب الأسنان، وتناول تخدير مثل كوب مبرد، والاستراحة بشكل هادئ بعد الإجراء.">
+        </p>
+    </div>
+</div>
+
+          
 
 
         </div>
 
-        <div class="slider-container">
+        <div class="slider-container" style="display:none">
             <h3 class="translatable" style="text-align: center; background-color: white;"
                 data-lang-hebrew="לקוחות ממליצים" data-lang-arabic="تقييمات الزبائن">
             </h3>
@@ -366,31 +388,32 @@
         </div>
 
         <div class="share-section">
-            <p class="translatable" 
-            data-lang-arabic="شارك هذا الكرت :"
-            data-lang-hebrew="שתף את הכרטיס"
-            ></p>
-           
+            <p class="translatable" data-lang-arabic="شارك هذا الكرت :" data-lang-hebrew="שתף את הכרטיס"></p>
+
             <div class="share-icons">
                 <a class="share-icon whatsapp-share" onclick="shareOn('whatsapp')"><i class="fab fa-whatsapp"></i></a>
                 <a class="share-icon facebook-share" onclick="shareOn('facebook')"><i class="fab fa-facebook-f"></i></a>
                 <a class="share-icon telegram-share" onclick="shareOn('telegram')"><i class="fab fa-telegram"></i></a>
                 <a class="share-icon linkedin-share" onclick="shareOn('linkedin')"><i class="fab fa-linkedin-in"></i></a>
                 <a class="share-icon messenger-share" onclick="shareOn('messenger')"><i class="fab fa-facebook-messenger"></i></a>
-            </div>            
+            </div>
         </div>
 
     </div>
     <script src="script.js"></script>
     <footer>
-        <p>Built with <i class="heart fas fa-heart"></i> by <a href="https://www.eye-on-media.com/" target="_blank" class="eyeonmedia"> Eye On Media</a> 2023</p>
+        <p>Built with <i class="heart fas fa-heart"></i> by <a href="https://www.eye-on-media.com/" target="_blank"
+                class="eyeonmedia"> Eye On Media</a> 2023</p>
         <div class="social-icons">
-          <!-- Replace # with your actual social media links -->
-          <a href="https://www.facebook.com/people/Eye-On-Media/100092701628022/?mibextid=PzaGJu" target="_blank"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.eye-on-media.com/" target="_blank"><i class="fas fa-globe"></i></a>
-          <a href="https://instagram.com/ionmedia.il?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            <!-- Replace # with your actual social media links -->
+            <a href="https://www.facebook.com/people/Eye-On-Media/100092701628022/?mibextid=PzaGJu" target="_blank"><i
+                    class="fab fa-facebook-f"></i></a>
+            <a href="https://www.eye-on-media.com/" target="_blank"><i class="fas fa-globe"></i></a>
+            <a href="https://instagram.com/ionmedia.il?igshid=OGQ5ZDc2ODk2ZA==" target="_blank"><i
+                    class="fab fa-instagram"></i></a>
+            <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
         </div>
-      </footer>     
+    </footer>
 </body>
+
 </html>

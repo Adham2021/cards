@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function shareOn(type) {
     
-    const text = 'Check out this awesome website!';
+    const text = 'כרטיס הביקור הדיגטלי של דר גיהאד';
     const url = window.location.href;
     if (type === 'facebook') {
         const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
@@ -87,10 +87,10 @@ function updateWorkingHoursStatus() {
 
 function sendWhatsAppMessage() {
     const whatsappLink = document.getElementById("whatsapp-link");
-    const phoneNumber = '+972528957836';
+    const phoneNumber = '+972527539647';
 
     // Replace 'YOUR_DEFAULT_MESSAGE' with your desired default message
-    const defaultMessage = encodeURIComponent('שלום , אשמח לעוד פרטים...');
+    const defaultMessage = encodeURIComponent('שלום , רוצה לקבוע תור בבקשה אפשר ?');
 
     const whatsappApi = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${defaultMessage}`;
     window.open(whatsappApi, '_blank');
@@ -127,9 +127,9 @@ function toggleService(btn) {
 }
 function addToContacts() {
     var contact = {
-        name: "מועתסם ח'ליליה - אדריכאל",
-        phone: "+972528957836",
-        email: "Moatasem97.kh@gmail.com"
+        name: "דר ג'האד - רופא שיניים",
+        phone: "+972527539647",
+        email: "jihad.abed99@gmail.com"
     };
     // create a vcard file
     var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
@@ -190,164 +190,6 @@ function updateContent(language) {
     });
 }
 
-
-
-
-const gallery = document.querySelector('.gallery');
-let currentIndex = 0;
-let initialX = 0;
-let isDragging = false;
-
-const imageArray = [
-    'https://i.imgur.com/M2MdiJv.jpg',
-    'https://i.imgur.com/pRcAbQj.jpg',
-    'https://i.imgur.com/AQ4RM76.jpg',
-    'https://i.imgur.com/nDUVkJK.jpg',
-    'https://i.imgur.com/mCEnphz.jpg',
-    'https://i.imgur.com/00ttFnj.jpg',
-    'https://i.imgur.com/zgkKUj5.jpg',
-    'https://i.imgur.com/9tNhABY.jpg',
-    'https://i.imgur.com/BnfLdIw.jpg',
-    'https://i.imgur.com/eWbJfiQ.jpg'
-
-];
-
-function initGallery() {
-    imageArray.forEach(url => {
-        const img = document.createElement('img');
-        img.src = url;
-        gallery.appendChild(img);
-    });
-
-    // Attach touch event listeners
-    gallery.addEventListener('touchstart', touchStart);
-    gallery.addEventListener('touchmove', touchMove);
-    gallery.addEventListener('touchend', touchEnd);
-
-    showSlide(currentIndex);
-}
-
-function showSlide(index) {
-    const galleryImage = document.querySelector('.gallery img');
-    galleryImage.src = imageArray[index];
-    // Update the currentIndex
-    currentIndex = index;
-}
-
-function prevSlide() {
-    currentIndex = (currentIndex - 1 + imageArray.length) % imageArray.length;
-    showSlide(currentIndex);
-}
-
-function nextSlide() {
-    currentIndex = (currentIndex + 1) % imageArray.length;
-    showSlide(currentIndex);
-}
-
-function touchStart(e) {
-    initialX = e.touches[0].clientX;
-    isDragging = true;
-}
-
-function touchMove(e) {
-    if (isDragging) {
-        const deltaX = e.touches[0].clientX - initialX;
-        if (deltaX > 50) {
-            prevSlide();
-            isDragging = false;
-        } else if (deltaX < -50) {
-            nextSlide();
-            isDragging = false;
-        }
-    }
-}
-
-function touchEnd() {
-    isDragging = false;
-}
-
-initGallery();
-setInterval(() => {
-    nextSlide();
-}, 5000); // Change the interval time as needed
-
-
-const gallery2 = document.querySelector('.gallery2');
-let currentIndex2 = 0;
-let initialX2 = 0;
-let isDragging2 = false;
-
-const imageArray2 = [
-    'https://i.imgur.com/XRS5LAS.jpg',
-    'https://i.imgur.com/5URyQqT.jpg',
-    'https://i.imgur.com/xjav5NG.jpg',
-    'https://i.imgur.com/raieYQr.jpg',
-    'https://i.imgur.com/KRRakqv.jpg',
-    'https://i.imgur.com/6Ao8X16.jpg',
-    'https://i.imgur.com/0IkJITw.jpg',
-    'https://i.imgur.com/IAy2Nz7.jpg',
-    'https://i.imgur.com/G6nzhbH.jpg',
-    'https://i.imgur.com/6Z3z2en.jpg'
-];
-
-function initGallery2() {
-    imageArray2.forEach(url => {
-        const img = document.createElement('img');
-        img.src = url;
-        gallery2.appendChild(img);
-    });
-
-    // Attach touch event listeners
-    gallery2.addEventListener('touchstart', touchStart2);
-    gallery2.addEventListener('touchmove', touchMove2);
-    gallery2.addEventListener('touchend', touchEnd2);
-
-    showSlide2(currentIndex2);
-}
-
-function showSlide2(index) {
-    const galleryImage2 = document.querySelector('.gallery2 img');
-    galleryImage2.src = imageArray2[index];
-    // Update the currentIndex
-    currentIndex2 = index;
-}
-
-function prevSlide2() {
-    currentIndex2 = (currentIndex2 - 1 + imageArray2.length) % imageArray2.length;
-    showSlide2(currentIndex2);
-}
-
-function nextSlide2() {
-    currentIndex2 = (currentIndex2 + 1) % imageArray2.length;
-    showSlide2(currentIndex2);
-}
-
-function touchStart2(e) {
-    initialX2 = e.touches[0].clientX;
-    isDragging2 = true;
-}
-
-function touchMove2(e) {
-    if (isDragging2) {
-        const deltaX2 = e.touches[0].clientX - initialX2;
-        if (deltaX2 > 50) {
-            prevSlide2();
-            isDragging2 = false;
-        } else if (deltaX2 < -50) {
-            nextSlide2();
-            isDragging2 = false;
-        }
-    }
-}
-
-function touchEnd2() {
-    isDragging2 = false;
-}
-
-initGallery2();
-setInterval(() => {
-    nextSlide2();
-}, 5000); // Change the interval time as needed
 
 
 
@@ -432,3 +274,37 @@ document.addEventListener('click', function(event) {
 document.getElementById('barcode-dialog').addEventListener('click', function(event) {
     event.stopPropagation();
 });
+
+
+$(document).ready(function() {
+    $("[data-fancybox]").fancybox({
+      // Options here
+      buttons: [
+        "zoom",
+        "slideShow",
+        "fullScreen",
+        "download",
+        "thumbs",
+        "close"
+      ]
+    });
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('img-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }
+  
+      // Set up the Intersection Observer
+      const observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+  
+      // Target all images with the class 'img-responsive' inside the gallery
+      const images = document.querySelectorAll('#gallery .img-responsive');
+  
+      // Observe each image
+      images.forEach(image => {
+        observer.observe(image);
+      });
+  });
