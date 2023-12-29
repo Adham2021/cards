@@ -328,14 +328,15 @@ body {
 .contact-icons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    max-width: 600px; /* Adjust the max-width as needed */
+    margin: 0 auto; /* Center the icons */
 }
 
 .contact-icons a {
-    flex: 0 1 calc(25% - 20px);
+    flex: 1 0 calc(30% - 10px);
+    margin-bottom: 10px;
     text-align: center;
     text-decoration: none;
-    color: #ffffff; /* Adjust the color as needed */
 }
 
 .contact-icons i {
