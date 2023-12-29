@@ -24,8 +24,6 @@ body {
     bottom: 0;
     background-image: url('assets/images/files/elmajd/cover.jpg');
     background-size: cover;
-    background-position: center;
-    transform: scaleX(-1);
     clip-path: polygon(0 0, 100% 0, 100% 95%, 50% 100%, 0 95%);
 }
 
@@ -329,7 +327,6 @@ body {
     display: flex;
     flex-wrap: wrap;
     max-width: 600px; /* Adjust the max-width as needed */
-    margin: 0 auto; /* Center the icons */
 }
 
 .contact-icons a {
