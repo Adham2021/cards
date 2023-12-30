@@ -29,8 +29,8 @@ body {
 
 
 .toggle-content {
-    max-height: 0;
     overflow: hidden;
+    display: none;
     transition: max-height 0.5s ease;
 }
 
@@ -65,7 +65,8 @@ body {
 .service-item,
 .faq-item,
 .review {
-    margin-top: 10px;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .service-icon,
@@ -121,10 +122,10 @@ body {
     transition: height 0.5s ease;
     background-color: white;
     padding: 10px;
-    border-radius: 5px;
     margin-top: 10px;
     height: auto;
     color: black;
+    margin: 0;
 }
 
 .review {
@@ -211,8 +212,6 @@ body {
 .faq,
 .reviews {
     text-align: center;
-    margin-top: 30px;
-    border-top: 2px solid #ffffff;
     padding-top: 20px;
 }
 
@@ -226,56 +225,22 @@ body {
     border-radius: 10%;
 }
 
-.about-us h3,
-.reviews h3,
-.gallery-container h3,
-.working-hours h3,
-.faq h3,
-.services h3 {
+.about-us h2,
+.reviews h2,
+.gallery-container h2,
+.working-hours h2,
+.faq h2,
+.services h2 {
     margin: 0 10px;
-    /* Adjust margin for better spacing */
-    background-color: #f2f2f2;
-    color: #000;
-    /* Adjust the color as needed */
+    color: #ffffff;
+    text-decoration: underline;
 }
-
-
-.line {
-    flex-grow: 1;
-    border-top: 1px solid #000;
-    /* Adjust line styling as needed */
-}
-
 
 .gallery-container {
     position: relative;
     width: 100%;
     overflow: hidden;
 }
-
-.gallery,
-.gallery2 {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-    margin-top: 15px;
-}
-
-.gallery img,
-.gallery2 img {
-    width: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease-in-out;
-}
-
-
-.arrow.left {
-    left: 10px;
-}
-
-.arrow.right {
-    right: 10px;
-}
-
 
 .reviews-slider {
     position: relative;
@@ -289,23 +254,6 @@ body {
 
 .review {
     width: 100%;
-}
-
-.arrow {
-    position: absolute;
-    top: 59%;
-    font-size: 24px;
-    cursor: pointer;
-    user-select: none;
-    background: rgba(255, 255, 255, 0.7);
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 50%;
-}
-
-.image-container {
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in-out forwards;
 }
 
 @keyframes fadeIn {

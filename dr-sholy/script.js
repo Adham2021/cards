@@ -143,6 +143,12 @@ function addToContacts() {
 
     newLink.click();
 }
+$(document).ready(function() {
+    $(".toggle-btn").click(function() {
+        $(this).next(".toggle-content").slideToggle("slow");
+        $(this).find("i").toggleClass("fa-angle-down fa-angle-up");
+    });
+});
 
 
 
