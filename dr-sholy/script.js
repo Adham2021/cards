@@ -41,15 +41,16 @@ changeLanguage(getLanguage(), false)
 function updateWorkingHoursStatus() {
     const now = new Date();
     const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
-
+    const currentHour = now.getHours();
+    
     const workingHours = {
-        0: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Monday
-        1: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Monday
-        2: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Tuesday
-        3: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Wednesday
-        4: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Thursday
-        5: now.getHours() < 8 || now.getHours() > 17 ? 'Closed, Open at 08:00' : 'Open until 17:00', // Friday
-        6: 'Closed, Open at 08:00' // Saturday
+        0: currentHour >= 13 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 13:00', // Sunday
+        1: currentHour >= 13 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 13:00', // Monday
+        2: 'Closed, Open at 13:00', // Tuesday
+        3: currentHour >= 13 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 13:00', // Wednesday
+        4: currentHour >= 13 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 13:00', // Thursday
+        5: 'Closed, Open at 10:00', // Friday
+        6: currentHour >= 10 && currentHour < 16 ? 'Open until 16:00' : 'Closed, Open at 10:00', // Saturday
     };
 
     const statusOpenElement = document.getElementById('status-open');
@@ -60,29 +61,28 @@ function updateWorkingHoursStatus() {
     if (workingHours[dayOfWeek].includes('Closed')) {
         if (currentLanguage === 'hebrew') {
             statusOpenElement.textContent = 'סגור';
-            statusUntilElement.textContent = ' נפתח ב- 08:00';
+            statusUntilElement.textContent = ' נפתח ב- 13:00';
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مغلق';
-            statusUntilElement.textContent = ' يفتح في الساعة 08:00';
+            statusUntilElement.textContent = ' يفتح في الساعة 13:00';
         }
 
         statusOpenElement.classList.add('status-close');
         statusOpenElement.classList.remove('status-open');
-    }
-
-    else {
+    } else {
         if (currentLanguage === 'hebrew') {
             statusOpenElement.textContent = 'פתוח';
-            statusUntilElement.textContent = ' עד 17:00';
+            statusUntilElement.textContent = ' עד 20:00';
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مفتوح';
-            statusUntilElement.textContent = ' حتى 17:00';
+            statusUntilElement.textContent = ' حتى 20:00';
         }
 
         statusOpenElement.classList.add('status-open');
         statusOpenElement.classList.remove('status-close');
     }
 }
+
 
 
 function sendWhatsAppMessage() {
@@ -222,20 +222,20 @@ let currentReviewIndex = 0;
 const slider = document.getElementById('slider');
 
 
-reviewsArray.forEach((review) => {
-    const slide = document.createElement('div');
-    slide.classList.add('slide');
+// reviewsArray.forEach((review) => {
+//     const slide = document.createElement('div');
+//     slide.classList.add('slide');
 
-    slide.innerHTML = `
-    <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" alt="${review.name}">
-    <h3>${review.name}</h3>
-    <p class="subtitle">${review.subtitle}</p>
-    <div class="stars">★★★★★</div>
-    <p>${review.content}</p>
-`;
+//     slide.innerHTML = `
+//     <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" alt="${review.name}">
+//     <h3>${review.name}</h3>
+//     <p class="subtitle">${review.subtitle}</p>
+//     <div class="stars">★★★★★</div>
+//     <p>${review.content}</p>
+// `;
 
-    slider.appendChild(slide);
-});
+//     slider.appendChild(slide);
+// });
 
 const totalSlides = document.querySelectorAll('.slide').length;
 
@@ -334,3 +334,34 @@ $(document).ready(function() {
 
     toggleText(); // Start the loop
 });
+
+$(document).ready(function () {
+    const addToHomeScreenButton = $('#addToHomeScreenButton');
+    let deferredPrompt;
+
+    // Check for the beforeinstallprompt event and store it in deferredPrompt
+    window.addEventListener('beforeinstallprompt', (event) => {
+        event.preventDefault();
+        deferredPrompt = event;
+        addToHomeScreenButton.show(); // Show the "Add to Home Screen" button
+    });
+
+    // Add click event listener to the button
+    addToHomeScreenButton.click(() => {
+        if (deferredPrompt) {
+            // Show the installation prompt
+            deferredPrompt.prompt();
+            // Wait for the user's response
+            deferredPrompt.userChoice.then((choiceResult) => {
+                if (choiceResult.outcome === 'accepted') {
+                    console.log('User accepted the A2HS prompt');
+                } else {
+                    console.log('User dismissed the A2HS prompt');
+                }
+                deferredPrompt = null;
+                addToHomeScreenButton.hide(); // Hide the button after user interaction
+            });
+        }
+    });
+});
+

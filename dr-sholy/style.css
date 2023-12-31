@@ -239,10 +239,11 @@ body {
 
 .about-us h2,
 .reviews h2,
+.share-section h2,
+.slider-container h2,
 .working-hours h2,
 .faq h2,
 .services h2 {
-    margin: 0 10px;
     color: #ffffff;
     text-decoration: underline;
 }
@@ -259,6 +260,10 @@ body {
 .reviews-slider {
     position: relative;
     overflow: hidden;
+}
+iframe {
+    /* You can adjust the max-width if needed */
+    max-width: 100%;
 }
 
 .reviews {
@@ -283,9 +288,10 @@ body {
 
 .slider-container {
     position: relative;
-    width: 80%;
+    width: 90%;
     margin: 50px auto;
     overflow: hidden;
+    text-align: center;
 }
 
 .slider {
@@ -297,7 +303,7 @@ body {
     min-width: 100%;
     box-sizing: border-box;
     text-align: center;
-    border: 1px solid rgb(255, 242, 54);
+    border: 2px solid rgb(132 175 255);
     border-radius: 5%;
     background-color: ghostwhite;
 }
@@ -337,10 +343,9 @@ body {
     right: 10px;
 }
 
-.slide p.subtitle {
-    margin: 5px 0;
-    font-style: italic;
-    color: #666;
+.slide p {
+    font-weight: bold;
+
 }
 .profile { 
     top:-40px;
@@ -350,11 +355,7 @@ body {
     height: 30%;
     margin-bottom: 0;
 }
-.slide p.subtitle {
-    margin: 5px 0;
-    font-style: italic;
-    color: #666;
-}
+
 .profile .subtitle{
     font-size: 16px !important;
     color: #ffffff;
@@ -380,15 +381,15 @@ body {
 .contact-icons {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
-    margin-top: 0;
+    max-width: 600px; /* Adjust the max-width as needed */
+    margin-top: -20px;
 }
 
 .contact-icons a {
-    flex: 0 1 calc(25% - 20px);
+    flex: 1 0 calc(30% - 10px);
+    margin-bottom: 10px;
     text-align: center;
     text-decoration: none;
-    color: #ffffff; /* Adjust the color as needed */
 }
 
 .contact-icons i {
