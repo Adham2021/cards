@@ -87,7 +87,7 @@ function updateWorkingHoursStatus() {
 
 function sendWhatsAppMessage() {
     const whatsappLink = document.getElementById("whatsapp-link");
-    const phoneNumber = '+972502808458';
+    const phoneNumber = '+972502206344';
 
     // Replace 'YOUR_DEFAULT_MESSAGE' with your desired default message
     const defaultMessage = encodeURIComponent('שלום , רוצה לקבוע תור בבקשה אפשר ?');
@@ -128,7 +128,7 @@ function toggleService(btn) {
 function addToContacts() {
     var contact = {
         name: "דר מוחמד שולי - רופא שיניים",
-        phone: "+972502808458",
+        phone: "+972502206344",
         email: "jihad.abed99@gmail.com"
     };
     // create a vcard file
