@@ -200,42 +200,10 @@ function updateContent(language) {
 
 
 
-const reviewsArray = [
-    {
-        name: 'יוסי הק.',
-        subtitle: 'בעל בית בנהריה',
-        content: 'התמקצעות וייחודיות! התמקצעות מקצועית וייחודיות עם פרויקטים מרהיבים. המשרד יצר לנו חוויה עיצובית ופונקציונלית שהתאימה בדיוק לסגנון ולצרכים שלנו.'
-    },
-    {
-        name: 'דניאלה',
-        subtitle: 'בעלת חנות בגדים',
-        content: 'שירות אישי וייחודי. השירות שקיבלנו היה אישי ומקצועי. הצוות עבד יחד איתנו להבין את רצונינו ויצר פתרונות שהתאימו בצורה מושלמת לבית שלנו.'
-    },
-    {
-        name: 'אבי ז.',
-        subtitle: 'בעל חנות למכירת חומרי בניין',
-        content: 'אמינות ויציבות. עברנו תהליך של בניה חדשה עם המשרד והיינו מרוצים מאוד מהאמינות והיציבות של הצוות. תודה על יצירת הבית שתמיד חלמנו עליו.'
-    }
-];
 
 let currentReviewIndex = 0;
 const slider = document.getElementById('slider');
 
-
-// reviewsArray.forEach((review) => {
-//     const slide = document.createElement('div');
-//     slide.classList.add('slide');
-
-//     slide.innerHTML = `
-//     <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" alt="${review.name}">
-//     <h3>${review.name}</h3>
-//     <p class="subtitle">${review.subtitle}</p>
-//     <div class="stars">★★★★★</div>
-//     <p>${review.content}</p>
-// `;
-
-//     slider.appendChild(slide);
-// });
 
 const totalSlides = document.querySelectorAll('.slide').length;
 
