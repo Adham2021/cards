@@ -314,3 +314,23 @@ $(document).ready(function() {
         observer.observe(image);
       });
   });
+
+  $(document).ready(function () {
+    const text1 = $('#text1');
+    const text2 = $('#text2');
+    const duration = 700; // Duration for each text display
+
+    function toggleText() {
+        text1.fadeIn(duration, function () {
+            text1.delay(duration).fadeOut(duration, function () {
+                text2.fadeIn(duration, function () {
+                    text2.delay(duration).fadeOut(duration, function () {
+                        toggleText(); // Repeat the loop
+                    });
+                });
+            });
+        });
+    }
+
+    toggleText(); // Start the loop
+});

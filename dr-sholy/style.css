@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #0F77B2;
+    background: linear-gradient(to bottom, #0D95D1 0%, #0F619B 50%, #3791A3 100%);
 }
 
 
@@ -27,16 +27,26 @@ body {
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
 }
 
-
+.image-container {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
 .toggle-content {
     overflow: hidden;
     display: none;
     transition: max-height 0.5s ease;
+    background-color: white;
+}
+
+.toggle-content li{
+    text-align: justify;
+    font-weight: bold;
 }
 
 .toggle-content.show {
     max-height: 1000px;
 }
+
 
 .toggle-btn {
     cursor: pointer;
@@ -46,7 +56,7 @@ body {
     padding: 10px;
     border: 1px solid white;
     border-radius: 5px;
-    margin-top: 20px;
+    margin-top: 5px;
     background-color: rgba(85, 85, 85, 0.5) !important;
     transition: background-color 0.3s ease;
     color: white;
@@ -65,7 +75,7 @@ body {
 .service-item,
 .faq-item,
 .review {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
 }
 
@@ -124,7 +134,8 @@ body {
     padding: 10px;
     margin-top: 10px;
     height: auto;
-    color: black;
+    color:#0F619B;
+    font-weight: bold;
     margin: 0;
 }
 
@@ -212,7 +223,8 @@ body {
 .faq,
 .reviews {
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
+    margin-top: 30px;
 }
 
 .working-hours p {
@@ -227,7 +239,6 @@ body {
 
 .about-us h2,
 .reviews h2,
-.gallery-container h2,
 .working-hours h2,
 .faq h2,
 .services h2 {
@@ -237,9 +248,12 @@ body {
 }
 
 .gallery-container {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
+    text-align: center; /* Center the text horizontally */
+}
+
+.text {
+    color: white;
+    opacity: 0.996057;
 }
 
 .reviews-slider {
@@ -345,14 +359,19 @@ body {
     font-size: 16px !important;
     color: #ffffff;
     font-weight: bold !important;
+    margin-top: -13px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInFromBottom 1s ease-out 1s forwards;
 }
+
 
 .profile h2 { 
     
     font-size: 25px !important;
 }
 .container {
-    background: linear-gradient(to right, #0D95D1 0%, #0F619B 50%, #3791A3 100%);
+    background: none;
     box-shadow: 0 -5px 10px rgba(255, 255, 255, 0.8);
     
 }
