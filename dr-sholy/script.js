@@ -129,7 +129,7 @@ function addToContacts() {
     var contact = {
         name: "דר מוחמד שולי - רופא שיניים",
         phone: "+972502206344",
-        email: "jihad.abed99@gmail.com"
+        email: "sholy@gmail.com"
     };
     // create a vcard file
     var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
