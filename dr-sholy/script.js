@@ -85,9 +85,9 @@ function updateWorkingHoursStatus() {
 
 
 
-function sendWhatsAppMessage() {
+function sendWhatsAppMessage(phone) {
     const whatsappLink = document.getElementById("whatsapp-link");
-    const phoneNumber = '+972502206344';
+    const phoneNumber = phone;
 
     // Replace 'YOUR_DEFAULT_MESSAGE' with your desired default message
     const defaultMessage = encodeURIComponent('שלום , רוצה לקבוע תור בבקשה אפשר ?');
