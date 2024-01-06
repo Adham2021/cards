@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function shareOn(type) {
     
-    const text = 'כרטיס הביקור הדיגטלי של 5Rooms Kitchens';
+    const text = 'כרטיס הביקור הדיגטלי של ריזק שהואן';
     const url = window.location.href;
     if (type === 'facebook') {
         const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
@@ -127,8 +127,8 @@ function toggleService(btn) {
 }
 function addToContacts() {
     var contact = {
-        name: "5Rooms Kitchens | מטבחים",
-        phone: "+972508107404",
+        name: "ריזק שהואן | מנהל עבודה",
+        phone: "+972525972813",
         email: ""
     };
     // create a vcard file
@@ -174,7 +174,7 @@ function changeLanguage(language, byClickButton = true) {
     }
 }
 function getLanguage() {
-    return localStorage.getItem('preferredLanguage') || 'arabic'; // Default language is Arabic
+    return localStorage.getItem('preferredLanguage') || 'hebrew'; // Default language is Arabic
 }
 function toggleLanguageMenu() {
     var languageMenu = document.getElementById("language-menu");
