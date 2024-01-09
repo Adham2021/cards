@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function shareOn(type) {
     
-    const text = 'כרטיס הביקור הדיגטלי של ריזק שהואן';
+    const text = 'כרטיס הביקור הדיגטלי של 5Rooms Kitchens';
     const url = window.location.href;
     if (type === 'facebook') {
         const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
@@ -44,13 +44,13 @@ function updateWorkingHoursStatus() {
     const currentHour = now.getHours();
     
     const workingHours = {
-        0: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Sunday
-        1: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Monday
-        2: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Tuesday
-        3: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Wednesday
-        4: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Thursday
-        5: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Friday
-        6: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 10:00', // Saturday
+        0: currentHour >= 9 && currentHour < 17 ? 'Open until 17:00' : 'Closed, Open at 09:00', // Sunday
+        1: currentHour >= 9 && currentHour < 17 ? 'Open until 17:00' : 'Closed, Open at 09:00', // Monday
+        2: currentHour >= 9 && currentHour < 17 ? 'Open until 17:00' : 'Closed, Open at 09:00', // Tuesday
+        3: currentHour >= 9 && currentHour < 17 ? 'Open until 17:00' : 'Closed, Open at 09:00', // Wednesday
+        4: currentHour >= 9 && currentHour < 17 ? 'Open until 17:00' : 'Closed, Open at 09:00', // Thursday
+        5: currentHour >= 9 && currentHour < 17 ? 'Open until 17:00' : 'Closed, Open at 09:00', // Friday
+        6: currentHour >= 9 && currentHour < 17 ? 'Open until 17:00' : 'Closed, Open at 10:00', // Saturday
     };
 
     const statusOpenElement = document.getElementById('status-open');
@@ -61,10 +61,10 @@ function updateWorkingHoursStatus() {
     if (workingHours[dayOfWeek].includes('Closed')) {
         if (currentLanguage === 'hebrew') {
             statusOpenElement.textContent = 'סגור';
-            statusUntilElement.textContent = ' נפתח ב- 08:00';
+            statusUntilElement.textContent = ' נפתח ב- 09:00';
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مغلق';
-            statusUntilElement.textContent = ' يفتح في الساعة 08:00';
+            statusUntilElement.textContent = ' يفتح في الساعة 09:00';
         }
 
         statusOpenElement.classList.add('status-close');
@@ -72,10 +72,10 @@ function updateWorkingHoursStatus() {
     } else {
         if (currentLanguage === 'hebrew') {
             statusOpenElement.textContent = 'פתוח';
-            statusUntilElement.textContent = ' עד 20:00';
+            statusUntilElement.textContent = ' עד 17:00';
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مفتوح';
-            statusUntilElement.textContent = ' حتى 20:00';
+            statusUntilElement.textContent = ' حتى 17:00';
         }
 
         statusOpenElement.classList.add('status-open');
@@ -127,9 +127,9 @@ function toggleService(btn) {
 }
 function addToContacts() {
     var contact = {
-        name: "ריזק שהואן | מנהל עבודה",
-        phone: "+972525972813",
-        email: "rezk5151@hotmail.com"
+        name: "5Rooms Kitchens | מטבחים",
+        phone: "+972508107404",
+        email: ""
     };
     // create a vcard file
     var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
@@ -174,7 +174,7 @@ function changeLanguage(language, byClickButton = true) {
     }
 }
 function getLanguage() {
-    return localStorage.getItem('preferredLanguage') || 'hebrew'; // Default language is Hebrew
+    return localStorage.getItem('preferredLanguage') || 'arabic'; // Default language is Arabic
 }
 function toggleLanguageMenu() {
     var languageMenu = document.getElementById("language-menu");
