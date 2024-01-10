@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function shareOn(type) {
     
-    const text = 'כרטיס הביקור הדיגטלי של 5Rooms Kitchens';
+    const text = 'الكرت الديجيتالي الخاص بمركز بيان للتجميل - القدس';
     const url = window.location.href;
     if (type === 'facebook') {
         const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
@@ -90,7 +90,7 @@ function sendWhatsAppMessage(phone) {
     const phoneNumber = phone;
 
     // Replace 'YOUR_DEFAULT_MESSAGE' with your desired default message
-    const defaultMessage = encodeURIComponent('مرحبا ممكن تفاصيل اكثر ؟ שלום אפשר פרטים ?');
+    const defaultMessage = encodeURIComponent('مرحبا ممكن تفاصيل اكثر ؟ ');
 
     const whatsappApi = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${defaultMessage}`;
     window.open(whatsappApi, '_blank');
@@ -127,8 +127,8 @@ function toggleService(btn) {
 }
 function addToContacts() {
     var contact = {
-        name: "5Rooms Kitchens | מטבחים",
-        phone: "+972508107404",
+        name: "مركز بيان للتجميل",
+        phone: "+972535620105",
         email: ""
     };
     // create a vcard file

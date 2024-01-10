@@ -442,7 +442,7 @@ iframe {
     color: white;
 }
 .contact-icons {
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
 margin-top: 0;
     gap: 20px;
@@ -452,6 +452,10 @@ margin-top: 0;
 {
     color:#E0C873;
 }
+.icon-container:last-child {
+    flex: 0 0 100%; /* This will make the last icon take up 100% of the row */
+    text-align: center;
+  }
 .contact-icons span { 
    /* font-family: 'Heebo', sans-serif; */
 }
@@ -462,6 +466,7 @@ margin-top: 0;
     font-size: 14px;
     transition: color 0.3s;
     margin-bottom: 20px; /* Adjust spacing between rows */
+    flex: 0 0 calc(23.333% - 10px);
 
 }
 
