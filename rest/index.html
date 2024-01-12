@@ -138,7 +138,47 @@
             margin: 0 auto; /* Centers the image horizontally */
             display: block; /* Makes the image a block element */
         }
-        
+        .footer {
+            background-color: rgb(209 208 206 / 80%);
+            padding: 5px;
+            text-align: center;
+        }
+
+        .footer a {
+            text-decoration: none;
+            color: #333;
+        }
+
+        .review-button {
+            background-color: #ff6600;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+    
+
+        .social-icons a {
+            font-size: 18px;
+            margin: 0 10px;
+            color: #333;
+        }
+
+        .signature {
+            font-size: 14px;
+            color: #555;
+        }
+
+        .copyright {
+            font-size: 15px;
+            color: #888;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -244,7 +284,20 @@
         </div>
         <!-- Add more menu items here -->
     </div>
+    <div class="footer">
 
+        <p class="signature">Developed by Ionmedia company</p>
+        <div class="social-icons">
+            <a href="[Link to Facebook]"><i class="fab fa-facebook"></i></a>
+            <a href="[Link to Twitter]"><i class="fab fa-twitter"></i></a>
+            <a href="[Link to Instagram]"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="copyright">&#169; <span id="year"></span></p>
+
+        <script>
+            document.getElementById("year").textContent = new Date().getFullYear();
+        </script>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
  $(document).ready(function() {
