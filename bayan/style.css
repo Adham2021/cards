@@ -535,3 +535,11 @@ margin-top: 0;
   .toggle-content li {
     text-align: right;
   }
+
+  .toggleBtn {
+    width: 95%;
+    margin:0 auto;
+    padding: 3px;
+    background-color: rgb(33 31 28 / 50%);
+    margin-top: 0px;
+}
