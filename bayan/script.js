@@ -358,5 +358,64 @@ $(document).ready(function () {
             });
         }
     });
+
+    var player;
+
+    // Function to open the video dialog
+    function openVideoDialog(videoId) {
+      $("#video-overlay").fadeIn();
+      playVideo(videoId); // Play the video
+    }
+
+    // Function to close the video dialog
+    function closeVideoDialog() {
+      stopVideo(); // Stop the video
+      $("#video-overlay").fadeOut();
+    }
+
+    // Function to stop the video
+    function stopVideo() {
+      if (player) {
+        player.stopVideo();
+      }
+    }
+
+    // Function to play the video
+    function playVideo(videoId) {
+      if (!player) {
+        player = new YT.Player('player', {
+          height: '315',
+          width: '560',
+          videoId: videoId,
+          events: {
+            'onReady': function(event) {
+              event.target.playVideo();
+            }
+          }
+        });
+      } else {
+        player.loadVideoById(videoId);
+        player.playVideo();
+      }
+    }
+
+    // Close the video dialog when clicking outside
+    $(document).mouseup(function(e) {
+      var videoDialog = $("#video-overlay .dialog");
+      if (!videoDialog.is(e.target) && videoDialog.has(e.target).length === 0) {
+        closeVideoDialog();
+      }
+    });
+
+    // Event listeners for opening the video dialogs
+    $("#open-video-dialog-1").click(function(e) {
+      e.preventDefault();
+      openVideoDialog("k-bbDwc3IcI"); // YouTube video ID for the first video
+    });
+
+    $("#open-video-dialog-2").click(function(e) {
+      e.preventDefault();
+      openVideoDialog("k-bbDwc3IcI"); // YouTube video ID for the second video
+    });
 });
 
