@@ -25,6 +25,9 @@ body {
     right: 0;
     bottom: 0;
     background-image: url('assets/images/files/cover.jpeg');
+background-color: #2D3A40;
+background-blend-mode: multiply; /* This blends the background color with the image */
+
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
@@ -38,14 +41,14 @@ body {
     overflow: hidden;
     display: none;
     transition: max-height 0.5s ease;
-    background-color: black;
+    background-color: white;
     border-radius: 1%;
 }
 
 .toggle-content li{
     text-align: right;
     font-weight: bold;
-    color: white;
+    color: black;
     font-size: 15px;
 }
 
@@ -140,7 +143,7 @@ body {
 .service-item p {
     overflow: hidden;
     transition: height 0.5s ease;
-    background-color: black;
+    background-color: white;
     padding: 10px;
     margin-top: 10px;
     height: auto;
@@ -486,3 +489,4 @@ iframe {
     font-weight: bold;
     color: white;
 }
+
