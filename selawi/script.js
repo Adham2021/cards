@@ -44,13 +44,13 @@ function updateWorkingHoursStatus() {
     const currentHour = now.getHours();
     
     const workingHours = {
-        0: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Sunday
-        1: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Monday
-        2: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Tuesday
-        3: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Wednesday
-        4: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Thursday
-        5: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Friday
-        6: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 10:00', // Saturday
+        0: currentHour >= 8 && currentHour < 20 ? 'Open until 18:00' : 'Closed, Open at 08:00', // Sunday
+        1: currentHour >= 8 && currentHour < 20 ? 'Open until 18:00' : 'Closed, Open at 08:00', // Monday
+        2: currentHour >= 8 && currentHour < 20 ? 'Open until 18:00' : 'Closed, Open at 08:00', // Tuesday
+        3: currentHour >= 8 && currentHour < 20 ? 'Open until 18:00' : 'Closed, Open at 08:00', // Wednesday
+        4: currentHour >= 8 && currentHour < 20 ? 'Open until 18:00' : 'Closed, Open at 08:00', // Thursday
+        5: currentHour >= 8 && currentHour < 20 ? 'Open until 18:00' : 'Closed, Open at 08:00', // Friday
+        6:'Closed, Open at 08:00' // Saturday
     };
 
     const statusOpenElement = document.getElementById('status-open');
@@ -72,10 +72,10 @@ function updateWorkingHoursStatus() {
     } else {
         if (currentLanguage === 'hebrew') {
             statusOpenElement.textContent = 'פתוח';
-            statusUntilElement.textContent = ' עד 20:00';
+            statusUntilElement.textContent = ' עד 18:00';
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مفتوح';
-            statusUntilElement.textContent = ' حتى 20:00';
+            statusUntilElement.textContent = ' حتى 18:00';
         }
 
         statusOpenElement.classList.add('status-open');
