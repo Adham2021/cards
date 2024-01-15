@@ -156,7 +156,7 @@ $(document).ready(function() {
 function changeLanguage(language, byClickButton = true) {
     const languageData = {
         hebrew: { flag: "/assets/images/files/flags/israel.png", text: "עברית" },
-        arabic: { flag: "/assets/images/files/flags/saudi-arabia.png", text: "العربية" },
+        arabic: { flag: "/assets/images/files/flags/egypt.png", text: "العربية" },
         english: { flag: "/assets/images/files/flags/united-kingdom.png", text: "English" },
     };
     const selectedLanguage = languageData[language];
