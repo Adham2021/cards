@@ -44,13 +44,13 @@ function updateWorkingHoursStatus() {
     const currentHour = now.getHours();
     
     const workingHours = {
-        0: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Sunday
-        1: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Monday
-        2: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Tuesday
-        3: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Wednesday
-        4: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Thursday
-        5: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 08:00', // Friday
-        6: currentHour >= 8 && currentHour < 20 ? 'Open until 20:00' : 'Closed, Open at 10:00', // Saturday
+        0: currentHour >= 8 && currentHour < 20 ? 'Open until 17:00' : 'Closed, Open at 08:00', // Sunday
+        1: currentHour >= 8 && currentHour < 20 ? 'Open until 17:00' : 'Closed, Open at 08:00', // Monday
+        2: currentHour >= 8 && currentHour < 20 ? 'Open until 17:00' : 'Closed, Open at 08:00', // Tuesday
+        3: currentHour >= 8 && currentHour < 20 ? 'Open until 17:00' : 'Closed, Open at 08:00', // Wednesday
+        4: currentHour >= 8 && currentHour < 20 ? 'Open until 17:00' : 'Closed, Open at 08:00', // Thursday
+        5:  'Closed, Open at 08:00', // Friday
+        6: currentHour >= 8 && currentHour < 20 ? 'Open until 17:00' : 'Closed, Open at 10:00', // Saturday
     };
 
     const statusOpenElement = document.getElementById('status-open');
@@ -72,10 +72,10 @@ function updateWorkingHoursStatus() {
     } else {
         if (currentLanguage === 'hebrew') {
             statusOpenElement.textContent = 'פתוח';
-            statusUntilElement.textContent = ' עד 20:00';
+            statusUntilElement.textContent = ' עד 17:00';
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مفتوح';
-            statusUntilElement.textContent = ' حتى 20:00';
+            statusUntilElement.textContent = ' حتى 17:00';
         }
 
         statusOpenElement.classList.add('status-open');
@@ -127,9 +127,9 @@ function toggleService(btn) {
 }
 function addToContacts() {
     var contact = {
-        name: "5Rooms Kitchens | מטבחים",
-        phone: "+972508107404",
-        email: ""
+        name: "מטבחי אורנית",
+        phone: "+972549369451",
+        email: "oranetkitchens@gmail.com"
     };
     // create a vcard file
     var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
@@ -160,7 +160,7 @@ function changeLanguage(language, byClickButton = true) {
         english: { flag: "/assets/images/files/flags/united-kingdom.png", text: "English" },
     };
     const selectedLanguage = languageData[language];
-    localStorage.setItem('preferredLanguage', language);
+    localStorage.setItem('OranetPreferredLanguage', language);
     document.getElementById("selected-language").innerText = selectedLanguage.text;
     document.getElementById("language-menu-btn").getElementsByTagName("img")[0].src = selectedLanguage.flag;
 
@@ -174,7 +174,7 @@ function changeLanguage(language, byClickButton = true) {
     }
 }
 function getLanguage() {
-    return localStorage.getItem('preferredLanguage') || 'arabic'; // Default language is Arabic
+    return localStorage.getItem('OranetPreferredLanguage') || 'hebrew'; // Default language is Arabic
 }
 function toggleLanguageMenu() {
     var languageMenu = document.getElementById("language-menu");
