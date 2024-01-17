@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function shareOn(type) {
     
-    const text = 'כרטיס הביקור הדיגטלי של 5Rooms Kitchens';
+    const text = 'כרטיס הביקור הדיגטלי של מטבחי אורנית';
     const url = window.location.href;
     if (type === 'facebook') {
         const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
@@ -90,7 +90,7 @@ function sendWhatsAppMessage(phone) {
     const phoneNumber = phone;
 
     // Replace 'YOUR_DEFAULT_MESSAGE' with your desired default message
-    const defaultMessage = encodeURIComponent('مرحبا ممكن تفاصيل اكثر ؟ שלום אפשר פרטים ?');
+    const defaultMessage = encodeURIComponent(' שלום אפשר פרטים ?');
 
     const whatsappApi = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${defaultMessage}`;
     window.open(whatsappApi, '_blank');
