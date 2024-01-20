@@ -18,6 +18,7 @@
 	============================================= -->
 	<link href="assets/css/css-assets-rtl.css" rel="stylesheet">
 	<link href="assets/css/style-rtl.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 
 
@@ -137,7 +138,7 @@
 											<div class="cs-notifications" data-error-msg="נא עקבו אחרי הודעות השגיאה והשלימו כפי שנדרש" data-success-msg="תודה על ההודעה :)">
 												<div class="cs-notifications-content"></div>
 											</div><!-- .cs-notifications end -->
-											<form id="form-cta-subscribe-1">
+											<form  id="emailForm">
 												<div class="form-group">
 													<span class="field-icon icon icon-User"></span>
 													<input type="text" name="cs1Name" id="cs1Name" class="form-control" placeholder="השם">
@@ -154,6 +155,38 @@
 													<input type="submit" class="form-control" value="שליחה">
 												</div><!-- .form-group end -->
 											</form><!-- #form-cta-subscribe-1 end -->
+											<script>
+												$(document).ready(function() {
+													$("#emailForm").submit(function(event) {
+														event.preventDefault();
+														
+														const emailData = {
+															to: $("#to").val(),
+															subject: $("#subject").val(),
+															text: $("#message").val()
+														};
+										
+														$.ajax({
+															type: "POST",
+															url: "/send-email",
+															contentType: "application/json",
+															data: JSON.stringify(emailData),
+															success: function(data) {
+																if (data.success) {
+																	alert("Email sent successfully!");
+																} else {
+																	alert("Failed to send email. Please try again.");
+																}
+															},
+															error: function(error) {
+																console.error(error);
+																alert("An error occurred while sending the email.");
+															}
+														});
+													});
+												});
+											</script>
+											
 										</div><!-- .box-content end -->
 									</div><!-- .box-form end -->
 								</div><!-- .banner-center-box end -->

@@ -497,3 +497,39 @@ $(document).ready(function () {
         e.preventDefault();
     });
 });
+
+
+$(document).ready(function() {
+    $("#emailForm").submit(function(event) {
+        event.preventDefault();
+        
+        const emailData = {
+            to: "adham@fit-x.app",
+            name: $("#name").val(),
+            phone: $("#phone").val(),
+            message: $("#message").val()
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "/send-email",
+            contentType: "application/json",
+            data: JSON.stringify(emailData),
+            success: function(data) {
+                if (data.success) {
+                    debugger;
+                    $("#successMessage").show();
+                    $("#errorMessage").hide();
+                    alert("תודה על ההודעה שלך")
+                } else {
+                    $("#successMessage").hide();
+                    $("#errorMessage").show();
+                }
+            },
+            error: function(error) {
+                $("#errorMessage").show();
+            }
+        });
+    });
+
+});

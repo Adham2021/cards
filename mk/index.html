@@ -503,6 +503,31 @@
     <button class="slider-button next" onclick="changeSlide(1)">&#9655;</button>
 </div>
  -->
+<div class="contact-form-details">
+ <h3 class="translatable" data-lang-hebrew="השאירו פרטים ונחזור אליכם" data-lang-arabic="سجلوا تفاصيلكم وسنعود اليكم"
+ data-lang-english="Contact Us">
+</h3>
+</div>
+<div id="successMessage" class="message success translatable" style="display: none;" 
+         data-lang-arabic="شكرا لرسالتك" data-lang-hebrew="תודה על ההודעה שלך" data-lang-english="Thank you for your message"></div>
+    
+    <div id="errorMessage" class="message error translatable" style="display: none;" 
+         data-lang-arabic="خطأ أثناء إرسال الرسالة" data-lang-hebrew="שגיאה במשלוח ההודעה" data-lang-english="Error while sending message"></div>
+
+ <form class="contact-form" id="emailForm">
+    <div class="form-group">  
+        <input type="text" id="name" placeholder="Name" class="translatable" data-lang-arabic="الاسم" data-lang-hebrew="שם" required>
+    </div>
+    <div class="form-group">
+        <input type="text" id="phone" placeholder="Phone" class="translatable" data-lang-arabic="رقم الهاتف" data-lang-hebrew="מספר טלפון" required>
+    </div>
+    <div class="form-group">
+        <textarea id="message" rows="4" placeholder="Message"  data-lang-arabic="الرسالة" data-lang-hebrew="הודעה"></textarea>
+    </div>
+    <button type="submit" class="translatable submitButtonContact" data-lang-arabic="إرسال" data-lang-hebrew="שלח"></button>
+</form>
+
+
 
         <div class="share-section">
             <p class="translatable" data-lang-arabic="شارك هذا الكرت :" data-lang-hebrew="שתף את הכרטיס"
