@@ -165,6 +165,12 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'chacour-rabeia', 'index.html'));
   });
 
+  app.use('/mohanad', express.static(path.join(__dirname, 'mohanad')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'mohanad', 'index.html'));
+  });
+
+
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, '404.html'));
 });
