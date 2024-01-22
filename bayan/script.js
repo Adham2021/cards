@@ -359,63 +359,71 @@ $(document).ready(function () {
         }
     });
 
-    var player;
+    var players = {}; // Object to store video players
 
     // Function to open the video dialog
-    function openVideoDialog(videoId) {
-      $("#video-overlay").fadeIn();
-      playVideo(videoId); // Play the video
+    function openVideoDialog(videoId, num) {
+      $("#video-overlay" + num).fadeIn();
+      playVideo(videoId, num); // Play the video
     }
-
+    
     // Function to close the video dialog
-    function closeVideoDialog() {
-      stopVideo(); // Stop the video
-      $("#video-overlay").fadeOut();
+    function closeVideoDialog(num) {
+      stopVideo(num); // Stop the video
+      $("#video-overlay" + num).fadeOut();
     }
-
+    
     // Function to stop the video
-    function stopVideo() {
-      if (player) {
-        player.stopVideo();
+    function stopVideo(num) {
+        if (players[num] && typeof players[num].stopVideo === 'function') {
+          players[num].stopVideo();
+        }
       }
-    }
-
+    
     // Function to play the video
-    function playVideo(videoId) {
-      if (!player) {
-        player = new YT.Player('player', {
+    function playVideo(videoId, num) {
+      if (!players[num]) {
+        players[num] = new YT.Player('player' + num, {
           height: '315',
           width: '560',
           videoId: videoId,
           events: {
-            'onReady': function(event) {
+            'onReady': function (event) {
               event.target.playVideo();
             }
           }
         });
       } else {
-        player.loadVideoById(videoId);
-        player.playVideo();
+        players[num].loadVideoById(videoId);
+        players[num].playVideo();
       }
     }
-
+    
     // Close the video dialog when clicking outside
-    $(document).mouseup(function(e) {
-      var videoDialog = $("#video-overlay .dialog");
-      if (!videoDialog.is(e.target) && videoDialog.has(e.target).length === 0) {
-        closeVideoDialog();
+    $(document).mouseup(function (e) {
+      for (var i = 1; i <= 3; i++) {
+        var videoDialog = $("#video-overlay" + i + " .videoDialog");
+        if (!videoDialog.is(e.target) && videoDialog.has(e.target).length === 0) {
+          closeVideoDialog(i.toString());
+        }
       }
     });
-
+    
     // Event listeners for opening the video dialogs
-    $("#open-video-dialog-1").click(function(e) {
+    $("#open-video-dialog-1").click(function (e) {
       e.preventDefault();
-      openVideoDialog("k-bbDwc3IcI"); // YouTube video ID for the first video
+      openVideoDialog("SMKCy7Dtw88", "1"); // YouTube video ID for the first video
     });
-
-    $("#open-video-dialog-2").click(function(e) {
+    
+    $("#open-video-dialog-2").click(function (e) {
       e.preventDefault();
-      openVideoDialog("k-bbDwc3IcI"); // YouTube video ID for the second video
+      openVideoDialog("k-bbDwc3IcI", "2"); // YouTube video ID for the second video
     });
+    
+    $("#open-video-dialog-3").click(function (e) {
+      e.preventDefault();
+      openVideoDialog("-yfx2R-ouJo", "3"); // YouTube video ID for the third video
+    });
+    
 });
 

@@ -79,7 +79,7 @@ app.post('/send-email', (req, res) => {
                     
                   </div>
                   <div class="footer">
-                    <p>All rights reserved to Eye On Media</p>
+                    <p>All rights reserved to Ionmedia</p>
                     <span class="copyright">&copy; ${new Date().getFullYear()}</span>
                   </div>
                 </body>
@@ -299,7 +299,7 @@ app.listen(port, () => {
                     
 //                   </div>
 //                   <div class="footer">
-//                     <p>All rights reserved to Eye On Media</p>
+//                     <p>All rights reserved to Ionmedia</p>
 //                     <span class="copyright">&copy; ${new Date().getFullYear()}</span>
 //                   </div>
 //                 </body>
