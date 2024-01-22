@@ -540,6 +540,32 @@ margin-top: 0;
     width: 95%;
     margin:0 auto;
     padding: 3px;
-    background-color: rgb(115 61 133 / 50%);
+    background-color: rgb(115 61 133 / 50%); 
     margin-top: 0px;
 }
+
+.toggleBtn:hover {
+background-color: rgb(41 0 55 / 50%);
+}
+
+.centered-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  @keyframes ring {
+    0%, 100% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    75% {
+      transform: scale(1.1);
+    }
+  }
