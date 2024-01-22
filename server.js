@@ -129,6 +129,9 @@ app.get('/style.css', (req, res) => {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'bayan', 'index.html'));
   });
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'bayan', 'style.css'));
+  });
 
   app.use('/dr-sholy', express.static(path.join(__dirname, 'dr-sholy')));
   app.get('/', (req, res) => {
