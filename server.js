@@ -125,6 +125,11 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'am', 'index.html'));
   });
 
+  app.use('/rest', express.static(path.join(__dirname, 'rest')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'rest', 'index.html'));
+  });
+
   app.use('/bayan', express.static(path.join(__dirname, 'bayan')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'bayan', 'index.html'));

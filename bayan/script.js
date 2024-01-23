@@ -427,3 +427,37 @@ $(document).ready(function () {
     
 });
 
+$(document).ready(function() {
+    
+    // Show the modal when the page loads
+    $(".modal-container").fadeIn();
+
+    // Close the modal when clicking the close button
+    $("#closeButton").click(function() {
+        $(".modal-container").fadeOut();
+    });
+
+    // Hide the modal after 3 seconds
+    // setTimeout(function() {
+    //     $(".modal-container").fadeOut();
+    // }, 5000);
+
+    // Skip button functionality
+    $("#skipButton").click(function() {
+        $(".modal-container").fadeOut();
+    });
+
+    // Countdown timer
+    var count = 5; // Adjust the countdown time in seconds
+    var counterElement = $(".counter");
+
+    var countdown = setInterval(function() {
+        count--;
+        if (count <= 0) {
+            clearInterval(countdown);
+            counterElement.text("0");
+        } else {
+            counterElement.text(count);
+        }
+    }, 1000);
+});
