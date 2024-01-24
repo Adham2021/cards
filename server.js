@@ -12,8 +12,8 @@ app.use(bodyParser.json());
 const transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-        user: 'adham.shahwan94@gmail.com', // Your Gmail email address
-        pass: 'qypb goij naqg cfiq', // Your Gmail password (use an app password for security)
+        user: 'ionmedia.me@gmail.com', // Your Gmail email address
+        pass: 'oeqr mieq wnxh wdba', // Your Gmail password (use an app password for security)
     },
 });
 
@@ -22,7 +22,7 @@ app.post('/send-email', (req, res) => {
   const { to, name, phone,message } = req.body;
 
   const mailOptions = {
-    from: 'adham.shahwan94@gmail.com', // Replace with your email address
+    from: 'ionmedia.me@gmail.com', // Replace with your email address
     to: to,
     subject: "ליד חדש מתעניין בשירות שלך",
     html: `
@@ -189,151 +189,3 @@ app.use((req, res, next) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-// const express = require('express');
-// const nodemailer = require('nodemailer');
-// const bodyParser = require('body-parser');
-// const app = express();
-// const PORT = 3000; // You can use any available port
-// const path = require('path');
-
-// // Redirect middleware for www to non-www or vice versa
-// app.use((req, res, next) => {
-//   const host = req.headers.host;
-//   if (host.startsWith('www.')) {
-//     const newHost = host.substring(4); // Remove 'www.' from the beginning
-//     return res.redirect(301, `http://${newHost}${req.url}`);
-//   }
-//   next();
-// });
-
-// // Body parser middleware to parse form data
-// app.use(express.urlencoded({ extended: true }));
-// app.use(express.json());
-
-// app.use(bodyParser.json());
-// app.use(express.static(path.join(__dirname))); // Serve static files
-
-// // Serve your HTML form when accessing the root path
-// app.get('/', (req, res) => {
-//   res.sendFile(path.join(__dirname, 'index.html'));
-// });
-
-// // Serve the root-level style.css file
-// app.get('/style.css', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'style.css'));
-//   });
-// // Serve static assets like CSS files
-// app.use('/assets', express.static(path.join(__dirname, 'assets')));
-
-
-// // Serve your HTML form when accessing the root path
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'mk', 'index.html'));
-//   });
-// app.use((req, res, next) => {
-//   res.status(404).sendFile(path.join(__dirname, '404.html'));
-// });
-
-
-// app.post('/send-email', async (req, res) => {
-//     console.log('Received POST request at /send-email');
-//     try {
-//         const cs1Name = req.body.cs1Name;
-//         const cs1Email = req.body.cs1Email;
-//         const cs1PhoneNum = req.body.cs1PhoneNum
-
-//         // Create a Nodemailer transporter
-//         const transporter = nodemailer.createTransport({
-//             service: 'gmail',
-//             auth: {
-//                 user: 'adham.shahwan94@gmail.com', // Your Gmail email address
-//                 pass: 'qypb goij naqg cfiq', // Your Gmail password (use an app password for security)
-//             },
-//         });
-
-//         // Email options
-//         const mailOptions = {
-//             from: 'adham.shahwan94@gmail.com',
-//             to: 'adham@fit-x.app',
-//             subject: 'ליד חדש מתעניין בשירות שלך',
-//             html: `
-//               <!DOCTYPE html>
-//               <html lang="he" dir="rtl">
-//                 <head>
-//                   <meta charset="UTF-8">
-//                   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-//                   <style>
-//                     body {
-//                       font-family: 'Arial', sans-serif;
-//                       line-height: 1.6;
-//                       margin: 0;
-//                       padding: 20px;
-//                       text-align: center;
-//                       background-color: #f4f4f4;
-//                     }
-//                     .email-container {
-//                       background-color: #fff;
-//                       padding: 20px;
-//                       border-radius: 10px;
-//                       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-//                       text-align: right;
-//                       display: inline-block;
-//                     }
-//                     h2 {
-//                       color: #333;
-//                     }
-//                     p {
-//                       color: #555;
-//                       align-items:center;
-//                     }
-//                     strong {
-//                       color: #000;
-//                       display: block;
-//                     }
-//                     .footer {
-//                       margin-top: 20px;
-//                       color: #777;
-//                     }
-//                     .copyright {
-//                       display: inline-block;
-//                       margin-top: 10px;
-//                     }
-
-//                   </style>
-//                 </head>
-//                 <body>
-//                   <div class="email-container">
-//                     <h2>ליד חדש מתעניין בשירות שלך</h2>
-//                     <p><strong>שם:</strong>${cs1Name}</p>
-//                     <p><strong>מספר טלפון:</strong>${cs1PhoneNum}</p>
-//                     <p><strong>אימייל:</strong>${cs1Email}</p>
-                    
-//                   </div>
-//                   <div class="footer">
-//                     <p>All rights reserved to Ionmedia</p>
-//                     <span class="copyright">&copy; ${new Date().getFullYear()}</span>
-//                   </div>
-//                 </body>
-//               </html>
-//             `,
-//           };
-          
-          
-          
-          
-          
-
-//         // Send the email
-//         const info = await transporter.sendMail(mailOptions);
-
-//         // Respond to the client
-//         res.status(200).send('success');
-//     } catch (error) {
-//         console.error('שגיאה בשליחת נתונים: ', error);
-//         res.status(500).send('שגיאה בשליחת נתונים');
-//     }
-// });
-// // Start the server
-// app.listen(PORT, () => {
-//     console.log(`Server is running on port ${PORT}`);
-// });

@@ -367,18 +367,20 @@
                <div id="errorMessage" class="message error translatable" style="display: none;" 
                     data-lang-arabic="خطأ أثناء إرسال الرسالة" data-lang-hebrew="שגיאה במשלוח ההודעה" data-lang-english="Error while sending message"></div>
            
-            <form class="contact-form" id="emailForm" netlify>
-               <div class="form-group">  
-                   <input type="text" id="name" placeholder="Name" class="translatable" data-lang-arabic="الاسم" data-lang-hebrew="שם" required>
-               </div>
-               <div class="form-group">
-                   <input type="text" id="phone" placeholder="Phone" class="translatable" data-lang-arabic="رقم الهاتف" data-lang-hebrew="מספר טלפון" required>
-               </div>
-               <div class="form-group">
-                   <textarea id="message" rows="4" placeholder="Message"  data-lang-arabic="الرسالة" data-lang-hebrew="הודעה"></textarea>
-               </div>
-               <button type="submit" class="translatable submitButtonContact" data-lang-arabic="إرسال" data-lang-hebrew="שלח"></button>
-           </form>
+                    <form class="contact-form" id="emailForm">
+                        <div class="form-group">  
+                            <input type="text" id="name" placeholder="Name" class="translatable" data-lang-arabic="الاسم" data-lang-hebrew="שם" required>
+                            <div class="error-message" id="name-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="phone" placeholder="Phone" class="translatable" data-lang-arabic="رقم الهاتف" data-lang-hebrew="מספר טלפון" required>
+                            <div class="error-message" id="phone-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="message" rows="4" placeholder="Message"  data-lang-arabic="الرسالة" data-lang-hebrew="הודעה"></textarea>
+                        </div>
+                        <button type="submit" class="translatable submitButtonContact" data-lang-arabic="إرسال" data-lang-hebrew="שלח"></button>
+                     </form>
 
         <div class="share-section">
             <h2 class="translatable" data-lang-arabic="شارك الكرت مع الاصدقاء"
@@ -399,7 +401,7 @@
         </div>
 
     </div>
-    <script src="script.js?v=2.0"></script>
+    <script src="script.js?v=3.0"></script>
     <footer>
         <p>Built with <i class="heart fas fa-heart"></i> by <a href="https://www.ionmedia.me/" target="_blank"
                 class="eyeonmedia"> Ionmedia</a> 2024</p>

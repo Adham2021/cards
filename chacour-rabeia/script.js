@@ -378,15 +378,61 @@ $(document).ready(function () {
 });
 
 $(document).ready(function() {
-    $("#emailForm").submit(function(event) {
+    const form = $("#emailForm");
+    const nameInput = $("#name");
+    const phoneInput = $("#phone");
+    const messageInput = $("#message");
+    const nameError = $("#name-error");
+    const phoneError = $("#phone-error");
+
+    // Use input event to restrict input to numeric values only
+    phoneInput.on("input", function() {
+        // Remove non-numeric characters
+        const phoneNumber = phoneInput.val().replace(/[^0-9]/g, '');
+
+        // Update the input value with the numeric version
+        phoneInput.val(phoneNumber);
+    });
+
+    form.submit(function(event) {
         event.preventDefault();
-        
+        const phoneNumber = phoneInput.val().trim();
+
+        // Get the selected language
+        const selectedLanguage = getLanguage()
+
+        // Define error messages based on the selected language
+        const errorMessages = {
+            english: {
+                phoneLength: "Phone number must be between 7 and 10 digits.",
+                // Add other error messages in English if needed
+            },
+            arabic: {
+                phoneLength: "يجب أن يكون رقم الهاتف بين 7 و 10 أرقام.",
+                // Add other error messages in Arabic if needed
+            },
+            hebrew: {
+                phoneLength: "מספר הטלפון חייב להיות בין 7 ל-10 ספרות.",
+                // Add other error messages in Hebrew if needed
+            },
+        };
+
+        // Check phone number length
+        if (phoneNumber.length < 7 || phoneNumber.length > 10) {
+            phoneError.text(errorMessages[selectedLanguage].phoneLength);
+            return;
+        }
+
+        // Reset error messages
+        phoneError.text("");
+
         const emailData = {
             to: "adham@fit-x.app",
-            name: $("#name").val(),
-            phone: $("#phone").val(),
-            message: $("#message").val()
+            name: nameInput.val(),
+            phone: phoneNumber,
+            message: messageInput.val()
         };
+
         $.ajax({
             type: "POST",
             url: "/send-email",
@@ -396,7 +442,12 @@ $(document).ready(function() {
                 if (data.success) {
                     $("#successMessage").show();
                     $("#errorMessage").hide();
-                    alert("תודה על ההודעה שלך")
+                    alert("תודה על ההודעה שלך");
+
+                    // Clear input fields after successful submission
+                    nameInput.val("");
+                    phoneInput.val("");
+                    messageInput.val("");
                 } else {
                     $("#successMessage").hide();
                     $("#errorMessage").show();
@@ -407,5 +458,13 @@ $(document).ready(function() {
             }
         });
     });
-    
+
+    // Show error messages as the user types
+    nameInput.on("input", function() {
+        nameError.text("");
+    });
+
+    phoneInput.on("input", function() {
+        phoneError.text("");
+    });
 });
