@@ -244,7 +244,19 @@ background-blend-mode: multiply; /* This blends the background color with the im
     background-color: burlywood;
     border-radius: 10%;
 }
+#gallery {
+    display: flex;
+    flex-direction: column;
+  }
 
+  #gallery a:first-child img {
+    width: 90%;
+    margin: 0 20px;
+}
+
+  #gallery a:not(:first-child) {
+    margin-top: 10px; /* Adjust the margin as needed */
+  }
 .about-us h2,
 .reviews h2,
 .share-section h2,

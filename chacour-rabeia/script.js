@@ -167,12 +167,13 @@ function changeLanguage(language, byClickButton = true) {
         english: { flag: "/assets/images/files/flags/united-kingdom.png", text: "English" },
     };
     const selectedLanguage = languageData[language];
-    localStorage.setItem('OranetPreferredLanguage', language);
+    localStorage.setItem('RabeiaPreferredLanguage', language);
     document.getElementById("selected-language").innerText = selectedLanguage.text;
     document.getElementById("language-menu-btn").getElementsByTagName("img")[0].src = selectedLanguage.flag;
 
     // Additional logic to change content or perform actions based on the selected language
     updateContent(language);
+    updatePlaceholders(language)
     updateWorkingHoursStatus()
 
 
@@ -181,7 +182,7 @@ function changeLanguage(language, byClickButton = true) {
     }
 }
 function getLanguage() {
-    return localStorage.getItem('OranetPreferredLanguage') || 'hebrew'; // Default language is Arabic
+    return localStorage.getItem('RabeiaPreferredLanguage') || 'hebrew'; // Default language is Arabic
 }
 function toggleLanguageMenu() {
     var languageMenu = document.getElementById("language-menu");
@@ -211,8 +212,17 @@ function updateContent(language) {
 }
 
 
+function updatePlaceholders(selectedLanguage) {
+    var placeholderKey = 'data-lang-' + selectedLanguage;
+    var placeholderText = $('#name').attr(placeholderKey); // Use .attr() to access the data attribute
+    $('#name').attr('placeholder', placeholderText);
 
+    var placeholderText2 = $('#phone').attr(placeholderKey); // Use .attr() to access the data attribute
+    $('#phone').attr('placeholder', placeholderText2);
 
+    var placeholderText3 = $('#message').attr(placeholderKey); // Use .attr() to access the data attribute
+    $('#message').attr('placeholder', placeholderText3);
+}
 
 
 let currentReviewIndex = 0;
@@ -377,7 +387,6 @@ $(document).ready(function() {
             phone: $("#phone").val(),
             message: $("#message").val()
         };
-
         $.ajax({
             type: "POST",
             url: "/send-email",
@@ -385,7 +394,6 @@ $(document).ready(function() {
             data: JSON.stringify(emailData),
             success: function(data) {
                 if (data.success) {
-                    debugger;
                     $("#successMessage").show();
                     $("#errorMessage").hide();
                     alert("תודה על ההודעה שלך")
@@ -399,5 +407,5 @@ $(document).ready(function() {
             }
         });
     });
-
+    
 });
