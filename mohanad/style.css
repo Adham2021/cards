@@ -4,7 +4,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Cairo', sans-serif;
-    background: url("assets/images/files/background.jpeg")
+    background: url("assets/images/files/background.jpeg");
+    background-color: #515151;
+    background-blend-mode: multiply; /* This blends the background color with the image */
 }
 
 
@@ -26,6 +28,8 @@ body {
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+    background-color: #515151;
+    background-blend-mode: multiply; /* This blends the background color with the image */
 }
 
 .image-container {
@@ -36,15 +40,15 @@ body {
     overflow: hidden;
     display: none;
     transition: max-height 0.5s ease;
-    background-color: black;
+    background-color: white;
     border-radius: 1%;
 }
 
-.toggle-content li{
+.toggle-content li {
     text-align: justify;
     font-weight: bold;
-    color: white;
-    font-size: 15px;
+    color: black;
+    font-size: 20px;
 }
 
 .toggle-content.show {
@@ -58,12 +62,12 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
-    border: 1px solid black;
+    border: 1px solid white;
     border-radius: 5px;
     margin-top: 5px;
     background-color: rgba(225, 194, 95, 0.5) !important;
     transition: background-color 0.3s ease;
-    color: black;
+    color: white;
     font-weight: bold;
     font-size: 15px;
 }
@@ -101,7 +105,7 @@ body {
 .working-hours p
 {
     font-size: 19px;
-    color: black;
+    color: white;
 }
 
 .faq-item label {
@@ -122,19 +126,19 @@ body {
 .faq-item p {
     overflow: hidden;
     transition: height 0.5s ease;
-    background-color: black;
+    background-color: white;
     padding: 10px;
     border-radius: 5px;
     margin-top: 10px;
     height: auto;
-    color: black;
+    color: white;
 
 }
 
 .service-item p {
     overflow: hidden;
     transition: height 0.5s ease;
-    background-color: black;
+    background-color: white;
     padding: 10px;
     margin-top: 10px;
     height: auto;
@@ -248,7 +252,7 @@ body {
 .working-hours h2,
 .faq h2,
 .services h2 {
-    color: black;
+    color: white;
     text-decoration: underline;
    /* font-family: 'Heebo', sans-serif; */;
 }
@@ -257,10 +261,10 @@ body {
     text-align: center; /* Center the text horizontally */
 }
 #working-hours-status span { 
-    color:black
+    color:white
 }
 .text {
-    color: black;
+    color: white;
     opacity: 0.996057;
 }
 
@@ -311,7 +315,7 @@ iframe {
     box-sizing: border-box;
     text-align: center;
     border-radius: 5%;
-    background-color: ghostblack;
+    background-color: ghostwhite;
 }
 
 .slide img {
@@ -355,15 +359,15 @@ iframe {
 }
 
 .profile img {
-    width: 65%;
-    height: 65%;
-    margin-bottom: 0;
+    width: 90%;
+    height: 90%;
+    margin-bottom: -55px;
     border-radius: 0%;
 }
 
 .profile .subtitle{
     font-size: 20px !important;
-    color: black;
+    color: white;
     font-weight: bold !important;
     margin-top: -25px;
     opacity: 0;
@@ -378,12 +382,15 @@ iframe {
     
     font-size: 25px !important;
    /* font-family: 'Heebo', sans-serif; */;
-    color:black;
+    color:white;
     margin-top:-25px
+}
+.profile { 
+    top: -166px;
 }
 .container {
     background: none;
-    box-shadow: 0 -5px 10px rgba(255, 255, 255, 0.8);
+    box-shadow: 0 -5px 10px rgba(137, 139, 6, 0.8);
     
 }
 
@@ -400,7 +407,7 @@ iframe {
 }
 .about-us p {
     font-size: 19px;
-    color: black;
+    color: white;
     animation: slideFromBottom 1.6s ease-out forwards;
 }
 .add-to-contacts {
@@ -436,9 +443,7 @@ iframe {
     color: white;
 }
 .contact-icons {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
-
+    margin-top: -145px;
     gap: 20px;
     max-width: 800px; /* Adjust as needed */
 }
@@ -477,5 +482,5 @@ iframe {
 .icon-text {
     display: block;
     font-weight: bold;
-    color: black;
+    color: white;
 }

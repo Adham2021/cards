@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function shareOn(type) {
     
-    const text = 'כרטיס הביקור הדיגטלי של 5Rooms Kitchens';
+    const text = 'כרטיס הביקור הדיגטלי של מונד חסן | עבודות בנייה ופיתוח';
     const url = window.location.href;
     if (type === 'facebook') {
         const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
@@ -127,9 +127,9 @@ function toggleService(btn) {
 }
 function addToContacts() {
     var contact = {
-        name: "5Rooms Kitchens | מטבחים",
-        phone: "+972508107404",
-        email: ""
+        name: "מוהנד חסן | בנייה ופיתוח",
+        phone: "+972504534181",
+        email: "mohnadhasan.85@gmail.com"
     };
     // create a vcard file
     var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
