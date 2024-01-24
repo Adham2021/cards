@@ -177,6 +177,9 @@ app.get('/style.css', (req, res) => {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'mohanad', 'index.html'));
   });
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'mohanad', 'style.css'));
+  });
 
 
 app.use((req, res, next) => {
