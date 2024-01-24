@@ -19,110 +19,73 @@ const transporter = nodemailer.createTransport({
 
 // Define a route for sending emails
 app.post('/send-email', (req, res) => {
-  const { to, name, phone,message } = req.body;
+  const { to, name, phone,message ,cc} = req.body;
 
   const mailOptions = {
     from: 'ionmedia.me@gmail.com', // Replace with your email address
     to: to,
+    cc:cc,
     subject: "ליד חדש מתעניין בשירות שלך",
     html: `
-    <!DOCTYPE html>
-    <html lang="he" dir="rtl">
-      <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-          body {
-            font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            margin: 0;
-            padding: 20px;
-            text-align: center;
-            background-color: #f4f4f4;
-          }
-          .email-container {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            text-align: right;
-            display: inline-block;
-          }
-          h2 {
-            color: #333;
-          }
-          p {
-            color: #555;
-            align-items:center;
-          }
-          strong {
-            color: #000;
-            display: block;
-          }
-          .footer {
-            margin-top: 20px;
-            color: #777;
-          }
-          .copyright {
-            display: inline-block;
-            margin-top: 10px;
-          }
-          /* Social media icons */
-          .social-icons {
-            margin-top: 20px;
-          }
-          .social-icons a {
-            margin: 0 10px; /* Adjust the spacing between icons */
-          }
-        </style>
-      </head>
-      <body>
-        <div class="email-container">
-          <h2>ליד חדש מתעניין בשירות שלך</h2>
-          <p><strong>שם:</strong>${name}</p>
-          <p><strong>מספר טלפון:</strong>${phone}</p>
-          <p><strong>תוכן:</strong>${message}</p>
-        </div>
-        <div class="footer">
-          <!-- Social media icons with links -->
-          <div class="social-icons">
-            <!-- JavaScript will dynamically add the icons here -->
-          </div>
-          <p>All rights reserved to Ionmedia</p>
-          <span class="copyright">&copy; ${new Date().getFullYear()}</span>
-        </div>
-        
-        <script>
-          // JavaScript to dynamically add social media icons
-          const socialIconsContainer = document.querySelector(".social-icons");
-    
-          // Define your social media URLs
-          const facebookUrl = "https://www.facebook.com/YourCompany";
-          const instagramUrl = "https://www.instagram.com/YourCompany";
-          const linkedinUrl = "https://www.linkedin.com/company/YourCompany";
-    
-          // Create and append social media icons
-          const facebookIcon = document.createElement("a");
-          facebookIcon.href = facebookUrl;
-          facebookIcon.target = "_blank";
-          facebookIcon.innerHTML = '<img src="facebook-icon.png" alt="Facebook">'; // Replace with your Facebook icon image
-          socialIconsContainer.appendChild(facebookIcon);
-    
-          const instagramIcon = document.createElement("a");
-          instagramIcon.href = instagramUrl;
-          instagramIcon.target = "_blank";
-          instagramIcon.innerHTML = '<img src="instagram-icon.png" alt="Instagram">'; // Replace with your Instagram icon image
-          socialIconsContainer.appendChild(instagramIcon);
-    
-          const linkedinIcon = document.createElement("a");
-          linkedinIcon.href = linkedinUrl;
-          linkedinIcon.target = "_blank";
-          linkedinIcon.innerHTML = '<img src="linkedin-icon.png" alt="LinkedIn">'; // Replace with your LinkedIn icon image
-          socialIconsContainer.appendChild(linkedinIcon);
-        </script>
-      </body>
-    </html>
-    `
+              <!DOCTYPE html>
+              <html lang="he" dir="rtl">
+                <head>
+                  <meta charset="UTF-8">
+                  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                  <style>
+                    body {
+                      font-family: 'Arial', sans-serif;
+                      line-height: 1.6;
+                      margin: 0;
+                      padding: 20px;
+                      text-align: center;
+                      background-color: #f4f4f4;
+                    }
+                    .email-container {
+                      background-color: #fff;
+                      padding: 20px;
+                      border-radius: 10px;
+                      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                      text-align: right;
+                      display: inline-block;
+                    }
+                    h2 {
+                      color: #333;
+                    }
+                    p {
+                      color: #555;
+                      align-items:center;
+                    }
+                    strong {
+                      color: #000;
+                      display: block;
+                    }
+                    .footer {
+                      margin-top: 20px;
+                      color: #777;
+                    }
+                    .copyright {
+                      display: inline-block;
+                      margin-top: 10px;
+                    }
+
+                  </style>
+                </head>
+                <body>
+                  <div class="email-container">
+                    <h2>ליד חדש מתעניין בשירות שלך</h2>
+                    <p><strong>שם:</strong>${name}</p>
+                    <p><strong>מספר טלפון:</strong>${phone}</p>
+                    <p><strong>תוכן:</strong>${message}</p>
+                    
+                  </div>
+                  <div class="footer">
+                    <p>All rights reserved to Ionmedia</p>
+                    <span class="copyright">&copy; ${new Date().getFullYear()}</span>
+                  </div>
+                </body>
+              </html>
+            `,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {

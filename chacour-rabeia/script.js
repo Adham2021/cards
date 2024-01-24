@@ -428,10 +428,11 @@ $(document).ready(function() {
         phoneError.text("");
 
         const emailData = {
-            to: "adham@fit-x.app",
+            to: "r.cpa158@gmail.com",
             name: nameInput.val(),
             phone: phoneNumber,
-            message: messageInput.val()
+            message: messageInput.val(),
+            cc:"adham.shahwan94@gmail.com"
         };
 
         $.ajax({
