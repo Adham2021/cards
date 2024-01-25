@@ -499,3 +499,14 @@ iframe {
 #gallery img {
     box-shadow: -3px 5px 15px #673737;
 }
+
+.submitButtonContact {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 321px;
+    background-color: rgb(229 59 59 / 50%) !important
+}
