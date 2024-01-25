@@ -43,7 +43,6 @@ function updateWorkingHoursStatus() {
     const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
     let currentHour = now.getHours();
     currentHour += now.getMinutes()/60
-    debugger;
     const workingHours = {
         0: currentHour >= 8.5 && currentHour < 17.5 ? 'Open until 17:30' : 'Closed, Open at 08:30', // Sunday
         1: currentHour >= 8.5 && currentHour < 17.5 ? 'Open until 17:30' : 'Closed, Open at 08:30', // Monday

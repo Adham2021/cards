@@ -401,7 +401,7 @@ $(document).ready(function () {
     
     // Close the video dialog when clicking outside
     $(document).mouseup(function (e) {
-      for (var i = 1; i <= 3; i++) {
+      for (var i = 1; i <= 4; i++) {
         var videoDialog = $("#video-overlay" + i + " .videoDialog");
         if (!videoDialog.is(e.target) && videoDialog.has(e.target).length === 0) {
           closeVideoDialog(i.toString());
