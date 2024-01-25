@@ -417,13 +417,18 @@ $(document).ready(function () {
     
     $("#open-video-dialog-2").click(function (e) {
       e.preventDefault();
-      openVideoDialog("k-bbDwc3IcI", "2"); // YouTube video ID for the second video
+      openVideoDialog("b6i8bhWo0Fs", "2"); // YouTube video ID for the second video
     });
     
     $("#open-video-dialog-3").click(function (e) {
       e.preventDefault();
       openVideoDialog("-yfx2R-ouJo", "3"); // YouTube video ID for the third video
     });
+
+    $("#open-video-dialog-4").click(function (e) {
+        e.preventDefault();
+        openVideoDialog("wpq6Kk8w8TA", "4"); // YouTube video ID for the third video
+      });
     
 });
 
