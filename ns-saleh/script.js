@@ -135,7 +135,7 @@ function toggleService(btn) {
 function addToContacts() {
     var contact = {
         name: "סאלח אחמד | חלקי חילוף",
-        phone: "+972538297822",
+        phone: "+972532311528",
         email: "Salachahmed007@gmail.com"
     };
     // create a vcard file
