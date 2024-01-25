@@ -182,6 +182,11 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'mohanad', 'style.css'));
   });
 
+  app.use('/ns-saleh', express.static(path.join(__dirname, 'ns-saleh')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'ns-saleh', 'index.html'));
+  });
+
 
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, '404.html'));
