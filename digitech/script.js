@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function shareOn(type) {
     
-    const text = 'כרטיס הביקור הדיגטלי של רואה חשבון שקור רביע';
+    const text = 'כרטיס הביקור הדיגטלי של דיגיטק | חנות סלולר ומעבדת תיקונים ';
     const url = window.location.href;
     if (type === 'facebook') {
         const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;

@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Cairo', sans-serif;    
     background-color: black;
 }
 
@@ -22,12 +22,11 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('assets/images/files/cover.gif');
+    background-image: url('assets/images/files/cover.jpg');
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
-    background-color: #a5998d;
-    background-blend-mode: multiply; 
+
 }
 
 .image-container {
@@ -64,7 +63,7 @@ body {
     border: 1px solid black;
     border-radius: 5px;
     margin-top: 5px;
-    background-color: rgb(253 98 81 / 50%) !important;
+    background-color:rgb(233 220 62 / 50%) !important;
     transition: background-color 0.3s ease;
     color: black;
     font-weight: bold;
@@ -363,11 +362,12 @@ iframe {
 }
 
 .profile img {
-    width: 70%;
-    height: 70%;
+    width: 30%;
+    height: 30%;
     margin-bottom: 0;
-    border-radius: 0%;
+    border-radius: 50%;
     margin-top: -4px;
+    border: 2px solid #B3945C;;
 }
 
 .profile .subtitle{
@@ -395,7 +395,7 @@ iframe {
 }
 .container {
     background: none;
-    box-shadow:0 -5px 10px rgb(139 22 22 / 80%);
+    box-shadow:0 -5px 10px rgb(132 139 70 / 80%);
     
 }
 
@@ -497,16 +497,15 @@ iframe {
 }
 
 #gallery img {
-    box-shadow: -3px 5px 15px #673737;
+    box-shadow: -3px 5px 15px #ffffff;
 }
 
 .submitButtonContact {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: #918e03;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 321px;
-    background-color: rgb(229 59 59 / 50%) !important
 }
