@@ -617,3 +617,7 @@ background-color: rgb(41 0 55 / 50%);
     font-size: 24px;
     margin-bottom: 10px;
 }
+
+.toggle-content.show {
+    max-height: 4000px;
+}

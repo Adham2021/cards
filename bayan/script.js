@@ -127,7 +127,7 @@ function toggleService(btn) {
 }
 function addToContacts() {
     var contact = {
-        name: "مركز بيان للتجميل",
+        name: "Bayan Beauty Center",
         phone: "+972535620105",
         email: ""
     };
@@ -465,4 +465,32 @@ $(document).ready(function() {
             counterElement.text(count);
         }
     }, 1000);
+});
+$(document).ready(function () {
+    const text = "في عيادتنا فقط ازالة التاتو مجانًا";
+
+    const textElement = $("#text-to-type");
+    let charIndex = 0;
+
+    function typeText() {
+        if (charIndex < text.length) {
+            textElement.append(text.charAt(charIndex));
+            charIndex++;
+            setTimeout(typeText, 50); // Adjust the typing speed here (in milliseconds)
+        } else {
+            setTimeout(deleteText, 1500); // Wait for 1 second before deleting
+        }
+    }
+
+    function deleteText() {
+        if (charIndex >= 0) {
+            textElement.text(text.substring(0, charIndex));
+            charIndex--;
+            setTimeout(deleteText, 30); // Adjust the deleting speed here (in milliseconds)
+        } else {
+            setTimeout(typeText, 50); // Wait for 1 second before typing again
+        }
+    }
+
+    typeText(); // Start the typing animation
 });
