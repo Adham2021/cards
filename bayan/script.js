@@ -476,7 +476,7 @@ $(document).ready(function () {
         if (charIndex < text.length) {
             textElement.append(text.charAt(charIndex));
             charIndex++;
-            setTimeout(typeText, 50); // Adjust the typing speed here (in milliseconds)
+            setTimeout(typeText, 100); // Adjust the typing speed here (in milliseconds)
         } else {
             setTimeout(deleteText, 1500); // Wait for 1 second before deleting
         }
@@ -486,9 +486,9 @@ $(document).ready(function () {
         if (charIndex >= 0) {
             textElement.text(text.substring(0, charIndex));
             charIndex--;
-            setTimeout(deleteText, 30); // Adjust the deleting speed here (in milliseconds)
+            setTimeout(deleteText, 100); // Adjust the deleting speed here (in milliseconds)
         } else {
-            setTimeout(typeText, 50); // Wait for 1 second before typing again
+            setTimeout(typeText, 1000); // Wait for 1 second before typing again
         }
     }
 
