@@ -329,6 +329,26 @@ $(document).ready(function() {
     toggleText(); // Start the loop
 });
 
+$(document).ready(function () {
+    const text6 = $('#text6');
+    const text7 = $('#text7');
+
+    const duration = 1000; // Duration for each text display
+
+    function toggleText67() {
+        text6.fadeIn(duration, function () {
+            text6.delay(duration).fadeOut(duration, function () {
+                text7.fadeIn(duration, function () {
+                    text7.delay(duration).fadeOut(duration, function () {
+                        toggleText67(); // Repeat the loop
+                    });
+                });
+            });
+        });
+    }
+
+    toggleText67(); // Start the loop
+});
 
 $(document).ready(function () {
     const addToHomeScreenButton = $('#addToHomeScreenButton');
