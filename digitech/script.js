@@ -135,7 +135,7 @@ function toggleService(btn) {
 function addToContacts() {
     var contact = {
         name: "דיגיטק | שאדי",
-        phone: "+97254690007",
+        phone: "+972546900077",
         email: "digitech2j@gmeil.com"
     };
     // create a vcard file
