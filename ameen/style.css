@@ -3,11 +3,10 @@ body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    font-family: 'Cairo', sans-serif;    
-    background-color: black;
+    font-family: 'Cairo', sans-serif;
+   background: url("assets/images/files/background.jpg");
+
 }
-
-
 
 .cover-photo {
     position: relative;
@@ -26,7 +25,8 @@ body {
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
-
+    background-color: #a5998d;
+    background-blend-mode: multiply; 
 }
 
 .image-container {
@@ -37,7 +37,7 @@ body {
     overflow: hidden;
     display: none;
     transition: max-height 0.5s ease;
-    background-color: rgb(255 255 255 / 75%);
+    background-color: rgb(233 233 233 / 75%);
     border-radius: 1%;
 }
 
@@ -47,6 +47,9 @@ body {
     color: black;
     font-size: 15px;
     padding-top: 5px;
+}
+.whyus li { 
+    font-weight: normal;
 }
 
 .toggle-content.show {
@@ -63,7 +66,7 @@ body {
     border: 1px solid black;
     border-radius: 5px;
     margin-top: 5px;
-    background-color: rgba(179, 148, 92, 0.5) !important;
+    background-color: rgba(57, 113, 188, 0.5) !important;
     transition: background-color 0.3s ease;
     color: black;
     font-weight: bold;
@@ -71,7 +74,7 @@ body {
 }
 
 .toggle-btn:hover {
-    background-color: #c9a400;
+    background-color: #d1e0ff;
 }
 
 .toggle-btn i {
@@ -250,11 +253,13 @@ body {
 .faq h2,
 .services h2 ,
 .contact-form-details h2{
-    color:white;
+    color:#535258;
     text-decoration: underline;
    /* font-family: 'Heebo', sans-serif; */;
 }
-
+.contact-form-details{
+    padding-top: 0;
+}
 .gallery-container {
     text-align: center; /* Center the text horizontally */
 }
@@ -262,7 +267,7 @@ body {
     color:black
 }
 .text {
-    color: white;
+    color: #545359;
     opacity: 0.996057;
 }
 
@@ -325,10 +330,10 @@ iframe {
 
 .slide h3 {
     margin: 5px 0;
-    color:white;
+    color:black;
 }
 .slide p {
-    color:white;
+    color:black;
 }
 
 .stars {
@@ -345,7 +350,7 @@ iframe {
     background: transparent;
     border: none;
     cursor: pointer;
-    color:white;
+    color:rgb(80, 96, 238);
 }
 
 .prev {
@@ -362,17 +367,16 @@ iframe {
 }
 
 .profile img {
-    width: 30%;
-    height: 30%;
+    width: 70%;
+    height: 70%;
     margin-bottom: 0;
-    border-radius: 50%;
+    border-radius: 0%;
     margin-top: -4px;
-    border: 2px solid #B3945C;;
 }
 
 .profile .subtitle{
     font-size: 18px !important;
-    color: white;
+    color: #545359;
     font-weight: bold !important;
     margin-top: -25px;
     opacity: 0;
@@ -391,11 +395,11 @@ iframe {
     
     font-size: 25px !important;
    /* font-family: 'Heebo', sans-serif; */;
-    color:white;
+    color:#545359;
 }
 .container {
     background: none;
-    box-shadow:0 -5px 10px rgb(132 139 70 / 80%);
+    box-shadow:0 -5px 10px rgb(139 22 22 / 80%);
     
 }
 
@@ -405,21 +409,21 @@ iframe {
 }
 
 #scan-icon{
-    background-color: #B3945C;;
+    background-color: #467ce0;;
 }
 #scan-icon i{
     color: white;
 }
 .about-us p {
     font-size: 19px;
-    color: white;
+    color: #535258;
     animation: slideFromBottom 1.6s ease-out forwards;
 }
 .add-to-contacts {
     display: inline-flex;
     align-items: center;
     padding: 10px;
-    background-color: #B3945C;;
+    background-color: #3A72BE;;
     border-radius: 5px;
     border: 2px solid white;
     text-decoration: none;
@@ -449,14 +453,14 @@ iframe {
 }
 .contact-icons {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
+    grid-template-columns: repeat(4, 1fr); /* Create 3 equal-width columns */
 
     gap: 20px;
     max-width: 800px; /* Adjust as needed */
 }
 .contact-icons i
 {
-    color:#B3945C;
+    color:#3A72BE;
 }
 .contact-icons span { 
    /* font-family: 'Heebo', sans-serif; */
@@ -478,7 +482,7 @@ iframe {
     align-items: center;
     width: 50px; /* Adjust the circle size */
     height: 50px; /* Adjust the circle size */
-    border: 1px solid #B3945C; /* Border color */
+    border: 1px solid #3A72BE; /* Border color */
     border-radius: 50%; /* Make it circular */
 }
 
@@ -489,7 +493,7 @@ iframe {
 .icon-text {
     display: block;
     font-weight: bold;
-    color: white;
+    color: #3A72BE;
 }
 .error-message{
     color: red;
@@ -497,15 +501,16 @@ iframe {
 }
 
 #gallery img {
-    box-shadow: -3px 5px 15px #ffffff;
+    box-shadow: -3px 5px 15px #8bb4ff;
 }
 
 .submitButtonContact {
     padding: 10px 20px;
-    background-color: #918e03;
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 321px;
+    background-color:rgb(14 58 157 / 50%) !important;
 }

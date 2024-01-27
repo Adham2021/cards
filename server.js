@@ -191,6 +191,10 @@ app.get('/style.css', (req, res) => {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'digitech', 'index.html'));
   });
+  app.use('/ameen', express.static(path.join(__dirname, 'ameen')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'ameen', 'index.html'));
+  });
 
 
 app.use((req, res, next) => {
