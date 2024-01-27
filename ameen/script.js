@@ -135,7 +135,7 @@ function toggleService(btn) {
 function addToContacts() {
     var contact = {
         name: "המשפץ האמין | עבודות שיפוצים",
-        phone: "+97224834208",
+        phone: "+972524834208",
         email: "hamshptshameen@gmail.com"
     };
     // create a vcard file
