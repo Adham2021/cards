@@ -196,6 +196,11 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'ameen', 'index.html'));
   });
 
+  app.use('/resto', express.static(path.join(__dirname, 'resto')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'resto', 'index.html'));
+  });
+
 
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, '404.html'));

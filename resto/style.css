@@ -1,0 +1,99 @@
+/* Add your custom CSS here */
+.language-selector {
+    text-align: center;
+    padding: 10px;
+}
+
+.menu-category {
+    font-size: 24px;
+    margin: 20px 0;
+}
+
+.menu-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.add-to-cart {
+    text-align: center;
+}
+
+.add-button {
+    width: 100%;
+}
+
+.sticky-cart {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.cart-icon {
+    display: flex;
+    align-items: center;
+}
+
+.cart-icon i {
+    font-size: 24px;
+    margin-right: 5px;
+}
+
+.cart-details .total {
+    margin-right: 10px;
+}
+
+.view-cart {
+    background-color: #ffc107;
+    border: none;
+    color: #333;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-cart:hover {
+    background-color: #ffdb58;
+}
+
+.menu-categories {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.category-button {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.category-button:hover {
+    background-color: #0056b3;
+}
+
+.menu-item {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 48%; /* Adjust the width as needed */
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    margin-right: 1%; /* Add a small gap between meals */
+}
+
+.menu-item img { 
+width: 100%;
+}
