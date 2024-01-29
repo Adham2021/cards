@@ -165,9 +165,10 @@ function changeLanguage(language, byClickButton = true) {
         hebrew: { flag: "/assets/images/files/flags/israel.png", text: "עברית" },
         arabic: { flag: "/assets/images/files/flags/egypt.png", text: "العربية" },
         english: { flag: "/assets/images/files/flags/united-kingdom.png", text: "English" },
+        russian: { flag: "/assets/images/files/flags/russia.png", text: "Русский" },
     };
     const selectedLanguage = languageData[language];
-    localStorage.setItem('RabeiaPreferredLanguage', language);
+    localStorage.setItem('AmeenPreferredLanguage', language);
     document.getElementById("selected-language").innerText = selectedLanguage.text;
     document.getElementById("language-menu-btn").getElementsByTagName("img")[0].src = selectedLanguage.flag;
 
@@ -176,13 +177,20 @@ function changeLanguage(language, byClickButton = true) {
     updatePlaceholders(language)
     updateWorkingHoursStatus()
 
+    if (language === 'russian') {
+        // Set the page direction to LTR for English
+        $('html').attr('dir', 'ltr');
+    } else {
+        // Reset the page direction for Hebrew and Arabic
+        $('html').attr('dir', 'rtl');
+    }
 
     if (byClickButton) {
         toggleLanguageMenu();
     }
 }
 function getLanguage() {
-    return localStorage.getItem('RabeiaPreferredLanguage') || 'hebrew'; // Default language is Arabic
+    return localStorage.getItem('AmeenPreferredLanguage') || 'hebrew'; // Default language is Arabic
 }
 function toggleLanguageMenu() {
     var languageMenu = document.getElementById("language-menu");
@@ -194,11 +202,19 @@ function updateContent(language) {
         $('body').css('font-family', 'Cairo, sans-serif');
         $(".whyus_arabic").show();
         $(".whyus_hebrew").hide();
+        $(".whyus_russian").hide();
     }
     if(language=='hebrew'){
         $('body').css('font-family', 'Heebo, sans-serif');
         $(".whyus_arabic").hide();
         $(".whyus_hebrew").show();
+        $(".whyus_russian").hide();
+    }
+    if(language=='russian') { 
+        $('body').css('font-family', 'Heebo, sans-serif');
+        $(".whyus_arabic").hide();
+        $(".whyus_hebrew").hide();
+        $(".whyus_russian").show();
     }
     const translatableElements = document.querySelectorAll('.translatable');
 
@@ -236,8 +252,13 @@ let intervalId; // Variable to store the interval ID
 
 function changeSlide(direction) {
     currentReviewIndex = (currentReviewIndex + direction + totalSlides) % totalSlides;
+    const selectedLanguage = getLanguage();
 
+    if(selectedLanguage == "russian"){
+        currentReviewIndex = currentReviewIndex*-1
+    }
     const translateValue = currentReviewIndex * 100 + '%';
+
     slider.style.transform = 'translate(' + translateValue + ')';
 }
 
@@ -418,6 +439,10 @@ $(document).ready(function() {
             hebrew: {
                 phoneLength: "מספר הטלפון חייב להיות בין 7 ל-10 ספרות.",
                 // Add other error messages in Hebrew if needed
+            },
+            russian: {
+                phoneLength: "Номер телефона должен содержать от 7 до 10 цифр.",
+                // Add other error messages in Russian if needed
             },
         };
 
