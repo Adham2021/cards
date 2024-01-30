@@ -200,10 +200,11 @@ app.get('/style.css', (req, res) => {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'resto', 'index.html'));
   });
-  app.use('/newionmedia', express.static(path.join(__dirname, 'newionmedia')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'newionmedia', 'index.html'));
-  });
+  app.use('/css', express.static(path.join(__dirname, 'css')));
+  app.use('/fonts', express.static(path.join(__dirname, 'fonts')));
+  app.use('/images', express.static(path.join(__dirname, 'images')));
+  app.use('/js', express.static(path.join(__dirname, 'js')));
+
 
 
 
