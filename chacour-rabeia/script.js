@@ -325,7 +325,7 @@ $(document).ready(function() {
     const text2 = $('#text2');
     const text3 = $('#text3'); // Add text3
 
-    const duration = 1000; // Duration for each text display
+    const duration = 2000; // Duration for each text display
 
     function toggleText() {
         text1.fadeIn(duration, function () {
