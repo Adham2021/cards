@@ -5,7 +5,7 @@ body {
     padding: 0;
     font-family: 'Cairo', sans-serif;
     background: url("assets/images/files/background.jpeg");
-    background-color: #292929;
+    background-color: #437bb3;
 background-blend-mode: multiply; /* This blends the background color with the image */
 }
 
@@ -28,7 +28,7 @@ background-blend-mode: multiply; /* This blends the background color with the im
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
-    background-color: #a5998d;
+    /* background-color: #a5998d; */
     background-blend-mode: multiply; 
 }
 
@@ -510,3 +510,70 @@ iframe {
     color: red;
     font-size: 12px;
 }
+.imageSlide-container {
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+  }
+
+  .imageSlide-slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .imageSlide-slide {
+    min-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .imageSlide-slide img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .imageSlide-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+  }
+
+  .imageSlide-dot {
+    height: 10px;
+    width: 10px;
+    background-color: #bbb;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
+  .imageSlide-dot.active {
+    background-color: #555;
+  }
+
+  .imageSlide-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: gold;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .imageSlide-arrow.left {
+    left: 10px;
+  }
+
+  .imageSlide-arrow.right {
+    right: 10px;
+  }

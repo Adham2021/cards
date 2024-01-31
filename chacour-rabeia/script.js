@@ -469,3 +469,89 @@ $(document).ready(function() {
         phoneError.text("");
     });
 });
+
+
+  $(document).ready(function () {
+    let currentSlide = 0;
+    const $slider = $('.imageSlide-slider');
+    const $slides = $('.imageSlide-slide');
+    const $dotsContainer = $('.imageSlide-dots');
+
+    // Create dots
+    for (let i = 0; i < $slides.length; i++) {
+      const $dot = $('<div class="imageSlide-dot"></div>');
+      $dotsContainer.append($dot);
+
+      // Add click event to each dot
+      $dot.on('click', function () {
+        goToSlide(i);
+      });
+    }
+
+    const $dots = $('.imageSlide-dot');
+
+    // Initial setup
+    updateDots();
+    setInterval(function () {
+        nextSlide();
+      }, 3000);
+
+    function goToSlide(index) {
+      if (index >= 0 && index < $slides.length) {
+        currentSlide = index;
+        updateDots();
+        const translateValue = index * 100 + '%';
+        $slider.css('transform', 'translateX(' + translateValue + ')');
+      }
+    }
+
+    function updateDots() {
+      $dots.each(function (index, dot) {
+        const $dot = $(dot);
+        if (index === currentSlide) {
+          $dot.addClass('active');
+        } else {
+          $dot.removeClass('active');
+        }
+      });
+    }
+
+    window.nextSlide = function () {
+      goToSlide((currentSlide + 1) % $slides.length);
+    };
+
+    window.prevSlide = function () {
+      goToSlide((currentSlide - 1 + $slides.length) % $slides.length);
+    };
+
+    // Touch events
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    $slider.on('touchstart', function (event) {
+      touchStartX = event.touches[0].clientX;
+    });
+
+    $slider.on('touchmove', function (event) {
+      event.preventDefault(); // Prevent the default behavior to enable smooth touch interactions
+    });
+
+    $slider.on('touchend', function (event) {
+      touchEndX = event.changedTouches[0].clientX;
+      handleSwipe();
+    });
+
+    function handleSwipe() {
+      const threshold = 100; // Adjust this value as needed
+      const deltaX = touchEndX - touchStartX;
+
+      if (deltaX > threshold) {
+        // Swipe right
+        prevSlide();
+      } else if (deltaX < -threshold) {
+        // Swipe left
+        nextSlide();
+      }
+    }
+  });
+
