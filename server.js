@@ -205,6 +205,8 @@ app.get('/style.css', (req, res) => {
   app.use('/images', express.static(path.join(__dirname, 'images')));
   app.use('/js', express.static(path.join(__dirname, 'js')));
 
+  app.use('/restoa', express.static(path.join(__dirname, 'restoa')));
+
 
 
 
