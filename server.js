@@ -196,19 +196,7 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'ameen', 'index.html'));
   });
 
-  app.use('/resto', express.static(path.join(__dirname, 'resto')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'resto', 'index.html'));
-  });
-  app.use('/css', express.static(path.join(__dirname, 'css')));
-  app.use('/fonts', express.static(path.join(__dirname, 'fonts')));
-  app.use('/images', express.static(path.join(__dirname, 'images')));
-  app.use('/js', express.static(path.join(__dirname, 'js')));
-
-  app.use('/restoa', express.static(path.join(__dirname, 'restoa')));
-
-
-
+app.use('/break-zone', express.static(path.join(__dirname, 'break-zone')));
 
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, '404.html'));
