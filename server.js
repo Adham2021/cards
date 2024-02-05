@@ -104,7 +104,7 @@ app.post('/send-email', (req, res) => {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
   });
-
+  
   // Serve static assets like CSS files
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.get('/style.css', (req, res) => {
@@ -195,15 +195,15 @@ app.get('/style.css', (req, res) => {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'ameen', 'index.html'));
   });
-
-  app.use('/css', express.static(path.join(__dirname, 'css')));
-  app.use('/fonts', express.static(path.join(__dirname, 'fonts')));
-  app.use('/images', express.static(path.join(__dirname, 'images')));
-  app.use('/js', express.static(path.join(__dirname, 'js')));
+  app.use('/jannah', express.static(path.join(__dirname, 'jannah')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'jannah', 'index.html'));
+  });
 
   app.use('/break-zone', express.static(path.join(__dirname, 'break-zone')));
-
-
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'break-zone', 'index.html'));
+  });
 
 
 app.use((req, res, next) => {
