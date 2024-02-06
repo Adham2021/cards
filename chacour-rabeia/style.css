@@ -4,8 +4,17 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Cairo', sans-serif;
-    /* background: url("https://i.pinimg.com/564x/00/5b/24/005b2408971c294eb50047ce635002e1.jpg"); */
-    background: url("assets/images/files/background2.jpeg");
+    background: url("assets/images/files/background5.jpg"); 
+    /*
+    https://i.pinimg.com/564x/4f/9a/71/4f9a71f384cf1c545129f90abd6e8bd7.jpg
+    https://i.pinimg.com/564x/95/46/eb/9546ebbf864c09462fc6e5ca82dc5028.jpg
+    https://i.pinimg.com/564x/f6/23/2d/f6232deaf9d43ac79fe5f6b296607e1c.jpg
+    https://i.pinimg.com/564x/48/e9/ee/48e9ee9fed70b2573066ad1f797b75a4.jpg
+    https://i.pinimg.com/564x/ad/e7/a7/ade7a78b850145e7afc00349aaeca959.jpg
+    https://i.pinimg.com/564x/3c/26/27/3c2627c6fee863226e7e7465485d205f.jpg
+    https://i.pinimg.com/564x/c6/01/f9/c601f9c72127b653f5dff8c255c5b06b.jpg 
+     */
+    /* background: url("assets/images/files/background2.jpeg"); */
 }
 
 
@@ -419,7 +428,7 @@ iframe {
 }
 
 #scan-icon{
-    background-color: #A67614;;
+    background-color: #cfa653;;
 }
 #scan-icon i{
     color: white;
@@ -433,7 +442,7 @@ iframe {
     display: inline-flex;
     align-items: center;
     padding: 10px;
-    background-color: #A67614;;
+    background-color: #cfa653;;
     border-radius: 5px;
     border: 2px solid white;
     text-decoration: none;
