@@ -505,7 +505,35 @@ textarea {
     width: 321px;
     background-color: rgb(255 240 34 / 50%) !important;
 }
-
+.centered-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  
+  @keyframes ring {
+    0%, 100% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    75% {
+      transform: scale(1.1);
+    }
+  }
+  .text-left
+  {
+    text-align: left !important;
+  }
+  .text-right
+  {
+    text-align: right !important;
+  }
 .contact-form-details{
     text-align: center;
     margin-top: 30px;

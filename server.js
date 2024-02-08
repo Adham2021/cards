@@ -205,6 +205,11 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'break-zone', 'index.html'));
   });
 
+  app.use('/dr-matani', express.static(path.join(__dirname, 'dr-matani')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dr-matani', 'index.html'));
+  });
+
 
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, '404.html'));
