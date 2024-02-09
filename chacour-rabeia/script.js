@@ -102,36 +102,7 @@ function sendWhatsAppMessage(phone) {
     const whatsappApi = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${defaultMessage}`;
     window.open(whatsappApi, '_blank');
 }
-function toggleContent(btn) {
-    // Toggle the 'show' class on the toggle-content div
-    var toggleContent = btn.nextElementSibling;
-    toggleContent.classList.toggle('show');
 
-    // Toggle the icon based on the 'show' class
-    var icon = btn.querySelector('i');
-    if (toggleContent.classList.contains('show')) {
-        icon.classList.remove('fa-plus');
-        icon.classList.add('fa-minus');
-    } else {
-        icon.classList.remove('fa-minus');
-        icon.classList.add('fa-plus');
-    }
-}
-function toggleService(btn) {
-    // Toggle the 'show' class on the toggle-content div
-    var toggleContent = btn.nextElementSibling;
-    toggleContent.classList.toggle('show');
-
-    // Toggle the icon based on the 'show' class
-    var icon = btn.querySelector('i');
-    if (toggleContent.classList.contains('show')) {
-        icon.classList.remove('fa-angle-down');
-        icon.classList.add('fa-angle-up');
-    } else {
-        icon.classList.remove('fa-angle-up');
-        icon.classList.add('fa-angle-down');
-    }
-}
 function addToContacts() {
     var contact = {
         name: "רואה חשבון שקור רביע",
@@ -151,8 +122,12 @@ function addToContacts() {
     newLink.click();
 }
 $(document).ready(function() {
-    $(".toggle-btn").click(function() {
-        $(this).next(".toggle-content").slideToggle("slow");
+    $(".toggle-btn").click(function(e) {
+        e.preventDefault();
+        var scrollPos = $(window).scrollTop();
+$(this).next(".toggle-content").slideToggle("slow",function() {
+    $(window).scrollTop(scrollPos);
+});
         $(this).find("i").toggleClass("fa-angle-down fa-angle-up");
     });
 });
