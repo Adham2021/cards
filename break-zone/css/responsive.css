@@ -2573,12 +2573,18 @@
   .menu-6-price h5, .menu-7-price h5 { font-size: 1.7rem; }
 
   #tabs-nav { margin-bottom: 40px; }
-  .tabs-1 li { display: block; background-color: #f5f5f5; padding: 11px 30px; margin-bottom: 10px; }
+  .tabs-1 li { display: block;
+    background-color: #f5f5f5;
+    padding: 6px 10px 10px 0;
+    margin-bottom: 10px;
+    border: 1px solid #adadad;
+    border-radius: 10px;
+    margin-right: 10px;}
   .tabs-1 li.current { background-color: transparent; }
 
   .tabs-1 li span { position: relative; left: 10px; }
   .tabs-1.ico-55 [class*="flaticon-"]:before, 
-  .tabs-1.co-55 [class*="flaticon-"]:after { font-size: 45px; line-height: 1!important; } 
+  .tabs-1.co-55 [class*="flaticon-"]:after { font-size: 35px; line-height: 1!important; } 
 
   .tabs-1 li h5 { display: inline-block; font-size: 1.4rem; position: relative; top: -4px; margin-top: 0; }
 

@@ -282,7 +282,18 @@ body {
 .rel { 
   position: relative!important; 
 }
+.ItemAdded-top{
+  position: fixed;
+  top: 90px; 
+  left:2%;
+  width: 96%;
+  z-index: 9999999;
+}
 
+
+.alert{
+  display: none;
+}
 /*------------------------------------------*/
 /*  Background Colors
 /*------------------------------------------*/
@@ -430,6 +441,7 @@ a:focus {
 ul {
   margin: 0;
   padding: 0;
+  margin-bottom: 3px;
   list-style: none;
 } 
 
@@ -461,7 +473,6 @@ ul.txt-list {
 /*------------------------------------------*/
 
 .btn {
-  background-color: transparent;
   font-family: 'Oswald', sans-serif;
   color: #fff;
   font-size: 16px;
@@ -469,16 +480,16 @@ ul.txt-list {
   font-weight: 500;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  padding: 13px 32px;
+  padding: 10px 10px;
   border: 1px solid transparent;
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  border-radius: 2px;  
+  border-radius: 10px;
   -webkit-transition: all 400ms ease-in-out;
   -moz-transition: all 400ms ease-in-out;
   -o-transition: all 400ms ease-in-out;
   -ms-transition: all 400ms ease-in-out;
-  transition: all 400ms ease-in-out; 
+  transition: all 400ms ease-in-out;
 }
 
 /*------------------------------------------*/
@@ -489,7 +500,10 @@ ul.txt-list {
   font-size: 15px;
   padding: 13px 26px;
 }
-
+.change-quantity{
+  background-color: transparent;
+  border: none;
+}
 .btn.btn-md {
   font-size: 17px;
   padding: 15px 38px;
@@ -3606,8 +3620,8 @@ span.ico-holder {
 /*------------------------------------------*/ 
 
 #tabs-nav {
-  margin-bottom: 70px;
-  overflow-x: auto;
+  overflow: hidden;
+  position: relative;
 }
 
 .tab-content.current,

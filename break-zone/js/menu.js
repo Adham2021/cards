@@ -336,6 +336,4 @@ jQuery(document).ready(function() {
 		var iconColorAttr = $(this).data('fa-color');
 		return iconColorAttr;
 	});
-
-
 });
