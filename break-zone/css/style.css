@@ -496,6 +496,19 @@ ul.txt-list {
 /*  Button Size
 /*------------------------------------------*/
 
+.mealContentsTable {
+  margin-bottom: 10px;
+  }
+  .seperateContents{
+    font-weight: bold;    
+  }
+.mealContentsTable tr td {
+  text-align: right;
+  padding: 0px 10px;
+}
+.mealContentsTable tr {
+border:none;
+}
 .btn.btn-sm {
   font-size: 15px;
   padding: 13px 26px;
@@ -5935,7 +5948,23 @@ table th {
   max-width: inherit;
   max-height: 60px;
 }
+.cart {
+  display: flex;
+  transition: transform 0.4s ease;
+}
 
+.cart.shake {
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+  20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+.add-toCart{
+  margin-top: 10px;
+}
 .cart-product-desc {
   overflow: hidden;
   padding-right: 20px;

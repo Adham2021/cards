@@ -91,7 +91,7 @@
 	<link href="css/jquery.datetimepicker.min.css" rel="stylesheet">
 
 	<!-- TEMPLATE CSS -->
-	<link href="css/style.css" rel="stylesheet">
+	<link href="css/style.css?v=1.0" rel="stylesheet">
 
 	<!-- RESPONSIVE CSS -->
 	<link href="css/responsive.css" rel="stylesheet">
@@ -135,9 +135,11 @@
 				</div>
 				<!-- YOUR ADDED CODE -->
 				<div class="basket-ico ico-30 mt-4" style="float: left;">
-					<a id="cartIcon">
-						<span class="ico-holder"><span class="flaticon-shopping-bag"></span> <em class="roundpoint"
-								id="items-cart-num">0</em></span>
+					<a id="cart" class="cart" >
+						<span class="ico-holder">
+							<span class="flaticon-shopping-bag"></span> 
+						<em class="roundpoint" id="items-cart-num">0</em>
+					</span>
 					</a>
 				</div>
 
@@ -372,7 +374,7 @@
 										<p class="grey-color"></p>
 
 										<!-- Button -->
-										<a onclick="addToCart(this,10)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,10)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -440,7 +442,7 @@
 										<p class="grey-color"></p>
 
 										<!-- Button -->
-										<a onclick="addToCart(this,20)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -503,13 +505,21 @@
 												</span>
 											</div>
 										</div>
-										<label for="content1-meal2"><input checked type="checkbox"
-												id="content1-meal2">צ'ילי מתוק (تشيلي متوك BBQ)</label><br>
-										<label for="content2-meal2"><input type="checkbox" id="content2-meal2"> צ'ילי
-											בוטנים (تشيلي زبدة فستق)</label><br>
+										<table class="mealContentsTable">
+											<tr>
+												<td class="seperateContents">תוספות (اضافات)</td>
+											  </tr>
+											<tr>
+											  <td><label for="content1-meal2"><input type="checkbox" id="content1-meal2"> צ'ילי מתוק (تشيلي متوك BBQ)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content2-meal2"><input type="checkbox" id="content2-meal2"> צ'ילי בוטנים (تشيلي زبدة فستق)</label></td>
+											</tr>
+										  </table>
+										  
 
 										<!-- Button -->
-										<a onclick="addToCart(this,28)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,28)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -575,7 +585,7 @@
 
 
 										<!-- Button -->
-										<a onclick="addToCart(this,9)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,9)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -640,7 +650,7 @@
 
 
 										<!-- Button -->
-										<a onclick="addToCart(this,15)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,15)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -702,7 +712,7 @@
 
 
 										<!-- Button -->
-										<a onclick="addToCart(this,5)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,5)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 									</div>
@@ -767,7 +777,7 @@
 
 
 										<!-- Button -->
-										<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -831,7 +841,7 @@
 											</div>
 										</div>
 										 <!-- Button -->
-										 <a onclick="addToCart(this,20)" class="btn btn-sm btn-tra-grey yellow-hover">
+										 <a onclick="addToCart(this,20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										   </a>
 
@@ -903,14 +913,29 @@
 											</div>
 											   </div>
 
-										<label for="content1-meal7"><input checked type="checkbox" id="content1-meal7"> חסה (خسة)</label><br>
-										<label for="content2-meal7"><input checked type="checkbox" id="content2-meal7"> שרי (شيري)</label><br>
-										<label for="content3-meal7"><input checked type="checkbox" id="content3-meal7"> רוטב וינינרט (صلصة فينجيرت)</label><br>
-										<label for="content4-meal7"><input checked type="checkbox" id="content4-meal7"> כרוב לבן(ملفوف ابيض)</label><br>
-										<label for="content5-meal7"><input checked type="checkbox" id="content5-meal7"> כרוב אדום (ملفوف احمر)</label><br>
-										<label for="content6-meal7"><input checked type="checkbox" id="content6-meal7"> גבינה בולגרית (جبنة بلغارية)</label><br>
+											   <table class="mealContentsTable">
+												<tr>
+												  <td><label for="content1-meal7"><input checked type="checkbox" id="content1-meal7"> חסה (خسة)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content2-meal7"><input checked type="checkbox" id="content2-meal7"> שרי (شيري)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content3-meal7"><input type="checkbox" id="content3-meal7"> רוטב וינינרט (صلصة فينجيرت)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content4-meal7"><input type="checkbox" id="content4-meal7"> כרוב לבן(ملفوف ابيض)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content5-meal7"><input type="checkbox" id="content5-meal7"> כרוב אדום (ملفوف احمر)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content6-meal7"><input type="checkbox" id="content6-meal7"> גבינה בולגרית (جبنة بلغارية)</label></td>
+												</tr>
+											  </table>
+											  
 										 <!-- Button -->
-										 <a onclick="addToCart(this,8)" class="btn btn-sm btn-tra-grey yellow-hover">
+										 <a onclick="addToCart(this,8)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										   </a>
 
@@ -972,14 +997,29 @@
 					</div>
 					   </div>
 
-				<label for="content1-meal7_1"><input checked type="checkbox" id="content1-meal7_1"> חסה (خسة)</label><br>
-				<label for="content2-meal7_1"><input checked type="checkbox" id="content2-meal7_1"> שרי (شيري)</label><br>
-				<label for="content3-meal7_1"><input checked type="checkbox" id="content3-meal7_1"> רוטב וינינרט (صلصة فينجيرت)</label><br>
-				<label for="content4-meal7_1"><input checked type="checkbox" id="content4-meal7_1"> כרוב לבן(ملفوف ابيض)</label><br>
-				<label for="content5-meal7_1"><input checked type="checkbox" id="content5-meal7_1"> כרוב אדום (ملفوف احمر)</label><br>
-				<label for="content6-meal7_1"><input checked type="checkbox" id="content6-meal7_1"> גבינה בולגרית (جبنة بلغارية)</label><br>
+					   <table class="mealContentsTable">
+						<tr>
+						  <td><label for="content1-meal7_1"><input checked type="checkbox" id="content1-meal7_1"> חסה (خسة)</label></td>
+						</tr>
+						<tr>
+						  <td><label for="content2-meal7_1"><input checked type="checkbox" id="content2-meal7_1"> שרי (شيري)</label></td>
+						</tr>
+						<tr>
+						  <td><label for="content3-meal7_1"><input  type="checkbox" id="content3-meal7_1"> רוטב וינינרט (صلصة فينجيرت)</label></td>
+						</tr>
+						<tr>
+						  <td><label for="content4-meal7_1"><input  type="checkbox" id="content4-meal7_1"> כרוב לבן(ملفوف ابيض)</label></td>
+						</tr>
+						<tr>
+						  <td><label for="content5-meal7_1"><input  type="checkbox" id="content5-meal7_1"> כרוב אדום (ملفوف احمر)</label></td>
+						</tr>
+						<tr>
+						  <td><label for="content6-meal7_1"><input  type="checkbox" id="content6-meal7_1"> גבינה בולגרית (جبنة بلغارية)</label></td>
+						</tr>
+					  </table>
+					  
 				 <!-- Button -->
-				 <a onclick="addToCart(this,20)" class="btn btn-sm btn-tra-grey yellow-hover">
+				 <a onclick="addToCart(this,20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 					<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 				   </a>
 
@@ -1040,20 +1080,45 @@
 			</div>
 		</div>
 		
-		<label for="content1-meal8"><input checked type="checkbox" id="content1-meal8"> מלפפון (خيار)</label><br>
-		<label for="content2-meal8"><input checked type="checkbox" id="content2-meal8"> עגבניה (شيري)</label><br>
-		<label for="content3-meal8"><input checked type="checkbox" id="content3-meal8"> חסה (خس)</label><br>
-		<label for="content4-meal8"><input checked type="checkbox" id="content4-meal8"> גמבה (فلفل حلوة)</label><br>
-		<label for="content5-meal8"><input checked type="checkbox" id="content5-meal8"> זיתי קלמטה (زيتون كلاماطه)</label><br>
-		<label for="content6-meal8"><input checked type="checkbox" id="content6-meal8"> כרוב אדום (ملفوف احمر)</label><br>
-		<label for="content7-meal8"><input checked type="checkbox" id="content7-meal8"> גבינת פטה (جبنة بلغارية)</label><br>
-		<label for="content8-meal8"><input checked type="checkbox" id="content8-meal8"> שמן זית (زيت زيتون)</label><br>
-		<label for="content9-meal8"><input checked type="checkbox" id="content9-meal8"> לימון (حامض)</label><br>
-		<label for="content10-meal8"><input checked type="checkbox" id="content10-meal8"> סומק (سماق)</label><br>
-		<label for="content11-meal8"><input checked type="checkbox" id="content11-meal8"> זעתר (زعتر)</label><br>
+		<table class="mealContentsTable">
+			<tr>
+			  <td><label for="content1-meal8"><input checked type="checkbox" id="content1-meal8"> מלפפון (خيار)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content2-meal8"><input checked type="checkbox" id="content2-meal8"> עגבניה (شيري)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content3-meal8"><input checked type="checkbox" id="content3-meal8"> חסה (خس)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content4-meal8"><input type="checkbox" id="content4-meal8"> גמבה (فلفل حلوة)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content5-meal8"><input type="checkbox" id="content5-meal8"> זיתי קלמטה (زيتون كلاماطه)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content6-meal8"><input type="checkbox" id="content6-meal8"> כרוב אדום (ملفوف احمر)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content7-meal8"><input type="checkbox" id="content7-meal8"> גבינת פטה (جبنة بلغارية)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content8-meal8"><input type="checkbox" id="content8-meal8"> שמן זית (زيت زيتون)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content9-meal8"><input type="checkbox" id="content9-meal8"> לימון (حامض)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content10-meal8"><input type="checkbox" id="content10-meal8"> סומק (سماق)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content11-meal8"><input type="checkbox" id="content11-meal8"> זעתר (زعتر)</label></td>
+			</tr>
+		  </table>
+		  
 
 		<!-- Button -->
-		<a onclick="addToCart(this,28)" class="btn btn-sm btn-tra-grey yellow-hover">
+		<a onclick="addToCart(this,28)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 			<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 		</a>
 
@@ -1115,21 +1180,48 @@
 			</div>
 		</div>
 
-		<label for="content0-meal9"><input checked type="checkbox" id="content0-meal9"> עגבנייה (بندورة)</label><br>
-		<label for="content1-meal9"><input checked type="checkbox" id="content1-meal9"> מלפפון (خيار)</label><br>
-		<label for="content2-meal9"><input checked type="checkbox" id="content2-meal9"> שירי (شيري)</label><br>
-		<label for="content3-meal9"><input checked type="checkbox" id="content3-meal9"> חסה (خس)</label><br>
-		<label for="content4-meal9"><input checked type="checkbox" id="content4-meal9"> גמבה (فلفل حلوة)</label><br>
-		<label for="content5-meal9"><input checked type="checkbox" id="content5-meal9"> זיתי קלמטה (زيتون كلاماطه)</label><br>
-		<label for="content6-meal9"><input checked type="checkbox" id="content6-meal9"> מאצ'וס  (خبز مقلي)</label><br>
-		<label for="content7-meal9"><input checked type="checkbox" id="content7-meal9"> גבינת פטה (جبنة بلغارية)</label><br>
-		<label for="content8-meal9"><input checked type="checkbox" id="content8-meal9"> שמן זית (زيت زيتون)</label><br>
-		<label for="content9-meal9"><input checked type="checkbox" id="content9-meal9"> לימון (حامض)</label><br>
-		<label for="content10-meal9"><input checked type="checkbox" id="content10-meal9"> סומק (سماق)</label><br>
-		<label for="content11-meal9"><input checked type="checkbox" id="content11-meal9"> שומשום (سمسم)</label><br>
+		<table class="mealContentsTable">
+			<tr>
+			  <td><label for="content0-meal9"><input checked type="checkbox" id="content0-meal9"> עגבנייה (بندورة)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content1-meal9"><input checked type="checkbox" id="content1-meal9"> מלפפון (خيار)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content2-meal9"><input checked type="checkbox" id="content2-meal9"> שירי (شيري)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content3-meal9"><input checked type="checkbox" id="content3-meal9"> חסה (خس)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content4-meal9"><input type="checkbox" id="content4-meal9"> גמבה (فلفل حلوة)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content5-meal9"><input type="checkbox" id="content5-meal9"> זיתי קלמטה (زيتون كلاماطه)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content6-meal9"><input type="checkbox" id="content6-meal9"> מאצ'וס  (خبز مقلي)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content7-meal9"><input type="checkbox" id="content7-meal9"> גבינת פטה (جبنة بلغارية)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content8-meal9"><input type="checkbox" id="content8-meal9"> שמן זית (زيت زيتون)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content9-meal9"><input type="checkbox" id="content9-meal9"> לימון (حامض)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content10-meal9"><input type="checkbox" id="content10-meal9"> סומק (سماق)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content11-meal9"><input type="checkbox" id="content11-meal9"> שומשום (سمسم)</label></td>
+			</tr>
+		  </table>
+		  
 
 		<!-- Button -->
-		<a onclick="addToCart(this,30)" class="btn btn-sm btn-tra-grey yellow-hover">
+		<a onclick="addToCart(this,30)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 			<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 		</a>
 
@@ -1191,16 +1283,33 @@
 			</div>
 		</div>
 
-		<label for="content1-meal10"><input checked type="checkbox" id="content1-meal10"> שירי (شيري)</label><br>
-		<label for="content2-meal10"><input checked type="checkbox" id="content2-meal10"> חסה (خس)</label><br>
-		<label for="content3-meal10"><input checked type="checkbox" id="content3-meal10"> גזר (جزر)</label><br>
-		<label for="content4-meal10"><input checked type="checkbox" id="content4-meal10"> גרעינים (بزر)</label><br>
-		<label for="content5-meal10"><input checked type="checkbox" id="content5-meal10"> רוטב וינינרט (صلصة فينجيرت)</label><br>
-		<label for="content6-meal10"><input checked type="checkbox" id="content6-meal10"> כרוב לבן(ملفوف ابيض)</label><br>
-		<label for="content7-meal10"><input checked type="checkbox" id="content7-meal10"> כרוב אדום (ملفوف احمر)</label><br>
+		<table class="mealContentsTable">
+			<tr>
+			  <td><label for="content1-meal10"><input checked type="checkbox" id="content1-meal10"> שירי (شيري)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content2-meal10"><input checked type="checkbox" id="content2-meal10"> חסה (خس)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content3-meal10"><input type="checkbox" id="content3-meal10"> גזר (جزر)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content4-meal10"><input type="checkbox" id="content4-meal10"> גרעינים (بزر)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content5-meal10"><input type="checkbox" id="content5-meal10"> רוטב וינינרט (صلصة فينجيرت)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content6-meal10"><input type="checkbox" id="content6-meal10"> כרוב לבן(ملفوف ابيض)</label></td>
+			</tr>
+			<tr>
+			  <td><label for="content7-meal10"><input type="checkbox" id="content7-meal10"> כרוב אדום (ملفوف احمر)</label></td>
+			</tr>
+		  </table>
+		  
 
 		<!-- Button -->
-		<a onclick="addToCart(this,34)" class="btn btn-sm btn-tra-grey yellow-hover">
+		<a onclick="addToCart(this,34)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 			<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 		</a>
 
@@ -1262,17 +1371,42 @@
 	</div>
 </div>
 
-<label for="content1-meal11"><input checked type="checkbox" id="content1-meal11"> שירי (شيري)</label><br>
-<label for="content2-meal11"><input checked type="checkbox" id="content2-meal11"> חסה (خس)</label><br>
-<label for="content3-meal11"><input checked type="checkbox" id="content3-meal11"> גזר (جزر)</label><br>
-<label for="content4-meal11"><input checked type="checkbox" id="content4-meal11"> גרעינים (بزر)</label><br>
-<label for="content5-meal11"><input checked type="checkbox" id="content5-meal11"> רוטב וינינרט (صلصة فينجيرت)</label><br>
-<label for="content6-meal11"><input checked type="checkbox" id="content6-meal11"> כרוב לבן(ملفوف ابيض)</label><br>
-<label for="content7-meal11"><input checked type="checkbox" id="content7-meal11"> כרוב אדום (ملفوف احمر)</label><br>
-<label for="content8-meal11"><input checked type="checkbox" id="content8-meal11"> רוטב צ'לי (صلصة تشيلي)</label><br>
+<table class="mealContentsTable">
+	<tr>
+		<td class="seperateContents">תוספות (اضافات)</td>
+	  </tr>
+	<tr>
+	  <td><label for="content1-meal11"><input checked type="checkbox" id="content1-meal11"> שירי (شيري)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content2-meal11"><input type="checkbox" id="content2-meal11"> חסה (خس)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content3-meal11"><input type="checkbox" id="content3-meal11"> גזר (جزر)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content4-meal11"><input type="checkbox" id="content4-meal11"> גרעינים (بزر)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content5-meal11"><input type="checkbox" id="content5-meal11"> כרוב לבן(ملفوف ابيض)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content6-meal11"><input type="checkbox" id="content6-meal11"> כרוב אדום (ملفوف احمر)</label></td>
+	</tr>
+	<tr>
+	  <td class="seperateContents">רוטבים (الصلصات)</td>
+	</tr>
+	<tr>
+	  <td><label for="content7-meal11"><input type="checkbox" name="sauceMeal_1" id="content7-meal11"> רוטב וינינרט (صلصة فينجيرت)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content8-meal11"><input type="checkbox" name="sauceMeal_1" id="content8-meal11"> רוטב צ'לי (صلصة تشيلي)</label></td>
+	</tr>
+  </table>
+  
 
 <!-- Button -->
-<a onclick="addToCart(this,34)" class="btn btn-sm btn-tra-grey yellow-hover">
+<a onclick="addToCart(this,34)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 	<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 </a>
 
@@ -1334,18 +1468,39 @@
 	</div>
 </div>
 
-<label for="content1-meal12"><input checked type="checkbox" id="content1-meal12"> שירי (شيري)</label><br>
-<label for="content2-meal12"><input checked type="checkbox" id="content2-meal12"> חסה (خس)</label><br>
-<label for="content3-meal12"><input checked type="checkbox" id="content3-meal12"> גזר (جزر)</label><br>
-<label for="content4-meal12"><input checked type="checkbox" id="content4-meal12"> שומשום (سمسم)</label><br>
-<label for="content5-meal12"><input checked type="checkbox" id="content5-meal12"> רוטב וינינרט (صلصة فينجيرت)</label><br>
-<label for="content6-meal12"><input checked type="checkbox" id="content6-meal12"> כרוב לבן(ملفوف ابيض)</label><br>
-<label for="content7-meal12"><input checked type="checkbox" id="content7-meal12"> כרוב אדום (ملفوف احمر)</label><br>
-<label for="content8-meal12"><input checked type="checkbox" id="content8-meal12"> חמאת שום (زبدة ثوم)</label><br>
-<label for="content9-meal12"><input checked type="checkbox" id="content9-meal12"> גבינה בולגרית (جبنة بلغارية)</label><br>
+<table class="mealContentsTable">
+	<tr>
+	  <td><label for="content1-meal12"><input checked type="checkbox" id="content1-meal12"> שירי (شيري)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content2-meal12"><input checked type="checkbox" id="content2-meal12"> חסה (خس)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content3-meal12"><input type="checkbox" id="content3-meal12"> גזר (جزر)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content4-meal12"><input type="checkbox" id="content4-meal12"> שומשום (سمسم)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content5-meal12"><input type="checkbox" id="content5-meal12"> רוטב וינינרט (صلصة فينجيرت)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content6-meal12"><input type="checkbox" id="content6-meal12"> כרוב לבן(ملفوف ابيض)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content7-meal12"><input type="checkbox" id="content7-meal12"> כרוב אדום (ملفوف احمر)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content8-meal12"><input type="checkbox" id="content8-meal12"> חמאת שום (زبدة ثوم)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content9-meal12"><input type="checkbox" id="content9-meal12"> גבינה בולגרית (جبنة بلغارية)</label></td>
+	</tr>
+  </table>
+  
 
 <!-- Button -->
-<a onclick="addToCart(this,34)" class="btn btn-sm btn-tra-grey yellow-hover">
+<a onclick="addToCart(this,34)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 	<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 </a>
 
@@ -1407,19 +1562,48 @@
 	</div>
 </div>
 
-<label for="content1-meal13"><input checked type="checkbox" id="content1-meal13"> שירי (شيري)</label><br>
-<label for="content2-meal13"><input checked type="checkbox" id="content2-meal13"> חסה (خس)</label><br>
-<label for="content3-meal13"><input checked type="checkbox" id="content3-meal13"> גזר (جزر)</label><br>
-<label for="content4-meal13"><input checked type="checkbox" id="content4-meal13"> פטריות (فطر)</label><br>
-<label for="content5-meal13"><input checked type="checkbox" id="content5-meal13"> רוטב וינינרט (صلصة فينجيرت)</label><br>
-<label for="content6-meal13"><input checked type="checkbox" id="content6-meal13"> כרוב לבן(ملفوف ابيض)</label><br>
-<label for="content7-meal13"><input checked type="checkbox" id="content7-meal13"> כרוב אדום (ملفوف احمر)</label><br>
-<label for="content8-meal13"><input checked type="checkbox" id="content8-meal13"> אגוזי מלך (جوز)</label><br>
-<label for="content9-meal13"><input checked type="checkbox" id="content9-meal13"> רוטב טריאקי (صلصة ترياكي)</label><br>
-<label for="content10-meal13"><input checked type="checkbox" id="content10-meal13"> גרעינים (بزر)</label><br>
+<table class="mealContentsTable">
+	<tr>
+		<td class="seperateContents">תוספות (اضافات)</td>
+	  </tr>
+	<tr>
+	  <td><label for="content1-meal13"><input checked type="checkbox" id="content1-meal13"> שירי (شيري)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content2-meal13"><input checked type="checkbox" id="content2-meal13"> חסה (خس)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content3-meal13"><input checked type="checkbox" id="content3-meal13"> גזר (جزر)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content4-meal13"><input type="checkbox" id="content4-meal13"> פטריות (فطر)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content5-meal13"><input type="checkbox" id="content5-meal13"> כרוב לבן(ملفوف ابيض)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content6-meal13"><input type="checkbox" id="content6-meal13"> כרוב אדום (ملفوف احمر)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content7-meal13"><input type="checkbox" id="content7-meal13"> אגוזי מלך (جوز)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content8-meal13"><input type="checkbox" id="content8-meal13"> גרעינים (بزر)</label></td>
+	</tr>
+	<tr>
+		<td class="seperateContents">רוטבים (الصلصات)</td>
+	  </tr>
+	<tr>
+	  <td><label for="content9-meal13"><input type="checkbox" name="sauceMeal_2" id="content9-meal13"> רוטב טריאקי (صلصة ترياكي)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content10-meal13"><input type="checkbox" name="sauceMeal_2" id="content10-meal13"> רוטב וינינרט (صلصة فينجيرت)</label></td>
+	</tr>
+  </table>
+  
 
 <!-- Button -->
-<a onclick="addToCart(this,40)" class="btn btn-sm btn-tra-grey yellow-hover">
+<a onclick="addToCart(this,40)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 	<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 </a>
 
@@ -1488,15 +1672,37 @@
 	</div>
 </div>
 
-<label for="content1-meal14"><input checked type="checkbox" id="content1-meal14"> רוטב רוזה (صلصة روزه)</label><br>
-<label for="content2-meal14"><input checked type="checkbox" id="content2-meal14"> אלפרידו פטריות (الفريدو فطر)</label><br>
-<label for="content3-meal14"><input checked type="checkbox" id="content3-meal14"> רוטב עגבניות (صلصة بندورة)</label><br>
-<label for="content4-meal14"><input checked type="checkbox" id="content4-meal14"> גבינה (جبنة)</label><br>
-<label for="content5-meal14"><input checked type="checkbox" id="content5-meal14"> אורגנו (اورجانو)</label><br>
-<label for="content6-meal14"><input checked type="checkbox" id="content6-meal14">  תוספת עוף +7(إضافة دجاج +7)</label><br>
+
+<table class="mealContentsTable">
+	<tr>
+		<td class="seperateContents">תוספות (اضافات)</td>
+	  </tr>
+	<tr>
+	  <td><label for="content4-meal14"><input checked type="checkbox" id="content4-meal14"> גבינה (جبنة)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content5-meal14"><input  type="checkbox" id="content5-meal14"> אורגנו (اورجانو)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content6-meal14"><input  type="checkbox" id="content6-meal14">  תוספת עוף +7(إضافة دجاج +7)</label></td>
+	</tr>
+	<tr>
+		<td class="seperateContents">רוטבים (الصلصات)</td>
+	  </tr>
+	<tr>
+	  <td><label for="content1-meal14"><input  type="checkbox" name="sauceMeal_3" id="content1-meal14"> רוטב רוזה (صلصة روزه)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content2-meal14"><input  type="checkbox" name="sauceMeal_3" id="content2-meal14"> אלפרידו פטריות (الفريدو فطر)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content3-meal14"><input  type="checkbox" name="sauceMeal_3" id="content3-meal14"> רוטב עגבניות (صلصة بندورة)</label></td>
+	</tr>
+  </table>
+  
 
 <!-- Button -->
-<a onclick="addToCart(this,48)" class="btn btn-sm btn-tra-grey yellow-hover">
+<a onclick="addToCart(this,48)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 	<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 </a>
 
@@ -1555,15 +1761,35 @@
 	</div>
 </div>
 
-<label for="content1-meal45"><input checked type="checkbox" id="content1-meal45"> רוטב רוזה (صلصة روزه)</label><br>
-<label for="content2-meal45"><input checked type="checkbox" id="content2-meal45"> אלפרידו פטריות (الفريدو فطر)</label><br>
-<label for="content3-meal45"><input checked type="checkbox" id="content3-meal45"> רוטב עגבניות (صلصة بندورة)</label><br>
-<label for="content4-meal45"><input checked type="checkbox" id="content4-meal45"> גבינה (جبنة)</label><br>
-<label for="content5-meal45"><input checked type="checkbox" id="content5-meal45"> אורגנו (اورجانو)</label><br>
-<label for="content6-meal45"><input checked type="checkbox" id="content6-meal45">  תוספת עוף +7(إضافة دجاج +7)</label><br>
+<table class="mealContentsTable">
+	<tr>
+		<td class="seperateContents">תוספות (اضافات)</td>
+	  </tr>
+	<tr>
+	  <td><label for="content4-meal45"><input checked type="checkbox" id="content4-meal45"> גבינה (جبنة)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content5-meal45"><input  type="checkbox" id="content5-meal45"> אורגנו (اورجانو)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content6-meal45"><input  type="checkbox" id="content6-meal45">  תוספת עוף +7(إضافة دجاج +7)</label></td>
+	</tr>
+	<tr>
+		<td class="seperateContents">רוטבים (الصلصات)</td>
+	  </tr>
+	<tr>
+	  <td><label for="content1-meal45"><input  type="checkbox" name="sauceMeal_4" id="content1-meal45"> רוטב רוזה (صلصة روزه)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content2-meal45"><input  type="checkbox" name="sauceMeal_4" id="content2-meal45"> אלפרידו פטריות (الفريدو فطر)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content3-meal45"><input  type="checkbox" name="sauceMeal_4" id="content3-meal45"> רוטב עגבניות (صلصة بندورة)</label></td>
+	</tr>
+  </table>
 
 <!-- Button -->
-<a onclick="addToCart(this,48)" class="btn btn-sm btn-tra-grey yellow-hover">
+<a onclick="addToCart(this,48)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 	<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 </a>
 
@@ -1625,15 +1851,35 @@
 	</div>
 </div>
 
-<label for="content1-meal15"><input checked type="checkbox" id="content1-meal15"> רוטב רוזה (صلصة روزه)</label><br>
-<label for="content2-meal15"><input checked type="checkbox" id="content2-meal15"> אלפרידו פטריות (الفريدو فطر)</label><br>
-<label for="content3-meal15"><input checked type="checkbox" id="content3-meal15"> רוטב עגבניות (صلصة بندورة)</label><br>
-<label for="content4-meal15"><input checked type="checkbox" id="content4-meal15"> גבינה (جبنة)</label><br>
-<label for="content5-meal15"><input checked type="checkbox" id="content5-meal15"> אורגנו (اورجانو)</label><br>
-<label for="content6-meal15"><input checked type="checkbox" id="content6-meal15">  תוספת עוף +7(إضافة دجاج +7)</label><br>
+<table class="mealContentsTable">
+	<tr>
+		<td class="seperateContents">תוספות (اضافات)</td>
+	  </tr>
+	<tr>
+	  <td><label for="content4-meal15"><input checked type="checkbox" id="content4-meal15"> גבינה (جبنة)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content5-meal15"><input  type="checkbox" id="content5-meal15"> אורגנו (اورجانو)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content6-meal15"><input  type="checkbox" id="content6-meal15">  תוספת עוף +7(إضافة دجاج +7)</label></td>
+	</tr>
+	<tr>
+		<td class="seperateContents">רוטבים (الصلصات)</td>
+	  </tr>
+	<tr>
+	  <td><label for="content1-meal15"><input  type="checkbox" name="sauceMeal_5" id="content1-meal15"> רוטב רוזה (صلصة روزه)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content2-meal15"><input  type="checkbox" name="sauceMeal_5" id="content2-meal15"> אלפרידו פטריות (الفريدو فطر)</label></td>
+	</tr>
+	<tr>
+	  <td><label for="content3-meal15"><input  type="checkbox" name="sauceMeal_5" id="content3-meal15"> רוטב עגבניות (صلصة بندورة)</label></td>
+	</tr>
+  </table>
 
 <!-- Button -->
-<a onclick="addToCart(this,42)" class="btn btn-sm btn-tra-grey yellow-hover">
+<a onclick="addToCart(this,42)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 	<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 </a>
 
@@ -1706,10 +1952,10 @@
 									</div>
 								</div>
 								
-								<label for="content1-meal16"><input checked type="checkbox" id="content1-meal16"> הוספת צ'יפס +7 (اضافة شيبس +7)</label><br>
+								<label for="content1-meal16"><input checked type="checkbox" id="content1-meal16" data-price="7"> הוספת צ'יפס +7 (اضافة شيبس +7)</label><br>
 								
 								<!-- Button -->
-								<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover">
+								<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 									<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 								</a>
 
@@ -1769,10 +2015,10 @@
 									</div>
 								</div>
 								
-								<label for="content1-meal17"><input  type="checkbox" id="content1-meal17"> הוספת צ'יפס +7 (اضافة شيبس +7)</label><br>
+								<label for="content1-meal17"><input  type="checkbox" id="content1-meal17" data-price="7"> הוספת צ'יפס +7 (اضافة شيبس +7)</label><br>
 								
 								<!-- Button -->
-								<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover">
+								<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 									<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 								</a>
 
@@ -1842,15 +2088,30 @@
 		</div>
 	</div>
 	
-	<label for="content1-meal18"><input checked type="checkbox" id="content1-meal18"> חומוס (حمص)</label><br>
-	<label for="content2-meal18"><input checked type="checkbox" id="content2-meal18"> חסה (خسة)</label><br>
-	<label for="content3-meal18"><input checked type="checkbox" id="content3-meal18"> עבניות (بندورة)</label><br>
-	<label for="content4-meal18"><input checked type="checkbox" id="content4-meal18"> מ.חמוץ (مخلل خيار)</label><br>
-	<label for="content5-meal18"><input         type="checkbox" id="content5-meal18" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label><br>
-	<label for="content6-meal18"><input         type="checkbox" id="content6-meal18" data-price="7"> הוספת צ'יפס +7 (اضافة شيبس +7)</label><br>
+	<table class="mealContentsTable">
+		<tr>
+		  <td><label for="content1-meal18"><input checked type="checkbox" id="content1-meal18"> חומוס (حمص)</label></td>
+		</tr>
+		<tr>
+		  <td><label for="content2-meal18"><input checked type="checkbox" id="content2-meal18"> חסה (خسة)</label></td>
+		</tr>
+		<tr>
+		  <td><label for="content3-meal18"><input checked type="checkbox" id="content3-meal18"> עבניות (بندورة)</label></td>
+		</tr>
+		<tr>
+		  <td><label for="content4-meal18"><input checked type="checkbox" id="content4-meal18"> מ.חמוץ (مخلل خيار)</label></td>
+		</tr>
+		<tr>
+		  <td><label for="content5-meal18"><input type="checkbox" id="content5-meal18" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label></td>
+		</tr>
+		<tr>
+		  <td><label for="content6-meal18"><input type="checkbox" id="content6-meal18" data-price="7"> הוספת צ'יפס +7 (اضافة شيبس +7)</label></td>
+		</tr>
+	  </table>
+	  
 	
 	<!-- Button -->
-	<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover">
+	<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 		<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 	</a>
 
@@ -1911,15 +2172,30 @@
 											</div>
 										</div>
 										
-										<label for="content1-meal19"><input checked type="checkbox" id="content1-meal19"> חומוס (حمص)</label><br>
-										<label for="content2-meal19"><input checked type="checkbox" id="content2-meal19"> חסה (خسة)</label><br>
-										<label for="content3-meal19"><input checked type="checkbox" id="content3-meal19"> עבניות (بندورة)</label><br>
-										<label for="content4-meal19"><input checked type="checkbox" id="content4-meal19"> מ.חמוץ (مخلل خيار)</label><br>
-										<label for="content5-meal19"><input         type="checkbox" id="content5-meal19" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label><br>
-										<label for="content6-meal19"><input         type="checkbox" id="content6-meal19" data-price="7"> הוספת צ'יפס +7 (اضافة شيبس +7)</label><br>
+										<table class="mealContentsTable">
+											<tr>
+											  <td><label for="content1-meal19"><input checked type="checkbox" id="content1-meal19"> חומוס (حمص)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content2-meal19"><input checked type="checkbox" id="content2-meal19"> חסה (خسة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content3-meal19"><input checked type="checkbox" id="content3-meal19"> עבניות (بندورة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content4-meal19"><input checked type="checkbox" id="content4-meal19"> מ.חמוץ (مخلل خيار)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content5-meal19"><input type="checkbox" id="content5-meal19" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content6-meal19"><input type="checkbox" id="content6-meal19" data-price="7"> הוספת צ'יפס +7 (اضافة شيبس +7)</label></td>
+											</tr>
+										  </table>
+										  
 										
 										<!-- Button -->
-										<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -1980,15 +2256,30 @@
 											</div>
 										</div>
 										
-										<label for="content1-meal20"><input checked type="checkbox" id="content1-meal20"> חומוס (حمص)</label><br>
-										<label for="content2-meal20"><input checked type="checkbox" id="content2-meal20"> חסה (خسة)</label><br>
-										<label for="content3-meal20"><input checked type="checkbox" id="content3-meal20"> עבניות (بندورة)</label><br>
-										<label for="content4-meal20"><input checked type="checkbox" id="content4-meal20"> מ.חמוץ (مخلل خيار)</label><br>
-										<label for="content5-meal20"><input         type="checkbox" id="content5-meal20" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label><br>
-										<label for="content6-meal20"><input         type="checkbox" id="content6-meal20" data-price="7"> הוספת צ'יפס +7 (اضافة شيبس +7)</label><br>
+										<table class="mealContentsTable">
+											<tr>
+											  <td><label for="content1-meal20"><input checked type="checkbox" id="content1-meal20"> חומוס (حمص)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content2-meal20"><input checked type="checkbox" id="content2-meal20"> חסה (خسة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content3-meal20"><input checked type="checkbox" id="content3-meal20"> עבניות (بندورة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content4-meal20"><input checked type="checkbox" id="content4-meal20"> מ.חמוץ (مخلل خيار)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content5-meal20"><input type="checkbox" id="content5-meal20" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content6-meal20"><input type="checkbox" id="content6-meal20" data-price="7"> הוספת צ'יפס +7 (اضافة شيبس +7)</label></td>
+											</tr>
+										  </table>
+										  
 										
 										<!-- Button -->
-										<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -2048,15 +2339,30 @@
 											</div>
 										</div>
 										
-										<label for="content1-meal21"><input checked type="checkbox" id="content1-meal21"> חומוס (حمص)</label><br>
-										<label for="content2-meal21"><input checked type="checkbox" id="content2-meal21"> חסה (خسة)</label><br>
-										<label for="content3-meal21"><input checked type="checkbox" id="content3-meal21"> עבניות (بندورة)</label><br>
-										<label for="content4-meal21"><input checked type="checkbox" id="content4-meal21"> מ.חמוץ (مخلل خيار)</label><br>
-										<label for="content5-meal21"><input         type="checkbox" id="content5-meal21" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label><br>
-										<label for="content6-meal21"><input         type="checkbox" id="content6-meal21" data-price="7"> הוספת צ'יפס +7 (اضافة شيبس +7)</label><br>
+										<table class="mealContentsTable">
+											<tr>
+											  <td><label for="content1-meal21"><input checked type="checkbox" id="content1-meal21"> חומוס (حمص)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content2-meal21"><input checked type="checkbox" id="content2-meal21"> חסה (خسة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content3-meal21"><input checked type="checkbox" id="content3-meal21"> עבניות (بندورة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content4-meal21"><input checked type="checkbox" id="content4-meal21"> מ.חמוץ (مخلل خيار)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content5-meal21"><input type="checkbox" id="content5-meal21" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content6-meal21"><input type="checkbox" id="content6-meal21" data-price="7"> הוספת צ'יפס +7 (اضافة شيبس +7)</label></td>
+											</tr>
+										  </table>
+										  
 										
 										<!-- Button -->
-										<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -2125,20 +2431,33 @@
 											</div>
 										</div>
 										
-										<label for="content1-meal22"><input checked type="checkbox" id="content1-meal22"> חומוס (حمص)</label><br>
-										<label for="content2-meal22"><input checked type="checkbox" id="content2-meal22"> חסה (خسة)</label><br>
-										<label for="content3-meal22"><input checked type="checkbox" id="content3-meal22"> עבניות (بندورة)</label><br>
-										<label for="content4-meal22"><input checked type="checkbox" id="content4-meal22"> מ.חמוץ (مخلل خيار)</label><br>
-										<label for="content5-meal22"><input         type="checkbox" id="content5-meal22" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label><br>										
+										<table class="mealContentsTable">
+											<tr>
+											  <td><label for="content1-meal22"><input checked type="checkbox" id="content1-meal22"> חומוס (حمص)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content2-meal22"><input checked type="checkbox" id="content2-meal22"> חסה (خسة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content3-meal22"><input checked type="checkbox" id="content3-meal22"> עבניות (بندورة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content4-meal22"><input checked type="checkbox" id="content4-meal22"> מ.חמוץ (مخلل خيار)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content5-meal22"><input type="checkbox" id="content5-meal22" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label></td>
+											</tr>
+										  </table>
+																				  
 										
 										<!-- Button -->
-										<a onclick="addToCart(this,33)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,33)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
 
 										<!-- Button -->
-										<!-- <a href="product-single.html" class="btn btn-sm btn-tra-grey yellow-hover">
+										<!-- <a href="product-single.html" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 																	<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 																</a> -->
 
@@ -2201,14 +2520,26 @@
 											</div>
 										</div>
 										
-										<label for="content1-meal23"><input checked type="checkbox" id="content1-meal23"> חומוס (حمص)</label><br>
-										<label for="content2-meal23"><input checked type="checkbox" id="content2-meal23"> חסה (خسة)</label><br>
-										<label for="content3-meal23"><input checked type="checkbox" id="content3-meal23"> עבניות (بندورة)</label><br>
-										<label for="content4-meal23"><input checked type="checkbox" id="content4-meal23"> מ.חמוץ (مخلل خيار)</label><br>
-										<label for="content5-meal23"><input         type="checkbox" id="content5-meal23" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label><br>										
-										
+										<table class="mealContentsTable">
+											<tr>
+											  <td><label for="content1-meal23"><input checked type="checkbox" id="content1-meal23"> חומוס (حمص)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content2-meal23"><input checked type="checkbox" id="content2-meal23"> חסה (خسة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content3-meal23"><input checked type="checkbox" id="content3-meal23"> עבניות (بندورة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content4-meal23"><input checked type="checkbox" id="content4-meal23"> מ.חמוץ (مخلل خيار)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content5-meal23"><input type="checkbox" id="content5-meal23" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label></td>
+											</tr>
+										  </table>
+										  
 										<!-- Button -->
-										<a onclick="addToCart(this,33)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,33)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -2271,14 +2602,26 @@
 											</div>
 										</div>
 										
-										<label for="content1-meal24"><input checked type="checkbox" id="content1-meal24"> חומוס (حمص)</label><br>
-										<label for="content2-meal24"><input checked type="checkbox" id="content2-meal24"> חסה (خسة)</label><br>
-										<label for="content3-meal24"><input checked type="checkbox" id="content3-meal24"> עבניות (بندورة)</label><br>
-										<label for="content4-meal24"><input checked type="checkbox" id="content4-meal24"> מ.חמוץ (مخلل خيار)</label><br>
-										<label for="content5-meal24"><input         type="checkbox" id="content5-meal24" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label><br>										
-										
+										<table class="mealContentsTable">
+											<tr>
+											  <td><label for="content1-meal24"><input checked type="checkbox" id="content1-meal24"> חומוס (حمص)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content2-meal24"><input checked type="checkbox" id="content2-meal24"> חסה (خسة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content3-meal24"><input checked type="checkbox" id="content3-meal24"> עבניות (بندورة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content4-meal24"><input checked type="checkbox" id="content4-meal24"> מ.חמוץ (مخلل خيار)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content5-meal24"><input type="checkbox" id="content5-meal24" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label></td>
+											</tr>
+										  </table>
+										  
 										<!-- Button -->
-										<a onclick="addToCart(this,33)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,33)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -2339,14 +2682,26 @@
 											</div>
 										</div>
 										
-										<label for="content1-meal25"><input checked type="checkbox" id="content1-meal25"> חומוס (حمص)</label><br>
-										<label for="content2-meal25"><input checked type="checkbox" id="content2-meal25"> חסה (خسة)</label><br>
-										<label for="content3-meal25"><input checked type="checkbox" id="content3-meal25"> עבניות (بندورة)</label><br>
-										<label for="content4-meal25"><input checked type="checkbox" id="content4-meal25"> מ.חמוץ (مخلل خيار)</label><br>
-										<label for="content5-meal25"><input         type="checkbox" id="content5-meal25" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label><br>										
-										
+										<table class="mealContentsTable">
+											<tr>
+											  <td><label for="content1-meal25"><input checked type="checkbox" id="content1-meal25"> חומוס (حمص)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content2-meal25"><input checked type="checkbox" id="content2-meal25"> חסה (خسة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content3-meal25"><input checked type="checkbox" id="content3-meal25"> עבניות (بندورة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content4-meal25"><input checked type="checkbox" id="content4-meal25"> מ.חמוץ (مخلل خيار)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content5-meal25"><input type="checkbox" id="content5-meal25" data-price="7"> הוספת כדורי פירה +7 (اضافة كرات بطاطا +7)</label></td>
+											</tr>
+										  </table>
+										  
 										<!-- Button -->
-										<a onclick="addToCart(this,33)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,33)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -2401,6 +2756,7 @@
 
 										<!-- Title -->
 										<h5 class="h5-sm">סטיק עוף | ستيك دجاج</h5>
+										<h6> מוגש עם סלט הבית ותוספת חמה</h6>
 										<div style="margin-top: 5px;">
 											<label for="quantity-meal26" style="margin-right: 5px;"></label>
 											<div style="display: inline-block;">
@@ -2414,12 +2770,28 @@
 												</span>
 											</div>
 										</div>
-										<!-- Description -->
-										<p class="grey-color">*מוגש עם תוספת חמה</p>
+										
+										<table class="mealContentsTable">
+											<tr>
+												<td class="seperateContents">בחר תוספת חמה אחת:</td>
+											</tr>
+											<tr>
+												<td><label for="content1-meal26"><input  name="sauceMeal_6" type="checkbox" id="content1-meal26">אורז (أرز) </label></td>
 
+											</tr>
+											<tr>
+												<td><label for="content2-meal26"><input  name="sauceMeal_6" type="checkbox" id="content2-meal26">צ'יפס (شيبس) </label></td>
+
+											</tr>
+											<tr>
+											  <td><label for="content3-meal26"><input  name="sauceMeal_6" type="checkbox" id="content3-meal26">כדורי פירה (كرات البطاطا) </label></td>
+											</tr>
+											
+										  </table>
+										  
 
 										<!-- Button -->
-										<a onclick="addToCart(this,38)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,38)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -2481,7 +2853,7 @@
 										</div>
 										
 										<!-- Button -->
-										<a onclick="addToCart(this,35)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,35)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -2542,7 +2914,7 @@
 										</div>
 										
 										<!-- Button -->
-										<a onclick="addToCart(this,40)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,40)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -2586,7 +2958,7 @@
 
 										<!-- Title -->
 										<h5 class="h5-sm">סקלופיני | اسكالوبيني</h5>
-										<p class="grey-color">*מוגש עם תוספת חמה</p>
+										<h6 class="grey-color">מוגש עם סלט הבית ותוספת חמה</h6>
 
 										<div style="margin-top: 5px;">
 											<label for="quantity-meal29" style="margin-right: 5px;"></label>
@@ -2602,13 +2974,39 @@
 											</div>
 										</div>
 										
-										<label for="content1-meal29"><input checked type="checkbox" id="content1-meal29" disabled> חזה עוף (صدر دجاج)</label><br>
-										<label for="content2-meal29"><input checked type="checkbox" id="content2-meal29"> צ'ילי מתוק (تشيلي متوك)</label><br>
-										<label for="content3-meal29"><input checked type="checkbox" id="content3-meal29"> סויה (سويا)</label><br>
-										<label for="content4-meal29"><input checked type="checkbox" id="content4-meal29"> סומסום (سمسم)</label><br>
 										
+										<table class="mealContentsTable">
+											<tr>
+												<td class="seperateContents">תוספות (اضافات)</td>
+											</tr>
+											  <tr>
+												<td><label for="content1-meal29"><input checked type="checkbox" id="content1-meal29" disabled> חזה עוף (صدر دجاج)</label></td>												
+											 </tr>
+											<tr>
+												<td><label for="content2-meal29"><input  type="checkbox" id="content2-meal29"> צ'ילי מתוק (تشيلي متوك)</label></td>
+											 </tr>
+											 <tr>
+												<td><label for="content3-meal29"><input  type="checkbox" id="content3-meal29"> סויה (سويا)</label></td>
+											  </tr>
+											<tr>
+												<td><label for="content4-meal29"><input  type="checkbox" id="content4-meal29"> סומסום (سمسم)</label></td>
+											</tr>
+											   <tr>
+												<td class="seperateContents">בחר תוספת חמה אחת:</td>
+											 </tr>
+											<tr>
+												<td><label for="content5-meal29"><input  name="sauceMeal_7" type="checkbox" id="content5-meal29">אורז (أرز) </label></td>
+											</tr>
+											<tr>
+												<td><label for="content6-meal29"><input  name="sauceMeal_7" type="checkbox" id="content6-meal29">צ'יפס (شيبس) </label></td>
+											</tr>
+											<tr>
+											  <td><label for="content7-meal29"><input  name="sauceMeal_7" type="checkbox" id="content7-meal29">כדורי פירה (كرات البطاطا) </label></td>
+											</tr>
+											
+										  </table>
 										<!-- Button -->
-										<a onclick="addToCart(this,42)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,42)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -2651,6 +3049,7 @@
 
 										<!-- Title -->
 										<h5 class="h5-sm">סקלופיני אלפרדו פטריות | اسكالبوني الفريدو فطر</h5>
+										<h6 class="grey-color">מוגש עם סלט הבית ותוספת חמה</h6>
 
 										<div style="margin-top: 5px;">
 											<label for="quantity-meal30" style="margin-right: 5px;"></label>
@@ -2666,11 +3065,34 @@
 											</div>
 										</div>
 										
-										<label for="content1-meal30"><input checked type="checkbox" id="content1-meal30" disabled> חזה עוף (صدر دجاج)</label><br>
-										<label for="content2-meal30"><input checked type="checkbox" id="content2-meal30"> רוטב אלפירידו פטריות (صلصة الفريدو فطر)</label><br>
-										
+										<table class="mealContentsTable">
+											<tr>
+												<td class="seperateContents">תוספות (اضافات)</td>
+											</tr>
+											  <tr>
+												<td><label for="content1-meal30"><input checked type="checkbox" id="content1-meal30" disabled> חזה עוף (صدر دجاج)</label></td>
+											</tr>
+											<tr>
+												<td><label for="content2-meal30"><input checked type="checkbox" id="content2-meal30"> רוטב אלפירידו פטריות (صلصة الفريدو فطر)</label></td>
+											</tr>
+											<tr>
+												<td class="seperateContents">בחר תוספת חמה אחת:</td>
+											 </tr>
+											 <tr>
+												<td><label for="content3-meal30"><input  name="sauceMeal_8" type="checkbox" id="content3-meal30">אורז (أرز) </label></td>
+
+											 </tr>
+											 <tr>
+												<td><label for="content4-meal30"><input  name="sauceMeal_8" type="checkbox" id="content4-meal30">צ'יפס (شيبس) </label></td>
+
+											 </tr>
+											<tr>
+											  <td><label for="content5-meal30"><input  name="sauceMeal_8" type="checkbox" id="content5-meal30">כדורי פירה (كرات البطاطا) </label></td>
+											</tr>
+											
+										  </table>
 										<!-- Button -->
-										<a onclick="addToCart(this,50)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,50)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 									</div>
@@ -2713,7 +3135,7 @@
 
 										<!-- Title -->
 										<h5 class="h5-sm">ספישל הזון</h5>
-										<p class="grey-color">*מוגש עם תוספת חמה</p>
+										<h6 class="grey-color">מוגש עם סלט הבית ותוספת חמה</h6>
 
 										<div style="margin-top: 5px;">
 											<label for="quantity-meal31" style="margin-right: 5px;"></label>
@@ -2728,10 +3150,26 @@
 												</span>
 											</div>
 										</div>
-										
+										<table class="mealContentsTable">											
+											 <tr>
+												<td class="seperateContents">בחר תוספת חמה אחת:</td>
+											 </tr>
+											 <tr>
+												<td><label for="content1-meal31"><input  name="sauceMeal_9" type="checkbox" id="content1-meal31">אורז (أرز) </label></td>
+
+											 </tr>
+											 <tr>
+												<td><label for="content2-meal31"><input  name="sauceMeal_9" type="checkbox" id="content2-meal31">צ'יפס (شيبس) </label></td>
+
+											 </tr>
+											<tr>
+											  <td><label for="content3-meal31"><input  name="sauceMeal_9" type="checkbox" id="content3-meal31">כדורי פירה (كرات البطاطا) </label></td>
+											</tr>
+											
+										  </table>
 										
 										<!-- Button -->
-										<a onclick="addToCart(this,55)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,55)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 									</div>
@@ -2788,16 +3226,33 @@
 											</div>
 										</div>
 										
-										<label for="content1-meal31"><input checked type="checkbox" id="content1-meal31"> זיתים ירוקים ( زيتون اخضر)</label><br>
-										<label for="content2-meal31"><input checked type="checkbox" id="content2-meal31"> זיתים שחורים (زيتون اسود)</label><br>
-										<label for="content3-meal31"><input checked type="checkbox" id="content3-meal31"> פטריות (فطر)</label><br>
-										<label for="content4-meal31"><input checked type="checkbox" id="content4-meal31"> תירס (ذرة)</label><br>
-										<label for="content5-meal31"><input checked type="checkbox" id="content5-meal31"> בצל (بصل)</label><br>
-										<label for="content6-meal31"><input checked type="checkbox" id="content6-meal31"> עגניה (بندورة)</label><br>
-										<label for="content7-meal31"><input checked type="checkbox" id="content7-meal31"> רוטב פיצה (صلصة بيتسا)</label><br>
+										<table class="mealContentsTable">
+											<tr>
+											  <td><label for="content1-meal31"><input type="checkbox" id="content1-meal31"> זיתים ירוקים (زيتون اخضر)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content2-meal31"><input type="checkbox" id="content2-meal31"> זיתים שחורים (زيتون اسود)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content3-meal31"><input type="checkbox" id="content3-meal31"> פטריות (فطر)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content4-meal31"><input type="checkbox" id="content4-meal31"> תירס (ذرة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content5-meal31"><input type="checkbox" id="content5-meal31"> בצל (بصل)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content6-meal31"><input type="checkbox" id="content6-meal31"> עגניה (بندورة)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content7-meal31"><input type="checkbox" id="content7-meal31"> רוטב פיצה (صلصة بيتسا)</label></td>
+											</tr>
+										  </table>
+										  
 										
 										<!-- Button -->
-										<a onclick="addToCart(this,28)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,28)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -2856,13 +3311,23 @@
 												</span>
 											</div>
 										</div>
+										<table class="mealContentsTable">
+											<tr>
+												<td class="seperateContents">בחר תוספת חמה אחת:</td>
+											</tr>
+											<tr>
+												<td> <label for="content1-meal32"><input type="checkbox" id="content1-meal32"> צ'ילי מתוק (تشيلي متوك)</label></td>
+											</tr>
+											<tr>
+												<td> <label for="content2-meal32"><input type="checkbox" id="content2-meal32"> צ'ילי בוטנים (تشيلي زبدة الفستق)</label></td>
+											</tr>
+											<tr>
+												<td> <label for="content3-meal32"><input type="checkbox" id="content3-meal32"> BBQ</label></td>
+											</tr>
 										
-										<label for="content1-meal32"><input checked type="checkbox" id="content1-meal32"> צ'ילי מתוק (تشيلي متوك)</label><br>
-										<label for="content2-meal32"><input         type="checkbox" id="content2-meal32"> צ'ילי בוטנים (تشيلي زبدة الفستق)</label><br>
-										<label for="content3-meal32"><input         type="checkbox" id="content3-meal32"> BBQ</label><br>
-										
+										</table>
 										<!-- Button -->
-										<a onclick="addToCart(this,48)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,48)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -2929,19 +3394,42 @@
 												</div>
 											</div>
 											
-											<label for="content1-meal33"><input checked type="checkbox" id="content1-meal33">  בצל ירוק (بصل اخضر)</label><br>
-											<label for="content2-meal33"><input checked type="checkbox" id="content2-meal33">  בוטנים (فستق)</label><br>
-											<label for="content3-meal33"><input checked type="checkbox" id="content3-meal33">  שום (ثوم)</label><br>
-											<label for="content4-meal33"><input checked type="checkbox" id="content4-meal33">  בצל (بصل)</label><br>
-											<label for="content5-meal33"><input checked type="checkbox" id="content5-meal33">  גמבה (فلفل حلو)</label><br>
-											<label for="content6-meal33"><input checked type="checkbox" id="content6-meal33">  כרוב (ملفوف)</label><br>
-											<label for="content7-meal33"><input checked type="checkbox" id="content7-meal33">  גזר (جزر)</label><br>
-											<label for="content8-meal33"><input         type="checkbox" id="content8-meal33">  שעועית (فاصوليا)</label><br>
-											<label for="content9-meal33"><input         type="checkbox" id="content9-meal33">  אפונה (بازيلا)</label><br>
-											<label for="content10-meal33"><input        type="checkbox" id="content10-meal33">  פטריות (فطر)</label><br>
+											<table class="mealContentsTable">
+												<tr>
+												  <td><label for="content1-meal33"><input type="checkbox" id="content1-meal33"> בצל ירוק (بصل اخضر)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content2-meal33"><input type="checkbox" id="content2-meal33"> בוטנים (فستق)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content3-meal33"><input type="checkbox" id="content3-meal33"> שום (ثوم)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content4-meal33"><input type="checkbox" id="content4-meal33"> בצל (بصل)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content5-meal33"><input type="checkbox" id="content5-meal33"> גמבה (فلفل حلو)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content6-meal33"><input type="checkbox" id="content6-meal33"> כרוב (ملفوف)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content7-meal33"><input type="checkbox" id="content7-meal33"> גזר (جزر)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content8-meal33"><input type="checkbox" id="content8-meal33"> שעועית (فاصوليا)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content9-meal33"><input type="checkbox" id="content9-meal33"> אפונה (بازيلا)</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content10-meal33"><input type="checkbox" id="content10-meal33"> פטריות (فطر)</label></td>
+												</tr>
+											  </table>
+											  
 											
 											<!-- Button -->
-											<a onclick="addToCart(this,50)" class="btn btn-sm btn-tra-grey yellow-hover">
+											<a onclick="addToCart(this,50)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 												<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 											</a>
 
@@ -3000,19 +3488,42 @@
 											</div>
 										</div>
 										
-										<label for="content1-meal34"><input checked type="checkbox" id="content1-meal34">  בצל ירוק (بصل اخضر)</label><br>
-										<label for="content2-meal34"><input checked type="checkbox" id="content2-meal34">  בוטנים (فستق)</label><br>
-										<label for="content3-meal34"><input checked type="checkbox" id="content3-meal34">  שום (ثوم)</label><br>
-										<label for="content4-meal34"><input checked type="checkbox" id="content4-meal34">  בצל (بصل)</label><br>
-										<label for="content5-meal34"><input checked type="checkbox" id="content5-meal34">  גמבה (فلفل حلو)</label><br>
-										<label for="content6-meal34"><input checked type="checkbox" id="content6-meal34">  כרוב (ملفوف)</label><br>
-										<label for="content7-meal34"><input checked type="checkbox" id="content7-meal34">  גזר (جزر)</label><br>
-										<label for="content8-meal34"><input         type="checkbox" id="content8-meal34">  שעועית (فاصوليا)</label><br>
-										<label for="content9-meal34"><input         type="checkbox" id="content9-meal34">  אפונה (بازيلا)</label><br>
-										<label for="content10-meal34"><input        type="checkbox" id="content10-meal34">  פטריות (فطر)</label><br>
+										<table class="mealContentsTable">
+											<tr>
+											  <td><label for="content1-meal34"><input type="checkbox" id="content1-meal34"> בצל ירוק (بصل اخضر)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content2-meal34"><input type="checkbox" id="content2-meal34"> בוטנים (فستق)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content3-meal34"><input type="checkbox" id="content3-meal34"> שום (ثوم)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content4-meal34"><input type="checkbox" id="content4-meal34"> בצל (بصل)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content5-meal34"><input type="checkbox" id="content5-meal34"> גמבה (فلفل حلو)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content6-meal34"><input type="checkbox" id="content6-meal34"> כרוב (ملفوف)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content7-meal34"><input type="checkbox" id="content7-meal34"> גזר (جزر)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content8-meal34"><input type="checkbox" id="content8-meal34"> שעועית (فاصوليا)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content9-meal34"><input type="checkbox" id="content9-meal34"> אפונה (بازيلا)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content10-meal34"><input type="checkbox" id="content10-meal34"> פטריות (فطر)</label></td>
+											</tr>
+										  </table>
+										  
 										
 										<!-- Button -->
-										<a onclick="addToCart(this,48)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,48)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -3072,19 +3583,42 @@
 											</div>
 										</div>
 										
-										<label for="content1-meal35"><input checked type="checkbox" id="content1-meal35">  בצל ירוק (بصل اخضر)</label><br>
-										<label for="content2-meal35"><input checked type="checkbox" id="content2-meal35">  בוטנים (فستق)</label><br>
-										<label for="content3-meal35"><input checked type="checkbox" id="content3-meal35">  שום (ثوم)</label><br>
-										<label for="content4-meal35"><input checked type="checkbox" id="content4-meal35">  בצל (بصل)</label><br>
-										<label for="content5-meal35"><input checked type="checkbox" id="content5-meal35">  גמבה (فلفل حلو)</label><br>
-										<label for="content6-meal35"><input checked type="checkbox" id="content6-meal35">  כרוב (ملفوف)</label><br>
-										<label for="content7-meal35"><input checked type="checkbox" id="content7-meal35">  גזר (جزر)</label><br>
-										<label for="content8-meal35"><input         type="checkbox" id="content8-meal35">  שעועית (فاصوليا)</label><br>
-										<label for="content9-meal35"><input         type="checkbox" id="content9-meal35">  אפונה (بازيلا)</label><br>
-										<label for="content10-meal35"><input        type="checkbox" id="content10-meal35">  פטריות (فطر)</label><br>
+										<table class="mealContentsTable">
+											<tr>
+											  <td><label for="content1-meal35"><input type="checkbox" id="content1-meal35"> בצל ירוק (بصل اخضر)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content2-meal35"><input type="checkbox" id="content2-meal35"> בוטנים (فستق)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content3-meal35"><input type="checkbox" id="content3-meal35"> שום (ثوم)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content4-meal35"><input type="checkbox" id="content4-meal35"> בצל (بصل)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content5-meal35"><input type="checkbox" id="content5-meal35"> גמבה (فلفل حلو)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content6-meal35"><input type="checkbox" id="content6-meal35"> כרוב (ملفوف)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content7-meal35"><input type="checkbox" id="content7-meal35"> גזר (جزر)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content8-meal35"><input type="checkbox" id="content8-meal35"> שעועית (فاصوليا)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content9-meal35"><input type="checkbox" id="content9-meal35"> אפונה (بازيلا)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content10-meal35"><input type="checkbox" id="content10-meal35"> פטריות (فطر)</label></td>
+											</tr>
+										  </table>
+										  
 										
 										<!-- Button -->
-										<a onclick="addToCart(this,55)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,55)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -3143,19 +3677,41 @@
 											</div>
 										</div>
 										
-										<label for="content1-meal36"><input checked type="checkbox" id="content1-meal36">  בצל ירוק (بصل اخضر)</label><br>
-										<label for="content2-meal36"><input checked type="checkbox" id="content2-meal36">  בוטנים (فستق)</label><br>
-										<label for="content3-meal36"><input checked type="checkbox" id="content3-meal36">  שום (ثوم)</label><br>
-										<label for="content4-meal36"><input checked type="checkbox" id="content4-meal36">  בצל (بصل)</label><br>
-										<label for="content5-meal36"><input checked type="checkbox" id="content5-meal36">  גמבה (فلفل حلو)</label><br>
-										<label for="content6-meal36"><input checked type="checkbox" id="content6-meal36">  כרוב (ملفوف)</label><br>
-										<label for="content7-meal36"><input checked type="checkbox" id="content7-meal36">  גזר (جزر)</label><br>
-										<label for="content8-meal36"><input         type="checkbox" id="content8-meal36">  שעועית (فاصوليا)</label><br>
-										<label for="content9-meal36"><input         type="checkbox" id="content9-meal36">  אפונה (بازيلا)</label><br>
-										<label for="content10-meal36"><input        type="checkbox" id="content10-meal36">  פטריות (فطر)</label><br>
+										<table class="mealContentsTable">
+											<tr>
+											  <td><label for="content1-meal36"><input type="checkbox" id="content1-meal36"> בצל ירוק (بصل اخضر)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content2-meal36"><input type="checkbox" id="content2-meal36"> בוטנים (فستق)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content3-meal36"><input type="checkbox" id="content3-meal36"> שום (ثوم)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content4-meal36"><input type="checkbox" id="content4-meal36"> בצל (بصل)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content5-meal36"><input type="checkbox" id="content5-meal36"> גמבה (فلفل حلو)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content6-meal36"><input type="checkbox" id="content6-meal36"> כרוב (ملفوف)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content7-meal36"><input type="checkbox" id="content7-meal36"> גזר (جزر)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content8-meal36"><input type="checkbox" id="content8-meal36"> שעועית (فاصوليا)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content9-meal36"><input type="checkbox" id="content9-meal36"> אפונה (بازيلا)</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content10-meal36"><input type="checkbox" id="content10-meal36"> פטריות (فطر)</label></td>
+											</tr>
+										  </table>
 										
 										<!-- Button -->
-										<a onclick="addToCart(this,42)" class="btn btn-sm btn-tra-grey yellow-hover">
+										<a onclick="addToCart(this,42)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 											<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 										</a>
 
@@ -3213,19 +3769,42 @@
 				</div>
 			</div>
 			
-			<label for="content1-meal37"><input checked type="checkbox" id="content1-meal37">  בצל ירוק (بصل اخضر)</label><br>
-			<label for="content2-meal37"><input checked type="checkbox" id="content2-meal37">  בוטנים (فستق)</label><br>
-			<label for="content3-meal37"><input checked type="checkbox" id="content3-meal37">  שום (ثوم)</label><br>
-			<label for="content4-meal37"><input checked type="checkbox" id="content4-meal37">  בצל (بصل)</label><br>
-			<label for="content5-meal37"><input checked type="checkbox" id="content5-meal37">  גמבה (فلفل حلو)</label><br>
-			<label for="content6-meal37"><input checked type="checkbox" id="content6-meal37">  כרוב (ملفوف)</label><br>
-			<label for="content7-meal37"><input checked type="checkbox" id="content7-meal37">  גזר (جزر)</label><br>
-			<label for="content8-meal37"><input         type="checkbox" id="content8-meal37">  שעועית (فاصوليا)</label><br>
-			<label for="content9-meal37"><input         type="checkbox" id="content9-meal37">  אפונה (بازيلا)</label><br>
-			<label for="content10-meal37"><input        type="checkbox" id="content10-meal37">  פטריות (فطر)</label><br>
+			<table class="mealContentsTable">
+				<tr>
+				  <td><label for="content1-meal37"><input type="checkbox" id="content1-meal37"> בצל ירוק (بصل اخضر)</label></td>
+				</tr>
+				<tr>
+				  <td><label for="content2-meal37"><input type="checkbox" id="content2-meal37"> בוטנים (فستق)</label></td>
+				</tr>
+				<tr>
+				  <td><label for="content3-meal37"><input type="checkbox" id="content3-meal37"> שום (ثوم)</label></td>
+				</tr>
+				<tr>
+				  <td><label for="content4-meal37"><input type="checkbox" id="content4-meal37"> בצל (بصل)</label></td>
+				</tr>
+				<tr>
+				  <td><label for="content5-meal37"><input type="checkbox" id="content5-meal37"> גמבה (فلفل حلو)</label></td>
+				</tr>
+				<tr>
+				  <td><label for="content6-meal37"><input type="checkbox" id="content6-meal37"> כרוב (ملفوف)</label></td>
+				</tr>
+				<tr>
+				  <td><label for="content7-meal37"><input type="checkbox" id="content7-meal37"> גזר (جزر)</label></td>
+				</tr>
+				<tr>
+				  <td><label for="content8-meal37"><input type="checkbox" id="content8-meal37"> שעועית (فاصوليا)</label></td>
+				</tr>
+				<tr>
+				  <td><label for="content9-meal37"><input type="checkbox" id="content9-meal37"> אפונה (بازيلا)</label></td>
+				</tr>
+				<tr>
+				  <td><label for="content10-meal37"><input type="checkbox" id="content10-meal37"> פטריות (فطر)</label></td>
+				</tr>
+			  </table>
+			  
 			
 			<!-- Button -->
-			<a onclick="addToCart(this,55)" class="btn btn-sm btn-tra-grey yellow-hover">
+			<a onclick="addToCart(this,55)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 				<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 			</a>
 
@@ -3301,7 +3880,7 @@
 										</div>
 										<br>
 										<!-- Button -->
-			<a onclick="addToCart(this,7,document.getElementById('meal38_dropdown').value)" class="btn btn-sm btn-tra-grey yellow-hover">
+			<a onclick="addToCart(this,7,document.getElementById('meal38_dropdown'))" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 				<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 			</a>
 
@@ -3371,7 +3950,7 @@
 										</div>
 										<br>
 										<!-- Button -->
-			<a onclick="addToCart(this,7,document.getElementById('meal39_dropdown').value)" class="btn btn-sm btn-tra-grey yellow-hover">
+			<a onclick="addToCart(this,7,document.getElementById('meal39_dropdown'))" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 				<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 			</a>
 
@@ -3432,7 +4011,7 @@
 										</div>
 
 <!-- Button -->
-<a onclick="addToCart(this,7)" class="btn btn-sm btn-tra-grey yellow-hover">
+<a onclick="addToCart(this,7)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 	<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 </a>
 									</div>
@@ -3491,7 +4070,7 @@
 										</div>
 
 <!-- Button -->
-<a onclick="addToCart(this,5)" class="btn btn-sm btn-tra-grey yellow-hover">
+<a onclick="addToCart(this,5)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 	<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 </a>
 									</div>
@@ -3550,7 +4129,7 @@
 										</div>
 
 <!-- Button -->
-<a onclick="addToCart(this,7)" class="btn btn-sm btn-tra-grey yellow-hover">
+<a onclick="addToCart(this,7)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 	<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 </a>
 									</div>
@@ -3607,7 +4186,7 @@
 										</div>
 
 <!-- Button -->
-<a onclick="addToCart(this,5)" class="btn btn-sm btn-tra-grey yellow-hover">
+<a onclick="addToCart(this,5)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 	<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 </a>
 
@@ -3664,7 +4243,7 @@
 										</div>
 
 <!-- Button -->
-<a onclick="addToCart(this,7)" class="btn btn-sm btn-tra-grey yellow-hover">
+<a onclick="addToCart(this,7)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
 	<span class="flaticon-shopping-bag"></span> اضف الى الطلبية
 </a>
 
@@ -3810,7 +4389,7 @@
 	<!-- Custom Script -->
 	<script src="js/custom.js"></script>
 	<script defer src="js/changer.js"></script>
-	<script src="cart.js"></script>
+	<script src="cart.js?v=1.0"></script>
 </body>
 
 </html>
