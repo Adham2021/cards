@@ -209,6 +209,10 @@ app.get('/style.css', (req, res) => {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'dr-matani', 'index.html'));
   });
+  app.use('/menu', express.static(path.join(__dirname, 'menu')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'menu', 'index.html'));
+  });
 
 
 app.use((req, res, next) => {
