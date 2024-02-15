@@ -204,10 +204,12 @@ function changeLanguage(language, byClickButton = true) {
         // Set the page direction to LTR for English
         $('html').attr('dir', 'ltr');
         $("li").addClass("text-left")
+        $("li").removeClass("text-right")
     } else {
         // Reset the page direction for Hebrew and Arabic
         $('html').attr('dir', 'rtl');
         $("li").addClass("text-right")
+        $("li").removeClass("text-left")
     }
 
     if (byClickButton) {
