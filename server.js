@@ -205,10 +205,11 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'break-zone', 'index.html'));
   });
 
-  app.use('/dr-matani', express.static(path.join(__dirname, 'dr-matani')));
+  app.use('/dr-m.matani', express.static(path.join(__dirname, 'dr-m.matani')));
   app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dr-matani', 'index.html'));
+    res.sendFile(path.join(__dirname, 'dr-m.matani', 'index.html'));
   });
+
   app.use('/menu', express.static(path.join(__dirname, 'menu')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'menu', 'index.html'));

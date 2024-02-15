@@ -23,7 +23,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('https://i.pinimg.com/564x/d2/b3/f6/d2b3f65e21e3f037caab1099c83ce9a5.jpg');
+    background-image: url('assets/images/files/cover.jpg');
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 0, 100% 0, 100% 94%, 50% 100%, 0 94%);
