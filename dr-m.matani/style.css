@@ -4,9 +4,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Cairo', sans-serif;
-   background-image: url("assets/images/files/background3.jpg");
-   background-color: #584b4b;
-   background-blend-mode: multiply;
+    background: #584b4b url("assets/images/files/background3.jpg") no-repeat;
+    background-blend-mode: multiply;
+    
 
 }
 
