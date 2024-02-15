@@ -4,7 +4,9 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Cairo', sans-serif;
-   background: url("assets/images/files/background.jpg");
+   background: url("assets/images/files/background3.jpg");
+   background-color: #584b4b;
+   background-blend-mode: multiply;
 
 }
 
@@ -21,11 +23,11 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('assets/images/files/cover.png');
+    background-image: url('https://i.pinimg.com/564x/d2/b3/f6/d2b3f65e21e3f037caab1099c83ce9a5.jpg');
     background-size: cover;
     background-position: center;
     clip-path: polygon(0 0, 100% 0, 100% 94%, 50% 100%, 0 94%);
-    background-color: #a5998d;
+    background-color: #958e86;
     background-blend-mode: multiply; 
 }
 
