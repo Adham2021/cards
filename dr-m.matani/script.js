@@ -158,7 +158,7 @@ function toggleService(btn) {
 function addToContacts() {
     var contact = {
         name: "דר מתאני מוחמד",
-        phone: "+972587169994",
+        phone: "+972587881797",
         email: "dr.matani@hotmail.com"
     };
     // create a vcard file
