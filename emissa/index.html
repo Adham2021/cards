@@ -21,7 +21,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="/style.css">
-    <link rel="stylesheet" href="style.css?v=1.0">
+    <link rel="stylesheet" href="style.css?v=2.0">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
     <link rel="icon" href="assets/images/files/logo.png" type="image/x-icon">
@@ -237,95 +237,346 @@
         <div class="services">
 
             <div class="service-item">
-                <div class="toggle-btn">
-                    <span class="service-text translatable" data-lang-hebrew="השירותים שלנו:"
-                        data-lang-arabic="منتجاتنا :">
-                    </span>
-                    <i class="fas fa-angle-down"></i>
-                </div>
-                <div class="toggle-content">
-                    <ul>
-                        <li class="translatable" data-lang-hebrew="חלקי חילוף מקוריים ואיכותיים ממגוון יצרנים מובילים" data-lang-arabic="قطع غيار أصلية وعالية الجودة من مجموعة متنوعة من الشركات المصنعة الرائدة"></li>
-                        <li class="translatable" data-lang-hebrew="מחירים משתלמים ומבצעים מרשימים ללקוחותינו" data-lang-arabic="أسعار مناسبة وعروض مذهلة لزبائننا"></li>
-                        <li class="translatable" data-lang-hebrew="שירות לקוחות מצוין וייעוץ מקצועי מצוין" data-lang-arabic="خدمة عملاء ممتازة واستشارة محترفة"></li>
-                        <li class="translatable" data-lang-hebrew="משלוחים מהירים ובטוחים לכל רחבי הארץ" data-lang-arabic="توصيل سريع وآمن إلى جميع أنحاء البلاد"></li>
-                    </ul>
-                    <ul>
-                    </ul>
-                    <p style="color:#c92927" class="translatable" 
-                    data-lang-hebrew="אנחנו דואגים לך ונשמח לראותך יוצא מרוצה מהחנות. בכל שאלה או צורך, אנחנו כאן לשירותך❤️" 
-                    data-lang-arabic="نحن نهتم بك ونسعد برؤيتك راضيًا تمامًا من محلنا. في أي استفسار أو سؤال, نحن هنا لخدمتك❤️">
-                 </p>
-                    
-                    
-                </div>
-            </div>
-
-            <div class="service-item">
                 <div class="toggle-btn" onclick="toggleService(this)">
                     <span class="service-text translatable" data-lang-hebrew="שעות פעילות :"
                         data-lang-arabic="ساعات العمل :">
                     </span>
                     <i class="fas fa-angle-down"></i>
                 </div>
-                <div class="toggle-content">
-                    <p class="translatable" style="font-weight: bold; color: black;"
-                       
-                        data-lang-hebrew="כל ימי השבוע מהשעה 08:00 🕙 בבוקר עד השעה 17:00 🕗 בערב "
-                        data-lang-arabic="كل ايام الاسبوع من الساعة 08:00 🕙 صباحًا حتّى الساعة 17:00 🕗 مساءًا ">
+                <div class="toggle-content" >
+                    <p class="translatable" style="font-weight: bold; color: black;"                     
+                        data-lang-arabic="الاحد-الخميس والسبت من الساعة 10:00  حتّى الساعة 22:00  
+                        يوم الجمعة من الساعة 15:00 حتى الساعة 22:00 ">
                     </p>
                   
-                    <p class="translatable" style="font-weight: bold; color: #c92927;" 
-                        data-lang-hebrew="Emissa Perfumes 
-                        הסניף 1: חיפה נשר אזור תעשיה 19
-                        הסניף 2 : יפיע - נצרת"
-                        data-lang-arabic="ن.س لقطع الغيار 
-                         الفرع 1 - حيفا نيشر المنطقة الصناعية 19
-                         الفرع 2 : يافة الناصرة - مراح الغزلان ">
-                    </p>
+                    <p style="color:#8d7700" class="translatable" 
+                    data-lang-hebrew="אנחנו דואגים לך ונשמח לראותך יוצא מרוצה מהחנות. בכל שאלה או צורך, אנחנו כאן לשירותך❤️" 
+                    data-lang-arabic="نحن نهتم بك ونسعد برؤيتك راضيًا تمامًا من محلنا. في أي استفسار أو سؤال, نحن هنا لخدمتك❤️">
+                 </p>
                     
                     
                 </div>
                 
             </div>
 
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" 
+                        data-lang-arabic="مجموعة القصور ">
+                    </span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content" >
+                    <div class="gallery" class="container-fluid" style="column-count: 1;">
+                        <a data-fancybox="images" href="https://i.imgur.com/yLbUhOi.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/yLbUhOi.jpeg" class="img-responsive" style="width: 200px;" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/DcHBrcK.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/DcHBrcK.jpeg" class="img-responsive" style="width: 200px;"  >                          
+                        </a>
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" 
+                        data-lang-arabic="مجموعة عطور النيش ">
+                    </span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content" >
+                    <div class="gallery" class="container-fluid" >
+                        <a data-fancybox="images" href="https://i.imgur.com/zJwK3Wh.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/zJwK3Wh.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/RhvLNkg.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/RhvLNkg.jpeg" class="img-responsive"  >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/aJkoDWb.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/aJkoDWb.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/N97QZDt.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/N97QZDt.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/lBF0iQt.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/lBF0iQt.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/aytp41j.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/aytp41j.jpeg" class="img-responsive"  >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/38S8wH9.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/38S8wH9.jpeg" class="img-responsive" >                          
+                        </a>
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" 
+                        data-lang-arabic="المجموعة الذهبية VIP ">
+                    </span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content" >
+                    <div class="gallery" class="container-fluid" >
+                        <a data-fancybox="images" href="https://i.imgur.com/NbirqAc.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/NbirqAc.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/KPOsgMz.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/KPOsgMz.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/HVOEIJ9.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/HVOEIJ9.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/2SXMRWO.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/2SXMRWO.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/nCUXQXy.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/nCUXQXy.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/L2J28P3.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/L2J28P3.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/DPcibVU.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/DPcibVU.jpeg" class="img-responsive" >                          
+                        </a>
+                    </div>            
+                </div>              
+            </div>
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" 
+                        data-lang-arabic="عطور شرقية">
+                    </span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content" >
+                    <div class="gallery" class="container-fluid" >
+                        <a data-fancybox="images" href="https://i.imgur.com/kPSAUpV.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/kPSAUpV.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/P944ELJ.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/P944ELJ.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/606xsnV.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/606xsnV.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/9TL80Vx.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/9TL80Vx.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/1aZAT9W.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/1aZAT9W.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/Cf9k5c0.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/Cf9k5c0.jpeg" class="img-responsive" >                          
+                        </a>
+                    </div>            
+                </div>              
+            </div>
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" 
+                        data-lang-arabic="عطور فرنسية رجالية">
+                    </span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content" >
+                    <div class="gallery" class="container-fluid" >
+                        <a data-fancybox="images" href="https://i.imgur.com/axAr0gE.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/axAr0gE.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/ftcN6Of.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/ftcN6Of.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/diXL3Nz.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/diXL3Nz.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/A93Iyte.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/A93Iyte.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/JNrZzpJ.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/JNrZzpJ.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/hmBmRps.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/hmBmRps.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/X9VoXGg.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/X9VoXGg.jpeg" class="img-responsive" >                          
+                        </a>
+                    </div>            
+                </div>              
+            </div>
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" 
+                    data-lang-arabic="عطور فرنسية نسائية">
+                </span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content" >
+                    <div class="gallery" class="container-fluid" >
+                        <a data-fancybox="images" href="https://i.imgur.com/tcP1nO2.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/tcP1nO2.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/DGOgDns.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/DGOgDns.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/RwCS1Eh.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/RwCS1Eh.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/ZSbxB9F.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/ZSbxB9F.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/7oza6a6.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/7oza6a6.jpeg" class="img-responsive" >                          
+                        </a>
+                    </div>            
+                </div>              
+            </div>
+            <div class="service-item">
+                <div class="toggle-btn" onclick="toggleService(this)">
+                    <span class="service-text translatable" 
+                    data-lang-arabic="عطور ومرشات للبيت">
+                </span>
+                    <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="toggle-content" >
+                    <div class="gallery" class="container-fluid" >
+                        <a data-fancybox="images" href="https://i.imgur.com/wgQpddy.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/wgQpddy.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/mpuRaTA.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/mpuRaTA.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/mQ1CdVL.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/mQ1CdVL.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/XOuIf8w.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/XOuIf8w.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/Sp9E9nQ.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/Sp9E9nQ.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/TQhYrl7.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/TQhYrl7.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/SQDI5JN.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/SQDI5JN.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/97LiX0Z.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/97LiX0Z.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/mVggdqq.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/mVggdqq.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/crH3Ot7.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/crH3Ot7.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/LnB9zpa.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/LnB9zpa.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/tVtfPBJ.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/tVtfPBJ.jpeg" class="img-responsive" >                          
+                        </a>
+                        <a data-fancybox="images" href="https://i.imgur.com/99jTsXy.jpeg" data-caption="">
+                            <img src="https://i.imgur.com/99jTsXy.jpeg" class="img-responsive" >                          
+                        </a>
+                    </div>            
+                </div>              
+            </div>
         </div>
 
  
 
         <div class="gallery-container">
-            <h2 id="text1" class="translatable text" data-lang-hebrew="✨ Emissa Perfumes ✨" data-lang-arabic="✨ ن.س لقطع الغيار  ✨"></h2>
+            <h2 id="text1" class="translatable text" data-lang-arabic="✨ Emissa Perfumes ✨" ></h2>
             <h3 id="text2" style="display: none;" class="translatable text" 
-            data-lang-hebrew="איכות ובטיחות בכל פרט" data-lang-arabic="الجودة والأمان في كل قطعة"></h3>
+             data-lang-arabic="إميسا - حيث تصوغ الجمال وتصنع الذكريات الخالدة"></h3>
             <h3 id="text3" style="display: none;" class="translatable text" 
-            data-lang-hebrew="כי כל רכב מסתדר עם חלקי החילוף הנכונים." data-lang-arabic="نحن هنا للعناية بسيارتك كما لو كانت لنا"></h3>
+           data-lang-arabic="عطور إميسا - لحظات تميز وأناقة تفوق الزمن"></h3>
 
         </div>
-
-        <div id="gallery" class="container-fluid">
-            <a data-fancybox="images" href="">
-                <img src="" class="img-responsive" alt="Image 0">
-            </a>
+        <div class="video-container">
+            <video width="320" height="500" controls autoplay muted loop>
+              <source src="https://i.imgur.com/A2v7tb2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-container">
+            <video width="320" height="500" controls autoplay muted loop>
+              <source src="https://i.imgur.com/6MlMO5S.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="video-container">
+            <video width="320" height="500" controls autoplay muted loop>
+              <source src="https://i.imgur.com/WH25kLx.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="slider-container" >
+            <h2 class="translatable" 
+               data-lang-arabic="">
+            </h2>
         </div>
+
                     
-         <!-- <iframe width="100%" height="315" src="https://www.youtube.com/embed/d0nSMHKl3l8" frameborder="0" allowfullscreen></iframe> 
-         <iframe width="100%" height="315" src="https://www.youtube.com/embed/ijeLguNF0ks" frameborder="0" allowfullscreen></iframe> -->
-
-        
-
-      
-
         <div class="slider-container" >
             <h2 class="translatable" 
                 data-lang-hebrew="לקוחות ממליצים" data-lang-arabic="تقييمات الزبائن">
             </h2>
             <div class="slider" id="slider">
                 <div class="slide">
-                    <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" alt="יוסי הק.">
-                    <h3>Nida Fares</h3>
+                    <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" >
+                    <h3>زبونة مميزة</h3>
                     <div class="stars">★★★★★</div>
                     <p class="reviewContent translatable" 
-                    data-lang-hebrew="היי רביע , רציתי להגיד לך תודה לך על השירות שאתה מעניק לי ובטוחה שזה לכלל לקוחותיך אתה ממש אדיב ,שירותי ושווה כל שקל שאני משלמת אתה נותן מעל ומעבר תומך סבלני מקצועי ואמין מודה לך מקרב לב " >
+                    data-lang-arabic="اسمعي شو الروائح يمااااااا ناررر 💡
+                    قديش اشتغلت وجليت وتحممت وكنت مشغولة بس طول اليوم والروائح على ايدي 😍😍😍" >
+                </p>
+                </div>
+                <div class="slide">
+                    <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" >
+                    <h3>زبون راضي</h3>
+                    <div class="stars">★★★★★</div>
+                    <p class="reviewContent translatable" 
+                    data-lang-arabic="الصراحة التوبب 🔝🔝 
+                    الصراحة التوب وان شاء الله بس تخلص اجدد ريحة جديدة واقوى بس من عندكم 
+                    يسعدكم 🫶" >
+                </p>
+                </div>
+
+                <div class="slide">
+                    <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" >
+                    <h3>زبونة راضية</h3>
+                    <div class="stars">★★★★★</div>
+                    <p class="reviewContent translatable" 
+                    data-lang-arabic="استلمتها وبدي اتشكركم كثيرر من كل قلبي كثير حبيت العطر الله يباركلكم يا رب
+                    وثانيا
+                    شكرا من كل قلبي على هيك شليح الله يسعدو ويكثر امثاله
+                    عملي معروف مش راح انسالو اياتو
+                    شكرا كثير كثير اني تعرفت عليكم 
+                    وراح اكون زبونة عندكم 💖" >
+                </p>
+                </div>
+                <div class="slide">
+                    <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" >
+                    <h3>زبونة راضية</h3>
+                    <div class="stars">★★★★★</div>
+                    <p class="reviewContent translatable" 
+                    data-lang-arabic="هلا كثير حلو ومميز بعد في اشياء ثقيلة 🔝🔝🔝" >
+                </p>
+                </div>
+                <div class="slide">
+                    <img src="https://images.squarespace-cdn.com/content/v1/564142efe4b09d10c39f8a8f/1594926536902-L2RPB0G2W5J7PK3GSJX8/no-person-profile-pic.png" >
+                    <h3>زبون راضي</h3>
+                    <div class="stars">★★★★★</div>
+                    <p class="reviewContent translatable" 
+                    data-lang-arabic="بجننو .. ريحتهن كثير ناعمة كثيررر 💖🌹" >
                 </p>
                 </div>
 
@@ -380,7 +631,7 @@
         </div>
 
     </div>
-    <script src="script.js?v=1.0"></script>
+    <script src="script.js?v=2.0"></script>
     <footer>
         <!-- <img src="https://i.imgur.com/aSRR4zl.png" alt="Your Image Description"> -->
         <p>Built with <i class="heart fas fa-heart"></i> by <a href="https://www.ionmedia.me/" target="_blank" class="eyeonmedia"> Ionmedia</a> 2024</p>

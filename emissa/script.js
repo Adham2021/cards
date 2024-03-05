@@ -168,7 +168,7 @@ function changeLanguage(language, byClickButton = true) {
         english: { flag: "/assets/images/files/flags/united-kingdom.png", text: "English" },
     };
     const selectedLanguage = languageData[language];
-    localStorage.setItem('RabeiaPreferredLanguage', language);
+    localStorage.setItem('EmissaPreferredLanguage', language);
     document.getElementById("selected-language").innerText = selectedLanguage.text;
     document.getElementById("language-menu-btn").getElementsByTagName("img")[0].src = selectedLanguage.flag;
 
@@ -183,7 +183,7 @@ function changeLanguage(language, byClickButton = true) {
     }
 }
 function getLanguage() {
-    return localStorage.getItem('RabeiaPreferredLanguage') || 'hebrew'; // Default language is Arabic
+    return localStorage.getItem('EmissaPreferredLanguage') || 'arabic'; // Default language is Arabic
 }
 function toggleLanguageMenu() {
     var languageMenu = document.getElementById("language-menu");
@@ -313,7 +313,7 @@ $(document).ready(function() {
       const observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
   
       // Target all images with the class 'img-responsive' inside the gallery
-      const images = document.querySelectorAll('#gallery .img-responsive');
+      const images = document.querySelectorAll('.gallery .img-responsive');
   
       // Observe each image
       images.forEach(image => {
@@ -444,7 +444,7 @@ $(document).ready(function() {
                 if (data.success) {
                     $("#successMessage").show();
                     $("#errorMessage").hide();
-                    alert("תודה על ההודעה שלך");
+                    alert("شكرًا لك على رسالتك");
 
                     // Clear input fields after successful submission
                     nameInput.val("");
