@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function shareOn(type) {
     
-    const text = 'כרטיס הביקור הדיגטלי של חלקי חילוף נ.ס סאלח';
+    const text = 'الكرت الديجيتالي لدكتور نوتيلا';
     const url = window.location.href;
     if (type === 'facebook') {
         const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
@@ -44,13 +44,13 @@ function updateWorkingHoursStatus() {
     let currentHour = now.getHours();
     currentHour += now.getMinutes()/60
     const workingHours = {
-        0: currentHour >= 8 && currentHour < 17 ? 'Open until 17:00' : 'Closed, Open at 08:00', // Sunday
-        1: currentHour >= 8 && currentHour < 17 ? 'Open until 17:00' : 'Closed, Open at 08:00', // Monday
-        2: currentHour >= 8 && currentHour < 17 ? 'Open until 17:00' : 'Closed, Open at 08:00', // Tuesday
-        3: currentHour >= 8 && currentHour < 17 ? 'Open until 17:00' : 'Closed, Open at 08:00', // Wednesday
-        4: currentHour >= 8 && currentHour < 17 ? 'Open until 17:00' : 'Closed, Open at 08:00', // Thursday
-        5:  'Closed, Open at 08:00-Sunday', // Friday
-        6:  'Closed, Open at 08:00-Sunday', // Saturday
+        0: currentHour >= 12 && currentHour < 24 ? 'Open until 00:00' : 'Closed, Open at 12:00', // Sunday
+        1: currentHour >= 12 && currentHour < 24 ? 'Open until 00:00' : 'Closed, Open at 12:00', // Monday
+        2: currentHour >= 12 && currentHour < 24 ? 'Open until 00:00' : 'Closed, Open at 12:00', // Tuesday
+        3: currentHour >= 12 && currentHour < 24 ? 'Open until 00:00' : 'Closed, Open at 12:00', // Wednesday
+        4: currentHour >= 12 && currentHour < 24 ? 'Open until 00:00' : 'Closed, Open at 16:00', // Thursday
+        5:  currentHour >= 16 && currentHour < 24 ? 'Open until 00:00' : 'Closed, Open at 12:00', // Friday
+        6:  currentHour >= 12 && currentHour < 24 ? 'Open until 00:00' : 'Closed, Open at 12:00', // Saturday
     };
 
     const statusOpenElement = document.getElementById('status-open');
@@ -61,28 +61,24 @@ function updateWorkingHoursStatus() {
     if (workingHours[dayOfWeek].includes('Closed')) {
         if (currentLanguage === 'hebrew') {
             statusOpenElement.textContent = 'סגור';
-            statusUntilElement.textContent = ' נפתח ב- 08:00';
+            statusUntilElement.textContent = ' נפתח ב- 12:00';
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مغلق';
-            statusUntilElement.textContent = ' يفتح في الساعة 08:00';
+            statusUntilElement.textContent = ' يفتح في الساعة 12:00';
+            if(dayOfWeek == 4){
+                statusUntilElement.textContent = ' يفتح في الساعة 16:00';
+            }
         }
-    if(dayOfWeek==5 || dayOfWeek==6){
-        if (currentLanguage === 'hebrew') {
-            statusUntilElement.textContent += " יום א ";
-        }
-     else if (currentLanguage === 'arabic') {
-        statusUntilElement.textContent += " الاحد "
-     }
-    }
+
         statusOpenElement.classList.add('status-close');
         statusOpenElement.classList.remove('status-open');
     } else {
         if (currentLanguage === 'hebrew') {
             statusOpenElement.textContent = 'פתוח';
-            statusUntilElement.textContent = ' עד 17:00';
+            statusUntilElement.textContent = ' עד 00:00';
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مفتوح';
-            statusUntilElement.textContent = ' حتى 17:00';
+            statusUntilElement.textContent = ' حتى 00:00';
         }
 
         statusOpenElement.classList.add('status-open');
@@ -134,9 +130,9 @@ function toggleService(btn) {
 }
 function addToContacts() {
     var contact = {
-        name: "סאלח אחמד | חלקי חילוף",
-        phone: "+972532311528",
-        email: "Salachahmed007@gmail.com"
+        name: "Dr.Nutella",
+        phone: "+972523343336",
+        email: ""
     };
     // create a vcard file
     var vcard = "BEGIN:VCARD\nVERSION:4.0\nFN:" + contact.name + "\nTEL;TYPE=work,voice:" + contact.phone + "\nEMAIL:" + contact.email + "\nEND:VCARD";
@@ -182,7 +178,7 @@ function changeLanguage(language, byClickButton = true) {
     }
 }
 function getLanguage() {
-    return localStorage.getItem('RabeiaPreferredLanguage') || 'hebrew'; // Default language is Arabic
+    return localStorage.getItem('DrNutellaPreferredLanguage') || 'arabic'; // Default language is Arabic
 }
 function toggleLanguageMenu() {
     var languageMenu = document.getElementById("language-menu");
