@@ -136,7 +136,7 @@ function toggleService(btn) {
 function addToContacts() {
     var contact = {
         name: "مجد - عطور اميسّا..",
-        phone: "+972547738099",
+        phone: "+972548222133",
         email: "majd.m.1996.123@gmail.com"
     };
     // create a vcard file
