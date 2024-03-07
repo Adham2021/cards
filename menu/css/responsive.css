@@ -2027,7 +2027,8 @@
 
   #tabs-nav { margin-bottom: 40px; }
   .tabs-1 li { display: block; background-color: #f5f5f5; padding: 11px 30px; margin-bottom: 10px; }
-  .tabs-1 li.current { background-color: transparent; }
+  .tabs-1 li.current { background-color: transparent; border: 2px solid white;
+    border-radius: 10%;}
 
   .tabs-1 li span { position: relative; left: 10px; }
   .tabs-1.ico-55 [class*="flaticon-"]:before, 

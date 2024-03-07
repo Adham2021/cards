@@ -316,3 +316,29 @@ $(document).ready(function() {
     }
     
   });
+
+//   $(document).ready(function () {
+//     const text1 = $('#text1');
+//     const text2 = $('#text2');
+//     const text3 = $('#text3'); // Add text3
+
+//     const duration = 2000; // Duration for each text display
+
+//     function toggleText() {
+//         text1.fadeIn(duration, function () {
+//             text1.delay(duration).fadeOut(duration, function () {
+//                 text2.fadeIn(duration, function () {
+//                     text2.delay(duration).fadeOut(duration, function () {
+//                         text3.fadeIn(duration, function () { // Fade in text3
+//                             text3.delay(duration).fadeOut(duration, function () { // Fade out text3
+//                                 toggleText(); // Repeat the loop
+//                             });
+//                         });
+//                     });
+//                 });
+//             });
+//         });
+//     }
+
+//     toggleText(); // Start the loop
+// });

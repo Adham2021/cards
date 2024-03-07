@@ -1,35 +1,15 @@
 
 
-
-
-/*
-  Template Name: Testo - Pizza and Fast Food Landing Page Template
-  Theme URL: https://themeforest.net/user/jthemes
-  Description: Testo - Pizza and Fast Food Landing Page Template
-  Author: Jthemes
-  Author URL: https://themeforest.net/user/jthemes
-  Version: 1.0.0
-  Website: www.jthemes.net
-  Tags: Jthemes, Food, Fast Food, Restaurant, Pizzeria, Restaurant Menu, Pizza, Burger, Sushi, Steak, Grill, Snack
-*/
-
-
-
-
-/* ==========================================================================
-  01. GENERAL & BASIC STYLES
-  =========================================================================== */
-
 html {
   -webkit-font-smoothing: antialiased;
   font-size: 16px;
 } 
  
 body {
-  font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #283034;
   font-weight: 300;
   text-align: right;
+  font-family: 'Heebo', sans-serif;
 }
 
 /*------------------------------------------------------------------*/
@@ -289,7 +269,30 @@ body {
   width: 96%;
   z-index: 9999999;
 }
-
+.mainH2{
+  background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
+}
+.menu-item {
+  text-align: center;
+  margin-bottom: 20px;
+  background-color: black !important;
+}
+.menu-item img {
+  width: 130%;
+  height: 70%;
+  border-radius: 5px;
+  margin-right: -10px;
+}
+.menu-item h5 {
+  margin-bottom: 10px;
+  font-size: 1.5em;
+  color: white;
+}
+.image-size {
+  max-width: 100%; /* Set maximum width to 100% of its container */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 200px; /* Set maximum height, adjust as needed */
+}
 
 .alert{
   display: none;
@@ -305,7 +308,7 @@ body {
 .bg-lightgrey { background-color: #f6f9fa; }
 .bg-grey { background-color: #eaeaea; }
 .bg-brown { background-color: #6f5e4d; }
-.bg-coffee { background-color: #642f21; }
+.bg-coffee { background-color: #6c6462; }
 .bg-meat { background-color: #d2322b; }
 .bg-orange { background-color: #ef7f01; }
 .bg-red { background-color: #e3000e; }
@@ -359,7 +362,7 @@ body {
 /*------------------------------------------*/
 
 h1, h2, h3, h4, h5, h6 {  
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Heebo', sans-serif;
   line-height: 1.3;
   font-weight: 500;
   text-transform: uppercase;
@@ -375,7 +378,7 @@ h6.h6-xl { font-size: 1.21875rem; }  /* 19.5px */
 
 /* Header H5 */
 h5.h5-xs { font-size: 1.25rem; }    /* 20px */
-h5.h5-sm { font-size: 1.375rem; font-weight: bold;}   /* 22px */
+h5.h5-sm { font-size: 1.375rem; font-weight: bold; color: white;}   /* 22px */
 h5.h5-md { font-size: 1.5rem; }     /* 24px */
 h5.h5-lg { font-size: 1.625rem; }   /* 26px */
 h5.h5-xl { font-size: 1.75rem; }    /* 28px */
@@ -501,10 +504,12 @@ ul.txt-list {
   }
   .seperateContents{
     font-weight: bold;    
+    color: white;
   }
 .mealContentsTable tr td {
   text-align: right;
   padding: 0px 10px;
+  color: white;
 }
 .mealContentsTable tr {
 border:none;
@@ -818,8 +823,11 @@ border:none;
 .grey-color i, 
 .white-color .grey-color,
 .lightgrey-color .grey-color, 
-.grey-color span { color: #757575; }
-
+.grey-color span { color: white; }
+.fa-minus,
+.fa-plus  {
+  color:white;
+}
 .lightgrey-color,
 .lightgrey-color h2, 
 .lightgrey-color h3, 
@@ -3380,6 +3388,9 @@ span.ico-holder {
 
 .menu-7-item {
   margin-bottom: 50px;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  padding: 25px 20px 20px;
 }
 
 .bg-01 .menu-5-item,
@@ -3685,8 +3696,9 @@ span.ico-holder {
 }
 
 .tabs-1 li.current h5 { 
-  color: #1b1b1b;
+  color: white;
   font-weight: 500;
+  text-decoration: underline;
 }
 
 .tabs-1.red-tabs li.current span { 
@@ -3739,13 +3751,6 @@ span.ico-holder {
   border-radius: 6px 6px 0 0;
 }
 
-.menu-7-img {   
-  border: 1px solid #e5e5e5;
-  padding: 25px 20px 20px;
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-}
 
 .menu-5-item:hover img,
 .menu-6-item:hover img {
@@ -3756,7 +3761,10 @@ span.ico-holder {
   -moz-transform: scale(1.1);
 }
 
-
+.text {
+  color: white;
+  opacity: 0.996057;
+}
 
 
 /* ==========================================================================
@@ -5964,6 +5972,8 @@ table th {
 }
 .add-toCart{
   margin-top: 10px;
+  font-family: 'Cairo', sans-serif;
+  background-color: white;
 }
 .cart-product-desc {
   overflow: hidden;
