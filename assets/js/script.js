@@ -446,3 +446,66 @@ $(document).ready(function() {
         phoneError.text("");
     });
 });
+var isMenuClicked = false;
+$(document).ready(function() {
+    
+    $(window).scroll(function() {
+
+        var scroll = $(window).scrollTop();
+        if (scroll > 0) {
+            if(!isMenuClicked){
+             $('#logo2').show();
+            $('#logo1').hide();
+            $(".ti-menu").removeClass("whiteColorMenu")
+            $(".navbar-toggler-icon").removeClass("whiteColorMenu")
+            $(".ti-menu").addClass("blueColorMenu")
+            $(".navbar-toggler-icon").addClass("blueColorMenu")
+            }
+            else {
+                $('#logo2').hide();
+                $('#logo1').show();
+                $(".ti-menu").removeClass("blueColorMenu")
+                $(".navbar-toggler-icon").removeClass("blueColorMenu")
+                $(".ti-menu").addClass("whiteColorMenu")
+                $(".navbar-toggler-icon").addClass("whiteColorMenu")
+            }
+            
+
+        } else {
+            $('#logo1').show();
+            $('#logo2').hide();
+            $(".ti-menu").addClass("whiteColorMenu")
+            $(".navbar-toggler-icon").addClass("whiteColorMenu")
+            $(".ti-menu").removeClass("blueColorMenu")
+            $(".navbar-toggler-icon").removeClass("blueColorMenu")
+
+        }
+    });
+    
+});
+function menuClick(){
+    isMenuClicked=!isMenuClicked;
+    $(".navbar-expand-md").toggleClass("coloredMenu")
+    if(!isMenuClicked){
+        $('#logo2').show();
+       $('#logo1').hide();
+       $(".ti-menu").removeClass("whiteColorMenu")
+       $(".navbar-toggler-icon").removeClass("whiteColorMenu")
+       $(".ti-menu").addClass("blueColorMenu")
+       $(".navbar-toggler-icon").addClass("blueColorMenu")
+       }
+       else {
+           $('#logo2').hide();
+           $('#logo1').show();
+           $(".ti-menu").removeClass("blueColorMenu")
+           $(".navbar-toggler-icon").removeClass("blueColorMenu")
+           $(".ti-menu").addClass("whiteColorMenu")
+           $(".navbar-toggler-icon").addClass("whiteColorMenu")
+       }
+    
+}
+
+function navItemClick(){
+    isMenuClicked=true;
+    menuClick();
+}

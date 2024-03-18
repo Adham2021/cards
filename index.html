@@ -20,8 +20,8 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>IonMedia | שיווק ,מיתוג וכרטיסי ביקור</title>
-    <meta name="description" content="IonMedia | שיווק ,מיתוג וכרטיסי ביקור">
+    <title>IonMedia | تسوق الكتروني وبناء مواقع</title>
+    <meta name="description" content="IonMedia | تسوق الكتروني وبناء مواقع ">
     <meta name="author" content="IonMedia | www.ionmedia.me" />
     <link rel="icon" href="assets/images/favicon.png">
     <!-- Font Icons -->
@@ -37,7 +37,7 @@
     <!-- Light Case -->
     <link rel="stylesheet" href="assets/css/lightcase.min.css" type="text/css">
     <!-- Template style -->
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css?v=1.0">
     <link rel="canonical" href="https://www.ionmedia.me">
     <meta property="og:url" content="https://www.ionmedia.me">
     <!--[if lt IE 9]>
@@ -71,24 +71,28 @@
 
     <!--Start Header Area-->
     <header class="header-area" id="header-area">
-        <nav class="navbar navbar-expand-md fixed-top">
-            <div class="container">
-                <div class="site-logo"><a class="navbar-brand" href="index.html"><img src="assets/images/logo.png"
-                            class="img-fluid" alt="Img" /></a></div>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        <nav class="navbar navbar-expand-md fixed-top" style="justify-content: center;">
+            <div class="site-logo">
+                <a class="navbar-brand" href="index.html">
+                    <img id="logo1" src="assets/images/logo_scroll.png" class="img-fluid" alt="Logo 1" />
+                    <img id="logo2" src="assets/images/logo.png" class="img-fluid" alt="Logo 2" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" onclick="menuClick()"
                     aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"><i class="ti-menu"></i></span>
                 </button>
+            </div>
+            <div class="container">
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="#" aria-haspopup="true" aria-expanded="false">ראשי</a>
+                        <li class="nav-item" onclick="navItemClick()">
+                            <a href="#" aria-haspopup="true" aria-expanded="false">الرئيسية</a>
                         </li>
-                        <li class="nav-item"> <a href="#" data-scroll-nav="4">מי אנחנו </a></li>
-                        <li class="nav-item"> <a href="#" data-scroll-nav="8">צור קשר</a></li>
-                        <li class="nav-item"> <a href="#" data-scroll-nav="6">שאלות נפוצות</a></li>
-                        <li class="nav-item"> <a href="#" data-scroll-nav="7">לקוחות ממליצים</a> </li>
-                        <li class="nav-item"> <a href="#" data-scroll-nav="3">דוגמאות</a> </li>
+                        <li class="nav-item" onclick="navItemClick()"> <a href="#" data-scroll-nav="4">من نحن </a></li>
+                        <li class="nav-item" onclick="navItemClick()"> <a href="#" data-scroll-nav="8"> تواصل معنا</a></li>
+                        <li class="nav-item" onclick="navItemClick()"> <a href="#" data-scroll-nav="6">اسئلة متكررة</a></li>
+                        <li class="nav-item" onclick="navItemClick()"> <a href="#" data-scroll-nav="7">تقييمات زبائننا</a> </li>
+                        <li class="nav-item" onclick="navItemClick()"> <a href="#" data-scroll-nav="3">شاهد اعمالنا</a> </li>
                     </ul>
                 </div>
             </div>
@@ -102,8 +106,11 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 start-home-content">
-                        <h1>שיווק , מיתוג וכרטיס ביקור דיגטלי - IonMedia</h1>
-                        <p>איאונמדיה מציעה שירותים מקיפים לעסקים שמחפשים לשפר את מרכזי השיווק, לבנות מיתוג מובהק וליצור כרטיסי ביקור דיגיטליים מרשימים. אצלנו תמצאו את כל הפתרונות במקום אחד.
+                        <h1 style="align-items: center;">الكرت الديجيتالي الذكي لمصلحتك من IonMedia</h1>
+                        <p>
+                            واكب عصر التكنولوجيا واشترك معنا كي تحصل على كرتك الديجيتالي الخاص بك
+هذه البطاقة تحتوي على كل المعلومات التي تود أن يعرفها زبائنك عن مصلحتك التجارية أو مهنتك
+فهي أشبه في موقع إلكتروني صغير ملائم لأجهزة الجوال
                         </p>
                         <div class="app-button">
                             <div class="apple-button">
@@ -112,7 +119,7 @@
                                         <i class="fas fa-phone" aria-hidden="true"></i>
                                     </div>
                                     <div class="slider-button-title">
-                                        <h3>לשיחת יעוץ והשארת פרטים</h3>
+                                        <h3>اطلب بطاقتك الآن</h3>
                                     </div>
                                 </a>
                             </div>
@@ -122,7 +129,7 @@
                                         <i class="fas fa-mobile" aria-hidden="true"></i>
                                     </div>
                                     <div class="slider-button-title">
-                                        <h3>לצפייה בכרטיסי ביקור</h3>
+                                        <h3>شاهد بطاقات قد أنشأناها</h3>
                                     </div>
                                 </a>
                             </div>
@@ -144,9 +151,9 @@
     <section id="AppFeatures" class="section-block features-style2" data-scroll-index="1">
         <div class="container">
             <div class="section-header">
-                <h2><span style="color:rgb(0 150 245)">היתרונות</span> של כרטיסי ביקור דיגיטלי</h2>
+                <h2><span style="color:rgb(0 150 245)">ليش لازمك</span> كرت ديجيتالي لمصلحتك</h2>
                 <p>
-                    כרטיס ביקור דיגיטלי הוא גרסה מודרנית ואלקטרונית של כרטיס ביקור מסורתי. המאפיינים המרכזיים שלו כוללים:
+                   الكرت الديجيتالي هو بديل للكرت الورقي الي تعودنا علي والي اغلبنا بطبعو وبضيعو بعد فترة , تعال نفرجيك شو مميزات الكرت الديجيتالي :
                 </p>
             </div>
             <div class="row">
@@ -156,8 +163,8 @@
                             <img src="assets/images/icons/1.png" class="img-fluid" alt="Img" />
                         </span>
                         <div class="feature-content">
-                            <h3>חסכון בזמן וכסף</h3>
-                            <p> בזמן שבו כרטיסי ביקור מסורתיים דורשים הדפסה והפצה פיזית, כרטיסי ביקור דיגיטליים נשמרים במכשיר הנייד שלך ונשלחים באמצעות מסרונים או אפליקציות, חוסכים בכך זמן וכסף.</p>
+                            <h3> توفير بالوقت والمصاري</h3>
+                            <p> كلنا منعرف انو طباعة كرت من ورق بتكلفنا كثير ولما بدنا نوزعو للناس بدنا نسلمو الكرت بايدو  , بالكرت الديجيتالي احنا منعطيك موقع انترنت الي بتبعثو للناس بكبسة زر بدون ما تصل لمحل</p>
                         </div>
                     </div>
                     <div class="feature-block">
@@ -165,8 +172,8 @@
                             <img src="assets/images/icons/2.png" class="img-fluid" alt="Img" />
                         </span>
                         <div class="feature-content">
-                            <h3>אפשרות לעדכון מיידי</h3>
-                            <p>אם יש שינוי במידע המופיע על כרטיס הביקור (לדוגמה, מספר טלפון חדש או כתובת חדשה), ניתן לעדכן את המידע מיידית, מבלי לצורך בהדפסה מחדש.</p>
+                            <h3>تعديل تفاصيلك على المحل</h3>
+                            <p>إذا بدك تغير بالمعلومات اللي على الكرت الديجيتالي (مثلاً رقم تلفون جديد أو عنوان جديد)، راح نحدث المعلومات على طول من غير ما نطبع كرت مرة ثانية زي الكرت الورقي.</p>
                         </div>
                     </div>
                     <div class="feature-block">
@@ -174,8 +181,9 @@
                             <img src="assets/images/icons/3.png" class="img-fluid" alt="Img" />
                         </span>
                         <div class="feature-content">
-                            <h3>מרקם איכותי</h3>
-                            <p>כרטיסי ביקור דיגיטליים יכולים לכלול גרפיקה ותמונות איכותיות ברזולוציה גבוהה, ולכן הם יכולים להראות מקצועיים ומרשימים יותר מכרטיסי ביקור מסורתיים.</p>
+                            <h3>تصميم مرت بجودة عالية</h3>
+                            <p>الكرت الديجيتالي بتضمن تصميم وصور عالية الجودة بدقة عالية، وبالتالي يمكن أن تبدو أكثر احترافية وإثارة للإعجاب من الكروت الورقية التقليدية.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -190,8 +198,8 @@
                             <img src="assets/images/icons/4.png" class="img-fluid" alt="Img" />
                         </span>
                         <div class="feature-content">
-                            <h3>אינטראקציה יעילה</h3>
-                            <p>כרטיסי ביקור דיגיטליים יכולים להכיל קישורים לרשתות החברתיות שלך, ובכך מאפשרים לאנשים להתחבר אליך בקלות ולעקוב אחרי העדכונים שלך.</p>
+                            <h3>وسائل التواصل كلها موجودة</h3>
+                            <p>الكرت الديجيتالي بحتوي على روابط لحساباتك على وسائل التواصل الاجتماعي، الي بهوّن على الأشخاص يتواصلوا معك بسهولة ومتابعة كل جديد عندك.</p>
                         </div>
                     </div>
                     <div class="feature-block">
@@ -199,8 +207,8 @@
                             <img src="assets/images/icons/5.png" class="img-fluid" alt="Img" />
                         </span>
                         <div class="feature-content">
-                            <h3>אפשרות לשיתוף קלה</h3>
-                            <p>אם אתה רוצה לשלוח את כרטיס הביקור שלך לאדם אחר, זה נעשה בקלות דרך פלטפורמות שיתוף או העתקה ישירה או דרך קוד - QR שאנחנו מיצרים בשבילך.</p>
+                            <h3>سهل المشاركة</h3>
+                            <p>إذا بدك ترسل الكرت الديجيتالي الخاص بك لشخص آخر، بتغدر ترسلو بسهولة عبر ازرار المشاركة أو النسخ المباشر أو عبر رمز الاستجابة السريعة (QR code) الذي نُنشئه لك.</p>
                         </div>
                     </div>
                     <div class="feature-block">
@@ -208,8 +216,8 @@
                             <img src="assets/images/icons/6.png" class="img-fluid" alt="Img" />
                         </span>
                         <div class="feature-content">
-                            <h3>פורמט אלקטרוני</h3>
-                            <p>כרטיס הביקור הדיגיטלי הוא מסמך אלקטרוני, שנשמר במכשירים כמו טלפון חכם או מחשב נייד ונכנסים דרך דפדפן ללא צורך בהורדת אפליקציה</p>
+                            <h3>كلو الكتروني</h3>
+                            <p>ب                               الكرت الديجيتالي هو موقع انترنت، بنحفظ عادةً على أجهزة مثل الهواتف الذكية أو الحواسيب المحمولة، وبتغدر تصلو عبر متصفح الإنترنت بدون حاجة انك تنزل اي تطبيق.</p>
                         </div>
                     </div>
                 </div>
@@ -222,19 +230,11 @@
     <section id="faqs" class="section-block" data-scroll-index="4">
         <div class="container">
             <div class="section-header">
-                <h1>אז מי <span style="color:rgb(0 150 245)">אנחנו</span> ?  </h1>
+                <h1><span style="color:rgb(0 150 245)">مين احنا</span> ?  </h1>
 
             </div>
             <p style="    font-size: 22px;">
-                כמומחים בשיווק מיתוג ובניית כרטיסי ביקור דיגיטלי, אנו כאן כדי להביא את העסק שלך לרמה הבאה. בתור צוות מומחה, אנו מציעים פתרונות מתואמים אישית שיעזרו לעסק שלך להתבנות ולצמוח.
-
-                אנו מתמחים ביצירת זהות מותגית מובהקת המשקפת את הערכים והמטרות של העסק שלך. דרך עיצוב מרהיב, תוכן משכנע ושיטות ייעוץ מתוחכמות, אנו נותנים למותג שלך את החשיבות הנדרשת כדי לקבל זיהוי מובהק ולהשאיר רושם חיובי על לקוחותיך.
-                
-                הכרטיסי ביקור הדיגיטליים שלנו מותאמים אישית ומעוצבים בקפידה על מנת להציע לך את הפתרון האידיאלי להתפרסות מותגית מרשימה. עם טכנולוגיות מתקדמות ועיצובים מודרניים, כרטיסי הביקור הדיגיטליים שלנו מבטיחים להעניק לך יתרון תחרותי ולהשאיר רושם חזק על לקוחותיך.
-                
-                אנו נלווה אותך בכל שלב של התהליך - מהתכנון ועד ליישום, כדי לוודא שהתוצאה הסופית תשקף את החזון שלך ותתאים לצרכי העסק שלך.
-                
-                בואו נקדם את המותג שלך יחד!
+                شركة IonMedia هي شركة رائدة في مجال التسويق الإلكتروني، وتطوير العلامات التجارية، وبناء المواقع الإلكترونية، وإنشاء الكروت الديجيتالية. يتمحور هدفنا حول تطوير المصالح في الوسط العربي وتعزيز وجودها على الإنترنت من خلال الاستفادة الكاملة من عالم الديجيتال والتسويق الإلكتروني. نسعى جاهدين لتحقيق نمو مصالح زبائننا من خلال استراتيجيات متقدمة ومبتكرة تضمن الوصول إلى جمهورهم المستهدف وتعزيز تجربتهم الرقمية.
             </p>
         </div>
     </section>
@@ -243,20 +243,20 @@
 
         <div class="contact-form-block" >
             <div class="section-header-style2">
-                <h1 style="font-weight: bold; color: rgb(0 150 245);"> לשיחת ייעוץ ולהצעת מחיר  </h1>
+                <h1 style="font-weight: bold; color: rgb(0 150 245);"> تواصل معنا الآن </h1>
 
             </div>
-            <div id="successMessage" class="message success" style="display: none;" >תודה על ההודעה שלך</div>     
-            <div id="errorMessage" class="message error" style="display: none;" >שגיאה במשלוח ההודעה </div>
+            <div id="successMessage" class="message success" style="display: none;" >شكرُا لك على رسالتك</div>     
+            <div id="errorMessage" class="message error" style="display: none;" >خطأ اثناء ارسال الرسالة , حاول مرة اخرى !</div>
             
             <form class="contact-form" id="emailForm">
-                <input type="text" id="name" class="form-control" placeholder="שם" required/>
+                <input type="text" id="name" class="form-control" placeholder="الاسم الكامل" required/>
                 <div class="error-message" id="name-error"></div>
-                <input type="email" id="email" class="form-control" placeholder="איימיל (לא חובה)" />
-                <input type="text" id="phone" class="form-control" placeholder="טלפון" />
+                <input type="email" id="email" class="form-control" placeholder="ايميل (ليس ضروريا)" />
+                <input type="text" id="phone" class="form-control" placeholder="تلفون" />
                 <div class="error-message" id="phone-error"></div>
-                <textarea id="message" class="form-control" placeholder="הודעה"></textarea>
-                <button style="width: 100%;" class="btn theme-btn" type="submit">שליחה</button>
+                <textarea id="message" class="form-control" placeholder="رسالة"></textarea>
+                <button style="width: 100%;" class="btn theme-btn" type="submit">ارسال</button>
             </form>
         </div>
 
@@ -269,11 +269,10 @@
         <div class="container">
             <div class="section-header">
                 <h2>
-                    3 <span style="color: rgb(0 150 245)">צעדים</span> ואתה איתנו
+                    3 <span style="color: rgb(0 150 245)">خطوات</span> بتصير معنا
                  </h2>
                 <p>
-                    העסק שלך צריך לצמוח! אם אתה מחפש דרך להגדיל את הנוכחות והפרסום שלך, אנחנו כאן כדי לעזור. בשלב הנוכחי, אתה יכול לבחור מתוך 3 אפשרויות:
-                </p>
+مصلحتك بحاجة لكرت ديجيتالي عشان تبين قديش انت مصلحة ناجحة ودايما متواجد على الانترنت والديجيتال :                </p>
             </div>
             <div class="row">
                 <div class="col-md-6">
@@ -286,10 +285,9 @@
                     <div class="description-block">
                         <div class="inner-box">
                             <div class="step_num"><img src="assets/images/step1.png" alt="Img" /></div>
-                            <h3>השארת פרטים</h3>
+                            <h3>اترك تفاصيلك</h3>
                             <p> 
-תשאיר פרטים שלך ואחד מויועצי השיווק שלנו יוצר איתך קשר טלפוני במהירות האפשרית.
-                            </p>
+اترك تفاصيلك وخبير تسويقي من عنا بتواصل معك                             </p>
                         </div>
                     </div>
                     <!-- End Block 1 -->
@@ -298,8 +296,8 @@
                     <div class="description-block">
                         <div class="inner-box">
                             <div class="step_num"><img src="assets/images/step2.png" alt="Img" /></div>
-                            <h3>אפיון והבנת הדרישות</h3>
-                            <p> יועץ השיווק שלנו יבצע איתך אפיון ויבין את הצרכים שלך, ולאחר מכן תתחילו יחד לתכנן את התוכנית המותאמת אישית, העונה על הדרישות שלך.</p>
+                            <h3>دراسة مصلحتك وفهم استراتيجيتها</h3>
+                            <p> بعد ما تتواصل معنا , الخبير التسويقي راح يحكي معك ويفهم منك شو مصلحتك وشوية تفاصيل عن المصلحة وصور وتقييمات زبائنك ان وجد</p>
                         </div>
                     </div>
                     <!-- End Block 2 -->
@@ -308,8 +306,8 @@
                     <div class="description-block">
                         <div class="inner-box">
                             <div class="step_num"><img src="assets/images/step3.png" alt="Img" /></div>
-                            <h3>תהליך הביצוע</h3>
-                            <p> אחרי השיחה עם היועץ השיווקי שלנו, הפניה שלך תועבר למחלקה המתאימה ונתחיל לעבוד מיד.</p>
+                            <h3>مرحلة التصميم والبدئ في العمل</h3>
+                            <p> بعد مكالمتك مع خبيرنا التسويقي , راح تصل تفاصيلك لقسم البرمجة عنا ونبلش نشتغل على الكرت الديجيتالي الذي الخاص فيك</p>
                         </div>
                     </div>
                     <!-- End Block 3 -->
@@ -323,148 +321,267 @@
 
         <div class="contact-form-block" style=" ">
             <div class="section-header-style2">
-                <h1 style="font-weight: bold; color: rgb(0 150 245);"> לשיחת ייעוץ ולהצעת מחיר  </h1>
+                <h1 style="font-weight: bold; color: rgb(0 150 245);"> تواصل معنا الآن </h1>
 
             </div>
-            <div id="successMessage" class="message success" style="display: none;" >תודה על ההודעה שלך</div>     
-            <div id="errorMessage" class="message error" style="display: none;" >שגיאה במשלוח ההודעה </div>
+            <div id="successMessage" class="message success" style="display: none;" >شكرُا لك على رسالتك</div>     
+            <div id="errorMessage" class="message error" style="display: none;" >خطأ اثناء ارسال الرسالة , حاول مرة اخرى !</div>
             
             <form class="contact-form" id="emailForm">
-                <input type="text" id="name" class="form-control" placeholder="שם" required/>
+                <input type="text" id="name" class="form-control" placeholder="الاسم الكامل" required/>
                 <div class="error-message" id="name-error"></div>
-                <input type="email" id="email" class="form-control" placeholder="איימיל (לא חובה)" />
-                <input type="text" id="phone" class="form-control" placeholder="טלפון" />
+                <input type="email" id="email" class="form-control" placeholder="ايميل (ليس ضروريا)" />
+                <input type="text" id="phone" class="form-control" placeholder="تلفون" />
                 <div class="error-message" id="phone-error"></div>
-                <textarea id="message" class="form-control" placeholder="הודעה"></textarea>
-                <button style="width: 100%;" class="btn theme-btn" type="submit">שליחה</button>
+                <textarea id="message" class="form-control" placeholder="رسالة"></textarea>
+                <button style="width: 100%;" class="btn theme-btn" type="submit">ارسال</button>
             </form>
         </div>
 
     </div>
     <!-- End Contact form Area -->
 
-    <!-- Start App Screenshots Section -->
-    <section id="appScreenshots" class="section-block" data-scroll-index="3">
+     <!-- Start App Screenshots Section -->
+     <section id="appScreenshots" class="section-block" data-scroll-index="3" >
         <div class="shape-top"></div>
         <div class="container">
             <div class="section-header">
-                <h2>כרטיסי ביקור <span style="color:rgb(0 150 245)">להתרשמות</span></h2>
+                <h2 ><span style="color:rgb(0 150 245)">تعال تفرج </span>على مصالح وثقت فينا وعملت كرت ديجيتالي لمصلحتها </h2>
 
                 <p>
-                   דוגמאות לכרטיסי הביקור המובהקים שלנו , תלחץ על כרטיס לעיין מקרוב ...
+                قليل من اعمالنا لكروت ديجيتالية فخمة , اكبس على الصورة عشان تشوف الكرت على الحقيقة
                 </p>
             </div>
 
-            <div class="col-sm-12 row">
-                <div class="col-sm-2 img-box">
+            <div class="list_screen_slide owl-carousel screenMobileExamples" style="display:none">
+                <!-- Start screen item-->
+                <div class="item">
                     <a href="https://www.ionmedia.me/chacour-rabeia/#" >
                         <img src="assets/images/screen/1.png" alt="Img">
                     </a>
                 </div>
-                <div class="col-sm-2 img-box">
+                <!-- End screen item-->
+
+                <!-- Start screen item-->
+                <div class="item">
                     <a href="https://www.ionmedia.me/ameen/#" >
                         <img src="assets/images/screen/2.png" alt="Img">
                     </a>
                 </div>
-                <div class="col-sm-2 img-box">
+                <!-- End screen item-->
+
+                <!-- Start screen item-->
+                <div class="item">
                     <a href="https://www.ionmedia.me/oranet/#" >
                         <img src="assets/images/screen/3.png" alt="Img">
                     </a>
                 </div>
-                <div class="col-sm-2 img-box">
+                <!-- End screen item-->
+
+                <!-- Start screen item-->
+                <div class="item">
                     <a href="https://www.ionmedia.me/ns-saleh/#" >
                         <img src="assets/images/screen/4.png" alt="Img">
                     </a>
                 </div>
-                <div class="col-sm-2 img-box">
-                    <a href="https://www.ionmedia.me/5rooms-kitchens/#" >
+                <!-- End screen item-->
+
+                <!-- Start screen item-->
+                <div class="item">
+                    <a href="https://www.ionmedia.me/5rooms-kitchens/#">
                         <img src="assets/images/screen/5.png" alt="Img">
                     </a>
                 </div>
-                <div class="col-sm-2 img-box">
-                    <a href="https://www.ionmedia.me/bayan/#" >
+                <!-- End screen item-->
+
+                <!-- Start screen item-->
+                <div class="item">
+                    <a href="https://www.ionmedia.me/bayan/#">
                         <img src="assets/images/screen/6.png" alt="Img">
                     </a>
                 </div>
-            </div>
+                <!-- End screen item-->
 
-            <div class="col-sm-12 row">
-                 
-                <div class="col-sm-2 img-box">
+                <!-- Start screen item-->
+                <div class="item">
                     <a href="https://www.ionmedia.me/dr-sholy/#" >
                         <img src="assets/images/screen/7.png" alt="Img">
                     </a>
                 </div>
-                <div class="col-sm-2 img-box">
+                <!-- End screen item-->
+
+                <!-- Start screen item-->
+                <div class="item">
                     <a href="https://www.ionmedia.me/selawi/#" >
                         <img src="assets/images/screen/8.png" alt="Img">
                     </a>
                 </div>
+                <!-- End screen item-->
 
-                <div class="col-sm-2 img-box">
-                    <a href="https://www.ionmedia.me/mohanad/#" >
-                        <img src="assets/images/screen/9.png" >
+                <!-- Start screen item-->
+                <div class="item">
+                    <a href="https://www.ionmedia.me/mk/#" >
+                        <img src="assets/images/screen/9.png" alt="Img">
                     </a>
                 </div>
-
-                <div class="col-sm-2 img-box">
+                <!-- End screen item-->
+                 <!-- Start screen item-->
+                 <div class="item">
                     <a href="https://www.ionmedia.me/dr.nutella/#" >
-                        <img src="assets/images/screen/10.png">
+                        <img src="assets/images/screen/10.png" alt="Img">
                     </a>
                 </div>
-                <div class="col-sm-2 img-box">
+                <!-- End screen item-->
+                 <!-- Start screen item-->
+                 <div class="item">
                     <a href="https://www.ionmedia.me/emissa/#" >
-                        <img src="assets/images/screen/11.png">
+                        <img src="assets/images/screen/11.png" alt="Img">
                     </a>
                 </div>
-                <div class="col-sm-2 img-box">
+                <!-- End screen item-->
+                 <!-- Start screen item-->
+                 <div class="item">
                     <a href="https://www.ionmedia.me/dr-m.matani/#" >
-                        <img src="assets/images/screen/12.png" >
+                        <img src="assets/images/screen/12.png" alt="Img">
                     </a>
                 </div>
-            </div>
-            <div class="col-sm-12 row">
-                 
-                <div class="col-sm-2 img-box">
+                <!-- End screen item-->
+                 <!-- Start screen item-->
+                 <div class="item">
                     <a href="https://www.ionmedia.me/digitech/#" >
                         <img src="assets/images/screen/13.png" alt="Img">
                     </a>
                 </div>
-                <div class="col-sm-2 img-box">
+                <!-- End screen item-->
+                 <!-- Start screen item-->
+                 <div class="item">
                     <a href="https://www.ionmedia.me/jannah/#" >
                         <img src="assets/images/screen/14.png" alt="Img">
                     </a>
                 </div>
-
-                <div class="col-sm-2 img-box">
+                <!-- End screen item-->
+                 <!-- Start screen item-->
+                 <div class="item">
                     <a href="https://www.ionmedia.me/am/#" >
-                        <img src="assets/images/screen/15.png" >
+                        <img src="assets/images/screen/15.png" alt="Img">
                     </a>
+                </div>
+                <!-- End screen item-->
+            </div>
+            <div class="screenExamples">
+                <div class="col-sm-12 row">
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/chacour-rabeia/#" >
+                            <img src="assets/images/screen/1.png" alt="Img">
+                        </a>
+                    </div>
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/ameen/#" >
+                            <img src="assets/images/screen/2.png" alt="Img">
+                        </a>
+                    </div>
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/oranet/#" >
+                            <img src="assets/images/screen/3.png" alt="Img">
+                        </a>
+                    </div>
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/ns-saleh/#" >
+                            <img src="assets/images/screen/4.png" alt="Img">
+                        </a>
+                    </div>
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/5rooms-kitchens/#" >
+                            <img src="assets/images/screen/5.png" alt="Img">
+                        </a>
+                    </div>
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/bayan/#" >
+                            <img src="assets/images/screen/6.png" alt="Img">
+                        </a>
+                    </div>
+                </div>
+    
+                <div class="col-sm-12 row">
+                     
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/dr-sholy/#" >
+                            <img src="assets/images/screen/7.png" alt="Img">
+                        </a>
+                    </div>
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/selawi/#" >
+                            <img src="assets/images/screen/8.png" alt="Img">
+                        </a>
+                    </div>
+    
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/mk/#" >
+                            <img src="assets/images/screen/9.png" >
+                        </a>
+                    </div>
+    
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/dr.nutella/#" >
+                            <img src="assets/images/screen/10.png">
+                        </a>
+                    </div>
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/emissa/#" >
+                            <img src="assets/images/screen/11.png">
+                        </a>
+                    </div>
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/dr-m.matani/#" >
+                            <img src="assets/images/screen/12.png" >
+                        </a>
+                    </div>
+                </div>
+                <div class="col-sm-12 row">
+                     
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/digitech/#" >
+                            <img src="assets/images/screen/13.png" alt="Img">
+                        </a>
+                    </div>
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/jannah/#" >
+                            <img src="assets/images/screen/14.png" alt="Img">
+                        </a>
+                    </div>
+    
+                    <div class="col-sm-2 img-box">
+                        <a href="https://www.ionmedia.me/am/#" >
+                            <img src="assets/images/screen/15.png" >
+                        </a>
+                    </div>
+    
                 </div>
 
             </div>
         </div>
     </section>
     <!-- End App Screenshots Section -->
+
                 <!-- Start Contact form Area -->
                 <div class="col-md-12">
                   
                     <div class="contact-form-block" style=" ">
                         <div class="section-header-style2">
-                            <h1 style="font-weight: bold; color: rgb(0 150 245);"> לשיחת ייעוץ ולהצעת מחיר  </h1>
+                            <h1 style="font-weight: bold; color: rgb(0 150 245);"> تواصل معنا الآن </h1>
 
                         </div>
-                        <div id="successMessage" class="message success" style="display: none;" >תודה על ההודעה שלך</div>     
-                        <div id="errorMessage" class="message error" style="display: none;" >שגיאה במשלוח ההודעה </div>
+                        <div id="successMessage" class="message success" style="display: none;" >شكرُا لك على رسالتك</div>     
+                        <div id="errorMessage" class="message error" style="display: none;" >خطأ اثناء ارسال الرسالة , حاول مرة اخرى !</div>
                         
                         <form class="contact-form" id="emailForm">
-                            <input type="text" id="name" class="form-control" placeholder="שם" required/>
+                            <input type="text" id="name" class="form-control" placeholder="الاسم الكامل" required/>
                             <div class="error-message" id="name-error"></div>
-                            <input type="email" id="email" class="form-control" placeholder="איימיל (לא חובה)" />
-                            <input type="text" id="phone" class="form-control" placeholder="טלפון" />
+                            <input type="email" id="email" class="form-control" placeholder="ايميل (ليس ضروريا)" />
+                            <input type="text" id="phone" class="form-control" placeholder="تلفون" />
                             <div class="error-message" id="phone-error"></div>
-                            <textarea id="message" class="form-control" placeholder="הודעה"></textarea>
-                            <button style="width: 100%;" class="btn theme-btn" type="submit">שליחה</button>
+                            <textarea id="message" class="form-control" placeholder="رسالة"></textarea>
+                            <button style="width: 100%;" class="btn theme-btn" type="submit">ارسال</button>
                         </form>
                     </div>
 
@@ -478,10 +595,10 @@
             <div class="row">
                 <div class="col-md-5">
                     <div class="section-header-style2">
-                        <h2>מה אומרים <span style="color:rgb(0 150 245)">הלקוחות</span> שלנו </h2>
+                        <h2>اذا وصلت لهون شوف <span style="color:rgb(0 150 245)">زبائننا</span> شو بحكو </h2>
                         <p>
-                            אל תאמין רק למילים שלנו. <br>
-                            תצפה בהמלצות מלקוחות מרוצים שלנו!
+                         <br>
+                           تفرج على اراء زبائننا فينا
                         </p>
                         
                         <div class="review_nav">
@@ -499,7 +616,7 @@
                         <div class="owl-carousel review_details" id="review_details-1">
                             <!-- Start review item -->
                             <div class="item">
-                                <p>עבדתי עם החברה של איאונמדיה ליצור כרטיסי ביקור דיגיטלי. השירות היה מצוין ומקצועי ביותר. אופן יעיל ומהיר שבו נכנסו לפרטים של העסק ויצרו פתרון מותאם אישית שהתאים לצרכים שלי בדיוק. הכרטיסי והלוגו שעשו לי בחינם  היו ברמה מאוד גבוהה וקיבלתי המון מחמאות עליהם. אני בוודאות אמליץ על השירות המצוין הזה לכל מי שזקוק לפתרון איכותי ומקצועי.
+                                <p>
                                 </p>
                                 <h5>אמין גדבאן</h5>
                                 <h6> בעל חברת המשפץ האמין לשיבוצים</h6>
@@ -592,7 +709,7 @@
     <section id="faqs" class="section-block" data-scroll-index="6">
         <div class="container">
             <div class="section-header">
-                <h2>שאלות נפוצות </h2>
+                <h2>اسئلة متكررة </h2>
 
             </div>
             <div class="row">
@@ -609,7 +726,7 @@
                                 <h2 class="mb-0">
                                     <button class="btn btn-link" type="button" data-toggle="collapse"
                                         data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        איך אפשר לבנות מיתוג מצליח?
+                                        هل هي مناسبة لجميع أنواع الأعمال و المهن ؟
                                     </button>
                                 </h2>
                             </div>
@@ -617,7 +734,7 @@
                             <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                                 data-parent="#accordionExample">
                                 <div class="card-body">
-                                    לבנות מיתוג מצליח דורש התמדה, יצירתיות והתמקדות בפרטיות, ומצריך קידום יחסים, יצירת חוויות חיוביות ללקוחות ותכנון אסטרטגי לאורך טווח.
+                                    طبعا نعم ! لا يهم ان كنت رجل اعمال او تاجر او صاحب اي مهنة .محامي . محاسب . طبيب . سائق تاكسي . البطاقة الإلكترونية تلائم كل الوظائف
                                 </div>
                             </div>
                         </div>
@@ -629,7 +746,7 @@
                                 <h2 class="mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                        מה כרטיס ביקור דיגיטלי ולמה הוא חשוב?
+                                        ماذا لو أردت تغيير شيء ما في احدى نصوص البطاقة في المستقبل؟
 
                                     </button>
                                 </h2>
@@ -637,7 +754,7 @@
                             <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
                                 data-parent="#accordionExample">
                                 <div class="card-body">
-                                     כרטיס ביקור דיגיטלי הוא כרטיס על-פי אינטרנט שמציג מידע אישי ועסקי. הוא חשוב כי הוא יכול לשמש ככלי ניווט ליצירת קשר ולהצגת מידע חשוב בדרך מקצועית.
+                                    يمكنك تعديل ما تشاء من النصوص مثلا اذا تغير لديك رقم الهاتف او ساعات العمل . يمكنك تغيير ما تشاء من النصوص عليك فقط ان تراسلنا على الواتس اب و سنعدل لك النص
                                 </div>
                             </div>
                         </div>
@@ -650,14 +767,14 @@
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapseThree" aria-expanded="false"
                                         aria-controls="collapseThree">
-                                        איך ניתן לקבוע את התקציב לשיווק דיגיטלי ?
+                                        هل يمكن الترويج للبطاقة في الإعلانات الممولة ؟
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
                                 data-parent="#accordionExample">
                                 <div class="card-body">
-                                    תשובה: התקציב יחלק לפי מטרות השיווק, סוגי הפרסום המשמשים, רמת התחרות בתעשייה, ואפשרויות הכללה שונות. חשוב למדוד ולנהל את התקציב בהתאם לתוצאות.
+                                    نعم ، يمكنك أيضًا الترويج للبطاقة عبر الإعلانات الممولة عبر فيسبوك و جووجل و غيرهم من المنصات 
                                 </div>
                             </div>
                         </div>
@@ -669,14 +786,14 @@
                                 <h2 class="mb-0">
                                     <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
                                         data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                        מהם היתרונות של כרטיסי ביקור דיגיטליים בהשוואה לכרטיסי ביקור מסורתיים ?
+                                        هل البطاقة الإلكترونية تغنيني عن موقع ويب كامل ؟
                                     </button>
                                 </h2>
                             </div>
                             <div id="collapseFour" class="collapse" aria-labelledby="headingThree"
                                 data-parent="#accordionExample">
                                 <div class="card-body">
-                                    תשובה: היתרונות של כרטיסי ביקור דיגיטליים כוללים אפשרות לשיתוף ושיוך לרשתות חברתיות, עדכונים קלים ומהירים, קישורים לאתר אינטרנט ותוכן מותאם אישית, בניית מותג מודרנית ויכולת להציג מידע בצורה חדישנית.
+                                    الجواب هو حسب مهنتك و نشاطك التجاري . البطاقة الإلكترونية هي موقع ويب مخصصة اكثر لأجهزة الجوال و التابلت و يمكنك عرض نشاطك التجاري فيها و هي تظهر ايضا في نتائج بحث جووجل و هي بالفعل يمكنها ان تغني الكثيرين من اصحاب المهن و المصالح عن إنشاء مواقع انترنت بتكلفة عالية فهي بديل ارخص من موقع انترنت لكن اذا كان لديك شركة كبيرة او مؤسسة كبيرة فأكيد انت تحتاج لموقع انترنت متكامل بجانب ان هذه البطاقة سوف تساعدك لجذب عدد زوار اكبر اذا كنت تريد امتلاك موقع انترنت كامل في المستقبل او اذا كان لديك بالفعل موقع انترنت مسبقا
                                 </div>
                             </div>
                         </div>
@@ -703,20 +820,20 @@
                     </div>
                     <div class="contact-form-block">
                         <div class="section-header-style2">
-                            <h1 style="font-weight: bold; color: rgb(0 150 245);"> לשיחת ייעוץ ולהצעת מחיר  </h1>
+                            <h1 style="font-weight: bold; color: rgb(0 150 245);"> تواصل معنا الآن </h1>
 
                         </div>
-                        <div id="successMessage" class="message success" style="display: none;" >תודה על ההודעה שלך</div>     
-                        <div id="errorMessage" class="message error" style="display: none;" >שגיאה במשלוח ההודעה </div>
+                        <div id="successMessage" class="message success" style="display: none;" >شكرُا لك على رسالتك</div>     
+                        <div id="errorMessage" class="message error" style="display: none;" >خطأ اثناء ارسال الرسالة , حاول مرة اخرى !</div>
                         
                         <form class="contact-form" id="emailForm">
-                            <input type="text" id="name" class="form-control" placeholder="שם" required/>
+                            <input type="text" id="name" class="form-control" placeholder="الاسم الكامل" required/>
                             <div class="error-message" id="name-error"></div>
-                            <input type="email" id="email" class="form-control" placeholder="איימיל (לא חובה)" />
-                            <input type="text" id="phone" class="form-control" placeholder="טלפון" />
+                            <input type="email" id="email" class="form-control" placeholder="ايميل (ليس ضروريا)" />
+                            <input type="text" id="phone" class="form-control" placeholder="تلفون" />
                             <div class="error-message" id="phone-error"></div>
-                            <textarea id="message" class="form-control" placeholder="הודעה"></textarea>
-                            <button style="width: 100%;" class="btn theme-btn" type="submit">שליחה</button>
+                            <textarea id="message" class="form-control" placeholder="رسالة"></textarea>
+                            <button style="width: 100%;" class="btn theme-btn" type="submit">ارسال</button>
                         </form>
                     </div>
 
@@ -740,43 +857,13 @@
                             <img src="assets/images/logo.png" class="img-fluid" alt="Img" />
                         </div>
                         <p>
-                            חברה לשיווק ומיתוג וקידום עסקים ובניית אתרים וכרטיסי ביקור דיגיטליים
+                           شركة متخصصة للتسويق الاكتروني وتقديم حلول رقمية للمصالح في الوسط العربي
                         </p>
                         <div class="footer-social-links">
                             <a href="https://www.facebook.com/profile.php?id=100092701628022"><i class="ti-facebook"></i></a>
                             <a href="https://www.instagram.com/ionmedia.me/?fbclid=IwAR3hEXxkbE_dbIimNEu0SEEEdjGkrclqXCktCD1ZwGOuQXE7iSxTImLT6fc"><i class="ti-instagram"></i></a>
                         </div>
                     </div>
-                    <!-- End Column 1 -->
-
-                    <!-- Start Column 2 -->
-                    <!-- <div class="col-md-2">
-                        <h4 class="footer-title">روابط مهمه</h4>
-                        <ul class="footer-links">
-                            <li><a href="index.html">الرئيسية</a></li>
-                            <li><a href="about-us.html">من نحن</a></li>
-                            <li><a href="contact-us.html">اتصل بنا</a></li>
-                            <li><a href="reviews.html">الأراء</a></li>
-                            <li><a href="faqs.html">الأسئلة المتكررة</a></li>
-                            <li><a href="blog-1.html">المقالات</a></li>
-                        </ul>
-                    </div> -->
-                    <!-- End Column 2 -->
-
-                    <!-- Start Column 3 -->
-                    <!-- <div class="col-md-2">
-                        <h4 class="footer-title">حساب المستخدم</h4>
-                        <ul class="footer-links">
-                            <li><a href="signin.html">تسجيل الدخول</a></li>
-                            <li><a href="signup.html">مستخدم جديد</a></li>
-                            <li><a href="recover-account.html">استعادة الحساب</a></li>
-                            <li><a href="recover-account.html">تغير كلمة المرور</a></li>
-                            <li><a href="error-404.html">404 صفحة الخطأ</a></li>
-                            <li><a href="coming-soon.html">صفحة الظهور قريبا</a></li>
-                        </ul>
-                    </div> -->
-                    <!-- End Column 3 -->
-
                    
                 </div>
             </div>
@@ -812,7 +899,7 @@
     <!-- scrollIt -->
     <script src="assets/js/scrollIt.min.js"></script>
     <!-- Main Script -->
-    <script src="assets/js/script.js"></script>
+    <script src="assets/js/script.js?v=1.0"></script>
 </body>
 
 </html>
