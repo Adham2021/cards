@@ -251,7 +251,7 @@ ol {
     font-size: 12px;
 }
 .theme-btn{
-    background-image:  linear-gradient(to right, rgba(34, 103, 148, 0.90) 0%, rgb(19, 19, 19, 0.90) 51%, rgba(227, 227, 227, 0.90) 100%);;
+    background-color: #4F7BBC;
     -webkit-transition: all 500ms;
     transition: all 500ms;
     background-size: 200% auto;
@@ -367,7 +367,7 @@ ul.list-checked li i {
 #back-to-top .top {
     position: fixed;
     color: #ffffff;
-    background-image: linear-gradient(to right, rgba(34, 103, 148, 0.90) 0%, rgb(19, 19, 19, 0.90) 51%, rgba(227, 227, 227, 0.90) 100%);;
+    background-color: #4F7BBC;
     background-size: 200% auto;
     bottom: 45px;
     right: 45px;
@@ -1735,7 +1735,7 @@ header.card-header {
     margin-bottom: 15px;
 }
 #faqs .card-header{
-    background-image: linear-gradient(to right, rgba(34, 103, 148, 0.90) 0%, rgb(19, 19, 19, 0.90) 51%, rgba(227, 227, 227, 0.90) 100%);;
+    background-color : #4F7BBC;
     text-align: left;
     padding: 13px 25px;
     border-radius: 5px !important;
@@ -1911,7 +1911,7 @@ header.card-header {
 #15. Footer
 ============================================================================= */
 footer{
-    background: linear-gradient(to right, rgba(34, 103, 148, 0.90) 0%, rgb(19, 19, 19, 0.90) 51%, rgba(227, 227, 227, 0.90) 100%);;
+    background-color: #4F7BBC;
     background-size:  200% auto;
     position: relative;
     padding-top: 220px;
