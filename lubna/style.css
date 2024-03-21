@@ -419,9 +419,8 @@ iframe {
 }
 .container {
     background: none;
-    box-shadow: 0 -5px 10px #FBAC4F;  
+    box-shadow: 0 -5px 10px -5px #FBAC4F;
 }
-
 
 #language-menu-btn {
     background-color: #3b3a3a6b;

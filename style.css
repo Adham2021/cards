@@ -84,13 +84,14 @@
 }
 
 footer {
-    background-color: #333;
+    background-color: #ebebeb;
     color: white;
     text-align: center;
-    padding: 10px;
   }
   footer p {
-    font-size: 13px;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
   }
   .heart {
     color: red;
@@ -418,7 +419,24 @@ font-weight: bold;
     -webkit-transition: all 0.1s;
     transition: all 0.1s;
   }
-
+  .footerClass{
+    display: inline-block;
+                outline: 0;
+                border: 0;
+                cursor: pointer;
+                background: #4F7BBC;
+                color: white;
+                border-radius: 30px;
+                padding: 14px 24px 16px;
+                font-size: 18px;
+                font-weight: 700;
+                line-height: 1;
+                transition: transform 200ms,background 200ms;
+                :hover{
+                    transform: translateY(-2px);
+                }
+                
+}
   #gallery2{
     -webkit-column-count:4;
     -moz-column-count:4;
