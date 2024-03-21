@@ -588,10 +588,18 @@ data-lang-russian="Надежный ремонт | Строительство и
     <script src="script.js?v=2.0"></script>
     <footer>
         <p>الكرت الديجيتالي الذكي من IonMedia</p> 
-        <button class="footerClass">للانضمام اضغط هنا</button>
+        <button class="footerClass" id="openTabButton">للانضمام اضغط هنا</button>
         <br>
         <img src="../assets/images/Mainlogo.png" alt="IonMedia" style="width:40%;margin-top: 8px;">       
     </footer>
+    <script>
+        $(document).ready(function() {
+          $("#openTabButton").click(function() {
+            // Open a new tab with the specified URL
+            window.open("https://www.ionmedia.me", "_blank");
+          });
+        });
+        </script>
     
 </body>
 
