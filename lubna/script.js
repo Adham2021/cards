@@ -163,7 +163,7 @@ function changeLanguage(language, byClickButton = true) {
         english: { flag: "/assets/images/files/flags/united-kingdom.png", text: "English" },
     };
     const selectedLanguage = languageData[language];
-    localStorage.setItem('EmissaPreferredLanguage', language);
+    localStorage.setItem('LubnaPreferredLanguage', language);
     document.getElementById("selected-language").innerText = selectedLanguage.text;
     document.getElementById("language-menu-btn").getElementsByTagName("img")[0].src = selectedLanguage.flag;
 
@@ -178,7 +178,7 @@ function changeLanguage(language, byClickButton = true) {
     }
 }
 function getLanguage() {
-    return localStorage.getItem('EmissaPreferredLanguage') || 'arabic'; // Default language is Arabic
+    return localStorage.getItem('LubnaPreferredLanguage') || 'arabic'; // Default language is Arabic
 }
 function toggleLanguageMenu() {
     var languageMenu = document.getElementById("language-menu");
@@ -370,6 +370,13 @@ $(document).ready(function () {
                 addToHomeScreenButton.hide(); // Hide the button after user interaction
             });
         }
+    });
+
+    $(".whatsapp-button").click(function(){
+        // Get the WhatsApp link from the anchor tag href attribute
+        var whatsappLink = $(this).find("a").attr("href");
+        // Open the WhatsApp link in a new tab
+        window.open(whatsappLink, '_blank');
     });
 });
 
