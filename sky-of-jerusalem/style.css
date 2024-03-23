@@ -1,0 +1,586 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+    background: #c3c3c3;
+}
+
+
+
+.cover-photo {
+    position: relative;
+    overflow: hidden; /* Ensure the pseudo-element doesn't overflow */
+    width: 100%;
+    height: 250px;
+}
+.cover-photo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #6a90cd url("assets/images/files/cover.jpg") no-repeat;
+    background-blend-mode: multiply;
+    background-size: cover;
+    background-position: center;
+    clip-path: polygon(0 0, 100% 0, 100% 92%, 50% 100%, 0 92%);
+
+}
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+  }
+.image-container {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+.toggle-content {
+    overflow: hidden;
+    display: none;
+    transition: max-height 0.5s ease;
+    background-color: rgb(254 241 232 / 75%);
+    border-radius: 1%;
+}
+.toggle-content .show { 
+    padding-bottom: 20px;
+}
+.ProgramHead{
+    text-align: center;
+    background-color: #ababab;
+    color: black;
+}
+.toggle-content li{
+    text-align: right;
+    font-weight: bold;
+    color: black;
+    font-size: 15px;
+    padding-top: 5px;
+}
+.whatsapp-button {
+    display: inline-block;
+    border: 2px solid #0a9b1d;
+    border-radius: 5px;
+    text-decoration: none;
+    color: #0a9b1d;
+    font-size: 14px;
+}
+
+.whatsapp-button i {
+    font-size: 48px;
+    animation: ring 1s infinite;
+    margin-right: 10px;
+}
+
+/* Animation for the WhatsApp icon */
+
+
+.toggle-btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 5px;
+    background-color: rgba(38, 33, 91, 0.5);
+    transition: background-color 0.3s ease;
+    color: black;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.toggle-btn:hover {
+    background-color: #d1e0ff;
+}
+
+.toggle-btn i {
+    font-size: 16px;
+}
+
+.service-item,
+.faq-item,
+.review {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.service-icon,
+.faq-item label {
+    font-size: 24px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.service-item:hover .service-icon,
+.faq-item label:hover {
+    color: #007bff;
+}
+
+.service-text,
+.faq-item p,
+.review p,
+.working-hours p
+{
+    font-size: 19px;
+    color: black;
+}
+
+.faq-item label {
+    display: block;
+    padding: 10px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: left;
+}
+
+.faq-item label:hover {
+    background-color: #d1e0ff;
+}
+
+.faq-item p {
+    overflow: hidden;
+    transition: height 0.5s ease;
+    background-color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: auto;
+    color: black;
+
+}
+
+.service-item p {
+    overflow: hidden;
+    transition: height 0.5s ease;
+    padding: 10px;
+    margin-top: 10px;
+    height: auto;
+    color:black;
+    font-weight: bold;
+    margin: 0;
+}
+
+.review {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.review .subtitle {
+    font-style: italic;
+    /* Italicize the subtitle */
+    color: #888;
+    /* Set a subdued color for the subtitle */
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.star-rating i {
+    color: #ffd700;
+    /* Gold color for stars */
+    font-size: 18px;
+    margin-right: 2px;
+}
+
+
+.contact-info p {
+    margin: 0;
+}
+
+
+.waze i {
+    color: #FCD516;
+    /* Google Maps color */
+}
+
+.facebook i {
+    color: #FCD516;
+}
+
+.whatsapp i {
+    color: #FCD516;
+}
+
+.phone i {
+    color: #FCD516;
+}
+
+.email i {
+    color: #FCD516;
+}
+
+.website i {
+    color: #FCD516;
+}
+
+.instagram i {
+    color: #FCD516;
+}
+
+.tiktok i {
+    color: #FCD516;
+}
+
+.working-hours,
+.about-us,
+.services,
+.gallery-container,
+.faq,
+.reviews {
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 30px;
+}
+
+.working-hours p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.gallery-container h4 {
+    background-color: burlywood;
+    border-radius: 10%;
+}
+.img-responsive {
+    opacity: 1;
+}
+.about-us h2,
+.reviews h2,
+.share-section h2,
+.slider-container h2,
+.programs-container h2,
+.working-hours h2,
+.faq h2,
+.services h2 ,
+.contact-form-details h2{
+    color:black;
+    text-decoration: underline;
+   /* font-family: 'Heebo', sans-serif; */;
+}
+
+.gallery-container {
+    text-align: center; /* Center the text horizontally */
+}
+#working-hours-status span { 
+    color:black
+}
+.text {
+    color: black;
+    opacity: 0.996057;
+}
+
+.reviews-slider {
+    position: relative;
+    overflow: hidden;
+}
+iframe {
+    /* You can adjust the max-width if needed */
+    max-width: 100%;
+}
+
+.reviews {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review {
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.slider-container {
+    position: relative;
+    width: 90%;
+    margin: 50px auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 5%;
+    background-color: ghostblack;
+}
+
+.slide img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.slide h3 {
+    margin: 5px 0;
+    color:black;
+}
+.slide p {
+    color:black;
+}
+
+.stars {
+    color: #ffd700;
+    /* gold color for stars */
+    margin: 5px 0;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color:black;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.slide p {
+    font-weight: bold;
+
+}
+
+.profile img {
+    width: 75%;
+    height: 75%;
+    margin-bottom: 0;
+    border-radius: 0%;
+    margin-top: -25px;
+}
+
+.profile .subtitle{
+    font-size: 18px !important;
+    color: #3876DB;
+    font-weight: bold !important;
+    margin-top: -25px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInFromBottom 1s ease-out 1s forwards;
+   /* font-family: 'Heebo', sans-serif; */;
+
+}
+.profile {
+    top: -45px;
+}
+.about-us {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInFromBottom 1.5s ease-out 1.5s forwards;
+}
+
+.profile h2 { 
+    
+    font-size: 25px !important;
+    color:#3876DB;
+    margin-top: -15px;
+}
+.container {
+    background: none;
+    box-shadow: 0 -5px 10px -5px #DFAA5C;
+}
+
+#language-menu-btn {
+    background-color: #3b3a3a6b;
+}
+
+#scan-icon{
+    background-color: #DFAA5C;;
+}
+#scan-icon i{
+    color: white;
+}
+.about-us p {
+    font-size: 19px;
+    color: black;
+    animation: slideFromBottom 1.6s ease-out forwards;
+}
+.add-to-contacts {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #DFAA5C;;
+    border-radius: 5px;
+    border: 2px solid rgb(141, 141, 141);
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    animation: fadeInFromBottom 1s ease-out 2s forwards;
+    opacity: 0;
+    transform: translateY(50px);
+
+}
+
+
+.add-to-contacts span {
+    color: white;
+   /* font-family: 'Heebo', sans-serif; */;
+
+}
+
+.add-to-contacts:hover {
+    background-color: #3876DB;
+    color: #fff;
+}
+
+.add-to-contacts i {
+    font-size: 18px;
+    margin-right: 5px;
+    color: white;
+}
+.contact-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
+    margin-top: -23px;
+    gap: 20px;
+    max-width: 800px; /* Adjust as needed */
+}
+.contact-icons i
+{
+    color:#3876DB;
+}
+.contact-icons span { 
+   /* font-family: 'Heebo', sans-serif; */
+}
+.icon-container {
+    text-align: center;
+    text-decoration: none;
+    color: #333; /* Icon color */
+    font-size: 14px;
+    transition: color 0.3s;
+    margin-bottom: 20px; /* Adjust spacing between rows */
+
+}
+
+
+.icon-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px; /* Adjust the circle size */
+    height: 50px; /* Adjust the circle size */
+    border: 1px solid #3876DB; /* Border color */
+    border-radius: 50%; /* Make it circular */
+}
+
+.icon-circle:hover {
+    color: #007BFF; /* Change icon color on hover */
+}
+
+.icon-text {
+    display: block;
+    font-weight: bold;
+    color: black;
+}
+.error-message{
+    color: red;
+    font-size: 12px;
+}
+
+.submitButtonContact {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 321px;
+    background-color:rgba(38, 33, 91, 0.5) !important;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .dropdown {
+    margin-bottom: 10px;
+  }
+  
+  label {
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-right: 5px;
+  }
+  
+  select {
+    padding: 8px;
+    width: 200px; /* Adjust the width as needed */
+    box-sizing: border-box; /* Include padding in the width */
+  }
+  option { 
+    font-family: Cairo, sans-serif;
+  }
+  .programs-container{ 
+        position: relative;
+        width: 90%;
+        margin: 0 auto;
+        overflow: hidden;
+        margin-top: 20px;
+        text-align: center;
+    
+  }
+  .search-button {
+    padding: 8px 16px;
+    background-color: #3876DB;
+    color: #fff;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    width: 53%;
+    margin: 0 auto;
+    margin-right: 114px;
+    font-family: Cairo, sans-serif;
+}
+  .search-button:hover {
+    background-color: #0056b3;
+  }
+  
