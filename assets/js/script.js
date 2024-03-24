@@ -369,6 +369,7 @@
 })(jQuery);
 
 $(document).ready(function() {
+    debugger;
     const form = $("#emailForm");
     const nameInput = $("#name");
     const phoneInput = $("#phone");
@@ -404,7 +405,7 @@ $(document).ready(function() {
         phoneError.text("");
 
         const emailData = {
-            to: "adham.shahwan94@gmail.com",
+            to: "ionmedia.me@gmail.com",
             name: nameInput.val(),
             phone: phoneNumber,
             message: messageInput.val(),
@@ -420,7 +421,324 @@ $(document).ready(function() {
                 if (data.success) {
                     $("#successMessage").show();
                     $("#errorMessage").hide();
-                    alert("תודה על ההודעה שלך");
+                    window.location.href = "thank";
+
+                    // Clear input fields after successful submission
+                    nameInput.val("");
+                    phoneInput.val("");
+                    messageInput.val("");
+                } else {
+                    $("#successMessage").hide();
+                    $("#errorMessage").show();
+                }
+            },
+            error: function(error) {
+                $("#errorMessage").show();
+            }
+        });
+    });
+
+    // Show error messages as the user types
+    nameInput.on("input", function() {
+        nameError.text("");
+    });
+
+    phoneInput.on("input", function() {
+        phoneError.text("");
+    });
+});
+$(document).ready(function() {
+    debugger;
+    const form = $("#emailForm2");
+    const nameInput = $("#name2");
+    const phoneInput = $("#phone2");
+    const email = $("#email2");
+    const messageInput = $("#message2");
+    const nameError = $("#name-error2");
+    const phoneError = $("#phone-error2");
+
+    // Use input event to restrict input to numeric values only
+    phoneInput.on("input", function() {
+        // Remove non-numeric characters
+        const phoneNumber = phoneInput.val().replace(/[^0-9]/g, '');
+
+        // Update the input value with the numeric version
+        phoneInput.val(phoneNumber);
+    });
+
+    form.submit(function(event) {
+        event.preventDefault();
+        const phoneNumber = phoneInput.val().trim();
+
+        // Get the selected language
+
+        const phoneLength= "מספר הטלפון חייב להיות בין 7 ל-10 ספרות."
+
+        // Check phone number length
+        if (phoneNumber.length < 7 || phoneNumber.length > 10) {
+            phoneError.text(phoneLength);
+            return;
+        }
+
+        // Reset error messages
+        phoneError.text("");
+
+        const emailData = {
+            to: "ionmedia.me@gmail.com",
+            name: nameInput.val(),
+            phone: phoneNumber,
+            message: messageInput.val(),
+            cc:"adham@fit-x.app"
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "../send-email",
+            contentType: "application/json",
+            data: JSON.stringify(emailData),
+            success: function(data) {
+                if (data.success) {
+                    $("#successMessage").show();
+                    $("#errorMessage").hide();
+                    window.location.href = "thank";
+
+                    // Clear input fields after successful submission
+                    nameInput.val("");
+                    phoneInput.val("");
+                    messageInput.val("");
+                } else {
+                    $("#successMessage").hide();
+                    $("#errorMessage").show();
+                }
+            },
+            error: function(error) {
+                $("#errorMessage").show();
+            }
+        });
+    });
+
+    // Show error messages as the user types
+    nameInput.on("input", function() {
+        nameError.text("");
+    });
+
+    phoneInput.on("input", function() {
+        phoneError.text("");
+    });
+});
+$(document).ready(function() {
+    debugger;
+    const form = $("#emailForm3");
+    const nameInput = $("#name3");
+    const phoneInput = $("#phone3");
+    const email = $("#email3");
+    const messageInput = $("#message3");
+    const nameError = $("#name-error3");
+    const phoneError = $("#phone-error3");
+
+    // Use input event to restrict input to numeric values only
+    phoneInput.on("input", function() {
+        // Remove non-numeric characters
+        const phoneNumber = phoneInput.val().replace(/[^0-9]/g, '');
+
+        // Update the input value with the numeric version
+        phoneInput.val(phoneNumber);
+    });
+
+    form.submit(function(event) {
+        event.preventDefault();
+        const phoneNumber = phoneInput.val().trim();
+
+        // Get the selected language
+
+        const phoneLength= "מספר הטלפון חייב להיות בין 7 ל-10 ספרות."
+
+        // Check phone number length
+        if (phoneNumber.length < 7 || phoneNumber.length > 10) {
+            phoneError.text(phoneLength);
+            return;
+        }
+
+        // Reset error messages
+        phoneError.text("");
+
+        const emailData = {
+            to: "ionmedia.me@gmail.com",
+            name: nameInput.val(),
+            phone: phoneNumber,
+            message: messageInput.val(),
+            cc:"adham@fit-x.app"
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "../send-email",
+            contentType: "application/json",
+            data: JSON.stringify(emailData),
+            success: function(data) {
+                if (data.success) {
+                    $("#successMessage").show();
+                    $("#errorMessage").hide();
+                    window.location.href = "thank";
+
+                    // Clear input fields after successful submission
+                    nameInput.val("");
+                    phoneInput.val("");
+                    messageInput.val("");
+                } else {
+                    $("#successMessage").hide();
+                    $("#errorMessage").show();
+                }
+            },
+            error: function(error) {
+                $("#errorMessage").show();
+            }
+        });
+    });
+
+    // Show error messages as the user types
+    nameInput.on("input", function() {
+        nameError.text("");
+    });
+
+    phoneInput.on("input", function() {
+        phoneError.text("");
+    });
+});
+$(document).ready(function() {
+    debugger;
+    const form = $("#emailForm4");
+    const nameInput = $("#name4");
+    const phoneInput = $("#phone4");
+    const email = $("#email4");
+    const messageInput = $("#message4");
+    const nameError = $("#name-error4");
+    const phoneError = $("#phone-error4");
+
+    // Use input event to restrict input to numeric values only
+    phoneInput.on("input", function() {
+        // Remove non-numeric characters
+        const phoneNumber = phoneInput.val().replace(/[^0-9]/g, '');
+
+        // Update the input value with the numeric version
+        phoneInput.val(phoneNumber);
+    });
+
+    form.submit(function(event) {
+        event.preventDefault();
+        const phoneNumber = phoneInput.val().trim();
+
+        // Get the selected language
+
+        const phoneLength= "מספר הטלפון חייב להיות בין 7 ל-10 ספרות."
+
+        // Check phone number length
+        if (phoneNumber.length < 7 || phoneNumber.length > 10) {
+            phoneError.text(phoneLength);
+            return;
+        }
+
+        // Reset error messages
+        phoneError.text("");
+
+        const emailData = {
+            to: "ionmedia.me@gmail.com",
+            name: nameInput.val(),
+            phone: phoneNumber,
+            message: messageInput.val(),
+            cc:"adham@fit-x.app"
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "../send-email",
+            contentType: "application/json",
+            data: JSON.stringify(emailData),
+            success: function(data) {
+                if (data.success) {
+                    $("#successMessage").show();
+                    $("#errorMessage").hide();
+                    window.location.href = "thank";
+
+                    // Clear input fields after successful submission
+                    nameInput.val("");
+                    phoneInput.val("");
+                    messageInput.val("");
+
+                } else {
+                    $("#successMessage").hide();
+                    $("#errorMessage").show();
+                }
+            },
+            error: function(error) {
+                $("#errorMessage").show();
+            }
+        });
+    });
+
+    // Show error messages as the user types
+    nameInput.on("input", function() {
+        nameError.text("");
+    });
+
+    phoneInput.on("input", function() {
+        phoneError.text("");
+    });
+});
+$(document).ready(function() {
+    debugger;
+    const form = $("#emailForm5");
+    const nameInput = $("#name5");
+    const phoneInput = $("#phone5");
+    const email = $("#email5");
+    const messageInput = $("#message5");
+    const nameError = $("#name-error5");
+    const phoneError = $("#phone-error5");
+
+    // Use input event to restrict input to numeric values only
+    phoneInput.on("input", function() {
+        // Remove non-numeric characters
+        const phoneNumber = phoneInput.val().replace(/[^0-9]/g, '');
+
+        // Update the input value with the numeric version
+        phoneInput.val(phoneNumber);
+    });
+
+    form.submit(function(event) {
+        event.preventDefault();
+        const phoneNumber = phoneInput.val().trim();
+
+        // Get the selected language
+
+        const phoneLength= "מספר הטלפון חייב להיות בין 7 ל-10 ספרות."
+
+        // Check phone number length
+        if (phoneNumber.length < 7 || phoneNumber.length > 10) {
+            phoneError.text(phoneLength);
+            return;
+        }
+
+        // Reset error messages
+        phoneError.text("");
+
+        const emailData = {
+            to: "ionmedia.me@gmail.com",
+            name: nameInput.val(),
+            phone: phoneNumber,
+            message: messageInput.val(),
+            cc:"adham@fit-x.app"
+        };
+
+        $.ajax({
+            type: "POST",
+            url: "../send-email",
+            contentType: "application/json",
+            data: JSON.stringify(emailData),
+            success: function(data) {
+                if (data.success) {
+                    $("#successMessage").show();
+                    $("#errorMessage").hide();
+                    window.location.href = "thank";
 
                     // Clear input fields after successful submission
                     nameInput.val("");

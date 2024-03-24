@@ -104,7 +104,9 @@ app.post('/send-email', (req, res) => {
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
   });
-  
+  app.get('/thank', (req, res) => {
+    res.sendFile(path.join(__dirname, 'thank.html'));
+  });
   // Serve static assets like CSS files
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.get('/style.css', (req, res) => {

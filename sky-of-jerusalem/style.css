@@ -526,13 +526,12 @@ iframe {
 
 .submitButtonContact {
     padding: 10px 20px;
-    background-color: #007bff;
+    background-color: rgb(31 123 255 / 50%) !important;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     width: 321px;
-    background-color:rgba(38, 33, 91, 0.5) !important;
 }
 
 .search-container {
