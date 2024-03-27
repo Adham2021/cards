@@ -242,6 +242,11 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'omaima', 'index.html'));
   });
 
+  app.use('/gena', express.static(path.join(__dirname, 'gena')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'gena', 'index.html'));
+  });
+
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, '404.html'));
 });
