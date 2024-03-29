@@ -399,8 +399,8 @@ iframe {
 }
 
 .profile .subtitle{
-    font-size: 15px !important;
-    color: black;
+    font-size: 17px !important;
+    color: green;
     font-weight: bold !important;
     margin-top: -10px;
     opacity: 0;
