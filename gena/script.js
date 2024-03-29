@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function shareOn(type) {
     
-    const text = 'الكرت الديجيتالي لعطور اميسّا المميزة';
+    const text = 'الكرت الديجيتالي لشركة الغنى الحديثة للمواد الغذائية';
     const url = window.location.href;
     if (type === 'facebook') {
         const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
