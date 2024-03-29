@@ -171,6 +171,12 @@ $(this).next(".toggle-content").slideToggle("slow",function() {
     });
 });
 
+$(document).ready(function(){
+    // Trigger click event on toggle button
+    $('#firstToggle').trigger('click');
+    $('#firstToggle').trigger('click');
+});
+
 function changeLanguage(language, byClickButton = true) {
     const languageData = {
         hebrew: { flag: "/assets/images/files/flags/israel.png", text: "עברית" },
