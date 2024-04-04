@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function shareOn(type) {
     
-    const text = 'الكرت الديجيتالي للبنى مصاروة - معالجة بالطاقة وتتطوير ذاتي ';
+    const text = 'الكرت الديجيتالي الذكي لـ Sky Of Jerusalem ';
     const url = window.location.href;
     if (type === 'facebook') {
         const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
@@ -93,7 +93,7 @@ function sendWhatsAppMessage(phone) {
     const phoneNumber = phone;
 
     // Replace 'YOUR_DEFAULT_MESSAGE' with your desired default message
-    const defaultMessage = encodeURIComponent(' مرحبا لبنى معنية باستشارة عندك?');
+    const defaultMessage = encodeURIComponent('مرحبا ممكن تفاصيل اكثر ؟ ');
 
     const whatsappApi = `https://api.whatsapp.com/send?phone=${phoneNumber}&text=${defaultMessage}`;
     window.open(whatsappApi, '_blank');
@@ -128,6 +128,7 @@ function toggleService(btn) {
         icon.classList.add('fa-angle-down');
     }
 }
+
 function addToContacts() {
     var contact = {
         name: "Sky Of Jerusalem",
@@ -153,7 +154,11 @@ $(document).ready(function() {
     });
 });
 
-
+$(document).ready(function(){
+    // Trigger click event on toggle button
+    $('#firstToggle2').trigger('click');
+    $('#firstToggle2').trigger('click');
+});
 
 
 function changeLanguage(language, byClickButton = true) {
