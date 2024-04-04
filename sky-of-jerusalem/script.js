@@ -490,8 +490,6 @@ $(document).ready(function(){
                 {value: 'animal_therapy', text: 'علاج عن طريق الحيوان'},
                 {value: 'cinematic_photography_therapy', text: 'علاج عن طريق التصوير السينيمائي'},
                 {value: 'nature_therapy', text: 'علاج بالطبيعة'},
-                {value: 'drama_and_theater_therapy', text: 'علاج عن طريق الدراما والمسرح'},
-                {value: 'arts', text: 'الفنون'},
                 {value: 'cinematic_makeup', text: 'المكياج السينمائي'},
                 {value: 'resin_art', text: 'فن الريزن'},
                 {value: 'dabke_and_traditional_arts', text: 'دبكة وفنون تراثية'}
@@ -519,7 +517,6 @@ $(document).ready(function(){
                 {value: 'party_decorating', text: 'تزين وتنسيق حفلات'},
                 {value: 'little_chef', text: 'الشيف الصغير'},
                 {value: 'dj', text: 'DJ'},
-                {value: 'wealth_threads', text: 'خيوط الثراء'},
                 {value: 'beauty_and_nails', text: 'تجميل وأظافر'}
             ];
           break;
