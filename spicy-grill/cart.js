@@ -34,11 +34,15 @@ function addToCart(target,price,dropdown) {
     }
 
     
-if(!AllContentsChecked && IsContentsNeeded){
+if(IsContentsNeeded){
     CheckedMealContents.each(function() {
         // Get the id of the current checkbox
         let contentId = $(this).attr('id'); 
 
+        if ($(this).attr('data-price')) {
+            // Get the value of data-price attribute
+             price += parseFloat($(this).attr('data-price'));
+        }
         // Find the label associated with the checkbox using the 'for' attribute
         let contentName = $('label[for="' + contentId + '"]');
         selectedContents.push(contentName.text().trim());
@@ -48,10 +52,10 @@ if(!AllContentsChecked && IsContentsNeeded){
 sauceMealCheckboxes.each(function() {
     // Get the id of the current checkbox
     let contentId = $(this).attr('id'); 
-
     // Find the label associated with the checkbox using the 'for' attribute
     let contentName = $('label[for="' + contentId + '"]');
     selectedContents.push(contentName.text().trim());
+    
 });
 
     let quantity = parseInt(mealDiv.find('.quantity-input').val());
@@ -154,22 +158,38 @@ function renderCart() {
         });
 
         // Render total price and checkout button with input fields for name and phone number
-        cartItems.append(`
-            <div class="total-section text-center" style="margin-top: 20px;background-color: #f1f1f1;">
-            <p style="font-size: 20px;"><strong> المجموع الكلي:</strong> <span id="totalCartPrice" style="color: #333;">${totalCartPrice} ₪</span></p>
+// Append the HTML content
+cartItems.append(`
+    <div class="total-section text-center" style="margin-top: 20px;background-color: #f1f1f1;">
+        <ul class="nav nav-tabs" style="justify-content: center;display: flex;
+        flex-wrap: nowrap;">
+            <li class="nav-item">
+                <a class="nav-link active" id="pickup-tab"  onclick="pickup_Clicked()">احضر الطلبية بشكل شخصي</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="delivery-tab" onclick="delivery_Clicked()">احضر الطلبية مع مرسل</a>
+            </li>
+        </ul>
+        <p style="font-size: 20px;"><strong>المجموع الكلي:</strong> <span id="totalCartPrice" style="color: #333;">${totalCartPrice} ₪</span></p>
+        
+           
                 <div style="margin-bottom: 5px;">
                     <input type="text" class="form-control" id="name" placeholder="ادخل اسمك الكامل" required>
                 </div>
                 <div style="margin-bottom: 5px;">
                     <input type="tel" class="form-control" id="phone" placeholder="ادخل رقم الهاتف" required>
                 </div>
-                <div style="margin-bottom: 5px;">
-                <input type="text" class="form-control" id="address" placeholder="ادخل عنوانك الكامل" required>
-            </div>
-                <button onclick="checkoutOrder()" class="btn btn-success" style="font-size: 18px;margin-bottom: 20px;"> اطلب الان</button>
-                
-            </div>
-        `);
+                <div style="margin-bottom: 5px;display:none" id="addressDiv"">
+                <input type="text" class="form-control" id="address" placeholder="ادخل عنوانك الكامل">
+            
+        
+           
+        </div>
+        <button onclick="checkoutOrder()" class="btn btn-success" style="font-size: 18px;margin-bottom: 20px;">اطلب الان</button>
+    </div>
+`);
+
+
 
         // Add event listeners for quantity change buttons
         $('.change-quantity').click(function() {
@@ -196,6 +216,19 @@ function renderCart() {
     }
 }
 
+function pickup_Clicked(){
+    $("#addressDiv").hide(500);
+    $("#address").removeAttr("required");
+    $("#pickup-tab").addClass("active")
+    $("#delivery-tab").removeClass("active")
+}
+
+function delivery_Clicked(){
+    $("#addressDiv").show(500);
+    $("#address").attr("required", "required");
+    $("#pickup-tab").removeClass("active")
+    $("#delivery-tab").addClass("active")
+}
 
 // Function to update total cart price
 function updateTotalCartPrice() {
@@ -274,22 +307,58 @@ function checkoutOrder() {
     var phone = $('#phone').val().trim();
     var address = $('#address').val().trim();
 
+
+
     // Check if name and phone are not empty
     if (name === '' || phone === '') {
-        alert('אנא מלא את כל השדות.'); // Please fill in all fields.
+        Swal.fire({
+            icon: 'error',
+            title: 'يرجى ملء جميع الحقول.',
+            text: '',
+            confirmButtonText: 'حسناً'
+          });
+          
     } else {
+
+        debugger;
+        if ($('#address').prop('required')) {
+            Swal.fire({
+                icon: 'error',
+                title: 'يرجى ادخال العنوان الكامل للتوصيل.',
+                text: '',
+                confirmButtonText: 'حسناً'
+              });
+              return
+        } 
         // Check if the phone number is valid (optional)
         var phoneRegex = /^\d{10}$/; // Change the regex according to your phone number format
         if (!phoneRegex.test(phone)) {
-            alert('אנא הזן מספר טלפון חוקי.'); // Please enter a valid phone number.
+            Swal.fire({
+                icon: 'error',
+                title: 'يرجى إدخال رقم هاتف صحيح.',
+                text: '',
+                confirmButtonText: 'حسناً'
+              });
+              
         } else {
             // Display confirmation dialog
-            var confirmMessage = 'האם אתה בטוח שברצונך להמשיך להזמין ב- WhatsApp?';
-            if (confirm(confirmMessage)) {
-                // Proceed to the WhatsApp order page
-                // Send the order via WhatsApp
-                sendOrderViaWhatsApp(name, phone,address, cart);
-            }
+            var confirmMessage = 'هل أنت متأكد أنك ترغب في المتابعة بطلب عبر WhatsApp ؟';
+            Swal.fire({
+              title: 'الطلب عبر WhatsApp؟',
+              text: confirmMessage,
+              icon: 'question',
+              showCancelButton: true,
+              confirmButtonColor: '#3085d6',
+              cancelButtonColor: '#d33',
+              confirmButtonText: 'نعم، متابعة',
+              cancelButtonText: 'إلغاء'
+            }).then((result) => {
+              if (result.isConfirmed) {
+                sendOrderViaWhatsApp(name, phone, address, cart);
+              }
+            });
+            
+            
         }
     }
 }
@@ -311,29 +380,3 @@ $(document).ready(function() {
     }
     
   });
-
-//   $(document).ready(function () {
-//     const text1 = $('#text1');
-//     const text2 = $('#text2');
-//     const text3 = $('#text3'); // Add text3
-
-//     const duration = 2000; // Duration for each text display
-
-//     function toggleText() {
-//         text1.fadeIn(duration, function () {
-//             text1.delay(duration).fadeOut(duration, function () {
-//                 text2.fadeIn(duration, function () {
-//                     text2.delay(duration).fadeOut(duration, function () {
-//                         text3.fadeIn(duration, function () { // Fade in text3
-//                             text3.delay(duration).fadeOut(duration, function () { // Fade out text3
-//                                 toggleText(); // Repeat the loop
-//                             });
-//                         });
-//                     });
-//                 });
-//             });
-//         });
-//     }
-
-//     toggleText(); // Start the loop
-// });

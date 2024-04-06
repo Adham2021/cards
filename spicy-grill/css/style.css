@@ -308,7 +308,7 @@ body {
 .bg-lightgrey { background-color: #f6f9fa; }
 .bg-grey { background-color: #eaeaea; }
 .bg-brown { background-color: #6f5e4d; }
-.bg-coffee { background-color: #6c6462; }
+.bg-coffee { background-color: #bdbcbb; }
 .bg-meat { background-color: #d2322b; }
 .bg-orange { background-color: #ef7f01; }
 .bg-red { background-color: #e3000e; }
@@ -505,6 +505,9 @@ ul.txt-list {
   .seperateContents{
     font-weight: bold;    
     color: white;
+    margin-bottom: 10px;
+    background-color: #F13D07;
+    border-radius: 10px;
   }
 .mealContentsTable tr td {
   text-align: right;
@@ -959,7 +962,7 @@ border:none;
 .white-color .yellow-color,
 .brown-color .yellow-color,
 .coffee-color .yellow-color,
-.yellow-color span { color: #f7be27; }
+.yellow-color span { color: #F13D07; }
 
 /*------------------------------------------*/
 /*  TEXT SHADOW
@@ -994,7 +997,7 @@ border:none;
 }
 
 .stars-rating i {
-  color: #f7be27;
+  color: #F13D07;
   font-size: 0.85rem;
   line-height: 1;
 }
@@ -2031,7 +2034,7 @@ span.ico-holder {
 .basket-ico em.roundpoint {
   width: 20px;
   height: 20px;
-  background-color: #e3000e;
+  background-color: #F13D07;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -5230,6 +5233,35 @@ select:-webkit-autofill:focus {
 .footer {
   padding-top: 80px;
   padding-bottom: 40px;
+  background-color: #000000;
+  border-top: 2px solid #a90000;
+  text-align: center;
+}
+.active { 
+  color: white !important; background-color: #ff6b28 !important;
+}
+.footerP { 
+  font-size: 15px;
+    color: black !important;
+    font-weight: bold;
+}
+.footerClass{
+  display: inline-block;
+              outline: 0;
+              border: 0;
+              cursor: pointer;
+              background: #4F7BBC;
+              color: white;
+              border-radius: 30px;
+              padding: 14px 24px 16px;
+              font-size: 18px;
+              font-weight: 700;
+              line-height: 1;
+              transition: transform 200ms,background 200ms;
+              :hover{
+                  transform: translateY(-2px);
+              }
+              
 }
 
 #footer-3.footer {
@@ -5417,12 +5449,6 @@ select:-webkit-autofill:focus {
 /*------------------------------------------*/
 /*  BOTTOM FOOTER
 /*------------------------------------------*/
-
-.bottom-footer {
-  border-top: 1px solid #ddd;
-  margin-top: 30px;
-  padding-top: 40px;
-}
 
 #footer-2 .bottom-footer {
   margin-top: 15px;
@@ -6019,7 +6045,11 @@ table th {
 .add-toCart{
   margin-top: 10px;
   font-family: 'Cairo', sans-serif;
-  background-color: white;
+  background-color: #F13D07;
+  color: white;
+}
+.add-toCart i { 
+  color: white;
 }
 .cart-product-desc {
   overflow: hidden;
@@ -6564,3 +6594,4 @@ nav a#pull {
   width: 100%;
   height: 250px;
 }
+

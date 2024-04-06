@@ -61,6 +61,11 @@
 	<!-- FAVICON AND TOUCH ICONS -->
 	<link rel="shortcut icon" href="images/logo-01.png" type="image/x-icon">
 	<link rel="icon" href="images/logo-01.png" type="image/x-icon">
+<!-- Include SweetAlert CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+
+<!-- Include SweetAlert JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
 	<!-- GOOGLE FONTS -->
@@ -89,7 +94,7 @@
 	<link href="../assets/restCss/jquery.datetimepicker.min.css" rel="stylesheet">
 
 	<!-- TEMPLATE CSS -->
-	<link href="css/style.css?v=3.0" rel="stylesheet">
+	<link href="css/style.css?v=4.0" rel="stylesheet">
 
 	<!-- RESPONSIVE CSS -->
 	<link href="../assets/restCss/responsive.css?v=2.0" rel="stylesheet">
@@ -226,7 +231,7 @@
 								<!-- TAB-1 LINK -->
 								<li class="menu-item col-md-4 current" data-tab="tab-1"  >
 									<a href="#tabs-content">
-									<img src="images/moqabelat.jpeg" alt="Food Item">
+									<img src="https://i.imgur.com/e4ZJhhx.png" alt="Food Item">
 									<h5 class="mt-3">الوجبات</h5>		
 								</a>					
 								</li>
@@ -234,7 +239,7 @@
 								<!-- TAB-2 LINK -->
 								<li class="menu-item col-md-4" data-tab="tab-2">
 									<a href="#tabs-content">
-									<img src="images/salad.jpg" alt="Food Item">
+									<img src="https://i.imgur.com/dQb2DDy.png" alt="Food Item">
 									<h5 class="mt-3">مقبلات</h5>
 								</a>
 								</li>
@@ -242,7 +247,7 @@
 								<!-- TAB-3 LINK -->
 								<li class="menu-item col-md-4" data-tab="tab-3">
 									<a href="#tabs-content">
-									<img src="images/drinks.jpg" alt="Food Item">
+									<img src="https://i.imgur.com/rTF9k1t.png" alt="Food Item">
 									<h5 class="mt-3">مشروبات</h5>
 								</a>
 								</li>
@@ -284,145 +289,6 @@
 					<div id="tab-1" class="tab-content current">
 						<div class="row">
 
-
-							<!-- MENU ITEM #1 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/STfr8Iq.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">10 ₪</h5>
-
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal"
-										data-meal-name="(8 قطع ) כדורי פירה | كرات البطاطا">
-
-										<!-- Title -->
-										<h5 class="h5-sm">כדורי פירה | كرات البطاطا</h5>
-										<h6 class="grey-color">8 قطع </h6>
-										<!-- Quantity input -->
-										<div style="margin-top: 5px;">
-											<label for="quantity-meal1" style="margin-right: 5px;"></label>
-											<div style="display: inline-block;">
-												<span style="cursor: pointer;"
-													onclick="decreaseQuantity('quantity-meal1')">
-													<i class="fas fa-minus"></i>
-												</span>
-												<input type="number" id="quantity-meal1" value="1" min="1"
-													style="width: 50px; text-align: center;" readonly
-													class="quantity-input">
-												<span style="cursor: pointer;"
-													onclick="increaseQuantity('quantity-meal1')">
-													<i class="fas fa-plus"></i>
-												</span>
-											</div>
-										</div>
-
-										<!-- Description -->
-										<p class="grey-color"></p>
-
-										<!-- Button -->
-										<a onclick="addToCart(this,10)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-											<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-										</a>
-
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #1 -->
-
-							<!-- MENU ITEM #1 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/STfr8Iq.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">20 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal"
-										data-meal-name="(18 قطعة ) כדורי פירה | كرات البطاطا">
-										<!-- Title -->
-										<h5 class="h5-sm">כדורי פירה | كرات البطاطا</h5>
-										<h6 class="grey-color">18 قطعة </h6>
-										<!-- Quantity input -->
-										<div style="margin-top: 5px;">
-											<label for="quantity-meal1_1" style="margin-right: 5px;"></label>
-											<div style="display: inline-block;">
-												<span style="cursor: pointer;"
-													onclick="decreaseQuantity('quantity-meal1_1')">
-													<i class="fas fa-minus"></i>
-												</span>
-												<input type="number" id="quantity-meal1_1" value="1" min="1"
-													style="width: 50px; text-align: center;" readonly
-													class="quantity-input">
-												<span style="cursor: pointer;"
-													onclick="increaseQuantity('quantity-meal1_1')">
-													<i class="fas fa-plus"></i>
-												</span>
-											</div>
-										</div>
-
-										<!-- Description -->
-										<p class="grey-color"></p>
-
-										<!-- Button -->
-										<a onclick="addToCart(this,20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-											<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-										</a>
-
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #1 -->
-
 							<!-- MENU ITEM #2 -->
 							<div class="col-sm-6 col-lg-3">
 								<div class="menu-7-item">
@@ -431,1063 +297,7 @@
 									<div class="menu-7-img rel">
 
 										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/jcQTE0N.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">28 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="Chicken Wings | اجنحة دجاج">
-
-										<!-- Title -->
-										<h5 class="h5-sm">Chicken Wings | اجنحة دجاج</h5>
-										<h5 class="h5-sm">8 قطع </h5>
-										<!-- Quantity input -->
-										<div style="margin-top: 5px;">
-											<label for="quantity-meal2" style="margin-right: 5px;"></label>
-											<div style="display: inline-block;">
-												<span style="cursor: pointer;"
-													onclick="decreaseQuantity('quantity-meal2')">
-													<i class="fas fa-minus"></i>
-												</span>
-												<input type="number" id="quantity-meal2" value="1" min="1"
-													style="width: 50px; text-align: center;" readonly
-													class="quantity-input">
-												<span style="cursor: pointer;"
-													onclick="increaseQuantity('quantity-meal2')">
-													<i class="fas fa-plus"></i>
-												</span>
-											</div>
-										</div>
-										<table class="mealContentsTable">
-											<tr>
-												<td class="seperateContents">תוספות (اضافات)</td>
-											  </tr>
-											<tr>
-											  <td><label for="content1-meal2"><input type="checkbox" id="content1-meal2"> צ'ילי מתוק (تشيلي متوك BBQ)</label></td>
-											</tr>
-											<tr>
-											  <td><label for="content2-meal2"><input type="checkbox" id="content2-meal2"> צ'ילי בוטנים (تشيلي زبدة فستق)</label></td>
-											</tr>
-										  </table>
-										  
-
-										<!-- Button -->
-										<a onclick="addToCart(this,28)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-											<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-										</a>
-
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #2 -->
-
-
-							<!-- MENU ITEM #3 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/UUcXHtD.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">9 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="צ'יפס קטן | بطاطا صغير">
-
-										<!-- Title -->
-										<h5 class="h5-sm">צ'יפס קטן | بطاطا صغير</h5>
-										<!-- Quantity input -->
-										<div style="margin-top: 5px;">
-											<label for="quantity-meal3" style="margin-right: 5px;"></label>
-											<div style="display: inline-block;">
-												<span style="cursor: pointer;"
-													onclick="decreaseQuantity('quantity-meal3')">
-													<i class="fas fa-minus"></i>
-												</span>
-												<input type="number" id="quantity-meal3" value="1" min="1"
-													style="width: 50px; text-align: center;" readonly
-													class="quantity-input">
-												<span style="cursor: pointer;"
-													onclick="increaseQuantity('quantity-meal3')">
-													<i class="fas fa-plus"></i>
-												</span>
-											</div>
-										</div>
-
-
-										<!-- Button -->
-										<a onclick="addToCart(this,9)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-											<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-										</a>
-
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #3 -->
-
-							<!-- MENU ITEM #3 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/UUcXHtD.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">15 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="צ'יפס גדול | بطاطا كبير">
-
-										<!-- Title -->
-										<h5 class="h5-sm">צ'יפס גדול | بطاطا كبير</h5>
-										<!-- Quantity input -->
-										<div style="margin-top: 5px;">
-											<label for="quantity-meal3_1" style="margin-right: 5px;"></label>
-											<div style="display: inline-block;">
-												<span style="cursor: pointer;"
-													onclick="decreaseQuantity('quantity-meal3_1')">
-													<i class="fas fa-minus"></i>
-												</span>
-												<input type="number" id="quantity-meal3_1" value="1" min="1"
-													style="width: 50px; text-align: center;" readonly
-													class="quantity-input">
-												<span style="cursor: pointer;"
-													onclick="increaseQuantity('quantity-meal3_1')">
-													<i class="fas fa-plus"></i>
-												</span>
-											</div>
-										</div>
-
-
-										<!-- Button -->
-										<a onclick="addToCart(this,15)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-											<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-										</a>
-
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #3 -->
-							<!-- MENU ITEM #4 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/16QFWej.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">5 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="חומוס | حمص">
-
-										<!-- Title -->
-										<h5 class="h5-sm">חומוס | حمص</h5>
-										<!-- Quantity input -->
-										<div style="margin-top: 5px;">
-											<label for="quantity-meal4" style="margin-right: 5px;"></label>
-											<div style="display: inline-block;">
-												<span style="cursor: pointer;"
-													onclick="decreaseQuantity('quantity-meal4')">
-													<i class="fas fa-minus"></i>
-												</span>
-												<input type="number" id="quantity-meal4" value="1" min="1"
-													style="width: 50px; text-align: center;" readonly
-													class="quantity-input">
-												<span style="cursor: pointer;"
-													onclick="increaseQuantity('quantity-meal4')">
-													<i class="fas fa-plus"></i>
-												</span>
-											</div>
-										</div>
-
-
-										<!-- Button -->
-										<a onclick="addToCart(this,5)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-											<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-										</a>
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #4 -->
-
-
-							<!-- MENU ITEM #6 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/rN9bB2u.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">25 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="גבינת חלומי | جبنة حلومي">
-
-										<!-- Title -->
-										<h5 class="h5-sm">גבינת חלומי | جبنة حلومي</h5>
-										<!-- Quantity input -->
-										<div style="margin-top: 5px;">
-											<label for="quantity-meal5" style="margin-right: 5px;"></label>
-											<div style="display: inline-block;">
-												<span style="cursor: pointer;"
-													onclick="decreaseQuantity('quantity-meal5')">
-													<i class="fas fa-minus"></i>
-												</span>
-												<input type="number" id="quantity-meal5" value="1" min="1"
-													style="width: 50px; text-align: center;" readonly
-													class="quantity-input">
-												<span style="cursor: pointer;"
-													onclick="increaseQuantity('quantity-meal5')">
-													<i class="fas fa-plus"></i>
-												</span>
-											</div>
-										</div>
-
-
-										<!-- Button -->
-										<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-											<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-										</a>
-
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #6 -->
-
-
-							<!-- MENU ITEM #7 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/roJZaWu.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">20 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="הום פריז | هوم فرايز">
-
-										<!-- Title -->
-										<h5 class="h5-sm">הום פריז | هوم فرايز</h5>
-										<!-- Quantity input -->
-										<div style="margin-top: 5px;">
-											<label for="quantity-meal6" style="margin-right: 5px;"></label>
-											<div style="display: inline-block;">
-												<span style="cursor: pointer;"
-													onclick="decreaseQuantity('quantity-meal6')">
-													<i class="fas fa-minus"></i>
-												</span>
-												<input type="number" id="quantity-meal6" value="1" min="1"
-													style="width: 50px; text-align: center;" readonly
-													class="quantity-input">
-												<span style="cursor: pointer;"
-													onclick="increaseQuantity('quantity-meal6')">
-													<i class="fas fa-plus"></i>
-												</span>
-											</div>
-										</div>
-										 <!-- Button -->
-										 <a onclick="addToCart(this,20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-											<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-										   </a>
-
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #7 -->
-
-						</div> <!-- End row -->
-					</div> <!-- END TAB-1 CONTENT -->
-
-
-					<!-- TAB-2 CONTENT -->
-					<div id="tab-2" class="tab-content">
-						<div class="row">
-
-
-							<!-- MENU ITEM #1 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/9CQ0Y0z.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">8 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="סלט הבית | سلطة البيت (صغيرة)">
-
-										<!-- Title -->
-										<h5 class="h5-sm">סלט הבית | سلطة البيت</h5>
-										<h5 class="h5-sm">صغيرة</h5>
-										 <!-- Quantity input -->
-										 <div style="margin-top: 5px;">
-											<label for="quantity-meal7" style="margin-right: 5px;"></label>
-											<div style="display: inline-block;">
-												<span style="cursor: pointer;"
-												onclick="decreaseQuantity('quantity-meal7')">
-										<i class="fas fa-minus"></i>
-									   </span>
-										   <input type="number" id="quantity-meal7" value="1" min="1"
-											 style="width: 50px; text-align: center;" readonly class="quantity-input">
-									  <span style="cursor: pointer;"
-									  onclick="increaseQuantity('quantity-meal7')">
-									   <i class="fas fa-plus"></i>
-													 </span>
-											</div>
-											   </div>
-
-											   <table class="mealContentsTable">
-												<tr>
-												  <td><label for="content1-meal7"><input checked type="checkbox" id="content1-meal7"> חסה (خسة)</label></td>
-												</tr>
-												<tr>
-												  <td><label for="content2-meal7"><input checked type="checkbox" id="content2-meal7"> שרי (شيري)</label></td>
-												</tr>
-												<tr>
-												  <td><label for="content3-meal7"><input type="checkbox" id="content3-meal7"> רוטב וינינרט (صلصة فينجيرت)</label></td>
-												</tr>
-												<tr>
-												  <td><label for="content4-meal7"><input type="checkbox" id="content4-meal7"> כרוב לבן(ملفوف ابيض)</label></td>
-												</tr>
-												<tr>
-												  <td><label for="content5-meal7"><input type="checkbox" id="content5-meal7"> כרוב אדום (ملفوف احمر)</label></td>
-												</tr>
-												<tr>
-												  <td><label for="content6-meal7"><input type="checkbox" id="content6-meal7"> גבינה בולגרית (جبنة بلغارية)</label></td>
-												</tr>
-											  </table>
-											  
-										 <!-- Button -->
-										 <a onclick="addToCart(this,8)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-											<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-										   </a>
-
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #1 -->
-	<!-- MENU ITEM #1 -->
-	<div class="col-sm-6 col-lg-3">
-		<div class="menu-7-item">
-
-			<!-- IMAGE -->
-			<div class="menu-7-img rel">
-
-				<!-- Image -->
-				<img class="img-fluid" src="https://i.imgur.com/9CQ0Y0z.jpeg"
-					alt="menu-image" />
-
-				<!-- Price -->
-				<div class="menu-7-price bg-coffee">
-					<h5 class="h5-xs yellow-color">20 ₪</h5>
-				</div>
-
-				<!-- Rating -->
-				<div class="item-rating">
-					<div class="stars-rating stars-lg">
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-						<i class="fas fa-star"></i>
-					</div>
-				</div>
-
-
-
-			</div>
-
-			<!-- TEXT -->
-			<div class="menu-7-txt rel meal" data-meal-name="סלט הבית | سلطة البيت (كبيرة)">
-
-				<!-- Title -->
-				<h5 class="h5-sm">סלט הבית | سلطة البيت</h5>
-				<h5 class="h5-sm">كبيرة</h5>
-				 <!-- Quantity input -->
-				 <div style="margin-top: 5px;">
-					<label for="quantity-meal7_1" style="margin-right: 5px;"></label>
-					<div style="display: inline-block;">
-						<span style="cursor: pointer;"
-						onclick="decreaseQuantity('quantity-meal7_1')">
-				<i class="fas fa-minus"></i>
-			   </span>
-				   <input type="number" id="quantity-meal7_1" value="1" min="1"
-					 style="width: 50px; text-align: center;" readonly class="quantity-input">
-			  <span style="cursor: pointer;"
-			  onclick="increaseQuantity('quantity-meal7_1')">
-			   <i class="fas fa-plus"></i>
-							 </span>
-					</div>
-					   </div>
-
-					   <table class="mealContentsTable">
-						<tr>
-						  <td><label for="content1-meal7_1"><input checked type="checkbox" id="content1-meal7_1"> חסה (خسة)</label></td>
-						</tr>
-						<tr>
-						  <td><label for="content2-meal7_1"><input checked type="checkbox" id="content2-meal7_1"> שרי (شيري)</label></td>
-						</tr>
-						<tr>
-						  <td><label for="content3-meal7_1"><input  type="checkbox" id="content3-meal7_1"> רוטב וינינרט (صلصة فينجيرت)</label></td>
-						</tr>
-						<tr>
-						  <td><label for="content4-meal7_1"><input  type="checkbox" id="content4-meal7_1"> כרוב לבן(ملفوف ابيض)</label></td>
-						</tr>
-						<tr>
-						  <td><label for="content5-meal7_1"><input  type="checkbox" id="content5-meal7_1"> כרוב אדום (ملفوف احمر)</label></td>
-						</tr>
-						<tr>
-						  <td><label for="content6-meal7_1"><input  type="checkbox" id="content6-meal7_1"> גבינה בולגרית (جبنة بلغارية)</label></td>
-						</tr>
-					  </table>
-					  
-				 <!-- Button -->
-				 <a onclick="addToCart(this,20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-					<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-				   </a>
-
-			</div>
-
-		</div>
-	</div> <!-- END MENU ITEM #1 -->
-
-							<!-- MENU ITEM #2 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/8hO4ifJ.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">28 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="סלט יווני | سلطة يونانية">
-
-										<!-- Title -->
-										<h5 class="h5-sm">סלט יווני | سلطة يونانية</h5>
-
-		<!-- Quantity input -->
-		<div style="margin-top: 5px;">
-			<label for="quantity-meal8" style="margin-right: 5px;"></label>
-			<div style="display: inline-block;">
-				<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal8')">
-					<i class="fas fa-minus"></i>
-				</span>
-				<input type="number" id="quantity-meal8" value="1" min="1" style="width: 50px; text-align: center;" readonly
-					class="quantity-input">
-				<span style="cursor: pointer;" onclick="increaseQuantity('quantity-meal8')">
-					<i class="fas fa-plus"></i>
-				</span>
-			</div>
-		</div>
-		
-		<table class="mealContentsTable">
-			<tr>
-			  <td><label for="content1-meal8"><input checked type="checkbox" id="content1-meal8"> מלפפון (خيار)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content2-meal8"><input checked type="checkbox" id="content2-meal8"> עגבניה (شيري)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content3-meal8"><input checked type="checkbox" id="content3-meal8"> חסה (خس)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content4-meal8"><input type="checkbox" id="content4-meal8"> גמבה (فلفل حلوة)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content5-meal8"><input type="checkbox" id="content5-meal8"> זיתי קלמטה (زيتون كلاماطه)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content6-meal8"><input type="checkbox" id="content6-meal8"> כרוב אדום (ملفوف احمر)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content7-meal8"><input type="checkbox" id="content7-meal8"> גבינת פטה (جبنة بلغارية)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content8-meal8"><input type="checkbox" id="content8-meal8"> שמן זית (زيت زيتون)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content9-meal8"><input type="checkbox" id="content9-meal8"> לימון (حامض)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content10-meal8"><input type="checkbox" id="content10-meal8"> סומק (سماق)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content11-meal8"><input type="checkbox" id="content11-meal8"> זעתר (زعتر)</label></td>
-			</tr>
-		  </table>
-		  
-
-		<!-- Button -->
-		<a onclick="addToCart(this,28)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-			<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-		</a>
-
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #2 -->
-
-
-							<!-- MENU ITEM #3 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/ZiBhP16.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">30 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="סלט פתוש | سلطة فتوش">
-
-										<!-- Title -->
-										<h5 class="h5-sm">סלט פתוש | سلطة فتوش</h5>
-
-<!-- Quantity input -->
-		<div style="margin-top: 5px;">
-			<label for="quantity-meal9" style="margin-right: 5px;"></label>
-			<div style="display: inline-block;">
-				<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal9')">
-					<i class="fas fa-minus"></i>
-				</span>
-				<input type="number" id="quantity-meal9" value="1" min="1" style="width: 50px; text-align: center;" readonly
-					class="quantity-input">
-				<span style="cursor: pointer;" onclick="increaseQuantity('quantity-meal9')">
-					<i class="fas fa-plus"></i>
-				</span>
-			</div>
-		</div>
-
-		<table class="mealContentsTable">
-			<tr>
-			  <td><label for="content0-meal9"><input checked type="checkbox" id="content0-meal9"> עגבנייה (بندورة)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content1-meal9"><input checked type="checkbox" id="content1-meal9"> מלפפון (خيار)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content2-meal9"><input checked type="checkbox" id="content2-meal9"> שירי (شيري)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content3-meal9"><input checked type="checkbox" id="content3-meal9"> חסה (خس)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content4-meal9"><input type="checkbox" id="content4-meal9"> גמבה (فلفل حلوة)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content5-meal9"><input type="checkbox" id="content5-meal9"> זיתי קלמטה (زيتون كلاماطه)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content6-meal9"><input type="checkbox" id="content6-meal9"> מאצ'וס  (خبز مقلي)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content7-meal9"><input type="checkbox" id="content7-meal9"> גבינת פטה (جبنة بلغارية)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content8-meal9"><input type="checkbox" id="content8-meal9"> שמן זית (زيت زيتون)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content9-meal9"><input type="checkbox" id="content9-meal9"> לימון (حامض)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content10-meal9"><input type="checkbox" id="content10-meal9"> סומק (سماق)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content11-meal9"><input type="checkbox" id="content11-meal9"> שומשום (سمسم)</label></td>
-			</tr>
-		  </table>
-		  
-
-		<!-- Button -->
-		<a onclick="addToCart(this,30)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-			<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-		</a>
-
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #3 -->
-
-
-							<!-- MENU ITEM #4 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/2w1jJxH.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">34 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="סלט שניצל | سلطة شنيتسل">
-
-										<!-- Title -->
-										<h5 class="h5-sm">סלט שניצל | سلطة شنيتسل</h5>
-
-										<!-- Quantity input -->
-		<div style="margin-top: 5px;">
-			<label for="quantity-meal10" style="margin-right: 5px;"></label>
-			<div style="display: inline-block;">
-				<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal10')">
-					<i class="fas fa-minus"></i>
-				</span>
-				<input type="number" id="quantity-meal10" value="1" min="1" style="width: 50px; text-align: center;" readonly
-					class="quantity-input">
-				<span style="cursor: pointer;" onclick="increaseQuantity('quantity-meal10')">
-					<i class="fas fa-plus"></i>
-				</span>
-			</div>
-		</div>
-
-		<table class="mealContentsTable">
-			<tr>
-			  <td><label for="content1-meal10"><input checked type="checkbox" id="content1-meal10"> שירי (شيري)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content2-meal10"><input checked type="checkbox" id="content2-meal10"> חסה (خس)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content3-meal10"><input type="checkbox" id="content3-meal10"> גזר (جزر)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content4-meal10"><input type="checkbox" id="content4-meal10"> גרעינים (بزر)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content5-meal10"><input type="checkbox" id="content5-meal10"> רוטב וינינרט (صلصة فينجيرت)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content6-meal10"><input type="checkbox" id="content6-meal10"> כרוב לבן(ملفوف ابيض)</label></td>
-			</tr>
-			<tr>
-			  <td><label for="content7-meal10"><input type="checkbox" id="content7-meal10"> כרוב אדום (ملفوف احمر)</label></td>
-			</tr>
-		  </table>
-		  
-
-		<!-- Button -->
-		<a onclick="addToCart(this,34)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-			<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-		</a>
-
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #4 -->
-
-
-							<!-- MENU ITEM #5 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/8O63aAB.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">34 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="סלט עוף | سلطة دجاج">
-
-										<!-- Title -->
-										<h5 class="h5-sm">סלט עוף | سلطة دجاج</h5>
-
-<!-- Quantity input -->
-<div style="margin-top: 5px;">
-	<label for="quantity-meal11" style="margin-right: 5px;"></label>
-	<div style="display: inline-block;">
-		<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal11')">
-			<i class="fas fa-minus"></i>
-		</span>
-		<input type="number" id="quantity-meal11" value="1" min="1" style="width: 50px; text-align: center;" readonly
-			class="quantity-input">
-		<span style="cursor: pointer;" onclick="increaseQuantity('quantity-meal11')">
-			<i class="fas fa-plus"></i>
-		</span>
-	</div>
-</div>
-
-<table class="mealContentsTable">
-	<tr>
-		<td class="seperateContents">תוספות (اضافات)</td>
-	  </tr>
-	<tr>
-	  <td><label for="content1-meal11"><input checked type="checkbox" id="content1-meal11"> שירי (شيري)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content2-meal11"><input type="checkbox" id="content2-meal11"> חסה (خس)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content3-meal11"><input type="checkbox" id="content3-meal11"> גזר (جزر)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content4-meal11"><input type="checkbox" id="content4-meal11"> גרעינים (بزر)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content5-meal11"><input type="checkbox" id="content5-meal11"> כרוב לבן(ملفوف ابيض)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content6-meal11"><input type="checkbox" id="content6-meal11"> כרוב אדום (ملفوف احمر)</label></td>
-	</tr>
-	<tr>
-	  <td class="seperateContents">רוטבים (الصلصات)</td>
-	</tr>
-	<tr>
-	  <td><label for="content7-meal11"><input type="checkbox" name="sauceMeal_1" id="content7-meal11"> רוטב וינינרט (صلصة فينجيرت)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content8-meal11"><input type="checkbox" name="sauceMeal_1" id="content8-meal11"> רוטב צ'לי (صلصة تشيلي)</label></td>
-	</tr>
-  </table>
-  
-
-<!-- Button -->
-<a onclick="addToCart(this,34)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-	<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-</a>
-
-
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #5 -->
-
-
-							<!-- MENU ITEM #6 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/K6SHHCv.png" alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">34 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="סלט טוסט | سلطة توست">
-
-										<!-- Title -->
-										<h5 class="h5-sm">סלט טוסט | سلطة توست</h5>
-
-										<!-- Quantity input -->
-<div style="margin-top: 5px;">
-	<label for="quantity-meal12" style="margin-right: 5px;"></label>
-	<div style="display: inline-block;">
-		<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal12')">
-			<i class="fas fa-minus"></i>
-		</span>
-		<input type="number" id="quantity-meal12" value="1" min="1" style="width: 50px; text-align: center;" readonly
-			class="quantity-input">
-		<span style="cursor: pointer;" onclick="increaseQuantity('quantity-meal12')">
-			<i class="fas fa-plus"></i>
-		</span>
-	</div>
-</div>
-
-<table class="mealContentsTable">
-	<tr>
-	  <td><label for="content1-meal12"><input checked type="checkbox" id="content1-meal12"> שירי (شيري)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content2-meal12"><input checked type="checkbox" id="content2-meal12"> חסה (خس)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content3-meal12"><input type="checkbox" id="content3-meal12"> גזר (جزر)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content4-meal12"><input type="checkbox" id="content4-meal12"> שומשום (سمسم)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content5-meal12"><input type="checkbox" id="content5-meal12"> רוטב וינינרט (صلصة فينجيرت)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content6-meal12"><input type="checkbox" id="content6-meal12"> כרוב לבן(ملفوف ابيض)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content7-meal12"><input type="checkbox" id="content7-meal12"> כרוב אדום (ملفوف احمر)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content8-meal12"><input type="checkbox" id="content8-meal12"> חמאת שום (زبدة ثوم)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content9-meal12"><input type="checkbox" id="content9-meal12"> גבינה בולגרית (جبنة بلغارية)</label></td>
-	</tr>
-  </table>
-  
-
-<!-- Button -->
-<a onclick="addToCart(this,34)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-	<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-</a>
-
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #6 -->
-
-
-							<!-- MENU ITEM #7 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/eIrxLdd.jpeg"
+										<img class="img-fluid" src="https://i.imgur.com/cS0QHoC.png"
 											alt="menu-image" />
 
 										<!-- Price -->
@@ -1511,75 +321,1040 @@
 									</div>
 
 									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="סלט חלומי | سلطة حلومي">
+									<div class="menu-7-txt rel meal" data-meal-name="رغيف خروف">
 
 										<!-- Title -->
-										<h5 class="h5-sm">סלט חלומי | سلطة حلومي</h5>
-
+										<h5 class="h5-sm">رغيف خروف</h5>
 										<!-- Quantity input -->
-<div style="margin-top: 5px;">
-	<label for="quantity-meal13" style="margin-right: 5px;"></label>
-	<div style="display: inline-block;">
-		<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal13')">
-			<i class="fas fa-minus"></i>
-		</span>
-		<input type="number" id="quantity-meal13" value="1" min="1" style="width: 50px; text-align: center;" readonly
-			class="quantity-input">
-		<span style="cursor: pointer;" onclick="increaseQuantity('quantity-meal13')">
-			<i class="fas fa-plus"></i>
-		</span>
-	</div>
-</div>
+										<div style="margin-bottom: 10px;">
+											<label for="quantity-meal2" style="margin-right: 5px;"></label>
+											<div style="display: inline-block;">
+												<span style="cursor: pointer;"
+													onclick="decreaseQuantity('quantity-meal2')">
+													<i class="fas fa-minus"></i>
+												</span>
+												<input type="number" id="quantity-meal2" value="1" min="1"
+													style="width: 50px; text-align: center;" readonly
+													class="quantity-input">
+												<span style="cursor: pointer;"
+													onclick="increaseQuantity('quantity-meal2')">
+													<i class="fas fa-plus"></i>
+												</span>
+											</div>
+										</div>
+										<table class="mealContentsTable">
+											<tr>
+												<td class="seperateContents">كيف بدك اياها ؟ </td>
+											  </tr>
+											  <tr>
+												<td><label for="content8-meal2"><input type="checkbox" checked name="sauceMeal_1" id="content8-meal2"> رغيف</label></td>
+											  </tr>
+											  <tr>
+												<td><label for="content9-meal2"><input type="checkbox" name="sauceMeal_1" id="content9-meal2"> لفة</label></td>
+											  </tr>
+											  <!-- <tr>
+												<td><label for="content10-meal2"><input type="checkbox" name="sauceMeal_1" id="content10-meal2"> باجيت</label></td>
+											  </tr> -->
+											  <tr>
+												<td><label for="content11-meal2"><input type="checkbox" name="sauceMeal_1" id="content11-meal2"> صحن</label></td>
+											  </tr>
+											<tr>
+												<td class="seperateContents">اضافات :</td>
+											  </tr>
+											<tr>
+											  <td><label for="content1-meal2"><input type="checkbox" checked id="content1-meal2"> طحينة</label></td>
+											</tr>
+											<tr>
+											  <td><label for="content2-meal2"><input type="checkbox" id="content2-meal2"> عمبة</label></td>
+											</tr>
+										    <tr>
+												<td><label for="content3-meal2"><input type="checkbox" id="content3-meal2"> حريف</label></td>
+											  </tr>
+											  <tr>
+												<td><label for="content4-meal2"><input type="checkbox" id="content4-meal2"> ملفوف ابيض</label></td>
+											  </tr>
+											  <tr>
+												<td><label for="content5-meal2"><input type="checkbox" id="content5-meal2"> ملفوف احمر</label></td>
+											  </tr>
+											  <tr>
+												<td><label for="content6-meal2"><input type="checkbox" id="content6-meal2"> بصل</label></td>
+											  </tr>
+											  <tr>
+												<td><label for="content7-meal2"><input type="checkbox" id="content7-meal2"> خيار مكبوس</label></td>
+											  </tr>
+										  </table>
+										  
 
-<table class="mealContentsTable">
-	<tr>
-		<td class="seperateContents">תוספות (اضافات)</td>
-	  </tr>
-	<tr>
-	  <td><label for="content1-meal13"><input checked type="checkbox" id="content1-meal13"> שירי (شيري)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content2-meal13"><input checked type="checkbox" id="content2-meal13"> חסה (خس)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content3-meal13"><input checked type="checkbox" id="content3-meal13"> גזר (جزر)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content4-meal13"><input type="checkbox" id="content4-meal13"> פטריות (فطر)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content5-meal13"><input type="checkbox" id="content5-meal13"> כרוב לבן(ملفوف ابيض)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content6-meal13"><input type="checkbox" id="content6-meal13"> כרוב אדום (ملفوف احمر)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content7-meal13"><input type="checkbox" id="content7-meal13"> אגוזי מלך (جوز)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content8-meal13"><input type="checkbox" id="content8-meal13"> גרעינים (بزر)</label></td>
-	</tr>
-	<tr>
-		<td class="seperateContents">רוטבים (الصلصات)</td>
-	  </tr>
-	<tr>
-	  <td><label for="content9-meal13"><input type="checkbox" name="sauceMeal_2" id="content9-meal13"> רוטב טריאקי (صلصة ترياكي)</label></td>
-	</tr>
-	<tr>
-	  <td><label for="content10-meal13"><input type="checkbox" name="sauceMeal_2" id="content10-meal13"> רוטב וינינרט (صلصة فينجيرت)</label></td>
-	</tr>
-  </table>
-  
-
-<!-- Button -->
-<a onclick="addToCart(this,40)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-	<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-</a>
+										<!-- Button -->
+										<a onclick="addToCart(this,40)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+											<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
+										</a>
 
 									</div>
 
 								</div>
-							</div> <!-- END MENU ITEM #7 -->
+							</div> <!-- END MENU ITEM #2 -->
+
+								<!-- MENU ITEM #2 -->
+								<div class="col-sm-6 col-lg-3">
+									<div class="menu-7-item">
+	
+										<!-- IMAGE -->
+										<div class="menu-7-img rel">
+	
+											<!-- Image -->
+											<img class="img-fluid" src="https://i.imgur.com/9rz3TbW.png"
+												alt="menu-image" />
+	
+											<!-- Price -->
+											<div class="menu-7-price bg-coffee">
+												<h5 class="h5-xs yellow-color">25 ₪</h5>
+											</div>
+	
+											<!-- Rating -->
+											<div class="item-rating">
+												<div class="stars-rating stars-lg">
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+												</div>
+											</div>
+	
+	
+	
+										</div>
+	
+										<!-- TEXT -->
+										<div class="menu-7-txt rel meal" data-meal-name="رغيف برجيت">
+	
+											<!-- Title -->
+											<h5 class="h5-sm">رغيف برجيت</h5>
+											<!-- Quantity input -->
+											<div style="margin-bottom: 10px;">
+												<label for="quantity-meal3" style="margin-right: 5px;"></label>
+												<div style="display: inline-block;">
+													<span style="cursor: pointer;"
+														onclick="decreaseQuantity('quantity-meal3')">
+														<i class="fas fa-minus"></i>
+													</span>
+													<input type="number" id="quantity-meal3" value="1" min="1"
+														style="width: 50px; text-align: center;" readonly
+														class="quantity-input">
+													<span style="cursor: pointer;"
+														onclick="increaseQuantity('quantity-meal3')">
+														<i class="fas fa-plus"></i>
+													</span>
+												</div>
+											</div>
+											<table class="mealContentsTable">
+												<tr>
+													<td class="seperateContents">كيف بدك اياها ؟ </td>
+												  </tr>
+												  <tr>
+													<td><label for="content8-meal3"><input type="checkbox" checked name="sauceMeal_2" id="content8-meal3"> رغيف</label></td>
+												  </tr>
+												  <tr>
+													<td><label for="content9-meal3"><input type="checkbox" name="sauceMeal_2" id="content9-meal3"> لفة</label></td>
+												  </tr>
+												  <!-- <tr>
+													<td><label for="content10-meal3"><input type="checkbox" name="sauceMeal_2" id="content10-meal3"> باجيت</label></td>
+												  </tr> -->
+												  <tr>
+													<td><label for="content11-meal3"><input type="checkbox" name="sauceMeal_2" id="content11-meal3"> صحن</label></td>
+												  </tr>
+												<tr>
+													<td class="seperateContents">اضافات :</td>
+												  </tr>
+												<tr>
+												  <td><label for="content1-meal3"><input type="checkbox" checked id="content1-meal3"> طحينة</label></td>
+												</tr>
+												<tr>
+												  <td><label for="content2-meal3"><input type="checkbox" id="content2-meal3"> عمبة</label></td>
+												</tr>
+												<tr>
+													<td><label for="content3-meal3"><input type="checkbox" id="content3-meal3"> حريف</label></td>
+												  </tr>
+												  <tr>
+													<td><label for="content4-meal3"><input type="checkbox" id="content4-meal3"> ملفوف ابيض</label></td>
+												  </tr>
+												  <tr>
+													<td><label for="content5-meal3"><input type="checkbox" id="content5-meal3"> ملفوف احمر</label></td>
+												  </tr>
+												  <tr>
+													<td><label for="content6-meal3"><input type="checkbox" id="content6-meal3"> بصل</label></td>
+												  </tr>
+												  <tr>
+													<td><label for="content7-meal3"><input type="checkbox" id="content7-meal3"> خيار مكبوس</label></td>
+												  </tr>
+											  </table>
+											  
+	
+											<!-- Button -->
+											<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+												<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
+											</a>
+	
+										</div>
+	
+									</div>
+								</div> <!-- END MENU ITEM #2 -->
+		<!-- MENU ITEM #2 -->
+		<div class="col-sm-6 col-lg-3">
+			<div class="menu-7-item">
+
+				<!-- IMAGE -->
+				<div class="menu-7-img rel">
+
+					<!-- Image -->
+					<img class="img-fluid" src="https://i.imgur.com/e4ZJhhx.png"
+						alt="menu-image" />
+
+					<!-- Price -->
+					<div class="menu-7-price bg-coffee">
+						<h5 class="h5-xs yellow-color">30 ₪</h5>
+					</div>
+
+					<!-- Rating -->
+					<div class="item-rating">
+						<div class="stars-rating stars-lg">
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+							<i class="fas fa-star"></i>
+						</div>
+					</div>
+
+
+
+				</div>
+
+				<!-- TEXT -->
+				<div class="menu-7-txt rel meal" data-meal-name="رغيف برجيت">
+
+					<!-- Title -->
+					<h5 class="h5-sm">رغيف كباب</h5>
+					<!-- Quantity input -->
+					<div style="margin-bottom: 10px;">
+						<label for="quantity-meal4" style="margin-right: 5px;"></label>
+						<div style="display: inline-block;">
+							<span style="cursor: pointer;"
+								onclick="decreaseQuantity('quantity-meal4')">
+								<i class="fas fa-minus"></i>
+							</span>
+							<input type="number" id="quantity-meal4" value="1" min="1"
+								style="width: 50px; text-align: center;" readonly
+								class="quantity-input">
+							<span style="cursor: pointer;"
+								onclick="increaseQuantity('quantity-meal4')">
+								<i class="fas fa-plus"></i>
+							</span>
+						</div>
+					</div>
+					<table class="mealContentsTable">
+						<tr>
+							<td class="seperateContents">كيف بدك اياها ؟ </td>
+						  </tr>
+						  <tr>
+							<td><label for="content8-meal4"><input type="checkbox" checked name="sauceMeal_3" id="content8-meal4"> رغيف</label></td>
+						  </tr>
+						  <tr>
+							<td><label for="content9-meal4"><input type="checkbox" name="sauceMeal_3" id="content9-meal4"> لفة</label></td>
+						  </tr>
+						  <!-- <tr>
+							<td><label for="content10-meal4"><input type="checkbox" name="sauceMeal_3" id="content10-meal4"> باجيت</label></td>
+						  </tr> -->
+						  <tr>
+							<td><label for="content11-meal4"><input type="checkbox" name="sauceMeal_3" id="content11-meal4"> صحن</label></td>
+						  </tr>
+						<tr>
+							<td class="seperateContents">اضافات :</td>
+						  </tr>
+						<tr>
+						  <td><label for="content1-meal4"><input type="checkbox" checked id="content1-meal4"> طحينة</label></td>
+						</tr>
+						<tr>
+						  <td><label for="content2-meal4"><input type="checkbox" id="content2-meal4"> عمبة</label></td>
+						</tr>
+						<tr>
+							<td><label for="content3-meal4"><input type="checkbox" id="content3-meal4"> حريف</label></td>
+						  </tr>
+						  <tr>
+							<td><label for="content4-meal4"><input type="checkbox" id="content4-meal4"> ملفوف ابيض</label></td>
+						  </tr>
+						  <tr>
+							<td><label for="content5-meal4"><input type="checkbox" id="content5-meal4"> ملفوف احمر</label></td>
+						  </tr>
+						  <tr>
+							<td><label for="content6-meal4"><input type="checkbox" id="content6-meal4"> بصل</label></td>
+						  </tr>
+						  <tr>
+							<td><label for="content7-meal4"><input type="checkbox" id="content7-meal4"> خيار مكبوس</label></td>
+						  </tr>
+					  </table>
+					  
+
+					<!-- Button -->
+					<a onclick="addToCart(this,30)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+						<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
+					</a>
+
+				</div>
+
+			</div>
+		</div> <!-- END MENU ITEM #2 -->
+
+				<!-- MENU ITEM #2 -->
+				<div class="col-sm-6 col-lg-3">
+					<div class="menu-7-item">
+		
+						<!-- IMAGE -->
+						<div class="menu-7-img rel">
+		
+							<!-- Image -->
+							<img class="img-fluid" src="https://i.imgur.com/5idyhQx.png"
+								alt="menu-image" />
+		
+							<!-- Price -->
+							<div class="menu-7-price bg-coffee">
+								<h5 class="h5-xs yellow-color">25 ₪</h5>
+							</div>
+		
+							<!-- Rating -->
+							<div class="item-rating">
+								<div class="stars-rating stars-lg">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+								</div>
+							</div>
+		
+		
+		
+						</div>
+		
+						<!-- TEXT -->
+						<div class="menu-7-txt rel meal" data-meal-name="رغيف سلاسيسو">
+		
+							<!-- Title -->
+							<h5 class="h5-sm">رغيف سلاسيسو</h5>
+							<!-- Quantity input -->
+							<div style="margin-bottom: 10px;">
+								<label for="quantity-meal5" style="margin-right: 5px;"></label>
+								<div style="display: inline-block;">
+									<span style="cursor: pointer;"
+										onclick="decreaseQuantity('quantity-meal5')">
+										<i class="fas fa-minus"></i>
+									</span>
+									<input type="number" id="quantity-meal5" value="1" min="1"
+										style="width: 50px; text-align: center;" readonly
+										class="quantity-input">
+									<span style="cursor: pointer;"
+										onclick="increaseQuantity('quantity-meal5')">
+										<i class="fas fa-plus"></i>
+									</span>
+								</div>
+							</div>
+							<table class="mealContentsTable">
+								<tr>
+									<td class="seperateContents">كيف بدك اياها ؟ </td>
+								  </tr>
+								  <tr>
+									<td><label for="content8-meal5"><input type="checkbox" checked name="sauceMeal_4" id="content8-meal5"> رغيف</label></td>
+								  </tr>
+								  <tr>
+									<td><label for="content9-meal5"><input type="checkbox" name="sauceMeal_4" id="content9-meal5"> لفة</label></td>
+								  </tr>
+								  <!-- <tr>
+									<td><label for="content10-meal5"><input type="checkbox" name="sauceMeal_4" id="content10-meal5"> باجيت</label></td>
+								  </tr> -->
+								  <tr>
+									<td><label for="content11-meal5"><input type="checkbox" name="sauceMeal_4" id="content11-meal5"> صحن</label></td>
+								  </tr>
+								<tr>
+									<td class="seperateContents">اضافات :</td>
+								  </tr>
+								<tr>
+								  <td><label for="content1-meal5"><input type="checkbox" checked id="content1-meal5"> طحينة</label></td>
+								</tr>
+								<tr>
+								  <td><label for="content2-meal5"><input type="checkbox" id="content2-meal5"> عمبة</label></td>
+								</tr>
+								<tr>
+									<td><label for="content3-meal5"><input type="checkbox" id="content3-meal5"> حريف</label></td>
+								  </tr>
+								  <tr>
+									<td><label for="content4-meal5"><input type="checkbox" id="content4-meal5"> ملفوف ابيض</label></td>
+								  </tr>
+								  <tr>
+									<td><label for="content5-meal5"><input type="checkbox" id="content5-meal5"> ملفوف احمر</label></td>
+								  </tr>
+								  <tr>
+									<td><label for="content6-meal5"><input type="checkbox" id="content6-meal5"> بصل</label></td>
+								  </tr>
+								  <tr>
+									<td><label for="content7-meal5"><input type="checkbox" id="content7-meal5"> خيار مكبوس</label></td>
+								  </tr>
+							  </table>
+							  
+		
+							<!-- Button -->
+							<a onclick="addToCart(this,25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+								<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
+							</a>
+		
+						</div>
+		
+					</div>
+				</div> <!-- END MENU ITEM #2 -->
+		
+				<!-- MENU ITEM #2 -->
+				<div class="col-sm-6 col-lg-3">
+					<div class="menu-7-item">
+		
+						<!-- IMAGE -->
+						<div class="menu-7-img rel">
+		
+							<!-- Image -->
+							<img class="img-fluid" src="https://i.imgur.com/P6pci6d.jpeg"
+								alt="menu-image" />
+		
+							<!-- Price -->
+							<div class="menu-7-price bg-coffee">
+								<h5 class="h5-xs yellow-color">35 ₪</h5>
+							</div>
+		
+							<!-- Rating -->
+							<div class="item-rating">
+								<div class="stars-rating stars-lg">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+								</div>
+							</div>
+		
+		
+		
+						</div>
+		
+						<!-- TEXT -->
+						<div class="menu-7-txt rel meal" data-meal-name="همبرغر 200 غم + شيبس">
+		
+							<!-- Title -->
+							<h5 class="h5-sm">همبرغر 200 غم + شيبس </h5>
+							<!-- Quantity input -->
+							<div style="margin-bottom: 10px;">
+								<label for="quantity-meal6" style="margin-right: 5px;"></label>
+								<div style="display: inline-block;">
+									<span style="cursor: pointer;"
+										onclick="decreaseQuantity('quantity-meal6')">
+										<i class="fas fa-minus"></i>
+									</span>
+									<input type="number" id="quantity-meal6" value="1" min="1"
+										style="width: 50px; text-align: center;" readonly
+										class="quantity-input">
+									<span style="cursor: pointer;"
+										onclick="increaseQuantity('quantity-meal6')">
+										<i class="fas fa-plus"></i>
+									</span>
+								</div>
+							</div>
+							<table class="mealContentsTable">
+								
+								<tr>
+									<td class="seperateContents">اضافات :</td>
+								  </tr>
+								
+								<tr>
+									<td><label for="content3-meal6"><input type="checkbox" id="content3-meal6"> حريف</label></td>
+								  </tr>
+								  <tr>
+									<td><label for="content4-meal6"><input type="checkbox" id="content4-meal6"> خسة</label></td>
+								  </tr>
+								  <tr>
+									<td><label for="content5-meal6"><input type="checkbox" id="content5-meal6"> بندورة</label></td>
+								  </tr>
+								  <tr>
+									<td><label for="content6-meal6"><input type="checkbox" id="content6-meal6"> بصل</label></td>
+								  </tr>
+								  <tr>
+									<td><label for="content7-meal6"><input type="checkbox" id="content7-meal6"> خيار مكبوس</label></td>
+								  </tr>
+								  <td><label for="content8-meal6"><input type="checkbox" id="content8-meal6" data-price="3"> اضافة جبنة +3</label></td>
+							  </table>
+							  
+		
+							<!-- Button -->
+							<a onclick="addToCart(this,35)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+								<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
+							</a>
+		
+						</div>
+		
+					</div>
+				</div> <!-- END MENU ITEM #2 -->
+
+				<!-- MENU ITEM #2 -->
+				<div class="col-sm-6 col-lg-3">
+					<div class="menu-7-item">
+		
+						<!-- IMAGE -->
+						<div class="menu-7-img rel">
+		
+							<!-- Image -->
+							<img class="img-fluid" src="https://i.imgur.com/g9fX5I8.png"
+								alt="menu-image" />
+		
+							<!-- Price -->
+							<div class="menu-7-price bg-coffee">
+								<h5 class="h5-xs yellow-color">15 ₪</h5>
+							</div>
+		
+							<!-- Rating -->
+							<div class="item-rating">
+								<div class="stars-rating stars-lg">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+								</div>
+							</div>
+		
+		
+		
+						</div>
+		
+						<!-- TEXT -->
+						<div class="menu-7-txt rel meal" data-meal-name="عروسة">
+		
+							<!-- Title -->
+							<h5 class="h5-sm"> عروسة </h5>
+							<!-- Quantity input -->
+							<div style="margin-bottom: 10px;">
+								<label for="quantity-meal7" style="margin-right: 5px;"></label>
+								<div style="display: inline-block;">
+									<span style="cursor: pointer;"
+										onclick="decreaseQuantity('quantity-meal7')">
+										<i class="fas fa-minus"></i>
+									</span>
+									<input type="number" id="quantity-meal7" value="1" min="1"
+										style="width: 50px; text-align: center;" readonly
+										class="quantity-input">
+									<span style="cursor: pointer;"
+										onclick="increaseQuantity('quantity-meal7')">
+										<i class="fas fa-plus"></i>
+									</span>
+								</div>
+							</div>
+							<table class="mealContentsTable">
+								
+								<tr>
+									<td class="seperateContents">اضافات :</td>
+								  </tr>
+								
+								  <tr>
+									<td><label for="content1-meal7"><input type="checkbox" checked id="content1-meal7"> طحينة</label></td>
+								  </tr>
+								  <tr>
+									<td><label for="content2-meal7"><input type="checkbox" id="content2-meal7"> عمبة</label></td>
+								  </tr>
+								  <tr>
+									  <td><label for="content3-meal7"><input type="checkbox" id="content3-meal7"> حريف</label></td>
+									</tr>
+									<tr>
+									  <td><label for="content4-meal7"><input type="checkbox" id="content4-meal7"> ملفوف ابيض</label></td>
+									</tr>
+									<tr>
+									  <td><label for="content5-meal7"><input type="checkbox" id="content5-meal7"> ملفوف احمر</label></td>
+									</tr>
+									<tr>
+									  <td><label for="content6-meal7"><input type="checkbox" id="content6-meal7"> بصل</label></td>
+									</tr>
+									<tr>
+									  <td><label for="content7-meal7"><input type="checkbox" id="content7-meal7"> خيار مكبوس</label></td>
+									</tr>
+							  </table>
+							  
+		
+							<!-- Button -->
+							<a onclick="addToCart(this,15)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+								<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
+							</a>
+		
+						</div>
+		
+					</div>
+				</div> <!-- END MENU ITEM #2 -->
+												<!-- MENU ITEM #2 -->
+												<div class="col-sm-6 col-lg-3">
+													<div class="menu-7-item">
+										
+														<!-- IMAGE -->
+														<div class="menu-7-img rel">
+										
+															<!-- Image -->
+															<img class="img-fluid" src="https://i.imgur.com/K9KIWA4.png"
+																alt="menu-image" />
+										
+															<!-- Price -->
+															<div class="menu-7-price bg-coffee">
+																<h5 class="h5-xs yellow-color">90 ₪</h5>
+															</div>
+										
+															<!-- Rating -->
+															<div class="item-rating">
+																<div class="stars-rating stars-lg">
+																	<i class="fas fa-star"></i>
+																	<i class="fas fa-star"></i>
+																	<i class="fas fa-star"></i>
+																	<i class="fas fa-star"></i>
+																	<i class="fas fa-star"></i>
+																</div>
+															</div>
+										
+										
+										
+														</div>
+										
+														<!-- TEXT -->
+														<div class="menu-7-txt rel meal" data-meal-name="اضلاع خروف">
+										
+															<!-- Title -->
+															<h5 class="h5-sm"> اضلاع خروف </h5>
+															<!-- Quantity input -->
+															<div style="margin-bottom: 10px;">
+																<label for="quantity-meal10" style="margin-right: 5px;"></label>
+																<div style="display: inline-block;">
+																	<span style="cursor: pointer;"
+																		onclick="decreaseQuantity('quantity-meal10')">
+																		<i class="fas fa-minus"></i>
+																	</span>
+																	<input type="number" id="quantity-meal10" value="1" min="1"
+																		style="width: 50px; text-align: center;" readonly
+																		class="quantity-input">
+																	<span style="cursor: pointer;"
+																		onclick="increaseQuantity('quantity-meal10')">
+																		<i class="fas fa-plus"></i>
+																	</span>
+																</div>
+															</div>
+															<table class="mealContentsTable">
+																
+																<tr>
+																	<td class="seperateContents">اضافات :</td>
+																  </tr>
+																
+																  <tr>
+																	<td><label for="content1-meal10"><input type="checkbox" checked id="content1-meal10"> طحينة</label></td>
+																  </tr>
+																  <tr>
+																	<td><label for="content2-meal10"><input type="checkbox" id="content2-meal10"> عمبة</label></td>
+																  </tr>
+																  <tr>
+																	  <td><label for="content3-meal10"><input type="checkbox" id="content3-meal10"> حريف</label></td>
+																	</tr>
+																	<tr>
+																	  <td><label for="content4-meal10"><input type="checkbox" id="content4-meal10"> ملفوف ابيض</label></td>
+																	</tr>
+																	<tr>
+																	  <td><label for="content5-meal10"><input type="checkbox" id="content5-meal10"> ملفوف احمر</label></td>
+																	</tr>
+																	<tr>
+																	  <td><label for="content6-meal10"><input type="checkbox" id="content6-meal10"> بصل</label></td>
+																	</tr>
+																	<tr>
+																	  <td><label for="content7-meal10"><input type="checkbox" id="content7-meal10"> خيار مكبوس</label></td>
+																	</tr>
+															  </table>
+															  
+										
+															<!-- Button -->
+															<a onclick="addToCart(this,90)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+																<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
+															</a>
+										
+														</div>
+										
+													</div>
+												</div> <!-- END MENU ITEM #2 -->
+
+								<!-- MENU ITEM #2 -->
+								<div class="col-sm-6 col-lg-3">
+									<div class="menu-7-item">
+						
+										<!-- IMAGE -->
+										<div class="menu-7-img rel">
+						
+											<!-- Image -->
+											<img class="img-fluid" src="https://i.imgur.com/moNfQrk.png"
+												alt="menu-image" />
+						
+											<!-- Price -->
+											<div class="menu-7-price bg-coffee">
+												<h5 class="h5-xs yellow-color">30 ₪</h5>
+											</div>
+						
+											<!-- Rating -->
+											<div class="item-rating">
+												<div class="stars-rating stars-lg">
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+													<i class="fas fa-star"></i>
+												</div>
+											</div>
+						
+						
+						
+										</div>
+						
+										<!-- TEXT -->
+										<div class="menu-7-txt rel meal" data-meal-name="لفة شامية">
+						
+											<!-- Title -->
+											<h5 class="h5-sm"> لفة شامية </h5>
+											<!-- Quantity input -->
+											<div style="margin-bottom: 10px;">
+												<label for="quantity-meal8" style="margin-right: 5px;"></label>
+												<div style="display: inline-block;">
+													<span style="cursor: pointer;"
+														onclick="decreaseQuantity('quantity-meal8')">
+														<i class="fas fa-minus"></i>
+													</span>
+													<input type="number" id="quantity-meal8" value="1" min="1"
+														style="width: 50px; text-align: center;" readonly
+														class="quantity-input">
+													<span style="cursor: pointer;"
+														onclick="increaseQuantity('quantity-meal8')">
+														<i class="fas fa-plus"></i>
+													</span>
+												</div>
+											</div>
+											<table class="mealContentsTable">
+												
+												<tr>
+													<td class="seperateContents">اضافات :</td>
+												  </tr>
+												
+												  <tr>
+													<td><label for="content1-meal8"><input type="checkbox" checked id="content1-meal8"> طحينة</label></td>
+												  </tr>
+												  <tr>
+													<td><label for="content2-meal8"><input type="checkbox" id="content2-meal8"> عمبة</label></td>
+												  </tr>
+												  <tr>
+													  <td><label for="content3-meal8"><input type="checkbox" id="content3-meal8"> حريف</label></td>
+													</tr>
+													<tr>
+													  <td><label for="content4-meal8"><input type="checkbox" id="content4-meal8"> ملفوف ابيض</label></td>
+													</tr>
+													<tr>
+													  <td><label for="content5-meal8"><input type="checkbox" id="content5-meal8"> ملفوف احمر</label></td>
+													</tr>
+													<tr>
+													  <td><label for="content6-meal8"><input type="checkbox" id="content6-meal8"> بصل</label></td>
+													</tr>
+													<tr>
+													  <td><label for="content7-meal8"><input type="checkbox" id="content7-meal8"> خيار مكبوس</label></td>
+													</tr>
+											  </table>
+											  
+						
+											<!-- Button -->
+											<a onclick="addToCart(this,30)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+												<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
+											</a>
+						
+										</div>
+						
+									</div>
+								</div> <!-- END MENU ITEM #2 -->
+
+				<!-- MENU ITEM #2 -->
+				<div class="col-sm-6 col-lg-3">
+					<div class="menu-7-item">
+		
+						<!-- IMAGE -->
+						<div class="menu-7-img rel">
+		
+							<!-- Image -->
+							<img class="img-fluid" src="https://i.imgur.com/Fd5vvvN.png"
+								alt="menu-image" />
+		
+							<!-- Price -->
+							<div class="menu-7-price bg-coffee">
+								<h5 class="h5-xs yellow-color">35 ₪</h5>
+							</div>
+		
+							<!-- Rating -->
+							<div class="item-rating">
+								<div class="stars-rating stars-lg">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+								</div>
+							</div>
+		
+		
+		
+						</div>
+		
+						<!-- TEXT -->
+						<div class="menu-7-txt rel meal" data-meal-name="كريسبي 5 قطع + شيبس">
+		
+							<!-- Title -->
+							<h5 class="h5-sm">كريسبي 5 قطع + شيبس</h5>
+							<!-- Quantity input -->
+							<div style="margin-bottom: 10px;">
+								<label for="quantity-meal9" style="margin-right: 5px;"></label>
+								<div style="display: inline-block;">
+									<span style="cursor: pointer;"
+										onclick="decreaseQuantity('quantity-meal9')">
+										<i class="fas fa-minus"></i>
+									</span>
+									<input type="number" id="quantity-meal9" value="1" min="1"
+										style="width: 50px; text-align: center;" readonly
+										class="quantity-input">
+									<span style="cursor: pointer;"
+										onclick="increaseQuantity('quantity-meal9')">
+										<i class="fas fa-plus"></i>
+									</span>
+								</div>
+							</div>
+							<table class="mealContentsTable">
+								
+								<tr>
+									<td class="seperateContents">اضافات :</td>
+								  </tr>
+								
+								  <tr>
+									<td><label for="content1-meal9"><input type="checkbox" id="content1-meal9" data-price="10"> اضافة كرات بطاطا +10</label></td>
+								  </tr>
+								  <tr>
+									<td><label for="content2-meal9"><input type="checkbox" id="content2-meal9" data-price="10"> اضافة حلقات بصل +10</label></td>
+								  </tr>
+							  </table>
+							  
+		
+							<!-- Button -->
+							<a onclick="addToCart(this,35)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+								<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
+							</a>
+		
+						</div>
+		
+					</div>
+				</div> <!-- END MENU ITEM #2 -->
+		
+						</div> <!-- End row -->
+					</div> <!-- END TAB-1 CONTENT -->
+
+
+					<!-- TAB-2 CONTENT -->
+					<div id="tab-2" class="tab-content">
+						<div class="row">
+
+							<!-- MENU ITEM #2 -->
+				<div class="col-sm-6 col-lg-3">
+					<div class="menu-7-item">
+		
+						<!-- IMAGE -->
+						<div class="menu-7-img rel">
+		
+							<!-- Image -->
+							<img class="img-fluid" src="https://i.imgur.com/VVvvclS.png"
+								alt="menu-image" />
+		
+							<!-- Price -->
+							<div class="menu-7-price bg-coffee">
+								<h5 class="h5-xs yellow-color">10 ₪</h5>
+							</div>
+		
+							<!-- Rating -->
+							<div class="item-rating">
+								<div class="stars-rating stars-lg">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+								</div>
+							</div>
+		
+		
+		
+						</div>
+		
+						<!-- TEXT -->
+						<div class="menu-7-txt rel meal" data-meal-name="حلقات البصل">
+		
+							<!-- Title -->
+							<h5 class="h5-sm">حلقات البصل</h5>
+							<!-- Quantity input -->
+							<div style="margin-bottom: 10px;">
+								<label for="quantity-meal12" style="margin-right: 5px;"></label>
+								<div style="display: inline-block;">
+									<span style="cursor: pointer;"
+										onclick="decreaseQuantity('quantity-meal12')">
+										<i class="fas fa-minus"></i>
+									</span>
+									<input type="number" id="quantity-meal12" value="1" min="1"
+										style="width: 50px; text-align: center;" readonly
+										class="quantity-input">
+									<span style="cursor: pointer;"
+										onclick="increaseQuantity('quantity-meal12')">
+										<i class="fas fa-plus"></i>
+									</span>
+								</div>
+							</div>
+							
+							<!-- Button -->
+							<a onclick="addToCart(this,10)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+								<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
+							</a>
+		
+						</div>
+		
+					</div>
+				</div> <!-- END MENU ITEM #2 -->
+
+											<!-- MENU ITEM #2 -->
+											<div class="col-sm-6 col-lg-3">
+												<div class="menu-7-item">
+									
+													<!-- IMAGE -->
+													<div class="menu-7-img rel">
+									
+														<!-- Image -->
+														<img class="img-fluid" src="https://i.imgur.com/sxgqvgF.png"
+															alt="menu-image" />
+									
+														<!-- Price -->
+														<div class="menu-7-price bg-coffee">
+															<h5 class="h5-xs yellow-color">10 ₪</h5>
+														</div>
+									
+														<!-- Rating -->
+														<div class="item-rating">
+															<div class="stars-rating stars-lg">
+																<i class="fas fa-star"></i>
+																<i class="fas fa-star"></i>
+																<i class="fas fa-star"></i>
+																<i class="fas fa-star"></i>
+																<i class="fas fa-star"></i>
+															</div>
+														</div>
+									
+									
+									
+													</div>
+									
+													<!-- TEXT -->
+													<div class="menu-7-txt rel meal" data-meal-name="كرات البطاطا">
+									
+														<!-- Title -->
+														<h5 class="h5-sm">كرات البطاطا</h5>
+														<!-- Quantity input -->
+														<div style="margin-bottom: 10px;">
+															<label for="quantity-meal11" style="margin-right: 5px;"></label>
+															<div style="display: inline-block;">
+																<span style="cursor: pointer;"
+																	onclick="decreaseQuantity('quantity-meal11')">
+																	<i class="fas fa-minus"></i>
+																</span>
+																<input type="number" id="quantity-meal11" value="1" min="1"
+																	style="width: 50px; text-align: center;" readonly
+																	class="quantity-input">
+																<span style="cursor: pointer;"
+																	onclick="increaseQuantity('quantity-meal11')">
+																	<i class="fas fa-plus"></i>
+																</span>
+															</div>
+														</div>
+														
+														<!-- Button -->
+														<a onclick="addToCart(this,10)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+															<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
+														</a>
+									
+													</div>
+									
+												</div>
+											</div> <!-- END MENU ITEM #2 -->
+
+																		<!-- MENU ITEM #2 -->
+				<div class="col-sm-6 col-lg-3">
+					<div class="menu-7-item">
+		
+						<!-- IMAGE -->
+						<div class="menu-7-img rel">
+		
+							<!-- Image -->
+							<img class="img-fluid" src="https://i.imgur.com/dQb2DDy.png"
+								alt="menu-image" />
+		
+							<!-- Price -->
+							<div class="menu-7-price bg-coffee">
+								<h5 class="h5-xs yellow-color">10 ₪</h5>
+							</div>
+		
+							<!-- Rating -->
+							<div class="item-rating">
+								<div class="stars-rating stars-lg">
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+									<i class="fas fa-star"></i>
+								</div>
+							</div>
+		
+		
+		
+						</div>
+		
+						<!-- TEXT -->
+						<div class="menu-7-txt rel meal" data-meal-name="شيبس">
+		
+							<!-- Title -->
+							<h5 class="h5-sm">شيبس</h5>
+							<!-- Quantity input -->
+							<div style="margin-bottom: 10px;">
+								<label for="quantity-meal10" style="margin-right: 5px;"></label>
+								<div style="display: inline-block;">
+									<span style="cursor: pointer;"
+										onclick="decreaseQuantity('quantity-meal10')">
+										<i class="fas fa-minus"></i>
+									</span>
+									<input type="number" id="quantity-meal10" value="1" min="1"
+										style="width: 50px; text-align: center;" readonly
+										class="quantity-input">
+									<span style="cursor: pointer;"
+										onclick="increaseQuantity('quantity-meal10')">
+										<i class="fas fa-plus"></i>
+									</span>
+								</div>
+							</div>
+							
+							<!-- Button -->
+							<a onclick="addToCart(this,10)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+								<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
+							</a>
+		
+						</div>
+		
+					</div>
+				</div> <!-- END MENU ITEM #2 -->
 
 						</div> <!-- End row -->
 					</div> <!-- END TAB-2 CONTENT -->
@@ -1625,7 +1400,7 @@
 
 										<!-- Title -->
 										<h5 class="h5-sm">קולה,זירו,ספרייט,פאנטה</h5>
-										<div style="margin-top: 5px;">
+										<div style="margin-bottom: 10px;">
 											<label for="quantity-meal38" style="margin-right: 5px;"></label>
 											<div style="display: inline-block;">
 												<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal38')">
@@ -1696,7 +1471,7 @@
 										<h5 class="h5-sm">ענבים,תות בננה,תפוזים</h5>
 
 
-										<div style="margin-top: 5px;">
+										<div style="margin-bottom: 10px;">
 											<label for="quantity-meal39" style="margin-right: 5px;"></label>
 											<div style="display: inline-block;">
 												<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal39')">
@@ -1728,66 +1503,6 @@
 								</div>
 							</div> <!-- END MENU ITEM #2 -->
 
-
-							<!-- MENU ITEM #3 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
-
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/MxOQYvx.png" alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">7 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="פריש תות">
-
-										<!-- Title -->
-										<h5 class="h5-sm">פריש תות</h5>
-
-										<div style="margin-top: 5px;">
-											<label for="quantity-meal40" style="margin-right: 5px;"></label>
-											<div style="display: inline-block;">
-												<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal40')">
-													<i class="fas fa-minus"></i>
-												</span>
-												<input type="number" id="quantity-meal40" value="1" min="1" style="width: 50px; text-align: center;" readonly
-													class="quantity-input">
-												<span style="cursor: pointer;" onclick="increaseQuantity('quantity-meal40')">
-													<i class="fas fa-plus"></i>
-												</span>
-											</div>
-										</div>
-
-<!-- Button -->
-<a onclick="addToCart(this,7)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-	<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-</a>
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #3 -->
-
 							<!-- MENU ITEM #4 -->
 							<div class="col-sm-6 col-lg-3">
 								<div class="menu-7-item">
@@ -1796,7 +1511,7 @@
 									<div class="menu-7-img rel">
 
 										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/YvUtsg4.png" alt="menu-image" />
+										<img class="img-fluid" src="https://i.imgur.com/i3pgEdx.png" alt="menu-image" />
 
 										<!-- Price -->
 										<div class="menu-7-price bg-coffee">
@@ -1824,7 +1539,7 @@
 										<!-- Title -->
 										<h5 class="h5-sm">סודה | سودا</h5>
 
-										<div style="margin-top: 5px;">
+										<div style="margin-bottom: 10px;">
 											<label for="quantity-meal41" style="margin-right: 5px;"></label>
 											<div style="display: inline-block;">
 												<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal41')">
@@ -1846,65 +1561,8 @@
 
 								</div>
 							</div> <!-- END MENU ITEM #4 -->
-							<!-- MENU ITEM #4 -->
-							<div class="col-sm-6 col-lg-3">
-								<div class="menu-7-item">
 
-									<!-- IMAGE -->
-									<div class="menu-7-img rel">
-
-										<!-- Image -->
-										<img class="img-fluid" src="https://i.imgur.com/VQLaoba.jpeg"
-											alt="menu-image" />
-
-										<!-- Price -->
-										<div class="menu-7-price bg-coffee">
-											<h5 class="h5-xs yellow-color">7 ₪</h5>
-										</div>
-
-										<!-- Rating -->
-										<div class="item-rating">
-											<div class="stars-rating stars-lg">
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-												<i class="fas fa-star"></i>
-											</div>
-										</div>
-
-
-
-									</div>
-
-									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="לימונדה | ليمونادا">
-
-										<!-- Title -->
-										<h5 class="h5-sm"> לימונדה | ليمونادا</h5>
-
-										<div style="margin-top: 5px;">
-											<label for="quantity-meal42" style="margin-right: 5px;"></label>
-											<div style="display: inline-block;">
-												<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal42')">
-													<i class="fas fa-minus"></i>
-												</span>
-												<input type="number" id="quantity-meal42" value="1" min="1" style="width: 50px; text-align: center;" readonly
-													class="quantity-input">
-												<span style="cursor: pointer;" onclick="increaseQuantity('quantity-meal42')">
-													<i class="fas fa-plus"></i>
-												</span>
-											</div>
-										</div>
-
-<!-- Button -->
-<a onclick="addToCart(this,7)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
-	<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
-</a>
-									</div>
-
-								</div>
-							</div> <!-- END MENU ITEM #4 -->
+							
 							<!-- MENU ITEM #4 -->
 							<div class="col-sm-6 col-lg-3">
 								<div class="menu-7-item">
@@ -1936,11 +1594,11 @@
 									</div>
 
 									<!-- TEXT -->
-									<div class="menu-7-txt rel meal" data-meal-name="מים מינרליים | مياه معدنية">
+									<div class="menu-7-txt rel meal" data-meal-name="مياه معدنية">
 
 										<!-- Title -->
-										<h5 class="h5-sm"> מים מינרליים | مياه معدنية</h5>
-										<div style="margin-top: 5px;">
+										<h5 class="h5-sm">مياه معدنية</h5>
+										<div style="margin-bottom: 10px;">
 											<label for="quantity-meal43" style="margin-right: 5px;"></label>
 											<div style="display: inline-block;">
 												<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal43')">
@@ -1997,7 +1655,7 @@
 
 										<!-- Title -->
 										<h5 class="h5-sm"> اكسل | XL </h5>
-										<div style="margin-top: 5px;">
+										<div style="margin-bottom: 10px;">
 											<label for="quantity-meal44" style="margin-right: 5px;"></label>
 											<div style="display: inline-block;">
 												<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal44')">
@@ -2020,6 +1678,64 @@
 
 								</div>
 							</div> <!-- END MENU ITEM #4 -->
+							<div class="col-sm-6 col-lg-3">
+								<div class="menu-7-item">
+
+									<!-- IMAGE -->
+									<div class="menu-7-img rel">
+
+										<!-- Image -->
+										<img class="img-fluid" src="https://i.imgur.com/gPpvJC2.png" alt="menu-image" />
+
+										<!-- Price -->
+										<div class="menu-7-price bg-coffee">
+											<h5 class="h5-xs yellow-color">5 ₪</h5>
+										</div>
+
+										<!-- Rating -->
+										<div class="item-rating">
+											<div class="stars-rating stars-lg">
+												<i class="fas fa-star"></i>
+												<i class="fas fa-star"></i>
+												<i class="fas fa-star"></i>
+												<i class="fas fa-star"></i>
+												<i class="fas fa-star"></i>
+											</div>
+										</div>
+
+
+
+									</div>
+
+									<!-- TEXT -->
+									<div class="menu-7-txt rel meal" data-meal-name="بلو | blu">
+
+										<!-- Title -->
+										<h5 class="h5-sm">بلو | blu </h5>
+										<div style="margin-bottom: 10px;">
+											<label for="quantity-meal45" style="margin-right: 5px;"></label>
+											<div style="display: inline-block;">
+												<span style="cursor: pointer;" onclick="decreaseQuantity('quantity-meal45')">
+													<i class="fas fa-minus"></i>
+												</span>
+												<input type="number" id="quantity-meal45" value="1" min="1" style="width: 50px; text-align: center;" readonly
+													class="quantity-input">
+												<span style="cursor: pointer;" onclick="increaseQuantity('quantity-meal45')">
+													<i class="fas fa-plus"></i>
+												</span>
+											</div>
+										</div>
+
+<!-- Button -->
+<a onclick="addToCart(this,7)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+	<i class="fas fa-shopping-bag"></i> اضف الى الطلبية
+</a>
+
+									</div>
+
+								</div>
+							</div> <!-- END MENU ITEM #4 -->
+
 
 
 						</div> <!-- End row -->
@@ -2035,7 +1751,7 @@
 
 		<!-- FOOTER-4
 			============================================= -->
-		<footer style="background-color: #5f5f5f;" id="footer-4" class="footer division">
+		<footer  id="footer-4" class="footer division">
 			<div class="container grey-color">
 
 
@@ -2048,11 +1764,11 @@
 						<div class="footer-info mb-40">
 
 							<!-- Footer Logo -->
-							<div class="footer-logo text-center"><img src="images/logo-01.png" alt="footer-logo" />
+							<div class="footer-logo text-center"><img src="images/logo-03.png" alt="footer-logo" />
 							</div>
 
 							<!-- Text -->
-							<p class="text-center">Fresh & Tasty
+							<p class="text-center">Spicy Grill
 							</p>
 
 						</div>
@@ -2064,15 +1780,15 @@
 						<div class="footer-contacts mb-40">
 
 							<!-- Title -->
-							<h5 class="h5-sm text-center">תזמין עכשיו | اطلب الان</h5>
+							<h5 style="color: white;" class="h5-sm text-center">اطلب الان</h5>
 
 							<!-- Address -->
-							<p class="text-center">Kafr Qasim, Israel, 13-15</p>
+							<p style="color: white;" class="text-center">اكسال بجانب عيادة مكابي</p>
 
 							<!-- Contacts -->
 
-							<p class="text-center"><span class="red-color"><a
-										href="tel:+963952622516">03-718-0877</a></span></p>
+							<p style="color: white;" class="text-center"><span class="red-color"><a
+										href="tel:+972509191802">050-919-1802</a></span></p>
 
 						</div>
 					</div>
@@ -2083,56 +1799,40 @@
 						<div class="footer-info mb-30">
 
 							<!-- Title -->
-							<h5 class="h5-sm text-center">שעות פעילות | ساعات العمل</h5>
-
-
+							<h5 style="color: white;" class="h5-sm text-center"> ساعات العمل</h5>
 							<!-- Text -->
 							<p class="mt-15 text-center">السبت - الخميس <span>12:00 - 23:00</span></p>
-							<p class=" text-center">שבת - חמישי <span>12:00 - 23:00</span></p>
 							<p class="text-center">الجمعة - مغلق</p>
-							<p class="text-center">שישי - סגור</p>
 
 						</div>
 					</div>
 
 				</div> <!-- END FOOTER CONTENT -->
 
-
-				<!-- BOTTOM FOOTER -->
-				<div class="bottom-footer">
-					<div class="row d-flex align-items-center">
-
-
-						<!-- FOOTER COPYRIGHT -->
-						<div class="col-md-5 col-lg-6 text-center">
-							<div class="footer-copyright">
-								<p>&copy; 2024 Ionmedia. All Rights Reserved</p>
-							</div>
-						</div>
-
-
-						<!-- BOTTOM FOOTER LINKS -->
-						<div class="col-md-7 col-lg-6">
-							<ul class="bottom-footer-list text-center clearfix">
-								<li>
-									<p class="first-list-link"><a href="#"><i class="fab fa-facebook-f"></i>
-										</a></p>
-								</li>
-								<li>
-									<p><a href="#"><i class="fab fa-instagram"></i> </a></p>
-								</li>
-								<li>
-									<p><a href="#"><i class="fab fa-youtube"></i> </a></p>
-								</li>
-
-							</ul>
-						</div>
-
-					</div> <!-- End row -->
-				</div> <!-- END BOTTOM FOOTER -->
-
 			</div> <!-- End container -->
 		</footer> <!-- END FOOTER-4 -->
+
+		<div class="bottom-footer" style="background-color: white;">
+			<div class="row d-flex align-items-center">
+
+				<footer style="text-align: center;">
+					<p style="font-family: 'Cairo', sans-serif;" class="footerP">المنيو الديجيتالي الذكي من IonMedia</p> 
+					<button class="footerClass" id="openTabButton">للانضمام اضغط هنا</button>
+					<br>
+					<img src="../assets/images/Mainlogo.png" alt="IonMedia" style="width:40%;margin-top: 8px;">       
+				</footer>
+				<script>
+					 document.getElementById("openTabButton").addEventListener("click", function() {
+    // Open a new tab with the specified URL
+    window.open("https://www.ionmedia.me", "_blank");
+});
+
+					
+					</script>
+				
+
+			</div> <!-- End row -->
+		</div> <!-- END BOTTOM FOOTER -->
 
 	</div> <!-- END PAGE CONTENT -->
 
@@ -2158,7 +1858,7 @@
 	<!-- Custom Script -->
 	<script src="../assets/restJs/custom.js"></script>
 	<script defer src="../assets/restJs/changer.js"></script>
-	<script src="cart.js?v=4.0"></script>
+	<script src="cart.js?v=5.0"></script>
 </body>
 
 </html>
