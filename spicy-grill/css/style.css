@@ -6610,3 +6610,17 @@ footer img {
   width: 10%;
 }
 }
+
+.newLoader {
+  animation: rotate 2s linear infinite; /* 2s for 2 seconds, linear for constant speed, infinite for infinite loop */
+  border-radius: 20%;
+}
+
+@keyframes rotate {
+  from {
+      transform: rotate(0deg); /* starting position */
+  }
+  to {
+      transform: rotate(360deg); /* ending position, full rotation */
+}
+}
