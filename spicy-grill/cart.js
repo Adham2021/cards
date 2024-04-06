@@ -321,7 +321,7 @@ function checkoutOrder() {
     } else {
 
         debugger;
-        if ($('#address').prop('required')) {
+        if ($('#address').prop('required') && address === '') {           
             Swal.fire({
                 icon: 'error',
                 title: 'يرجى ادخال العنوان الكامل للتوصيل.',
