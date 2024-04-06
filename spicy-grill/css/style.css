@@ -636,9 +636,9 @@ border:none;
 .yellow-hover:hover, 
 .scroll .yellow-hover:hover, 
 .white-color .yellow-hover:hover {
-  color: #333435!important;
-  background-color: #f7be27;
-  border-color: #f7be27!important;
+  color: #ffffff!important;
+  background-color: #f07027;
+  border-color: #f78c27!important;
 }
 
 /*------------------------------------------*/
@@ -6594,4 +6594,19 @@ nav a#pull {
   width: 100%;
   height: 250px;
 }
+footer img { 
+  width:40%
+}
 
+@media (min-width: 768px) {
+  .cover-photo {
+      width: 70%; /* Width for screens larger than mobile */
+      height: 400px;
+  }
+  .profile img {
+    width: 10%; /* Width for screens larger than mobile */
+}
+footer img { 
+  width: 10%;
+}
+}

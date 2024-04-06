@@ -580,3 +580,22 @@ textarea {
     text-align: center;
     margin-top: 10px;
 }
+
+footer img { 
+    width:40%
+  }
+  
+  @media (min-width: 768px) {
+    .cover-photo {
+        height: 400px !important;
+    }
+    .profile img {
+      width: 10%; /* Width for screens larger than mobile */
+  }
+  footer img { 
+    width: 10%;
+  }
+  #barcode-dialog img  { 
+    width: 17% !important;
+  }
+  }
