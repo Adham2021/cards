@@ -32,7 +32,15 @@ function addToCart(target,price,dropdown) {
         IsContentsNeeded=false;
         WithoutContentsMessage ="/بدون اي اضافات/";
     }
-
+    
+    sauceMealCheckboxes.each(function() {
+        // Get the id of the current checkbox
+        let contentId = $(this).attr('id'); 
+        // Find the label associated with the checkbox using the 'for' attribute
+        let contentName = $('label[for="' + contentId + '"]');
+        selectedContents.push(contentName.text().trim());
+        
+    });
     
 if(IsContentsNeeded){
     CheckedMealContents.each(function() {
@@ -49,14 +57,7 @@ if(IsContentsNeeded){
     });
 }
 
-sauceMealCheckboxes.each(function() {
-    // Get the id of the current checkbox
-    let contentId = $(this).attr('id'); 
-    // Find the label associated with the checkbox using the 'for' attribute
-    let contentName = $('label[for="' + contentId + '"]');
-    selectedContents.push(contentName.text().trim());
-    
-});
+
 
     let quantity = parseInt(mealDiv.find('.quantity-input').val());
     if (isNaN(quantity) || quantity <= 0) {
@@ -294,7 +295,7 @@ function sendOrderViaWhatsApp(name, phone,address, cart) {
     let encodedMessage = encodeURIComponent(messageBody);
 
     // Construct the WhatsApp message URL
-    let whatsappURL = `https://api.whatsapp.com/send?phone=+963952622516&text=${encodedMessage}`;
+    let whatsappURL = `https://api.whatsapp.com/send?phone=+972509191802&text=${encodedMessage}`;
 
     // Open WhatsApp in a new tab with the pre-filled message
     window.open(whatsappURL, '_blank');
@@ -373,7 +374,7 @@ $(document).ready(function() {
       });
     }
 
-    var numberOfMeals=8;
+    var numberOfMeals=4;
     for(let i=1;i<numberOfMeals;i++){
       var mealSelector = 'input[type="checkbox"][name="sauceMeal_' + i + '"]';
       restrictCheckboxes(mealSelector);
