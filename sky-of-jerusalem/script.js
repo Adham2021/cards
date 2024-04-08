@@ -44,13 +44,13 @@ function updateWorkingHoursStatus() {
     let currentHour = now.getHours();
     currentHour += now.getMinutes()/60
     const workingHours = {
-        0: currentHour >= 10 && currentHour < 18 ? 'Open until 22:00' : 'Closed, Open at 10:00', // Sunday
-        1: currentHour >= 10 && currentHour < 18 ? 'Open until 22:00' : 'Closed, Open at 10:00', // Monday
-        2: currentHour >= 10 && currentHour < 18 ? 'Open until 22:00' : 'Closed, Open at 10:00', // Tuesday
-        3: currentHour >= 10 && currentHour < 18 ? 'Open until 22:00' : 'Closed, Open at 10:00', // Wednesday
-        4: currentHour >= 10 && currentHour < 18 ? 'Open until 22:00' : 'Closed, Open at 10:00', // Thursday
-        5: currentHour >= 10 && currentHour < 18 ? 'Open until 22:00' : 'Closed, Open at 15:00', // Friday
-        6: currentHour >= 10 && currentHour < 18 ? 'Open until 22:00' : 'Closed, Open at 10:00', // Saturday
+        0: currentHour >= 9 && currentHour < 21 ? 'Open until 21:00' : 'Closed, Open at 09:00', // Sunday
+        1: currentHour >= 9 && currentHour < 21 ? 'Open until 21:00' : 'Closed, Open at 09:00', // Monday
+        2: currentHour >= 9 && currentHour < 21 ? 'Open until 21:00' : 'Closed, Open at 09:00', // Tuesday
+        3: currentHour >= 9 && currentHour < 21 ? 'Open until 21:00' : 'Closed, Open at 09:00', // Wednesday
+        4: currentHour >= 9 && currentHour < 21 ? 'Open until 21:00' : 'Closed, Open at 09:00', // Thursday
+        5: 'Closed, Open at 09:00'                                                            , //Friday
+        6: currentHour >= 9 && currentHour < 21 ? 'Open until 21:00' : 'Closed, Open at 09:00', // Saturday
     };
 
     const statusOpenElement = document.getElementById('status-open');
@@ -61,11 +61,20 @@ function updateWorkingHoursStatus() {
     if (workingHours[dayOfWeek].includes('Closed')) {
         if (currentLanguage === 'hebrew') {
             statusOpenElement.textContent = 'סגור';
-            statusUntilElement.textContent = ' נפתח ב- 10:00';
+            statusUntilElement.textContent = ' נפתח ב- 09:00';
             
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مغلق';
-            statusUntilElement.textContent = ' يفتح في الساعة 10:00';    
+            statusUntilElement.textContent = ' يفتح في الساعة 09:00';    
+        }
+
+        if(dayOfWeek==5){
+            if (currentLanguage === 'hebrew') {
+                statusUntilElement.textContent += " יום שבת";
+            }
+         else if (currentLanguage === 'arabic') {
+            statusUntilElement.textContent += " السبت "
+         }
         }
    
         statusOpenElement.classList.add('status-close');
@@ -75,10 +84,10 @@ function updateWorkingHoursStatus() {
     else {
         if (currentLanguage === 'hebrew') {
             statusOpenElement.textContent = 'פתוח';
-            statusUntilElement.textContent = ' עד 18:00';
+            statusUntilElement.textContent = ' עד 21:00';
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مفتوح';
-            statusUntilElement.textContent = ' حتى 18:00';
+            statusUntilElement.textContent = ' حتى 21:00';
         }
 
         statusOpenElement.classList.add('status-open');
