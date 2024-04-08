@@ -141,7 +141,7 @@ function toggleService(btn) {
 function addToContacts() {
     var contact = {
         name: "Sky Of Jerusalem",
-        phone: "+972526181804",
+        phone: "+972547229088",
         email: "sky.jerusalem23@gmail.com"
     };
     // create a vcard file
