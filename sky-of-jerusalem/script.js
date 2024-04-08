@@ -496,6 +496,7 @@ $(document).ready(function(){
                 {value: 'cinematic_photography_therapy', text: 'علاج عن طريق التصوير السينيمائي'},
                 {value: 'nature_therapy', text: 'علاج بالطبيعة'},
                 {value: 'cinematic_makeup', text: 'المكياج السينمائي'},
+                {value: 'threads_wealth', text: 'خيوط الثراء'},
                 {value: 'resin_art', text: 'فن الريزن'},
                 {value: 'dabke_and_traditional_arts', text: 'دبكة وفنون تراثية'}
             ];
@@ -503,8 +504,8 @@ $(document).ready(function(){
         case 'lamanhaje':
             var subcategories = [
                 {value: 'all_programs', text: 'كل البرامج'},
-                {value: 'summer_camps', text: 'مخيمات صيفية'},
                 {value: 'leadership_symphony', text: 'سيمفونية القيادة'},
+                {value: 'summer_camps', text: 'مخيمات صيفية'},
                 {value: 'one-time_trips', text: 'رحلات  لمرة واحدة'},
                 {value: 'swimming', text: 'سباحة'},
                 {value: 'horseback_riding', text: 'ركوب خيل'},
