@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meal Selection</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <div class="container mt-5">
+    <!-- Dropdown for selecting tab -->
+    <div class="form-group">
+        <label for="tabSelect">Select Tab:</label>
+        <select class="form-control" id="tabSelect">
+          <option value="tab-1">Tab 1</option>
+          <option value="tab-2">Tab 2</option>
+          <option value="tab-3">Tab 3</option>
+          <option value="tab-4">Tab 4</option>
+          <option value="tab-5">Tab 5</option>
+          <option value="tab-6">Tab 6</option>
+          <option value="tab-7">Tab 7</option>
+          <option value="tab-8">Tab 8</option>
+          <option value="tab-9">Tab 9</option>
+          <option value="tab-10">Tab 10</option>
+          <option value="tab-11">Tab 11</option>
+          <option value="tab-12">Tab 12</option>
+          <option value="tab-13">Tab 13</option>
+  
+          <!-- Add options for other tabs -->
+        </select>
+      </div>
+
+
+    <!-- Add meal form -->
+    <div id="mealForm">
+      <div class="form-group">
+        <label for="mealName">Meal Name:</label>
+        <input type="text" class="form-control" id="mealName">
+      </div>
+      <div class="form-group">
+        <label for="mealPrice">Meal Price:</label>
+        <input type="text" class="form-control" id="mealPrice">
+      </div>
+      <div class="form-group">
+        <label for="mealImageUrl">Image URL:</label>
+        <input type="text" class="form-control" id="mealImageUrl">
+      </div>
+      <div class="form-group">
+        <label for="mealContents">Contents:</label>
+        <div id="mealContents">
+          <!-- Content name and price fields will be dynamically added here -->
+        </div>
+        <button type="button" class="btn btn-primary" id="addContent">Add Content</button>
+      </div>
+      <button type="button" class="btn btn-success" id="addMeal">Add Meal</button>
+      <div class="form-group mt-3">
+        <label for="mealHtmlTextarea">Generated mealHtml:</label>
+        <textarea class="form-control" id="mealHtmlTextarea" rows="6" readonly></textarea>
+      </div>
+    </div>
+
+    <!-- Display area for meals -->
+    <div id="tabs-content">
+      <!-- Meal items will be displayed here -->
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="meal_script.js"></script>
+
+</body>
+
+</html>

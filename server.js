@@ -252,6 +252,12 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'spicy-grill', 'index.html'));
   });
 
+  app.use('/adminadham', express.static(path.join(__dirname, 'adminadham')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'adminadham', 'index.html'));
+  });
+
+
 app.use((req, res, next) => {
   res.status(404).sendFile(path.join(__dirname, '404.html'));
 });
