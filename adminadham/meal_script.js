@@ -96,9 +96,11 @@ $(document).ready(function () {
                 </tr>
       `;
     });
-
+    if(mealContents.length > 0){
+        mealHtml+=`</table>`
+    }
     mealHtml += `
-              </table>
+             
               <a onclick="addToCart(this, ${mealPrice})" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
                 <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
               </a>
