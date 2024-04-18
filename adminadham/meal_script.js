@@ -79,11 +79,14 @@ $(document).ready(function () {
                     </span>
                   </div>
                 </div>
-                <table class="mealContentsTable">
-                  <tr>
-                    <td class="seperateContents">اضافات :</td>
-                  </tr>
+               
     `;
+    if(mealContents.length > 0){
+      mealHtml+=` <table class="mealContentsTable">
+      <tr>
+        <td class="seperateContents">اضافات :</td>
+      </tr>`
+    }
 
     mealContents.forEach(function (content, index) {
       var price = content.split(' +')[1] || '0';
