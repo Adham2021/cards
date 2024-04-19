@@ -101,11 +101,12 @@ $(document).ready(function () {
 
     mealContents.forEach(function (content, index) {
       var price = content.split(' +')[1] || '0';
+      var isConstant = $("#constantCheckbox" + (index + 1)).prop("checked");
       mealHtml += `
       <tr>
         <td>
           <label for="content${index + 1}-meal${mealNumber}">
-            <input type="checkbox" id="content${index + 1}-meal${mealNumber}" data-price="${price}" ${isConstant ? 'class="constantCheckbox"' : ''}>${content}
+            <input type="checkbox" id="content${index + 1}-meal${mealNumber}" data-price="${price}" ${isConstant ? 'class="preventUncheck"' : ''}>${content}
           </label>
         </td>
       </tr>
