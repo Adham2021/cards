@@ -7,18 +7,29 @@ $(document).ready(function () {
   // Add content fields dynamically
   $('#addContent').click(function () {
     var contentHtml = `
-      <div class="form-row" id="contentRow${contentCount}">
-        <div class="col">
-          <input type="text" class="form-control contentName" placeholder="Content Name">
-        </div>
-        <div class="col">
-          <input type="text" class="form-control contentPrice" placeholder="Content Price" value="0">
-        </div>
-        <div class="col">
-          <button type="button" class="btn btn-danger removeContent" data-rowid="${contentCount}">Remove</button>
-        </div>
+  <div class="form-row" id="contentRow${contentCount}">
+    <div class="col">
+      <input type="text" class="form-control contentName" placeholder="Content Name">
+    </div>
+    <div class="col">
+      <input type="text" class="form-control contentPrice" placeholder="Content Price" value="0">
+    </div>
+    <div class="col">
+      <div class="form-check">
+        <input class="form-check-input isConstant" type="checkbox" id="constantCheckbox${contentCount}">
+        <label class="form-check-label" for="constantCheckbox${contentCount}">
+          Constant
+        </label>
       </div>
-    `;
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-danger removeContent" data-rowid="${contentCount}">Remove</button>
+    </div>
+  </div>
+`;
+
+// You can then use JavaScript to handle the logic based on the checkbox state.
+
     $('#mealContents').append(contentHtml);
     contentCount++;
   });
@@ -91,10 +102,15 @@ $(document).ready(function () {
     mealContents.forEach(function (content, index) {
       var price = content.split(' +')[1] || '0';
       mealHtml += `
-                <tr>
-                  <td><label for="content${index + 1}-meal${mealNumber}"><input type="checkbox" id="content${index + 1}-meal${mealNumber}" data-price="${price}">${content}</label></td>
-                </tr>
-      `;
+      <tr>
+        <td>
+          <label for="content${index + 1}-meal${mealNumber}">
+            <input type="checkbox" id="content${index + 1}-meal${mealNumber}" data-price="${price}" ${isConstant ? 'class="constantCheckbox"' : ''}>${content}
+          </label>
+        </td>
+      </tr>
+    `;
+    
     });
     if(mealContents.length > 0){
         mealHtml+=`</table>`
