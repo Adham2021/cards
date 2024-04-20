@@ -252,6 +252,10 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'spicy-grill', 'index.html'));
   });
 
+  app.use('/tamer-kitchen', express.static(path.join(__dirname, 'tamer-kitchen')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'tamer-kitchen', 'index.html'));
+  });
   app.use('/adminadham', express.static(path.join(__dirname, 'adminadham')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'adminadham', 'index.html'));

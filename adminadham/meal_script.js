@@ -2,7 +2,7 @@ $(document).ready(function () {
   // Counter for content fields
   var contentCount = 1;
   // Counter for meal number
-  var mealNumber = 1;
+  var mealNumber = 2;
 
   // Add content fields dynamically
   $('#addContent').click(function () {
@@ -106,7 +106,8 @@ $(document).ready(function () {
       <tr>
         <td>
           <label for="content${index + 1}-meal${mealNumber}">
-            <input type="checkbox" id="content${index + 1}-meal${mealNumber}" data-price="${price}" ${isConstant ? 'class="preventUncheck"' : ''}>${content}
+            <input type="checkbox" id="content${index + 1}-meal${mealNumber}" data-price="${price}" ${isConstant ? 'class="preventUncheck"' : ''} 
+            ${isConstant ? 'checked' : ''}>${content}
           </label>
         </td>
       </tr>
