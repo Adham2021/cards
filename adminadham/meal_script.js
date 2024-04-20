@@ -123,6 +123,7 @@ $(document).ready(function () {
               </a>
             </div>
           </div>
+          </div>
     `;
 
     $('#tabs-content').append(mealHtml);
