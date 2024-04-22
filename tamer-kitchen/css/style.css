@@ -277,6 +277,29 @@ button{
 .mainH2{
   background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
 }
+#working-hours-status span { 
+  color:black
+}
+.status-open {
+  background-color: #4CAF50;
+  /* Green */
+  color: #fff;
+  /* White */
+  padding: 5px 10px;
+  border-radius: 10px;
+  /* Rounded borders */
+}
+
+.status-close {
+  background-color: #e12d00;
+  /* red */
+  color: #fff;
+  /* White */
+  padding: 5px 10px;
+  border-radius: 10px;
+  /* Rounded borders */
+}
+
 .menu-item {
   text-align: center;
   margin-bottom: 20px;

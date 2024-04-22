@@ -429,4 +429,41 @@ $(document).ready(function() {
           $(`input[name="food_option_${i}"]`).not(this).prop('checked', false);
         });
       }   
+      updateWorkingHoursStatus()
   });
+
+  
+function updateWorkingHoursStatus() {
+    const now = new Date();
+    const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
+    let currentHour = now.getHours();
+    currentHour += now.getMinutes() / 60
+    const workingHours = {
+        0: currentHour >= 9 && currentHour < 2 ? 'Open until 21:00' : 'Closed, Open at 09:30', // Sunday
+        1: currentHour >= 9 && currentHour < 22 ? 'Open until 22:00' : 'Closed, Open at 09:30', // Monday
+        2: currentHour >= 9 && currentHour < 22 ? 'Open until 22:00' : 'Closed, Open at 09:30', // Tuesday
+        3: currentHour >= 9 && currentHour < 22 ? 'Open until 22:00' : 'Closed, Open at 09:30', // Wednesday
+        4: currentHour >= 9 && currentHour < 22 ? 'Open until 22:00' : 'Closed, Open at 09:30', // Thursday
+        5: currentHour >= 9 && currentHour < 22 ? 'Open until 22:00' : 'Closed, Open at 09:30', // Friday
+        6: currentHour >= 9 && currentHour < 22 ? 'Open until 22:00' : 'Closed, Open at 09:30', // Saturday
+    };
+
+    const statusOpenElement = document.getElementById('status-open');
+    const statusUntilElement = document.getElementById('status-until');
+
+
+    if (workingHours[dayOfWeek].includes('Closed')) {
+
+        statusOpenElement.textContent = 'مغلق';
+        statusUntilElement.textContent = ' يفتح في الساعة 09:30';
+        statusOpenElement.classList.add('status-close');
+        statusOpenElement.classList.remove('status-open');
+    }
+
+    else {
+        statusOpenElement.textContent = 'مفتوح';
+        statusUntilElement.textContent = ' حتى 22:00';
+        statusOpenElement.classList.add('status-open');
+        statusOpenElement.classList.remove('status-close');
+    }
+}
