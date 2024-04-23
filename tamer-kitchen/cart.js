@@ -297,12 +297,13 @@ function sendOrderViaWhatsApp(name, phone,address, cart) {
 
     // Encode the message body
     let encodedMessage = encodeURIComponent(messageBody);
-
+    
     // Construct the WhatsApp message URL
     let whatsappURL = `https://api.whatsapp.com/send?phone=+972527050545&text=${encodedMessage}`;
 
     // Open WhatsApp in a new tab with the pre-filled message
     window.open(whatsappURL, '_blank');
+    sendEmail(messageBody)
 }
 
 
@@ -466,4 +467,27 @@ function updateWorkingHoursStatus() {
         statusOpenElement.classList.add('status-open');
         statusOpenElement.classList.remove('status-close');
     }
+}
+
+function sendEmail(message){
+    const emailData = {
+        to: "ionmedia.me@gmail.com",
+        name: "Tamer Kitchen",
+        phone: "",
+        message: message,
+        cc:"adham.shahwan94@gmail.com"
+    };
+
+    $.ajax({
+        type: "POST",
+        url: "/send-email",
+        contentType: "application/json",
+        data: JSON.stringify(emailData),
+        success: function(data) {
+            
+        },
+        error: function(error) {
+           
+        }
+    });
 }
