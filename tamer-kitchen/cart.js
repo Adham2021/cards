@@ -433,40 +433,60 @@ $(document).ready(function() {
       updateWorkingHoursStatus()
   });
 
-  
-function updateWorkingHoursStatus() {
+ var isResturantClosed = false; 
+ function updateWorkingHoursStatus() {
     const now = new Date();
     const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
     let currentHour = now.getHours();
-    currentHour += now.getMinutes() / 60
+    debugger;
+    currentHour += now.getMinutes() / 60;
     const workingHours = {
-        0: currentHour >= 9 && currentHour < 2 ? 'Open until 21:00' : 'Closed, Open at 09:30', // Sunday
-        1: currentHour >= 9 && currentHour < 22 ? 'Open until 22:00' : 'Closed, Open at 09:30', // Monday
-        2: currentHour >= 9 && currentHour < 22 ? 'Open until 22:00' : 'Closed, Open at 09:30', // Tuesday
-        3: currentHour >= 9 && currentHour < 22 ? 'Open until 22:00' : 'Closed, Open at 09:30', // Wednesday
-        4: currentHour >= 9 && currentHour < 22 ? 'Open until 22:00' : 'Closed, Open at 09:30', // Thursday
-        5: currentHour >= 9 && currentHour < 22 ? 'Open until 22:00' : 'Closed, Open at 09:30', // Friday
-        6: currentHour >= 9 && currentHour < 22 ? 'Open until 22:00' : 'Closed, Open at 09:30', // Saturday
+        0: currentHour >= 9.5 && currentHour <= 21.5 ? true : false, // Sunday
+        1: currentHour >= 9.5 && currentHour <= 22 ? true : false, // Monday
+        2: currentHour >= 9.5 && currentHour <= 22 ? true : false, // Tuesday
+        3: currentHour >= 9.5 && currentHour <= 22 ? true : false, // Wednesday
+        4: currentHour >= 9.5 && currentHour <= 22 ? true : false, // Thursday
+        5: currentHour >= 9.5 && currentHour <= 22 ? true : false, // Friday
+        6: currentHour >= 9.5 && currentHour <= 22 ? true : false, // Saturday
     };
 
-    const statusOpenElement = document.getElementById('status-open');
-    const statusUntilElement = document.getElementById('status-until');
+    const statusOpenElement = $('#status-open');
+    const statusUntilElement = $('#status-until');
+    const orderButton = $(".add-toCart");
 
-
-    if (workingHours[dayOfWeek].includes('Closed')) {
-
-        statusOpenElement.textContent = 'مغلق';
-        statusUntilElement.textContent = ' يفتح في الساعة 09:30';
-        statusOpenElement.classList.add('status-close');
-        statusOpenElement.classList.remove('status-open');
+    if (!workingHours[dayOfWeek]) {
+        statusOpenElement.text('مغلق');
+        statusUntilElement.text(' يفتح في الساعة 09:30');
+        statusOpenElement.addClass('status-close').removeClass('status-open');
+        orderButton.attr('onclick', 'return false;'); // Disable the onclick event
+        orderButton.addClass('disabled'); // Add a class to style the button as disabled
+        isResturantClosed=true;
+    } else {
+        statusOpenElement.text('مفتوح');
+        statusUntilElement.text(' حتى 22:00');
+        statusOpenElement.addClass('status-open').removeClass('status-close');
+        orderButton.attr('onclick', ''); // Enable the onclick event
+        orderButton.removeClass('disabled'); // Remove the disabled styling
+        isResturantClosed=false;
     }
+    $(".add-toCart").each(function() {
+        const orderButton = $(this);
+        const statusMessage = $('<br><span class="status-message"></span>');
 
-    else {
-        statusOpenElement.textContent = 'مفتوح';
-        statusUntilElement.textContent = ' حتى 22:00';
-        statusOpenElement.classList.add('status-open');
-        statusOpenElement.classList.remove('status-close');
-    }
+        // Remove any existing status message
+        orderButton.next('.status-message').remove();
+
+        // Append the status message after the order button
+        orderButton.after(statusMessage);
+
+        if (!workingHours[dayOfWeek] || currentHour < workingHours[dayOfWeek].open || currentHour >= workingHours[dayOfWeek].close) {
+            orderButton.prop('disabled', true);
+            statusMessage.text('مغلق - نبدأ باستقبال طلباتكم في الـ 09:30');
+        } else {
+            orderButton.prop('disabled', false);
+            statusMessage.text("");
+        }
+    });
 }
 
 function sendEmail(message){

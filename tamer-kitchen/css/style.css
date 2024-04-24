@@ -6115,6 +6115,9 @@ table th {
   padding-top: 6px;
   margin-bottom: 2px;
 }
+.status-message{
+  color: white;
+}
 
 .cart-product-desc p {
   margin-bottom: 0;
