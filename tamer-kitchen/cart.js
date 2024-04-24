@@ -438,7 +438,6 @@ $(document).ready(function() {
     const now = new Date();
     const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
     let currentHour = now.getHours();
-    debugger;
     currentHour += now.getMinutes() / 60;
     const workingHours = {
         0: currentHour >= 9.5 && currentHour <= 21.5 ? true : false, // Sunday
@@ -465,7 +464,7 @@ $(document).ready(function() {
         statusOpenElement.text('مفتوح');
         statusUntilElement.text(' حتى 22:00');
         statusOpenElement.addClass('status-open').removeClass('status-close');
-        orderButton.attr('onclick', ''); // Enable the onclick event
+        
         orderButton.removeClass('disabled'); // Remove the disabled styling
         isResturantClosed=false;
     }
