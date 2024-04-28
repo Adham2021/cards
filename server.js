@@ -256,6 +256,13 @@ app.get('/style.css', (req, res) => {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'tamer-kitchen', 'index.html'));
   });
+
+  app.use('/tiktak', express.static(path.join(__dirname, 'tiktak')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'tiktak', 'index.html'));
+  });
+
+
   app.use('/adminadham', express.static(path.join(__dirname, 'adminadham')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'adminadham', 'index.html'));

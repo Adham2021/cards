@@ -1,25 +1,23 @@
 // Define the cart variable globally
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+
+
 // Define the addToCart function
-function addToCart(target,price,dropdown) {
+function addToCart(target,price) {
+    ;
     cartShake();
     // Find the parent meal div
+    let TargetMealId= $(target).attr("id");
     let mealDiv = $(target).closest('.meal');
 
     // Extract meal information from data attributes
     let mealName = mealDiv.data('meal-name');
-    if(dropdown != undefined && dropdown!=null){
-        var selectedOption = dropdown.options[dropdown.selectedIndex];
-        var selectedProduct = selectedOption.text;
-        mealName=selectedProduct;
-    }
+
     let selectedContents = [];
 
     let mealContents = mealDiv.find('input[type="checkbox"]:not([name^="sauceMeal_"])');
     let CheckedMealContents = mealDiv.find('input[type="checkbox"]:checked:not([name^="sauceMeal_"])');
-
-    let sauceMealCheckboxes = mealDiv.find('input[type="checkbox"][name^="sauceMeal_"]:checked');
 
     let AllContentsChecked= false;
     let IsContentsNeeded=true;
@@ -32,33 +30,40 @@ function addToCart(target,price,dropdown) {
         IsContentsNeeded=false;
         WithoutContentsMessage ="/بدون اي اضافات/";
     }
-    
-    sauceMealCheckboxes.each(function() {
-        // Get the id of the current checkbox
-        let contentId = $(this).attr('id'); 
-        // Find the label associated with the checkbox using the 'for' attribute
-        let contentName = $('label[for="' + contentId + '"]');
-        selectedContents.push(contentName.text().trim());
-        
-    });
-    
-if(IsContentsNeeded){
-    CheckedMealContents.each(function() {
-        // Get the id of the current checkbox
-        let contentId = $(this).attr('id'); 
-
-        if ($(this).attr('data-price')) {
-            // Get the value of data-price attribute
-             price += parseFloat($(this).attr('data-price'));
-        }
-        // Find the label associated with the checkbox using the 'for' attribute
-        let contentName = $('label[for="' + contentId + '"]');
-        selectedContents.push(contentName.text().trim());
-    });
-}
 
 
+    if (IsContentsNeeded) {
+        CheckedMealContents.each(function () {
+            // Get the id of the current checkbox
+            let contentId = $(this).attr('id');
+            let contentName = ""
+            if ($(this).attr('data-price')) {
+                // Get the value of data-price attribute
+                price += parseFloat($(this).attr('data-price'));
+            }
+            // Find the label associated with the checkbox using the 'for' attribute
+            var fristTime = true;
+            if (contentId.indexOf('burger') !== -1) {
+                if (fristTime) {
+                    fristTime = false;
+                    contentName = `اضافات برجر كنتاكي : `
+                    selectedContents.push(contentName);
+                }
+               
+            }
+            else {
+                if (contentId.indexOf('kfc') !== -1) {
+                contentName = `اضافات تورتيا كنتاكي : `
+                selectedContents.push(contentName);
+                }
+            }
+            contentName = $('label[for="' + contentId + '"]');
+            selectedContents.push(contentName.text().trim());
+        });
+    }
 
+
+let mealId = mealDiv.find('.quantity-input').attr('id');
     let quantity = parseInt(mealDiv.find('.quantity-input').val());
     if (isNaN(quantity) || quantity <= 0) {
         alert('Invalid quantity! Please enter a valid quantity.');
@@ -67,6 +72,7 @@ if(IsContentsNeeded){
 
     // Create an object representing the meal and its contents
     let meal = {
+        mealId:mealId,
         name: mealName,
         contents: selectedContents,
         quantity: quantity,
@@ -112,9 +118,9 @@ function decreaseQuantity(inputId) {
 
 
 function showSuccessMessage() {
-    $(".ItemAdded-top").show();
+    $(".alert-success").show();
     setTimeout(function(){
-      $(".ItemAdded-top").hide("500"); 
+      $(".alert-success").hide("500"); 
     }, 2000);
 }
 
@@ -125,7 +131,7 @@ function renderCart() {
     cartItems.empty(); // Clear previous contents
 
     let totalCartPrice = 0; // Variable to store the total price of all items in the cart
-
+    
     if (cart.length === 0) {
        
         cartItems.append(`
@@ -160,14 +166,13 @@ function renderCart() {
         });
 
         // Render total price and checkout button with input fields for name and phone number
-
-        if(isResturantClosed){
-            var span = `<span style="font-family: 'Cairo', sans-serif;font-size:20px;    display: flex;
-            text-align: center;">المطعم مغلق - نبدأ باستقبال طلباتكم في الـساعة 14:00</span>`
-            cartItems.append(span);
-            return;
-        }
 // Append the HTML content
+if(isResturantClosed){
+    var span = `<span style="font-family: 'Cairo', sans-serif;font-size:20px;    display: flex;
+    text-align: center;">المطعم مغلق - نبدأ باستقبال طلباتكم في الـساعة 18:00</span>`
+    cartItems.append(span);
+    return;
+}
 cartItems.append(`
     <div class="total-section text-center" style="margin-top: 20px;background-color: #f1f1f1;">
         <ul class="nav nav-tabs" style="justify-content: center;display: flex;
@@ -302,76 +307,15 @@ function sendOrderViaWhatsApp(name, phone,address, cart) {
 
     // Encode the message body
     let encodedMessage = encodeURIComponent(messageBody);
-
+    
     // Construct the WhatsApp message URL
-    let whatsappURL = `https://api.whatsapp.com/send?phone=+972509191802&text=${encodedMessage}`;
+    let whatsappURL = `https://api.whatsapp.com/send?phone=+972527314326&text=${encodedMessage}`;
 
     // Open WhatsApp in a new tab with the pre-filled message
     window.open(whatsappURL, '_blank');
-
     sendEmail(messageBody)
 }
 
-var isResturantClosed = false; 
-function updateWorkingHoursStatus() {
-   const now = new Date();
-   const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
-   let currentHour = now.getHours();
-   currentHour += now.getMinutes() / 60;
-   const workingHours = {
-       0: currentHour >= 14 && currentHour <= 22 ? true : false, // Sunday
-       1: currentHour >= 14 && currentHour <= 22 ? true : false, // Monday
-       2: false, // Tuesday
-       3: currentHour >= 14 && currentHour <= 22 ? true : false, // Wednesday
-       4: currentHour >= 14 && currentHour <= 22 ? true : false, // Thursday
-       5: currentHour >= 14 && currentHour <= 22 ? true : false, // Friday
-       6: currentHour >= 14 && currentHour <= 22 ? true : false, // Satrday
-   };
-
-   const statusOpenElement = $('#status-open');
-   const statusUntilElement = $('#status-until');
-   const orderButton = $(".add-toCart");
-
-   if (!workingHours[dayOfWeek]) {
-       statusOpenElement.text('مغلق');
-       if(dayOfWeek==2){
-           statusUntilElement.text('يفتح في الساعة 14:00 الاربعاء');
-       }
-       else {
-           statusUntilElement.text(' يفتح في الساعة 14:00');
-
-       }
-       statusOpenElement.addClass('status-close').removeClass('status-open');
-       orderButton.attr('onclick', 'return false;'); // Disable the onclick event
-       orderButton.addClass('disabled'); // Add a class to style the button as disabled
-       isResturantClosed=true;
-   } else {
-       statusOpenElement.text('مفتوح');
-       statusUntilElement.text(' حتى 22:00');
-       statusOpenElement.addClass('status-open').removeClass('status-close');
-       
-       orderButton.removeClass('disabled'); // Remove the disabled styling
-       isResturantClosed=false;
-   }
-   $(".add-toCart").each(function() {
-       const orderButton = $(this);
-       const statusMessage = $('<br><span class="status-message"></span>');
-
-       // Remove any existing status message
-       orderButton.next('.status-message').remove();
-
-       // Append the status message after the order button
-       orderButton.after(statusMessage);
-
-       if (!workingHours[dayOfWeek] || currentHour < workingHours[dayOfWeek].open || currentHour >= workingHours[dayOfWeek].close) {
-           orderButton.prop('disabled', true);
-           statusMessage.text('مغلق - نبدأ باستقبال طلباتكم في الـ 14:00');
-       } else {
-           orderButton.prop('disabled', false);
-           statusMessage.text("");
-       }
-   });
-}
 
 function checkoutOrder() {
     // Get the input values
@@ -392,7 +336,7 @@ function checkoutOrder() {
           
     } else {
 
-        debugger;
+        ;
         if ($('#address').prop('required') && address === '') {           
             Swal.fire({
                 icon: 'error',
@@ -444,9 +388,7 @@ $(document).ready(function() {
         }
       });
     }
-    updateWorkingHoursStatus()
-    renderCart();
-    $('#items-cart-num').text(cart.length);
+
     var numberOfMeals=4;
     for(let i=1;i<numberOfMeals;i++){
       var mealSelector = 'input[type="checkbox"][name="sauceMeal_' + i + '"]';
@@ -455,13 +397,115 @@ $(document).ready(function() {
     
   });
 
-  function sendEmail(message){
+  $(document).ready(function() {
+    // Function to animate menu items for a specific tab when they come into view
+    function animateMenuItemsInView(tab) {
+      var menuItems = $('[data-tab="' + tab + '"] .menu-item');
+      menuItems.each(function() {
+        var itemTop = $(this).offset().top;
+        var windowBottom = $(window).scrollTop() + $(window).height();
+  
+        // If the menu item is within the viewport, animate it
+        if (itemTop < windowBottom) {
+          $(this).addClass('animate');
+        }
+      });
+    }
+  
+    // Trigger animation for items in view for the initial tab when the page is loaded
+    animateMenuItemsInView('tab-1');
+  
+    // Trigger animation for items in view for the initial tab when scrolling
+    $(window).on('scroll', function() {
+      animateMenuItemsInView('tab-1');
+    });
+  });
+
+  $(document).ready(function() {
+    $('.preventUncheck').click(function(event) {
+        if (!$(this).is(':checked')) {
+            event.preventDefault(); // Prevent default behavior
+            $('#customAlert').fadeIn().delay(3000).fadeOut(); // Show custom danger alert and hide it after 3 seconds
+            $(this).prop('checked', true); // Keep the checkbox checked
+            return false;
+        } else if ($(this).is(':checked')) {
+            $('#customInfoAlert').fadeIn().delay(3000).fadeOut(); // Show custom info alert and hide it after 3 seconds
+        }
+    });
+    updateWorkingHoursStatus()
+    renderCart();
+    $('#items-cart-num').text(cart.length);
+});
+
+
+
+ var isResturantClosed = false; 
+ function updateWorkingHoursStatus() {
+    const now = new Date();
+    const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
+    let currentHour = now.getHours();
+    currentHour += now.getMinutes() / 60;
+    const workingHours = {
+        0: currentHour >= 9 && currentHour <= 24 ? true : false, // Sunday
+        1: currentHour >= 18 && currentHour <= 24 ? true : false, // Monday
+        2: currentHour >= 18 && currentHour <= 24 ? true : false, // Tuesday
+        3: currentHour >= 18 && currentHour <= 24 ? true : false, // Wednesday
+        4: currentHour >= 18 && currentHour <= 24 ? true : false, // Thursday
+        5: currentHour >= 18 && currentHour <= 24 ? true : false, // Friday
+        6: false, // Saturday
+    };
+
+    const statusOpenElement = $('#status-open');
+    const statusUntilElement = $('#status-until');
+    const orderButton = $(".add-toCart");
+
+    if (!workingHours[dayOfWeek]) {
+        statusOpenElement.text('مغلق');
+        if(dayOfWeek==6){
+            statusUntilElement.text('يفتح في الساعة 18:00 الأحد');
+        }
+        else {
+            statusUntilElement.text(' يفتح في الساعة 18:00');
+
+        }
+        statusOpenElement.addClass('status-close').removeClass('status-open');
+        orderButton.attr('onclick', 'return false;'); // Disable the onclick event
+        orderButton.addClass('disabled'); // Add a class to style the button as disabled
+        isResturantClosed=true;
+    } else {
+        statusOpenElement.text('مفتوح');
+        statusUntilElement.text(' حتى 23:55');
+        statusOpenElement.addClass('status-open').removeClass('status-close');
+        
+        orderButton.removeClass('disabled'); // Remove the disabled styling
+        isResturantClosed=false;
+    }
+    $(".add-toCart").each(function() {
+        const orderButton = $(this);
+        const statusMessage = $('<br><span class="status-message"></span>');
+
+        // Remove any existing status message
+        orderButton.next('.status-message').remove();
+
+        // Append the status message after the order button
+        orderButton.after(statusMessage);
+
+        if (!workingHours[dayOfWeek] || currentHour < workingHours[dayOfWeek].open || currentHour >= workingHours[dayOfWeek].close) {
+            orderButton.prop('disabled', true);
+            statusMessage.text('مغلق - نبدأ باستقبال طلباتكم في الـ 18:00');
+        } else {
+            orderButton.prop('disabled', false);
+            statusMessage.text("");
+        }
+    });
+}
+
+function sendEmail(message){
     const emailData = {
         to: "ionmedia.me@gmail.com",
-        name: "Spicy Grill",
+        name: "Tik Tak",
         phone: "",
-        message: message,
-        cc:"adham.shahwan94@gmail.com"
+        message: message     
     };
 
     $.ajax({
@@ -477,3 +521,28 @@ $(document).ready(function() {
         }
     });
 }
+
+
+$(document).ready(function() {
+    // Array of image URLs
+    var imageUrls = [
+      "https://i.imgur.com/C6rQ352.gif",
+      "https://i.pinimg.com/originals/73/58/4e/73584e6883687bbeb0f65b8466c94dd3.gif", 
+      "https://i.pinimg.com/564x/fb/a6/15/fba615d5651967a8b0f7aa9aeaa2f68a.jpg"   
+    ];
+  
+    var currentIndex = 0;
+  
+    function changeBackground() {
+      $('.cover-photo').fadeOut('slow', function() {
+        $(this).css('background-image', 'url("' + imageUrls[currentIndex] + '")').fadeIn('slow');
+        currentIndex = (currentIndex + 1) % imageUrls.length;
+      });
+    }
+  
+    // Call the function initially
+    changeBackground();
+  
+    // Change the background every 1 second
+    setInterval(changeBackground, 3000);
+  });

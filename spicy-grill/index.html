@@ -102,7 +102,7 @@
 	<link href="../assets/restCss/jquery.datetimepicker.min.css" rel="stylesheet">
 
 	<!-- TEMPLATE CSS -->
-	<link href="css/style.css?v=4.0" rel="stylesheet">
+	<link href="css/style.css?v=5.0" rel="stylesheet">
 
 	<!-- RESPONSIVE CSS -->
 	<link href="../assets/restCss/responsive.css?v=2.0" rel="stylesheet">
@@ -172,7 +172,7 @@
 			<div class="modal-content">
 				<div class="modal-header text-center">
 					
-					<h5 class="modal-title" id="cartModalLabel">طلبيتي </h5>
+					<h5 class="modal-title" id="cartModalLabel" style="    font-family: 'Cairo', sans-serif;">طلبيتي </h5>
 					<button type="button" class="close btn btn-danger" data-bs-dismiss="modal" aria-bs-label="Close">
 						<span aria-hidden="true">&times;</span>
 					</button>
@@ -201,6 +201,11 @@
 			<img src="images/logo-01.png" alt="header-logo" />
 			<br>
 			<p class="tafrit">תפריט | MENU</p>
+			<p id="working-hours-status" >
+                <span style="color:white" id="status-open" dir="ltr">Open</span>
+                <span style="color:white" id="status-until" dir="ltr"> until 21:00</span>
+            </p>
+			<p class="tafrit_slogan"> طعم اللحظات الشهية في كل لقمة!</p>
 			<div class="share-icons">
                 <a class="share-icon" href="https://wa.me/+972509191802"><i
                         class="fab fa-whatsapp"></i></a>
@@ -216,7 +221,7 @@
 		<a class="text-center" style="display: block;" href="https://waze.com/ul/hsvc1gsytg" target="_blank">
 		<i style="color: white;
 		font-size: 20px;" class="fas fa-map-marker-alt"></i> 
-		<span style="color: white;
+		<span style="color: white;font-family: 'Cairo', sans-serif;
 		font-size: 20px;">اكسال | بجانب عيادة مكابي</span>
 	</a>
 	<a class="text-center" style="display: block;" href="tel:+972509191802" >
@@ -2331,14 +2336,14 @@
 						<div class="footer-contacts mb-40">
 
 							<!-- Title -->
-							<h5 style="color: white;" class="h5-sm text-center">اطلب الان</h5>
+							<h5 style="color: white;font-family: 'Cairo', sans-serif;" class="h5-sm text-center">اطلب الان</h5>
 
 							<!-- Address -->
-							<p style="color: white;" class="text-center">اكسال بجانب عيادة مكابي</p>
+							<p style="color: white;font-family: 'Cairo', sans-serif;" class="text-center">اكسال بجانب عيادة مكابي</p>
 
 							<!-- Contacts -->
 
-							<p style="color: white;" class="text-center"><span class="red-color"><a
+							<p style="color: white;font-family: 'Cairo', sans-serif;" class="text-center"><span class="red-color"><a
 										href="tel:+972509191802">050-919-1802</a></span></p>
 
 						</div>
@@ -2350,10 +2355,10 @@
 						<div class="footer-info mb-30">
 
 							<!-- Title -->
-							<h5 style="color: white;" class="h5-sm text-center"> ساعات العمل</h5>
+							<h5 style="color: white;font-family: 'Cairo', sans-serif;" class="h5-sm text-center"> ساعات العمل</h5>
 							<!-- Text -->
-							<p class="mt-15 text-center">الاحد - السبت <span>14:00 - 22:00</span></p>
-							<p class="text-center">الاثنين - مغلق</p>
+							<p class="mt-15 text-center" style="font-family: 'Cairo', sans-serif;">جميع ايام الاسبوع عدا الثلاثاء <span>14:00 - 22:00</span></p>
+							<p class="text-center" style="font-family: 'Cairo', sans-serif;">الثلاثاء - مغلق</p>
 
 						</div>
 					</div>
@@ -2409,7 +2414,7 @@
 	<!-- Custom Script -->
 	<script src="../assets/restJs/custom.js"></script>
 	<script defer src="../assets/restJs/changer.js"></script>
-	<script src="cart.js?v=5.0"></script>
+	<script src="cart.js?v=6.0"></script>
 </body>
 
 </html>

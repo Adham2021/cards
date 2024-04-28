@@ -254,11 +254,16 @@ body {
   background-position: center center;   
   background-size: cover;
 }
-
+p{
+  font-family: 'Cairo', sans-serif;
+}
 .bg-scroll {
   background-attachment: fixed!important;
 }
 
+button{ 
+  font-family: 'Cairo', sans-serif !important;
+}
 .rel { 
   position: relative!important; 
 }
@@ -272,16 +277,58 @@ body {
 .mainH2{
   background-color: rgba(0, 0, 0, 0.5); /* Black with 50% transparency */
 }
+#working-hours-status span { 
+  color:black
+}
+.status-open {
+  background-color: #4CAF50;
+  /* Green */
+  color: #fff;
+  /* White */
+  padding: 5px 10px;
+  border-radius: 10px;
+  /* Rounded borders */
+}
+
+.status-close {
+  background-color: #e12d00;
+  /* red */
+  color: #fff;
+  /* White */
+  padding: 5px 10px;
+  border-radius: 10px;
+  /* Rounded borders */
+}
+
 .menu-item {
   text-align: center;
   margin-bottom: 20px;
-  background-color: black !important;
+  background-color: #F78F2E !important;
+  margin-bottom: 0 !important;
+  padding: 3px !important;
+  margin-right: 0 !important;
+  height: 50%;
+  opacity: 0;
+  animation: fadeInFromBottom 0.5s ease forwards;
+}
+ /* Define the CSS animation */
+ @keyframes fadeInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+#menu-8{
+  background-color: #F78F2E;
 }
 .menu-item img {
-  width: 100%;
-  height: 50%;
+  width: 90px;
+  height: 78px;
   border-radius: 5px;
-  margin-right: -10px;
 }
 .menu-item h5 {
   margin-bottom: 10px;
@@ -308,7 +355,7 @@ body {
 .bg-lightgrey { background-color: #f6f9fa; }
 .bg-grey { background-color: #eaeaea; }
 .bg-brown { background-color: #6f5e4d; }
-.bg-coffee { background-color: #bdbcbb; }
+.bg-coffee { background-color: #ffffff; }
 .bg-meat { background-color: #d2322b; }
 .bg-orange { background-color: #ef7f01; }
 .bg-red { background-color: #e3000e; }
@@ -378,7 +425,7 @@ h6.h6-xl { font-size: 1.21875rem; }  /* 19.5px */
 
 /* Header H5 */
 h5.h5-xs { font-size: 1.25rem; }    /* 20px */
-h5.h5-sm { font-size: 1.375rem; font-weight: bold; color: white;font-family: 'Cairo', sans-serif;}   /* 22px */
+h5.h5-sm { font-size: 1.375rem; font-weight: bold; color: white;font-size: 30px !important;     font-family: 'Heebo, sans-serif';}   /* 22px */
 h5.h5-md { font-size: 1.5rem; }     /* 24px */
 h5.h5-lg { font-size: 1.625rem; }   /* 26px */
 h5.h5-xl { font-size: 1.75rem; }    /* 28px */
@@ -506,7 +553,7 @@ ul.txt-list {
     font-weight: bold;    
     color: white;
     margin-bottom: 10px;
-    background-color: #F13D07;
+    background-color: #ff6700;
     border-radius: 10px;
   }
 .mealContentsTable tr td {
@@ -962,7 +1009,7 @@ border:none;
 .white-color .yellow-color,
 .brown-color .yellow-color,
 .coffee-color .yellow-color,
-.yellow-color span { color: #F13D07; }
+.yellow-color span { color: #ff6700; }
 
 /*------------------------------------------*/
 /*  TEXT SHADOW
@@ -997,7 +1044,7 @@ border:none;
 }
 
 .stars-rating i {
-  color: #F13D07;
+  color: #ff6700;
   font-size: 0.85rem;
   line-height: 1;
 }
@@ -1937,6 +1984,9 @@ span.item-code {
 #header-3.navik-header {
   padding-top: 20px;
 }
+.navik-header {
+  background-color: #F78F2E;
+}
 
 /*------------------------------------------*/
 /*  MAIN MENU LINK
@@ -2034,7 +2084,7 @@ span.ico-holder {
 .basket-ico em.roundpoint {
   width: 20px;
   height: 20px;
-  background-color: #F13D07;
+  background-color: #e35c00;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
@@ -3382,7 +3432,7 @@ span.ico-holder {
 
 .menu-5-item,
 .menu-6-item {
-  border: 1px solid #e5e5e5;
+  border: 2px solid #ffb27e;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
   border-radius: 6px;
@@ -3391,7 +3441,7 @@ span.ico-holder {
 
 .menu-7-item {
   margin-bottom: 50px;
-  border: 1px solid #e5e5e5;
+  border: 2px solid #ffb27e;
   border-radius: 6px;
   padding: 25px 20px 20px;
 }
@@ -3691,12 +3741,7 @@ span.ico-holder {
   position: relative;
   z-index: 997;
 }
-.status-message{
-  color: white;
-}
-p{
-  font-family: 'Cairo', sans-serif;
-}
+
 .tabs-1 li h5 {
   line-height: 1;
   font-weight: 500;
@@ -3705,38 +3750,10 @@ p{
   font-family: 'Cairo', sans-serif;
   font-size: 17px !important;
 }
-#working-hours-status span { 
-  color:black
-}
-.status-open {
-  background-color: #4CAF50;
-  /* Green */
-  color: #fff;
-  /* White */
-  padding: 5px 10px;
-  border-radius: 10px;
-  /* Rounded borders */
-}
-
-.status-close {
-  background-color: #e12d00;
-  /* red */
-  color: #fff;
-  /* White */
-  padding: 5px 10px;
-  border-radius: 10px;
-  /* Rounded borders */
-}
 
 .tabs-1 li.current h5 { 
   color: white;
   font-weight: 500;
-}
-.tafrit_slogan { 
-  color: white;
-  position: relative;
-  font-family: 'Cairo', sans-serif;
-  font-size: 20px;
 }
 
 .tabs-1.red-tabs li.current span { 
@@ -5268,8 +5285,8 @@ select:-webkit-autofill:focus {
 .footer {
   padding-top: 80px;
   padding-bottom: 40px;
-  background-color: #000000;
-  border-top: 2px solid #a90000;
+  background-color: #ff7e27;
+  border-top: 2px solid #ffa15b;
   text-align: center;
 }
 .active { 
@@ -5613,7 +5630,7 @@ select:-webkit-autofill:focus {
 }
 
 #menu-page {
-  background-color: black;
+  background-color: #F78F2E;
 }
 .share-icon i{
   font-size: 25px;
@@ -5651,12 +5668,10 @@ select:-webkit-autofill:focus {
 }
 
 .profile img {
-  width: 40%;
-  height: 40%;
+  width: 55%;
+  height: 55%;
   margin-bottom: 0;
-  margin-top: -4px;
-  border-radius: 33%;
-  border: 2px solid white;
+  margin-top: -50px;
 }
 
 .profile { 
@@ -6080,8 +6095,32 @@ table th {
 .add-toCart{
   margin-top: 10px;
   font-family: 'Cairo', sans-serif;
-  background-color: #F13D07;
+  background-color: #ff6700;
   color: white;
+}
+.overlay {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  left: -3px;
+  height: 50%;
+  background-color: rgb(0 0 0 / 50%);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.overlay h1 {
+  color: white; /* Text color */
+  font-size: 30px; /* Adjust font size as needed */
+}
+.tafrit_slogan { 
+  color: white;
+  position: relative;
+  font-family: 'Cairo', sans-serif;
+  font-size: 20px;
 }
 .add-toCart i { 
   color: white;
@@ -6095,6 +6134,9 @@ table th {
   position: relative;
   padding-top: 6px;
   margin-bottom: 2px;
+}
+.status-message{
+  color: white;
 }
 
 .cart-product-desc p {
@@ -6621,7 +6663,6 @@ nav a#pull {
 }
 
 .cover-photo {
-  background-image: url("https://i.pinimg.com/564x/82/10/2c/82102cf332bf6298801b408067a90366.jpg"); /* Set cover photo background */
   background-size: cover;
   background-position: center;
   position: relative;
@@ -6644,6 +6685,15 @@ footer img {
 footer img { 
   width: 10%;
 }
+ .overlay{
+  width: 27%;
+  left: 0;
+    right: 0;
+}
+.tabs-1 .menu-item a {
+  width: 25%;
+  display: table-cell;
+} 
 }
 
 .newLoader {
@@ -6659,3 +6709,4 @@ footer img {
       transform: rotate(360deg); /* ending position, full rotation */
 }
 }
+
