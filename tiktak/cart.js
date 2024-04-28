@@ -446,7 +446,7 @@ $(document).ready(function() {
     let currentHour = now.getHours();
     currentHour += now.getMinutes() / 60;
     const workingHours = {
-        0: currentHour >= 9 && currentHour <= 24 ? true : false, // Sunday
+        0: currentHour >= 18 && currentHour <= 24 ? true : false, // Sunday
         1: currentHour >= 18 && currentHour <= 24 ? true : false, // Monday
         2: currentHour >= 18 && currentHour <= 24 ? true : false, // Tuesday
         3: currentHour >= 18 && currentHour <= 24 ? true : false, // Wednesday
@@ -463,15 +463,15 @@ $(document).ready(function() {
         statusOpenElement.text('مغلق');
         if(dayOfWeek==6){
             statusUntilElement.text('يفتح في الساعة 18:00 الأحد');
-        }
+        } 
         else {
             statusUntilElement.text(' يفتح في الساعة 18:00');
 
         }
         statusOpenElement.addClass('status-close').removeClass('status-open');
-        orderButton.attr('onclick', 'return false;'); // Disable the onclick event
-        orderButton.addClass('disabled'); // Add a class to style the button as disabled
-        isResturantClosed=true;
+        // orderButton.attr('onclick', 'return false;'); // Disable the onclick event
+        // orderButton.addClass('disabled'); // Add a class to style the button as disabled
+        // isResturantClosed=true;
     } else {
         statusOpenElement.text('مفتوح');
         statusUntilElement.text(' حتى 23:55');
@@ -490,13 +490,13 @@ $(document).ready(function() {
         // Append the status message after the order button
         orderButton.after(statusMessage);
 
-        if (!workingHours[dayOfWeek] || currentHour < workingHours[dayOfWeek].open || currentHour >= workingHours[dayOfWeek].close) {
-            orderButton.prop('disabled', true);
-            statusMessage.text('مغلق - نبدأ باستقبال طلباتكم في الـ 18:00');
-        } else {
-            orderButton.prop('disabled', false);
-            statusMessage.text("");
-        }
+        // if (!workingHours[dayOfWeek] || currentHour < workingHours[dayOfWeek].open || currentHour >= workingHours[dayOfWeek].close) {
+        //     orderButton.prop('disabled', true);
+        //     statusMessage.text('مغلق - نبدأ باستقبال طلباتكم في الـ 18:00');
+        // } else {
+        //     orderButton.prop('disabled', false);
+        //     statusMessage.text("");
+        // }
     });
 }
 
