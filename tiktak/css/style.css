@@ -6101,8 +6101,8 @@ table th {
 .overlay {
   position: absolute;
   top: 20%;
-  width: 100%;
-  left: -3px;
+  width: 90%;
+  left: 5%;
   height: 50%;
   background-color: rgb(0 0 0 / 50%);
   display: flex;
