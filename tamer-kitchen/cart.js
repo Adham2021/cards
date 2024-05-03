@@ -425,7 +425,7 @@ $(document).ready(function() {
 });
 
 $(document).ready(function() {
-    for (let i = 1; i <= 28; i++) {
+    for (let i = 1; i <= 29; i++) {
         $(`input[name="food_option_${i}"]`).click(function() {
           $(`input[name="food_option_${i}"]`).not(this).prop('checked', false);
         });
