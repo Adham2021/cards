@@ -319,13 +319,13 @@ function updateWorkingHoursStatus() {
    let currentHour = now.getHours();
    currentHour += now.getMinutes() / 60;
    const workingHours = {
-       0: false, //currentHour >= 14 && currentHour <= 22 ? true : false, // Sunday
-       1: currentHour >= 14 && currentHour <= 22 ? true : false, // Monday
-       2: currentHour >= 14 && currentHour <= 22 ? true : false, //false, // Tuesday
-       3: currentHour >= 14 && currentHour <= 22 ? true : false, // Wednesday
-       4: currentHour >= 14 && currentHour <= 22 ? true : false, // Thursday
-       5: currentHour >= 14 && currentHour <= 22 ? true : false, // Friday
-       6: currentHour >= 14 && currentHour <= 22 ? true : false, // Satrday
+       0: currentHour >= 14 && currentHour <= 23 ? true : false, // Sunday
+       1: currentHour >= 14 && currentHour <= 23 ? true : false, // Monday
+       2: false, // Tuesday
+       3: currentHour >= 14 && currentHour <= 23 ? true : false, // Wednesday
+       4: currentHour >= 14 && currentHour <= 23 ? true : false, // Thursday
+       5: currentHour >= 14 && currentHour <= 23 ? true : false, // Friday
+       6: currentHour >= 14 && currentHour <= 23 ? true : false, // Satrday
    };
 
    const statusOpenElement = $('#status-open');
@@ -347,7 +347,7 @@ function updateWorkingHoursStatus() {
        isResturantClosed=true;
    } else {
        statusOpenElement.text('مفتوح');
-       statusUntilElement.text(' حتى 22:00');
+       statusUntilElement.text(' حتى 23:00');
        statusOpenElement.addClass('status-open').removeClass('status-close');
        
        orderButton.removeClass('disabled'); // Remove the disabled styling
