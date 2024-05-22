@@ -452,7 +452,7 @@ $(document).ready(function() {
         3: currentHour >= 18 && currentHour <= 24 ? true : false, // Wednesday
         4: currentHour >= 18 && currentHour <= 24 ? true : false, // Thursday
         5: currentHour >= 18 && currentHour <= 24 ? true : false, // Friday
-        6: false, // Saturday
+        6: currentHour >= 18 && currentHour <= 24 ? true : false, // Satarday
     };
 
     const statusOpenElement = $('#status-open');
