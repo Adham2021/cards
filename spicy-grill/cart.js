@@ -318,8 +318,10 @@ function updateWorkingHoursStatus() {
    const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
    let currentHour = now.getHours();
    currentHour += now.getMinutes() / 60;
+   const givenDate = new Date('2024-05-26'); // Replace with the date you want to check
+let closeOnce = isToday(givenDate);
    const workingHours = {
-       0: false, //currentHour >= 14 && currentHour <= 23 ? true : false, // Sunday
+       0: checkCurrentHour(currentHour,closeOnce), //currentHour >= 14 && currentHour <= 23 ? true : false, // Sunday
        1: currentHour >= 14 && currentHour <= 23 ? true : false, // Monday
        2: false, // Tuesday
        3: currentHour >= 14 && currentHour <= 23 ? true : false, // Wednesday
@@ -371,6 +373,20 @@ function updateWorkingHoursStatus() {
            statusMessage.text("");
        }
    });
+}
+
+function checkCurrentHour(currentHour,closeOnce){
+    if(closeOnce){
+        return false;
+    }
+  return currentHour >= 14 && currentHour <= 23 ? true : false;
+}
+
+function isToday(dateToCheck) {
+    const today = new Date();
+    return dateToCheck.getFullYear() === today.getFullYear() &&
+           dateToCheck.getMonth() === today.getMonth() &&
+           dateToCheck.getDate() === today.getDate();
 }
 
 function checkoutOrder() {
