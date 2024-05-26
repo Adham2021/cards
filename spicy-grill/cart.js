@@ -319,7 +319,7 @@ function updateWorkingHoursStatus() {
    let currentHour = now.getHours();
    currentHour += now.getMinutes() / 60;
    const workingHours = {
-       0: currentHour >= 14 && currentHour <= 23 ? true : false, // Sunday
+       0: false, //currentHour >= 14 && currentHour <= 23 ? true : false, // Sunday
        1: currentHour >= 14 && currentHour <= 23 ? true : false, // Monday
        2: false, // Tuesday
        3: currentHour >= 14 && currentHour <= 23 ? true : false, // Wednesday
