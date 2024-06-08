@@ -112,6 +112,10 @@ app.use('/assets', express.static(path.join(__dirname, 'assets')));
 app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'style.css'));
   });
+
+  app.get('/MainStyle.css', (req, res) => {
+    res.sendFile(path.join(__dirname, 'MainStyle.css'));
+  });
   
   app.use('/mk', express.static(path.join(__dirname, 'mk')));
   app.get('/', (req, res) => {
@@ -271,6 +275,17 @@ app.get('/style.css', (req, res) => {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'adminadham', 'index.html'));
   });
+
+  app.use('/cards', express.static(path.join(__dirname, 'cards')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'cards', 'index.html'));
+  });
+
+  app.use('/mh', express.static(path.join(__dirname, 'mh')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'mh', 'index.html'));
+  });
+
 
 
 app.use((req, res, next) => {
