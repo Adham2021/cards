@@ -132,7 +132,11 @@ $(this).next(".toggle-content").slideToggle("slow",function() {
     });
 });
 
-
+$(document).ready(function(){
+    // Trigger click event on toggle button
+    $('#firstToggle').trigger('click');
+    $('#firstToggle').trigger('click');
+});
 
 
 function changeLanguage(language, byClickButton = true) {
@@ -142,7 +146,7 @@ function changeLanguage(language, byClickButton = true) {
         english: { flag: "/assets/images/files/flags/united-kingdom.png", text: "English" },
     };
     const selectedLanguage = languageData[language];
-    localStorage.setItem('RabeiaPreferredLanguage', language);
+    localStorage.setItem('MhPreferredLanguage', language);
     document.getElementById("selected-language").innerText = selectedLanguage.text;
     document.getElementById("language-menu-btn").getElementsByTagName("img")[0].src = selectedLanguage.flag;
 
@@ -157,7 +161,7 @@ function changeLanguage(language, byClickButton = true) {
     }
 }
 function getLanguage() {
-    return localStorage.getItem('RabeiaPreferredLanguage') || 'hebrew'; // Default language is Arabic
+    return localStorage.getItem('MhPreferredLanguage') || 'hebrew'; // Default language is Hebrew
 }
 function toggleLanguageMenu() {
     var languageMenu = document.getElementById("language-menu");

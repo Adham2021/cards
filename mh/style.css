@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Cairo', sans-serif;
-    background-color: #cbcbcb;
+    background-color: #e7e6e6;
     background-image: url('assets/images/files/background.jpeg');
     background-blend-mode: multiply; 
 }
@@ -29,7 +29,6 @@ body {
     background-position: center;
     clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
     background-blend-mode: multiply; 
-    background-color: #719eff;
 }
 
 .image-container {
