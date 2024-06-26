@@ -324,7 +324,7 @@ let closeOnce = isToday(givenDate);
        0: checkCurrentHour(currentHour,closeOnce), //currentHour >= 14 && currentHour <= 23 ? true : false, // Sunday
        1: currentHour >= 14 && currentHour <= 23 ? true : false, // Monday
        2: false, // Tuesday
-       3: currentHour >= 14 && currentHour <= 23 ? true : false, // Wednesday
+       3: false, //currentHour >= 14 && currentHour <= 23 ? true : false, // Wednesday
        4: currentHour >= 14 && currentHour <= 23 ? true : false, // Thursday
        5: currentHour >= 14 && currentHour <= 23 ? true : false, // Friday
        6: currentHour >= 14 && currentHour <= 23 ? true : false, // Satrday
