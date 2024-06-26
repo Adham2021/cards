@@ -323,7 +323,7 @@ let closeOnce = isToday(givenDate);
    const workingHours = {
        0: checkCurrentHour(currentHour,closeOnce), //currentHour >= 14 && currentHour <= 23 ? true : false, // Sunday
        1: currentHour >= 14 && currentHour <= 23 ? true : false, // Monday
-       2: currentHour >= 14 && currentHour <= 23 ? true : false, // Tuesday
+       2: false, // Tuesday
        3: currentHour >= 14 && currentHour <= 23 ? true : false, // Wednesday
        4: currentHour >= 14 && currentHour <= 23 ? true : false, // Thursday
        5: currentHour >= 14 && currentHour <= 23 ? true : false, // Friday
