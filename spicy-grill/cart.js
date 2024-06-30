@@ -318,13 +318,13 @@ function updateWorkingHoursStatus() {
    const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
    let currentHour = now.getHours();
    currentHour += now.getMinutes() / 60;
-   const givenDate = new Date('2024-06-26'); // Replace with the date you want to check
+   const givenDate = new Date('2024-06-30'); // Replace with the date you want to check
 let closeOnce = isToday(givenDate);
    const workingHours = {
-       0: currentHour >= 14 && currentHour <= 23 ? true : false, //currentHour >= 14 && currentHour <= 23 ? true : false, // Sunday
+       0: checkCurrentHour(currentHour,closeOnce), //currentHour >= 14 && currentHour <= 23 ? true : false, // Sunday
        1: currentHour >= 14 && currentHour <= 23 ? true : false, // Monday
        2: false, // Tuesday
-       3:  checkCurrentHour(currentHour,closeOnce), //currentHour >= 14 && currentHour <= 23 ? true : false, // Wednesday
+       3: currentHour >= 14 && currentHour <= 23 ? true : false, //currentHour >= 14 && currentHour <= 23 ? true : false, // Wednesday
        4: currentHour >= 14 && currentHour <= 23 ? true : false, // Thursday
        5: currentHour >= 14 && currentHour <= 23 ? true : false, // Friday
        6: currentHour >= 14 && currentHour <= 23 ? true : false, // Satrday
