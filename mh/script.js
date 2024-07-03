@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 function shareOn(type) {
     
-    const text = 'כרטיס הביקור הדיגטלי של רואה חשבון שקור רביע';
+    const text = 'כרטיס הביקור הדיגטלי של רואה חשבון חאג יחיא מחמוד';
     const url = window.location.href;
     if (type === 'facebook') {
         const facebookShareURL = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
@@ -66,12 +66,19 @@ function updateWorkingHoursStatus() {
             statusOpenElement.textContent = 'مغلق';
             statusUntilElement.textContent = ' يفتح في الساعة 10:00';
         }
+        else if (currentLanguage === 'english') {
+            statusOpenElement.textContent = 'Closed';
+            statusUntilElement.textContent = ' Open at 10:00';
+        }
     if(dayOfWeek==5){
         if (currentLanguage === 'hebrew') {
             statusUntilElement.textContent += " יום שבת ";
         }
      else if (currentLanguage === 'arabic') {
         statusUntilElement.textContent += " السبت "
+     }
+     else if (currentLanguage === 'english') {
+        statusUntilElement.textContent += " Saturday "
      }
     }
         statusOpenElement.classList.add('status-close');
@@ -83,6 +90,10 @@ function updateWorkingHoursStatus() {
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مفتوح';
             statusUntilElement.textContent = ' حتى 18:00';
+        }
+        else if (currentLanguage === 'arabic') {
+            statusOpenElement.textContent = 'Open';
+            statusUntilElement.textContent = 'Until 18:00';
         }
 
         statusOpenElement.classList.add('status-open');
