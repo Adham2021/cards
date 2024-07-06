@@ -505,7 +505,8 @@ function sendEmail(message){
         to: "ionmedia.me@gmail.com",
         name: "Tik Tak",
         phone: "",
-        message: message     
+        message: message,
+        cc:"aleen.shahwan23@gmail.com"    
     };
 
     $.ajax({
