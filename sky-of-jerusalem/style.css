@@ -475,7 +475,7 @@ iframe {
 }
 .contact-icons {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Create 3 equal-width columns */
+    grid-template-columns: repeat(3, 1fr); /* Create 3 equal-width columns */
     margin-top: -23px;
     gap: 20px;
     max-width: 800px; /* Adjust as needed */

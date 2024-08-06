@@ -177,7 +177,7 @@ function changeLanguage(language, byClickButton = true) {
         english: { flag: "/assets/images/files/flags/united-kingdom.png", text: "English" },
     };
     const selectedLanguage = languageData[language];
-    localStorage.setItem('LubnaPreferredLanguage', language);
+    localStorage.setItem('SkyOfJerusalemPreferredLanguage', language);
     document.getElementById("selected-language").innerText = selectedLanguage.text;
     document.getElementById("language-menu-btn").getElementsByTagName("img")[0].src = selectedLanguage.flag;
 
@@ -192,7 +192,7 @@ function changeLanguage(language, byClickButton = true) {
     }
 }
 function getLanguage() {
-    return localStorage.getItem('LubnaPreferredLanguage') || 'arabic'; // Default language is Arabic
+    return localStorage.getItem('SkyOfJerusalemPreferredLanguage') || 'arabic'; // Default language is Arabic
 }
 function toggleLanguageMenu() {
     var languageMenu = document.getElementById("language-menu");
@@ -513,14 +513,14 @@ $(document).ready(function(){
         case 'lamanhaje':
             var subcategories = [
                 {value: 'all_programs', text: 'كل البرامج'},
-                {value: 'leadership_symphony', text: 'سيمفونية القيادة'},
+                {value: 'leadership_symphony', text: 'عالم الواقع الافتراضي (VR)'},
                 {value: 'summer_camps', text: 'مخيمات صيفية'},
                 {value: 'one-time_trips', text: 'رحلات  لمرة واحدة'},
                 {value: 'swimming', text: 'سباحة'},
                 {value: 'horseback_riding', text: 'ركوب خيل'},
                 {value: 'diving', text: 'غوص'},
                 {value: 'surfing', text: 'ركوب أمواج'},
-                {value: 'extreme_sports', text: 'رياضات خطرة'}
+                {value: 'extreme_sports', text: 'رياضات تحدّي'}
             ];
           break;
         case 'mehani':
