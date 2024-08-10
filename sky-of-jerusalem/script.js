@@ -67,6 +67,10 @@ function updateWorkingHoursStatus() {
             statusOpenElement.textContent = 'مغلق';
             statusUntilElement.textContent = ' يفتح في الساعة 09:00';    
         }
+        else if (currentLanguage === 'english') {
+            statusOpenElement.textContent = 'Closed';
+            statusUntilElement.textContent = 'Open at 09:00';    
+        }
 
         if(dayOfWeek==5){
             if (currentLanguage === 'hebrew') {
@@ -74,6 +78,10 @@ function updateWorkingHoursStatus() {
             }
          else if (currentLanguage === 'arabic') {
             statusUntilElement.textContent += " السبت "
+         }
+
+         else if (currentLanguage === 'english') {
+            statusUntilElement.textContent += " Saturday "
          }
         }
    
@@ -88,6 +96,10 @@ function updateWorkingHoursStatus() {
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مفتوح';
             statusUntilElement.textContent = ' حتى 21:00';
+        }
+        else if (currentLanguage === 'english') {
+            statusOpenElement.textContent = 'Open';
+            statusUntilElement.textContent = ' Until 21:00 ';
         }
 
         statusOpenElement.classList.add('status-open');
@@ -180,6 +192,24 @@ function changeLanguage(language, byClickButton = true) {
     localStorage.setItem('SkyOfJerusalemPreferredLanguage', language);
     document.getElementById("selected-language").innerText = selectedLanguage.text;
     document.getElementById("language-menu-btn").getElementsByTagName("img")[0].src = selectedLanguage.flag;
+
+    if (language === 'english') {
+        // Set the page direction to LTR for English
+        $('html').attr('dir', 'ltr');
+        $('p.translatable').css('text-align', 'left');
+        $('li.translatable').css('text-align', 'left');
+        $('p.ProgramHead').css('text-align', 'center');
+        $('p.subtitle').css('text-align', 'center');
+        $('p.float-center').css('text-align', 'center');
+    } else {
+        // Reset the page direction for Hebrew and Arabic
+        $('html').attr('dir', 'rtl');
+        $('p.translatable').css('text-align', 'right');
+        $('li.translatable').css('text-align', 'right');
+        $('p.ProgramHead').css('text-align', 'center');
+        $('p.subtitle').css('text-align', 'center');
+        $('p.float-center').css('text-align', 'center');
+    }
 
     // Additional logic to change content or perform actions based on the selected language
     updateContent(language);
@@ -495,50 +525,53 @@ $(document).ready(function(){
       var subcategories;
       switch(selectedCategory) {
         case 'manhaje':
-            var subcategories = [
-                {value: 'all_programs', text: 'كل البرامج'},
-                {value: 'algorithm_melody', text: 'لحن اللوغاريتم'},
-                {value: 'sustainability_chants', text: 'تراتيل الاستدامة'},
-                {value: 'electronic_marketing', text: 'التسويق الالكتروني'},
-                {value: 'financial_management', text: 'الادارة المالية'},
-                {value: 'animal_therapy', text: 'علاج عن طريق الحيوان'},
-                {value: 'cinematic_photography_therapy', text: 'علاج عن طريق التصوير السينيمائي'},
-                {value: 'nature_therapy', text: 'علاج بالطبيعة'},
-                {value: 'cinematic_makeup', text: 'المكياج السينمائي'},
-                {value: 'threads_wealth', text: 'خيوط الثراء'},
-                {value: 'resin_art', text: 'فن الريزن'},
-                {value: 'dabke_and_traditional_arts', text: 'دبكة وفنون تراثية'}
+            subcategories = [
+                {value: 'all_programs', text: 'كل البرامج', data: {arabic: 'كل البرامج', hebrew: 'כל התוכניות', english: 'All Programs'}},
+                {value: 'algorithm_melody', text: 'لحن اللوغاريتم', data: {arabic: 'لحن اللوغاريتم', hebrew: 'מניע השפעה', english: 'Impact Drive'}},
+                {value: 'sustainability_chants', text: 'تراتيل الاستدامة', data: {arabic: 'تراتيل الاستدامة', hebrew: 'שירי קיימות', english: 'Sustainability Chants'}},
+                {value: 'electronic_marketing', text: 'التسويق الالكتروني', data: {arabic: 'التسويق الالكتروني', hebrew: 'שיווק דיגיטלי', english: 'Electronic Marketing'}},
+                {value: 'financial_management', text: 'الادارة المالية', data: {arabic: 'الادارة المالية', hebrew: 'ניהול פיננסי', english: 'Financial Management'}},
+                {value: 'animal_therapy', text: 'علاج عن طريق الحيوان', data: {arabic: 'علاج عن طريق الحيوان', hebrew: 'טיפול בעזרת בעלי חיים', english: 'Animal Therapy'}},
+                {value: 'cinematic_photography_therapy', text: 'علاج عن طريق التصوير السينيمائي', data: {arabic: 'علاج عن طريق التصوير السينيمائي', hebrew: 'טיפול בצילום קולנועי', english: 'Cinematic Photography Therapy'}},
+                {value: 'nature_therapy', text: 'علاج بالطبيعة', data: {arabic: 'علاج بالطبيعة', hebrew: 'טיפול בטבע', english: 'Nature Therapy'}},
+                {value: 'cinematic_makeup', text: 'المكياج السينمائي', data: {arabic: 'المكياج السينمائي', hebrew: 'איפור קולנועי', english: 'Cinematic Makeup'}},
+                {value: 'threads_wealth', text: 'خيوط الثراء', data: {arabic: 'خيوط الثراء', hebrew: 'חוטי עושר', english: 'Threads of Wealth'}},
+                {value: 'resin_art', text: 'فن الريزن', data: {arabic: 'فن الريزن', hebrew: 'אומנות רזין', english: 'Resin Art'}},
+                {value: 'dabke_and_traditional_arts', text: 'دبكة وفنون تراثية', data: {arabic: 'دبكة وفنون تراثية', hebrew: 'דבקה ואומנויות מסורתיות', english: 'Dabke and Traditional Arts'}}
             ];
-          break;
+            break;
         case 'lamanhaje':
-            var subcategories = [
-                {value: 'all_programs', text: 'كل البرامج'},
-                {value: 'leadership_symphony', text: 'عالم الواقع الافتراضي (VR)'},
-                {value: 'summer_camps', text: 'مخيمات صيفية'},
-                {value: 'one-time_trips', text: 'رحلات  لمرة واحدة'},
-                {value: 'swimming', text: 'سباحة'},
-                {value: 'horseback_riding', text: 'ركوب خيل'},
-                {value: 'diving', text: 'غوص'},
-                {value: 'surfing', text: 'ركوب أمواج'},
-                {value: 'extreme_sports', text: 'رياضات تحدّي'}
+            subcategories = [
+                {value: 'all_programs', text: 'كل البرامج', data: {arabic: 'كل البرامج', hebrew: 'כל התוכניות', english: 'All Programs'}},
+                {value: 'leadership_symphony', text: 'عالم الواقع الافتراضي (VR)', data: {arabic: 'عالم الواقع الافتراضي (VR)', hebrew: 'עולם מציאות מדומה (VR)', english: 'Virtual Reality World (VR)'}},
+                {value: 'alam_doma', text: 'عالم الدمى', data: {arabic: 'عالم الدمى', hebrew: 'עולם הבובות', english: 'World of Puppets'}},
+                {value: 'fan_makrame', text: 'فن المكرمية', data: {arabic: 'فن المكرمية', hebrew: 'אמנות מקרמה', english: 'Macrame Art'}},
+                {value: 'summer_camps', text: 'مخيمات صيفية', data: {arabic: 'مخيمات صيفية', hebrew: 'מחנות קיץ', english: 'Summer Camps'}},
+                {value: 'one-time_trips', text: 'رحلات لمرة واحدة', data: {arabic: 'رحلات لمرة واحدة', hebrew: 'טיולים חד פעמיים', english: 'One-Time Trips'}},
+                {value: 'swimming', text: 'سباحة', data: {arabic: 'سباحة', hebrew: 'שחייה', english: 'Swimming'}},
+                {value: 'horseback_riding', text: 'ركوب خيل', data: {arabic: 'ركوب خيل', hebrew: 'רכיבה על סוסים', english: 'Horseback Riding'}},
+                {value: 'diving', text: 'غوص', data: {arabic: 'غوص', hebrew: 'צלילה', english: 'Diving'}},
+                {value: 'surfing', text: 'ركوب أمواج', data: {arabic: 'ركوب أمواج', hebrew: 'גלישת גלים', english: 'Surfing'}},
+                {value: 'extreme_sports', text: 'رياضات تحدّي', data: {arabic: 'رياضات تحدّي', hebrew: 'ספורט אתגרי', english: 'Extreme Sports'}}
             ];
-          break;
+            break;
         case 'mehani':
-            var subcategories = [
-                {value: 'all_programs', text: 'كل البرامج'},
-                {value: 'hairdressing', text: 'حلاقة'},
-                {value: 'cooking', text: 'طبيخ'},
-                {value: 'sweet_making', text: 'صناعة حلويات'},
-                {value: 'party_decorating', text: 'تزين وتنسيق حفلات'},
-                {value: 'little_chef', text: 'الشيف الصغير'},
-                {value: 'dj', text: 'DJ'},
-                {value: 'beauty_and_nails', text: 'تجميل وأظافر'}
+            subcategories = [
+                {value: 'all_programs', text: 'كل البرامج', data: {arabic: 'كل البرامج', hebrew: 'כל התוכניות', english: 'All Programs'}},
+                {value: 'hairdressing', text: 'حلاقة', data: {arabic: 'حلاقة', hebrew: 'תספורת', english: 'Hairdressing'}},
+                {value: 'cooking', text: 'طبيخ', data: {arabic: 'طبيخ', hebrew: 'בישול', english: 'Cooking'}},
+                {value: 'sweet_making', text: 'صناعة حلويات', data: {arabic: 'صناعة حلويات', hebrew: 'הכנת ממתקים', english: 'Sweet Making'}},
+                {value: 'party_decorating', text: 'تزين وتنسيق حفلات', data: {arabic: 'تزين وتنسيق حفلات', hebrew: 'קישוט והפקת מסיבות', english: 'Party Decorating'}},
+                {value: 'little_chef', text: 'الشيف الصغير', data: {arabic: 'الشيف الصغير', hebrew: 'השף הקטן', english: 'Little Chef'}},
+                {value: 'dj', text: 'DJ', data: {arabic: 'DJ', hebrew: 'די ג\'יי', english: 'DJ'}},
+                {value: 'beauty_and_nails', text: 'تجميل وأظافر', data: {arabic: 'تجميل وأظافر', hebrew: 'איפור וציפורניים', english: 'Beauty and Nails'}}
             ];
-          break;
+            break;
         default:
-          subcategories = [{value: 'all_programs', text: 'كل البرامج'}];
-      }
+            subcategories = [{value: 'all_programs', text: 'كل البرامج', data: {arabic: 'كل البرامج', hebrew: 'כל התוכניות', english: 'All Programs'}}];
+    }
       populateSubcategoryDropdown(subcategories);
+      changeLanguage(getLanguage(), false)
     }).trigger('change');
   
     // Handle search button click
@@ -552,17 +585,25 @@ $(document).ready(function(){
   
     // Function to populate subcategory dropdown
     function populateSubcategoryDropdown(subcategories) {
-      var subcategorySelect = $('#subcategory-select');
-      subcategorySelect.empty();
-      $.each(subcategories, function(index, item) {
-        subcategorySelect.append($('<option>', {
-          value: item.value,
-          text: item.text
-        }));
-      });
-      // Set 'كل البرامج' as selected by default
-      subcategorySelect.val('all_programs');
+        var subcategorySelect = $('#subcategory-select');
+        subcategorySelect.empty();
+        
+        $.each(subcategories, function(index, item) {
+            subcategorySelect.append($('<option>', {
+                value: item.value,
+                text: item.text,
+                'data-lang-arabic': item.data.arabic,
+                'data-lang-hebrew': item.data.hebrew,
+                'data-lang-english': item.data.english,
+                'class' : "translatable"
+            }));
+        });
+    
+        // Set 'كل البرامج' as selected by default
+        subcategorySelect.val('all_programs');
+        
     }
+    
   });
 
   function SearchProgram() {
