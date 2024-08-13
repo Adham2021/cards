@@ -318,7 +318,7 @@ function updateWorkingHoursStatus() {
    const dayOfWeek = now.getDay(); // 0 is Sunday, 1 is Monday, etc.
    let currentHour = now.getHours();
    currentHour += now.getMinutes() / 60;
-   const givenDate = new Date('2024-08-06'); // Replace with the date you want to check
+   const givenDate = new Date('2024-08-13'); // Replace with the date you want to check
 let closeOnce = isToday(givenDate);
    const workingHours = {
        0: currentHour >= 16 && currentHour <= 23 ? true : false, // Sunday
