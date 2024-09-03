@@ -534,20 +534,16 @@ $(document).ready(function(){
                 {value: 'animal_therapy', text: 'علاج عن طريق الحيوان', data: {arabic: 'علاج عن طريق الحيوان', hebrew: 'טיפול בעזרת בעלי חיים', english: 'Animal Therapy'}},
                 {value: 'cinematic_photography_therapy', text: 'علاج عن طريق التصوير السينيمائي', data: {arabic: 'علاج عن طريق التصوير السينيمائي', hebrew: 'טיפול בצילום קולנועי', english: 'Cinematic Photography Therapy'}},
                 {value: 'nature_therapy', text: 'علاج بالطبيعة', data: {arabic: 'علاج بالطبيعة', hebrew: 'טיפול בטבע', english: 'Nature Therapy'}},
-                {value: 'cinematic_makeup', text: 'المكياج السينمائي', data: {arabic: 'المكياج السينمائي', hebrew: 'איפור קולנועי', english: 'Cinematic Makeup'}},
                 {value: 'threads_wealth', text: 'خيوط الثراء', data: {arabic: 'خيوط الثراء', hebrew: 'חוטי עושר', english: 'Threads of Wealth'}},
-                {value: 'resin_art', text: 'فن الريزن', data: {arabic: 'فن الريزن', hebrew: 'אומנות רזין', english: 'Resin Art'}},
-                {value: 'dabke_and_traditional_arts', text: 'دبكة وفنون تراثية', data: {arabic: 'دبكة وفنون تراثية', hebrew: 'דבקה ואומנויות מסורתיות', english: 'Dabke and Traditional Arts'}}
             ];
             break;
         case 'lamanhaje':
             subcategories = [
                 {value: 'all_programs', text: 'كل البرامج', data: {arabic: 'كل البرامج', hebrew: 'כל התוכניות', english: 'All Programs'}},
                 {value: 'leadership_symphony', text: 'عالم الواقع الافتراضي (VR)', data: {arabic: 'عالم الواقع الافتراضي (VR)', hebrew: 'עולם מציאות מדומה (VR)', english: 'Virtual Reality World (VR)'}},
-                {value: 'alam_doma', text: 'عالم الدمى', data: {arabic: 'عالم الدمى', hebrew: 'עולם הבובות', english: 'World of Puppets'}},
-                {value: 'fan_makrame', text: 'فن المكرمية', data: {arabic: 'فن المكرمية', hebrew: 'אמנות מקרמה', english: 'Macrame Art'}},
                 {value: 'summer_camps', text: 'مخيمات صيفية', data: {arabic: 'مخيمات صيفية', hebrew: 'מחנות קיץ', english: 'Summer Camps'}},
                 {value: 'one-time_trips', text: 'رحلات لمرة واحدة', data: {arabic: 'رحلات لمرة واحدة', hebrew: 'טיולים חד פעמיים', english: 'One-Time Trips'}},
+                {value: 'jodo', text: 'رياضة الجودو', data: {arabic: 'رياضة الجودو', hebrew: 'ספורט גודו', english: 'Judo sport'}},
                 {value: 'swimming', text: 'سباحة', data: {arabic: 'سباحة', hebrew: 'שחייה', english: 'Swimming'}},
                 {value: 'horseback_riding', text: 'ركوب خيل', data: {arabic: 'ركوب خيل', hebrew: 'רכיבה על סוסים', english: 'Horseback Riding'}},
                 {value: 'diving', text: 'غوص', data: {arabic: 'غوص', hebrew: 'צלילה', english: 'Diving'}},
@@ -561,12 +557,26 @@ $(document).ready(function(){
                 {value: 'hairdressing', text: 'حلاقة', data: {arabic: 'حلاقة', hebrew: 'תספורת', english: 'Hairdressing'}},
                 {value: 'cooking', text: 'طبيخ', data: {arabic: 'طبيخ', hebrew: 'בישול', english: 'Cooking'}},
                 {value: 'sweet_making', text: 'صناعة حلويات', data: {arabic: 'صناعة حلويات', hebrew: 'הכנת ממתקים', english: 'Sweet Making'}},
-                {value: 'party_decorating', text: 'تزين وتنسيق حفلات', data: {arabic: 'تزين وتنسيق حفلات', hebrew: 'קישוט והפקת מסיבות', english: 'Party Decorating'}},
                 {value: 'little_chef', text: 'الشيف الصغير', data: {arabic: 'الشيف الصغير', hebrew: 'השף הקטן', english: 'Little Chef'}},
                 {value: 'dj', text: 'DJ', data: {arabic: 'DJ', hebrew: 'די ג\'יי', english: 'DJ'}},
                 {value: 'beauty_and_nails', text: 'تجميل وأظافر', data: {arabic: 'تجميل وأظافر', hebrew: 'איפור וציפורניים', english: 'Beauty and Nails'}}
             ];
             break;
+            case 'fonon':
+                subcategories = [
+                    {value: 'all_programs', text: 'كل البرامج', data: {arabic: 'كل البرامج', hebrew: 'כל התוכניות', english: 'All Programs'}},
+                    {value: 'alam_doma', text: 'عالم الدمى', data: {arabic: 'عالم الدمى', hebrew: 'עולם הבובות', english: 'World of Puppets'}},
+                    {value: 'fan_makrame', text: 'فن المكرمية', data: {arabic: 'فن المكرمية', hebrew: 'אמנות מקרמה', english: 'Macrame Art'}},
+                    {value: 'resin_art', text: 'فن الريزن', data: {arabic: 'فن الريزن', hebrew: 'אומנות רזין', english: 'Resin Art'}},
+                    {value: 'party_art', text: 'فن تزيين الحفلات', data: {arabic: 'فن تزيين الحفلات', hebrew: 'אמנות עיצוב המסיבות', english: 'The art of party decoration'}},
+                    {value: 'shamee_art', text: 'صناعة الشمع', data: {arabic: 'صناعة الشمع', hebrew: 'ייצור נרות ', english: 'Candle making'}},
+                    {value: 'selecon_art', text: 'صنع قوالب السليكون', data: {arabic: ' صنع قوالب السليكون', hebrew: 'יצירת תבניות סיליקון ', english: 'Making silicone molds'}},
+                    {value: 'fashion_art', text: 'فن تصميم الازياء', data: {arabic: ' فن تصميم الازياء', hebrew: 'אמנות עיצוב האופנה', english: 'The art of fashion design'}},
+                    {value: 'chair_art', text: 'فن تصنيع الكراسي', data: {arabic: ' فن تصنيع الكراسي', hebrew: 'אמנות ייצור הכיסאות', english: 'The art of chair making'}},
+                    {value: 'cinematic_makeup', text: 'المكياج السينمائي', data: {arabic: 'المكياج السينمائي', hebrew: 'איפור קולנועי', english: 'Cinematic Makeup'}},
+                    {value: 'dabke_and_traditional_arts', text: 'دبكة وفنون تراثية', data: {arabic: 'دبكة وفنون تراثية', hebrew: 'דבקה ואומנויות מסורתיות', english: 'Dabke and Traditional Arts'}}
+                ];
+                break;
         default:
             subcategories = [{value: 'all_programs', text: 'كل البرامج', data: {arabic: 'كل البرامج', hebrew: 'כל התוכניות', english: 'All Programs'}}];
     }
