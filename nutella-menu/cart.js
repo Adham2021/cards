@@ -301,7 +301,7 @@ function sendOrderViaWhatsApp(name, phone,address, cart) {
     let encodedMessage = encodeURIComponent(messageBody);
     
     // Construct the WhatsApp message URL
-    let whatsappURL = `https://api.whatsapp.com/send?phone=+972527050545&text=${encodedMessage}`;
+    let whatsappURL = `https://api.whatsapp.com/send?phone=+972523343336&text=${encodedMessage}`;
 
     // Open WhatsApp in a new tab with the pre-filled message
     window.open(whatsappURL, '_blank');
