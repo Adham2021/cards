@@ -524,26 +524,26 @@ $(document).ready(function() {
 }
 
 function sendEmail(message){
-    const emailData = {
-        to: "ionmedia.me@gmail.com",
-        name: "Dr Nutella",
-        phone: "",
-        message: message,
-        cc:""
-    };
+    // const emailData = {
+    //     to: "ionmedia.me@gmail.com",
+    //     name: "Dr Nutella",
+    //     phone: "",
+    //     message: message,
+    //     cc:""
+    // };
 
-    $.ajax({
-        type: "POST",
-        url: "/send-email",
-        contentType: "application/json",
-        data: JSON.stringify(emailData),
-        success: function(data) {
+    // $.ajax({
+    //     type: "POST",
+    //     url: "/send-email",
+    //     contentType: "application/json",
+    //     data: JSON.stringify(emailData),
+    //     success: function(data) {
             
-        },
-        error: function(error) {
+    //     },
+    //     error: function(error) {
            
-        }
-    });
+    //     }
+    // });
 }
 
 $(document).ready(function() {

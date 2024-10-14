@@ -472,24 +472,24 @@ $(document).ready(function() {
   });
 
   function sendEmail(message){
-    const emailData = {
-        to: "ionmedia.me@gmail.com",
-        name: "Spicy Grill",
-        phone: "",
-        message: message,
-        cc:"adham.shahwan94@gmail.com"
-    };
+    // const emailData = {
+    //     to: "ionmedia.me@gmail.com",
+    //     name: "Spicy Grill",
+    //     phone: "",
+    //     message: message,
+    //     cc:"adham.shahwan94@gmail.com"
+    // };
 
-    $.ajax({
-        type: "POST",
-        url: "/send-email",
-        contentType: "application/json",
-        data: JSON.stringify(emailData),
-        success: function(data) {
+    // $.ajax({
+    //     type: "POST",
+    //     url: "/send-email",
+    //     contentType: "application/json",
+    //     data: JSON.stringify(emailData),
+    //     success: function(data) {
             
-        },
-        error: function(error) {
+    //     },
+    //     error: function(error) {
            
-        }
-    });
+    //     }
+    // });
 }
