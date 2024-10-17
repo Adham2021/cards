@@ -163,7 +163,7 @@ function renderCart() {
 
         if(isResturantClosed){
             var span = `<span style="font-family: 'Cairo', sans-serif;font-size:20px;    display: flex;
-            text-align: center;">المطعم مغلق - نبدأ باستقبال طلباتكم في الـساعة 16:00</span>`
+            text-align: center;">المطعم مغلق - نبدأ باستقبال طلباتكم في الـساعة 12:00</span>`
             cartItems.append(span);
             return;
         }
@@ -321,13 +321,13 @@ function updateWorkingHoursStatus() {
    const givenDate = new Date('2024-08-13'); // Replace with the date you want to check
 let closeOnce = isToday(givenDate);
    const workingHours = {
-       0: currentHour >= 16 && currentHour <= 23 ? true : false, // Sunday
-       1: currentHour >= 16 && currentHour <= 23 ? true : false, // Monday
+       0: currentHour >= 12 && currentHour <= 22 ? true : false, // Sunday
+       1: currentHour >= 12 && currentHour <= 22 ? true : false, // Monday
        2: checkCurrentHour(currentHour,!closeOnce), // Tuesday
-       3: currentHour >= 16 && currentHour <= 23 ? true : false, //currentHour >= 16 && currentHour <= 23 ? true : false, // Wednesday
-       4: currentHour >= 16 && currentHour <= 23 ? true : false, // Thursday
-       5: currentHour >= 16 && currentHour <= 23 ? true : false, // Friday
-       6: currentHour >= 16 && currentHour <= 23 ? true : false, // Satrday
+       3: currentHour >= 12 && currentHour <= 22 ? true : false, //currentHour >= 16 && currentHour <= 23 ? true : false, // Wednesday
+       4: currentHour >= 12 && currentHour <= 22 ? true : false, // Thursday
+       5: currentHour >= 12 && currentHour <= 22 ? true : false, // Friday
+       6: currentHour >= 12 && currentHour <= 22 ? true : false, // Satrday
    };
 
    const statusOpenElement = $('#status-open');
@@ -337,10 +337,10 @@ let closeOnce = isToday(givenDate);
    if (!workingHours[dayOfWeek]) {
        statusOpenElement.text('مغلق');
        if(dayOfWeek==2){
-           statusUntilElement.text('يفتح في الساعة 16:00 الاربعاء');
+           statusUntilElement.text('يفتح في الساعة 12:00 الاربعاء');
        }
        else {
-           statusUntilElement.text(' يفتح في الساعة 16:00');
+           statusUntilElement.text(' يفتح في الساعة 12:00');
 
        }
        statusOpenElement.addClass('status-close').removeClass('status-open');
@@ -349,7 +349,7 @@ let closeOnce = isToday(givenDate);
        isResturantClosed=true;
    } else {
        statusOpenElement.text('مفتوح');
-       statusUntilElement.text(' حتى 23:00');
+       statusUntilElement.text(' حتى 22:00');
        statusOpenElement.addClass('status-open').removeClass('status-close');
        
        orderButton.removeClass('disabled'); // Remove the disabled styling
@@ -367,7 +367,7 @@ let closeOnce = isToday(givenDate);
 
        if (!workingHours[dayOfWeek] || currentHour < workingHours[dayOfWeek].open || currentHour >= workingHours[dayOfWeek].close) {
            orderButton.prop('disabled', true);
-           statusMessage.text('مغلق - نبدأ باستقبال طلباتكم في الـ 16:00');
+           statusMessage.text('مغلق - نبدأ باستقبال طلباتكم في الـ 12:00');
        } else {
            orderButton.prop('disabled', false);
            statusMessage.text("");
@@ -379,7 +379,7 @@ function checkCurrentHour(currentHour,closeOnce){
     if(closeOnce){
         return false;
     }
-  return currentHour >= 16 && currentHour <= 23 ? true : false;
+  return currentHour >= 12 && currentHour <= 22 ? true : false;
 }
 
 function isToday(dateToCheck) {
