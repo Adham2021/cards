@@ -369,7 +369,6 @@
 })(jQuery);
 
 $(document).ready(function() {
-    debugger;
     const form = $("#emailForm");
     const nameInput = $("#name");
     const phoneInput = $("#phone");
@@ -448,7 +447,6 @@ $(document).ready(function() {
     });
 });
 $(document).ready(function() {
-    debugger;
     const form = $("#emailForm2");
     const nameInput = $("#name2");
     const phoneInput = $("#phone2");
@@ -527,7 +525,6 @@ $(document).ready(function() {
     });
 });
 $(document).ready(function() {
-    debugger;
     const form = $("#emailForm3");
     const nameInput = $("#name3");
     const phoneInput = $("#phone3");
@@ -606,7 +603,6 @@ $(document).ready(function() {
     });
 });
 $(document).ready(function() {
-    debugger;
     const form = $("#emailForm4");
     const nameInput = $("#name4");
     const phoneInput = $("#phone4");
@@ -686,7 +682,6 @@ $(document).ready(function() {
     });
 });
 $(document).ready(function() {
-    debugger;
     const form = $("#emailForm5");
     const nameInput = $("#name5");
     const phoneInput = $("#phone5");
@@ -803,23 +798,23 @@ $(document).ready(function() {
 });
 function menuClick(){
     isMenuClicked=!isMenuClicked;
-    $(".navbar-expand-md").toggleClass("coloredMenu")
-    if(!isMenuClicked){
-        $('#logo2').show();
-       $('#logo1').hide();
-       $(".ti-menu").removeClass("whiteColorMenu")
-       $(".navbar-toggler-icon").removeClass("whiteColorMenu")
-       $(".ti-menu").addClass("blueColorMenu")
-       $(".navbar-toggler-icon").addClass("blueColorMenu")
-       }
-       else {
-           $('#logo2').hide();
-           $('#logo1').show();
-           $(".ti-menu").removeClass("blueColorMenu")
-           $(".navbar-toggler-icon").removeClass("blueColorMenu")
-           $(".ti-menu").addClass("whiteColorMenu")
-           $(".navbar-toggler-icon").addClass("whiteColorMenu")
-       }
+    // $(".navbar-expand-md").toggleClass("coloredMenu")
+    // if(!isMenuClicked){
+    //     $('#logo2').show();
+    //    $('#logo1').hide();
+    //    $(".ti-menu").removeClass("whiteColorMenu")
+    //    $(".navbar-toggler-icon").removeClass("whiteColorMenu")
+    //    $(".ti-menu").addClass("blueColorMenu")
+    //    $(".navbar-toggler-icon").addClass("blueColorMenu")
+    //    }
+    //    else {
+    //        $('#logo2').hide();
+    //        $('#logo1').show();
+    //        $(".ti-menu").removeClass("blueColorMenu")
+    //        $(".navbar-toggler-icon").removeClass("blueColorMenu")
+    //        $(".ti-menu").addClass("whiteColorMenu")
+    //        $(".navbar-toggler-icon").addClass("whiteColorMenu")
+    //    }
     
 }
 
@@ -827,3 +822,5 @@ function navItemClick(){
     isMenuClicked=true;
     menuClick();
 }
+
+

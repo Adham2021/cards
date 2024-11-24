@@ -285,6 +285,10 @@ app.get('/style.css', (req, res) => {
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'mh', 'index.html'));
   });
+  app.use('/main', express.static(path.join(__dirname, 'main')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'main', 'index.html'));
+  });
 
   app.use('/nutella-menu', express.static(path.join(__dirname, 'nutella-menu')));
   app.get('/', (req, res) => {
