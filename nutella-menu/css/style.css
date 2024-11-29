@@ -6722,4 +6722,82 @@ footer img {
 }
 
 
+.new-price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #FF6B6B; /* Gold */
+}
 
+.old-price {
+  font-size: 1em;
+  color: #FF6B6B; /* Red */
+  text-decoration: line-through;
+  margin-left: 10px;
+  opacity: 0.8;
+}
+
+/* Modal Styles */
+.special-modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Black background */
+  background-color: rgba(0, 0, 0, 0.4); /* Black with transparency */
+  padding-top: 60px;
+}
+
+/* Modal Content (Centered) */
+.special-modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center the modal */
+}
+
+/* Close Button */
+.special-close {
+  color: #aaa;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.special-close:hover,
+.special-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.special-btn-close {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.special-btn-close:hover {
+  background-color: #45a049;
+}
+
+.special-modal-message {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+}

@@ -631,3 +631,27 @@ $(document).ready(function() {
         $('#mealOptionsModal_' + mealNumber).hide();
     });
 });
+
+
+
+/////
+$(document).ready(function () {
+    // Show the modal when the page loads
+    $('#specialDiscountModal').fadeIn();
+  
+    // Automatically close the modal after 5 seconds (5000 milliseconds)
+    setTimeout(function() {
+      $('#specialDiscountModal').fadeOut();
+    }, 3500);
+  
+    // Close the modal when the "تعال وتحلى معنا" button is clicked
+    $('#specialCloseModalBtn').click(function () {
+      $('#specialDiscountModal').fadeOut();
+    });
+  
+    // Optional: Close the modal if the user clicks on the close (×) button
+    $('.special-close').click(function () {
+      $('#specialDiscountModal').fadeOut();
+    });
+  });
+  

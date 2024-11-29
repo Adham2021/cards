@@ -101,7 +101,7 @@
 	<link href="../assets/restCss/jquery.datetimepicker.min.css" rel="stylesheet">
 
 	<!-- TEMPLATE CSS -->
-	<link href="css/style.css?v=8.0" rel="stylesheet">
+	<link href="css/style.css?v=9.0" rel="stylesheet">
 
 	<!-- RESPONSIVE CSS -->
 	<link href="../assets/restCss/responsive.css?v=2.0" rel="stylesheet">
@@ -164,6 +164,18 @@
 			</div>
 		</div>
 	</div>
+
+  <!-- Modal HTML -->
+<div id="specialDiscountModal" class="special-modal">
+  <div class="special-modal-content">
+    <span class="special-close">&times;</span>
+    <h2 class="special-modal-message">الان خصم 30% على كل المينيو مع دكتور نوتيلا</h2>
+    <h3 class="special-modal-message">الحملة حتى 30.11</h3>
+
+    <button id="specialCloseModalBtn" class="special-btn-close">تعال وتحلى معنا</button>
+  </div>
+</div>
+
 
 	<!-- PAGE CONTENT
 		============================================= -->
@@ -297,8 +309,9 @@
               <div class="menu-7-img rel">
                 <img class="img-fluid" src="https://i.imgur.com/VMT6htM.jpeg" alt="menu-image">
                 <div class="menu-7-price bg-coffee">
-                  <h5 class="h5-xs yellow-color">25 ₪</h5>
-                </div>
+                  <h5 class="h5-xs yellow-color new-price">17.50 ₪</h5>
+                  <h5 class="h5-xs old-price"><del>25 ₪</del></h5>
+                                  </div>
                 <div class="item-rating">
                   <div class="stars-rating stars-lg">
                     <i class="fas fa-star"></i>
@@ -572,7 +585,7 @@
           </table>
         </div>
 		
-        <a onclick="addToCart(this, 25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+        <a onclick="addToCart(this, 17.5)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
           <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
         </a>
 			</div>
@@ -588,8 +601,9 @@
               <div class="menu-7-img rel">
                 <img class="img-fluid" src="https://i.imgur.com/gppUrMQ.jpeg" alt="menu-image">
                 <div class="menu-7-price bg-coffee">
-                  <h5 class="h5-xs yellow-color">25 ₪</h5>
-                </div>
+                  <h5 class="h5-xs yellow-color new-price">17.50 ₪</h5>
+                  <h5 class="h5-xs old-price"><del>25 ₪</del></h5>
+                                  </div>
                 <div class="item-rating">
                   <div class="stars-rating stars-lg">
                     <i class="fas fa-star"></i>
@@ -833,7 +847,7 @@
           </table>
         </div>
 		
-        <a onclick="addToCart(this, 25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+        <a onclick="addToCart(this, 17.5)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
           <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
         </a>
 			</div>
@@ -849,8 +863,9 @@
               <div class="menu-7-img rel">
                 <img class="img-fluid" src="https://i.imgur.com/5DJhclG.jpeg" alt="menu-image">
                 <div class="menu-7-price bg-coffee">
-                  <h5 class="h5-xs yellow-color">25 ₪</h5>
-                </div>
+                  <h5 class="h5-xs yellow-color new-price">17.50 ₪</h5>
+                  <h5 class="h5-xs old-price"><del>25 ₪</del></h5>
+                                  </div>
                 <div class="item-rating">
                   <div class="stars-rating stars-lg">
                     <i class="fas fa-star"></i>
@@ -1131,7 +1146,7 @@
           </table>
         </div>
 		
-        <a onclick="addToCart(this, 25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+        <a onclick="addToCart(this, 17.5)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
           <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
         </a>
 			</div>
@@ -1147,8 +1162,9 @@
               <div class="menu-7-img rel">
                 <img class="img-fluid" src="https://i.imgur.com/RbVn7kj.jpeg" alt="menu-image">
                 <div class="menu-7-price bg-coffee">
-                  <h5 class="h5-xs yellow-color">15 ₪</h5>
-                </div>
+                  <h5 class="h5-xs yellow-color new-price">10.50 ₪</h5>
+                  <h5 class="h5-xs old-price"><del>15 ₪</del></h5>
+                                  </div>
                 <div class="item-rating">
                   <div class="stars-rating stars-lg">
                     <i class="fas fa-star"></i>
@@ -1234,7 +1250,7 @@
           </table>
         </div>
 		
-        <a onclick="addToCart(this, 15)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+        <a onclick="addToCart(this, 10.5)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
           <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
         </a>
 			</div>
@@ -1250,8 +1266,9 @@
               <div class="menu-7-img rel">
                 <img class="img-fluid" src="https://i.imgur.com/AAzr9rn.jpeg" alt="menu-image">
                 <div class="menu-7-price bg-coffee">
-                  <h5 class="h5-xs yellow-color">25 ₪</h5>
-                </div>
+                  <h5 class="h5-xs yellow-color new-price">21.00 ₪</h5>
+                  <h5 class="h5-xs old-price"><del>30 ₪</del></h5>
+                                  </div>
                 <div class="item-rating">
                   <div class="stars-rating stars-lg">
                     <i class="fas fa-star"></i>
@@ -1357,7 +1374,7 @@
           </table>
         </div>
 		
-        <a onclick="addToCart(this, 25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+        <a onclick="addToCart(this, 21)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
           <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
         </a>
 			</div>
@@ -1373,8 +1390,9 @@
               <div class="menu-7-img rel">
                 <img class="img-fluid" src="https://i.imgur.com/afIQBIC.jpeg" alt="menu-image">
                 <div class="menu-7-price bg-coffee">
-                  <h5 class="h5-xs yellow-color">30 ₪</h5>
-                </div>
+                  <h5 class="h5-xs yellow-color new-price">21.00 ₪</h5>
+                  <h5 class="h5-xs old-price"><del>30 ₪</del></h5>
+                                  </div>
                 <div class="item-rating">
                   <div class="stars-rating stars-lg">
                     <i class="fas fa-star"></i>
@@ -1545,7 +1563,7 @@
           </table>
         </div>
 		
-        <a onclick="addToCart(this, 25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+        <a onclick="addToCart(this, 21)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
           <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
         </a>
 			</div>
@@ -1561,8 +1579,9 @@
               <div class="menu-7-img rel">
                 <img class="img-fluid" src="https://i.imgur.com/ZwMBPQS.jpeg" alt="menu-image">
                 <div class="menu-7-price bg-coffee">
-                  <h5 class="h5-xs yellow-color">25 ₪</h5>
-                </div>
+                  <h5 class="h5-xs yellow-color new-price">17.50 ₪</h5>
+                  <h5 class="h5-xs old-price"><del>25 ₪</del></h5>
+                                  </div>
                 <div class="item-rating">
                   <div class="stars-rating stars-lg">
                     <i class="fas fa-star"></i>
@@ -1843,7 +1862,7 @@
           </table>
         </div>
 		
-        <a onclick="addToCart(this, 25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+        <a onclick="addToCart(this, 17.5)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
           <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
         </a>
 			</div>
@@ -1859,8 +1878,9 @@
               <div class="menu-7-img rel">
                 <img class="img-fluid" src="https://i.imgur.com/CMQBtTx.jpeg" alt="menu-image">
                 <div class="menu-7-price bg-coffee">
-                  <h5 class="h5-xs yellow-color">25 ₪</h5>
-                </div>
+                  <h5 class="h5-xs yellow-color new-price">17.50 ₪</h5>
+                  <h5 class="h5-xs old-price"><del>25 ₪</del></h5>
+                                  </div>
                 <div class="item-rating">
                   <div class="stars-rating stars-lg">
                     <i class="fas fa-star"></i>
@@ -2141,7 +2161,7 @@
           </table>
         </div>
 		
-        <a onclick="addToCart(this, 25)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+        <a onclick="addToCart(this, 17.5)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
           <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
         </a>
 			</div>
@@ -2163,8 +2183,9 @@
                   <div class="menu-7-img rel">
                     <img class="img-fluid" src="https://i.imgur.com/FzhqeXL.jpeg" alt="menu-image">
                     <div class="menu-7-price bg-coffee">
-                      <h5 class="h5-xs yellow-color">20 ₪</h5>
-                    </div>
+                      <h5 class="h5-xs yellow-color new-price">14.00 ₪</h5>
+                      <h5 class="h5-xs old-price"><del>20 ₪</del></h5>
+                                          </div>
                     <div class="item-rating">
                       <div class="stars-rating stars-lg">
                         <i class="fas fa-star"></i>
@@ -2250,7 +2271,7 @@
               </table>
             </div>
         
-            <a onclick="addToCart(this, 20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+            <a onclick="addToCart(this, 14)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
               <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
             </a>
           </div>
@@ -2267,8 +2288,9 @@
                   <div class="menu-7-img rel">
                     <img class="img-fluid" src="https://i.imgur.com/RoGFeGq.jpeg" alt="menu-image">
                     <div class="menu-7-price bg-coffee">
-                      <h5 class="h5-xs yellow-color">20 ₪</h5>
-                    </div>
+                      <h5 class="h5-xs yellow-color new-price">14.00 ₪</h5>
+                      <h5 class="h5-xs old-price"><del>20 ₪</del></h5>
+                                          </div>
                     <div class="item-rating">
                       <div class="stars-rating stars-lg">
                         <i class="fas fa-star"></i>
@@ -2294,7 +2316,7 @@
                       </div>
                     </div>
     
-                    <a onclick="addToCart(this, 20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+                    <a onclick="addToCart(this, 14)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
                       <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
                     </a>
 
@@ -2314,8 +2336,9 @@
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/NWvvb4B.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">20 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">14.00 ₪</h5>
+              <h5 class="h5-xs old-price"><del>20 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -2549,7 +2572,7 @@ data-bs-backdrop="static">
       </table>
     </div>
 
-    <a onclick="addToCart(this, 20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+    <a onclick="addToCart(this, 14)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
       <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
     </a>
   </div>
@@ -2565,8 +2588,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/xzQJoty.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">20 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">14.00 ₪</h5>
+              <h5 class="h5-xs old-price"><del>20 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -2809,7 +2833,7 @@ data-bs-backdrop="static">
       </table>
     </div>
 
-    <a onclick="addToCart(this, 20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+    <a onclick="addToCart(this, 14)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
       <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
     </a>
   </div>
@@ -2826,8 +2850,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/i3WO36K.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">20 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">14.00 ₪</h5>
+              <h5 class="h5-xs old-price"><del>20 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -3068,7 +3093,7 @@ data-bs-backdrop="static">
       </table>
     </div>
 
-    <a onclick="addToCart(this, 20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+    <a onclick="addToCart(this, 14)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
       <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
     </a>
   </div>
@@ -3084,8 +3109,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/JWOJN4L.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">20 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">14.00 ₪</h5>
+              <h5 class="h5-xs old-price"><del>20 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -3327,7 +3353,7 @@ data-bs-backdrop="static">
       </table>
     </div>
 
-    <a onclick="addToCart(this, 20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+    <a onclick="addToCart(this, 14)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
       <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
     </a>
   </div>
@@ -3349,8 +3375,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/HkejTX9.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">18 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">12.60 ₪</h5>
+              <h5 class="h5-xs old-price"><del>18 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -3410,7 +3437,7 @@ data-bs-backdrop="static">
       </table>
     </div>
 
-    <a onclick="addToCart(this, 18)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+    <a onclick="addToCart(this, 12.6)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
       <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
     </a>
   </div>
@@ -3427,8 +3454,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/FvULe1J.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">18 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">12.60 ₪</h5>
+              <h5 class="h5-xs old-price"><del>18 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -3488,7 +3516,7 @@ data-bs-backdrop="static">
       </table>
     </div>
 
-    <a onclick="addToCart(this, 18)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+    <a onclick="addToCart(this, 12.6)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
       <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
     </a>
   </div>
@@ -3505,8 +3533,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/fliuh8X.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">18 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">12.60 ₪</h5>
+              <h5 class="h5-xs old-price"><del>18 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -3566,7 +3595,7 @@ data-bs-backdrop="static">
       </table>
     </div>
 
-    <a onclick="addToCart(this, 18)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+    <a onclick="addToCart(this, 12.6)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
       <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
     </a>
   </div>
@@ -3583,8 +3612,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/Iv6ijaF.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">18 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">12.60 ₪</h5>
+              <h5 class="h5-xs old-price"><del>18 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -3644,7 +3674,7 @@ data-bs-backdrop="static">
       </table>
     </div>
 
-    <a onclick="addToCart(this, 18)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+    <a onclick="addToCart(this, 12.6)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
       <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
     </a>
   </div>
@@ -3661,8 +3691,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/ppd35rt.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">18 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">12.60 ₪</h5>
+              <h5 class="h5-xs old-price"><del>18 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -3722,7 +3753,7 @@ data-bs-backdrop="static">
       </table>
     </div>
 
-    <a onclick="addToCart(this, 18)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+    <a onclick="addToCart(this, 12.6)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
       <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
     </a>
   </div>
@@ -3743,8 +3774,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/UYtNBWF.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">20 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">14.00 ₪</h5>
+              <h5 class="h5-xs old-price"><del>20 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -3770,7 +3802,7 @@ data-bs-backdrop="static">
               </div>
             </div>
 
-            <a onclick="addToCart(this, 20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+            <a onclick="addToCart(this, 14)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
               <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
             </a>
 
@@ -3784,8 +3816,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/0lUoRvU.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">20 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">14.00 ₪</h5>
+              <h5 class="h5-xs old-price"><del>20 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -3811,7 +3844,7 @@ data-bs-backdrop="static">
               </div>
             </div>
 
-            <a onclick="addToCart(this, 20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+            <a onclick="addToCart(this, 14)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
               <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
             </a>
 
@@ -3825,8 +3858,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/a2QeWEp.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">20 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">14.00 ₪</h5>
+              <h5 class="h5-xs old-price"><del>20 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -3852,7 +3886,7 @@ data-bs-backdrop="static">
               </div>
             </div>
 
-            <a onclick="addToCart(this, 20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+            <a onclick="addToCart(this, 14)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
               <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
             </a>
 
@@ -3866,8 +3900,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/xEvu3mJ.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">20 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">14.00 ₪</h5>
+              <h5 class="h5-xs old-price"><del>20 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -3893,7 +3928,7 @@ data-bs-backdrop="static">
               </div>
             </div>
 
-            <a onclick="addToCart(this, 20)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+            <a onclick="addToCart(this, 14)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
               <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
             </a>
 
@@ -3906,8 +3941,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/M1V4zG9.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">5 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">3.50 ₪</h5>
+              <h5 class="h5-xs old-price"><del>5 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -3948,7 +3984,7 @@ data-bs-backdrop="static">
             
              
             </table>
-            <a onclick="addToCart(this, 5)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+            <a onclick="addToCart(this, 3.5)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
               <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
             </a>
 
@@ -3961,8 +3997,9 @@ data-bs-backdrop="static">
           <div class="menu-7-img rel">
             <img class="img-fluid" src="https://i.imgur.com/cOYjfzM.jpeg" alt="menu-image">
             <div class="menu-7-price bg-coffee">
-              <h5 class="h5-xs yellow-color">15 ₪</h5>
-            </div>
+              <h5 class="h5-xs yellow-color new-price">10.50 ₪</h5>
+              <h5 class="h5-xs old-price"><del>15 ₪</del></h5>
+                          </div>
             <div class="item-rating">
               <div class="stars-rating stars-lg">
                 <i class="fas fa-star"></i>
@@ -3988,7 +4025,7 @@ data-bs-backdrop="static">
               </div>
             </div>
 
-            <a onclick="addToCart(this, 15)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
+            <a onclick="addToCart(this, 10.5)" class="btn btn-sm btn-tra-grey yellow-hover add-toCart">
               <i class="fas fa-shopping-bag"></i> اضف الى الطلبية
             </a>
 
@@ -4115,7 +4152,7 @@ data-bs-backdrop="static">
 	<!-- Custom Script -->
 	<script src="../assets/restJs/custom.js"></script>
 	<script defer src="../assets/restJs/changer.js"></script>
-	<script src="cart.js?v=11.0"></script>
+	<script src="cart.js?v=12.0"></script>
 </body>
 
 </html>
