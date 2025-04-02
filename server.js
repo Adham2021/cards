@@ -150,14 +150,10 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'dr-sholy', 'index.html'));
 });
 
-  app.use('/elmajd', express.static(path.join(__dirname, 'elmajd')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'elmajd', 'index.html'));
-  });
 
-  app.use('/oranet', express.static(path.join(__dirname, 'oranet')));
+  app.use('/sif', express.static(path.join(__dirname, 'sif')));
   app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'oranet', 'index.html'));
+    res.sendFile(path.join(__dirname, 'sif', 'index.html'));
   });
 
   app.use('/rest', express.static(path.join(__dirname, 'rest')));
