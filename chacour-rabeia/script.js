@@ -132,6 +132,11 @@ $(this).next(".toggle-content").slideToggle("slow",function() {
     });
 });
 
+$(document).ready(function(){
+    // Trigger click event on toggle button
+    $('#firstToggle').trigger('click');
+    $('#firstToggle').trigger('click');
+});
 
 
 
