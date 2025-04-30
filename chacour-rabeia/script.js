@@ -407,11 +407,10 @@ $(document).ready(function() {
         phoneError.text("");
 
         const emailData = {
-            to: "r.cpa158@gmail.com",
+            to: "Rabeia@chr-cpa.co.il",
             name: nameInput.val(),
             phone: phoneNumber,
-            message: messageInput.val(),
-            cc:"adham.shahwan94@gmail.com"
+            message: messageInput.val()
         };
 
         $.ajax({
