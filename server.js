@@ -132,11 +132,6 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'am', 'index.html'));
   });
 
-  app.use('/rest', express.static(path.join(__dirname, 'rest')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'rest', 'index.html'));
-  });
-
   app.use('/bayan', express.static(path.join(__dirname, 'bayan')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'bayan', 'index.html'));
@@ -145,10 +140,6 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'bayan', 'style.css'));
   });
 
-  app.use('/dr-sholy', express.static(path.join(__dirname, 'dr-sholy')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dr-sholy', 'index.html'));
-});
 
 
   app.use('/sif', express.static(path.join(__dirname, 'sif')));
@@ -156,15 +147,6 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'sif', 'index.html'));
   });
 
-  app.use('/rest', express.static(path.join(__dirname, 'rest')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'rest', 'index.html'));
-  });
-
-  app.use('/selawi', express.static(path.join(__dirname, 'selawi')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'selawi', 'index.html'));
-  });
 
   app.use('/rizik', express.static(path.join(__dirname, 'rizik')));
   app.get('/', (req, res) => {
@@ -176,23 +158,14 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'chacour-rabeia', 'index.html'));
   });
 
-  app.use('/mohanad', express.static(path.join(__dirname, 'mohanad')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'mohanad', 'index.html'));
-  });
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'mohanad', 'style.css'));
-  });
+
 
   app.use('/ns-saleh', express.static(path.join(__dirname, 'ns-saleh')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'ns-saleh', 'index.html'));
   });
 
-  app.use('/digitech', express.static(path.join(__dirname, 'digitech')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'digitech', 'index.html'));
-  });
+
   app.use('/ameen', express.static(path.join(__dirname, 'ameen')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'ameen', 'index.html'));
@@ -202,19 +175,10 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'jannah', 'index.html'));
   });
 
-  app.use('/break-zone', express.static(path.join(__dirname, 'break-zone')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'break-zone', 'index.html'));
-  });
 
   app.use('/dr-m.matani', express.static(path.join(__dirname, 'dr-m.matani')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'dr-m.matani', 'index.html'));
-  });
-
-  app.use('/menu', express.static(path.join(__dirname, 'menu')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'menu', 'index.html'));
   });
 
   app.use('/emissa', express.static(path.join(__dirname, 'emissa')));
@@ -237,10 +201,6 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'sky-of-jerusalem', 'index.html'));
   });
 
-  app.use('/omaima', express.static(path.join(__dirname, 'omaima')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'omaima', 'index.html'));
-  });
 
   app.use('/gena', express.static(path.join(__dirname, 'gena')));
   app.get('/', (req, res) => {
@@ -249,11 +209,6 @@ app.get('/style.css', (req, res) => {
   app.use('/etgar', express.static(path.join(__dirname, 'etgar')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'etgar', 'index.html'));
-  });
-
-  app.use('/spicy-grill', express.static(path.join(__dirname, 'spicy-grill')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'spicy-grill', 'index.html'));
   });
 
   app.use('/tamer-kitchen', express.static(path.join(__dirname, 'tamer-kitchen')));
@@ -267,24 +222,12 @@ app.get('/style.css', (req, res) => {
   });
 
 
-  app.use('/adminadham', express.static(path.join(__dirname, 'adminadham')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'adminadham', 'index.html'));
-  });
-
-  app.use('/cards', express.static(path.join(__dirname, 'cards')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'cards', 'index.html'));
-  });
 
   app.use('/mh', express.static(path.join(__dirname, 'mh')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'mh', 'index.html'));
   });
-  app.use('/main', express.static(path.join(__dirname, 'main')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'main', 'index.html'));
-  });
+
 
   app.use('/nutella-menu', express.static(path.join(__dirname, 'nutella-menu')));
   app.get('/', (req, res) => {
