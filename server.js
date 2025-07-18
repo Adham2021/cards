@@ -202,6 +202,8 @@ app.get('/style.css', (req, res) => {
   // app.get('/', (req, res) => {
   //   res.sendFile(path.join(__dirname, 'gena', 'index.html'));
   // });
+  
+ 
 
   app.use('/etgar', express.static(path.join(__dirname, 'etgar')));
   app.get('/', (req, res) => {
