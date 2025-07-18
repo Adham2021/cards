@@ -122,23 +122,18 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'mk', 'index.html'));
   });
 
-  app.use('/5rooms-kitchens', express.static(path.join(__dirname, '5rooms-kitchens')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, '5rooms-kitchens', 'index.html'));
-  });
-
   app.use('/am', express.static(path.join(__dirname, 'am')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'am', 'index.html'));
   });
 
-  app.use('/bayan', express.static(path.join(__dirname, 'bayan')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'bayan', 'index.html'));
-  });
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'bayan', 'style.css'));
-  });
+  // app.use('/bayan', express.static(path.join(__dirname, 'bayan')));
+  // app.get('/', (req, res) => {
+  //   res.sendFile(path.join(__dirname, 'bayan', 'index.html'));
+  // });
+  // app.get('/', (req, res) => {
+  //   res.sendFile(path.join(__dirname, 'bayan', 'style.css'));
+  // });
 
 
 
@@ -153,10 +148,10 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'rizik', 'index.html'));
   });
 
-  app.use('/chacour-rabeia', express.static(path.join(__dirname, 'chacour-rabeia')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'chacour-rabeia', 'index.html'));
-  });
+  // app.use('/chacour-rabeia', express.static(path.join(__dirname, 'chacour-rabeia')));
+  // app.get('/', (req, res) => {
+  //   res.sendFile(path.join(__dirname, 'chacour-rabeia', 'index.html'));
+  // });
 
 
 
@@ -166,25 +161,26 @@ app.get('/style.css', (req, res) => {
   });
 
 
-  app.use('/ameen', express.static(path.join(__dirname, 'ameen')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'ameen', 'index.html'));
-  });
-  app.use('/jannah', express.static(path.join(__dirname, 'jannah')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'jannah', 'index.html'));
-  });
+  // app.use('/ameen', express.static(path.join(__dirname, 'ameen')));
+  // app.get('/', (req, res) => {
+  //   res.sendFile(path.join(__dirname, 'ameen', 'index.html'));
+  // });
+
+  // app.use('/jannah', express.static(path.join(__dirname, 'jannah')));
+  // app.get('/', (req, res) => {
+  //   res.sendFile(path.join(__dirname, 'jannah', 'index.html'));
+  // });
 
 
-  app.use('/dr-m.matani', express.static(path.join(__dirname, 'dr-m.matani')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dr-m.matani', 'index.html'));
-  });
+  // app.use('/dr-m.matani', express.static(path.join(__dirname, 'dr-m.matani')));
+  // app.get('/', (req, res) => {
+  //   res.sendFile(path.join(__dirname, 'dr-m.matani', 'index.html'));
+  // });
 
-  app.use('/emissa', express.static(path.join(__dirname, 'emissa')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'emissa', 'index.html'));
-  });
+  // app.use('/emissa', express.static(path.join(__dirname, 'emissa')));
+  // app.get('/', (req, res) => {
+  //   res.sendFile(path.join(__dirname, 'emissa', 'index.html'));
+  // });
 
   app.use('/dr.nutella', express.static(path.join(__dirname, 'dr.nutella')));
   app.get('/', (req, res) => {
@@ -196,16 +192,17 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'lubna', 'index.html'));
   });
 
-  app.use('/sky-of-jerusalem', express.static(path.join(__dirname, 'sky-of-jerusalem')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'sky-of-jerusalem', 'index.html'));
-  });
+  // app.use('/sky-of-jerusalem', express.static(path.join(__dirname, 'sky-of-jerusalem')));
+  // app.get('/', (req, res) => {
+  //   res.sendFile(path.join(__dirname, 'sky-of-jerusalem', 'index.html'));
+  // });
 
 
-  app.use('/gena', express.static(path.join(__dirname, 'gena')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'gena', 'index.html'));
-  });
+  // app.use('/gena', express.static(path.join(__dirname, 'gena')));
+  // app.get('/', (req, res) => {
+  //   res.sendFile(path.join(__dirname, 'gena', 'index.html'));
+  // });
+
   app.use('/etgar', express.static(path.join(__dirname, 'etgar')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'etgar', 'index.html'));
@@ -243,3 +240,4 @@ app.use((req, res, next) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+ 
