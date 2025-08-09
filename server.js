@@ -215,14 +215,16 @@ app.get('/style.css', (req, res) => {
   //   res.sendFile(path.join(__dirname, 'tamer-kitchen', 'index.html'));
   // });
 
-// Redirect any case variation of /tamer-kitchen to lowercase
+// Redirect ALL case variations (e.g., /Tamer-Kitchen, /TAMER-KITCHEN) to lowercase
 app.get(/\/tamer-kitchen/i, (req, res) => {
-  const lowercasePath = req.path.toLowerCase();
-  res.redirect(lowercasePath);
+  res.redirect('/tamer-kitchen' + req.path.slice(13)); // 13 = length of '/tamer-kitchen'
 });
 
-// Then your existing static route
+// Serve static files
 app.use('/tamer-kitchen', express.static(path.join(__dirname, 'tamer-kitchen')));
+
+
+
   app.use('/tiktak', express.static(path.join(__dirname, 'tiktak')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'tiktak', 'index.html'));
