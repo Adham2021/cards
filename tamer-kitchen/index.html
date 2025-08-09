@@ -26,7 +26,13 @@
 
   gtag('config', 'G-9JE6XFVB7B');
 </script>
-
+	
+<script>
+  const path = window.location.pathname;
+  if (path.match(/\/Tamer-Kitchen(\/|$)/i)) {
+    window.location.href = path.toLowerCase();
+  }
+</script>
 
 	<meta property="og:locale" content="he_IL">
 	<meta property="og:type" content="article">
