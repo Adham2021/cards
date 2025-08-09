@@ -210,19 +210,10 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'etgar', 'index.html'));
   });
 
-  // app.use('/tamer-kitchen', express.static(path.join(__dirname, 'tamer-kitchen')));
-  // app.get('/', (req, res) => {
-  //   res.sendFile(path.join(__dirname, 'tamer-kitchen', 'index.html'));
-  // });
-
-// Redirect ALL case variations (e.g., /Tamer-Kitchen, /TAMER-KITCHEN) to lowercase
-app.get(/\/tamer-kitchen/i, (req, res) => {
-  res.redirect('/tamer-kitchen' + req.path.slice(13)); // 13 = length of '/tamer-kitchen'
-});
-
-// Serve static files
-app.use('/tamer-kitchen', express.static(path.join(__dirname, 'tamer-kitchen')));
-
+  app.use('/tamer-kitchen', express.static(path.join(__dirname, 'tamer-kitchen')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'tamer-kitchen', 'index.html'));
+  });
 
 
   app.use('/tiktak', express.static(path.join(__dirname, 'tiktak')));
