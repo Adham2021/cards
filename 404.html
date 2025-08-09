@@ -1,14 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-<script>
-  const path = window.location.pathname;
-  if (path.toLowerCase().includes('tamer-kitchen')) {
-    window.location.href = '/tamer-kitchen' + path.slice(path.toLowerCase().indexOf('tamer-kitchen') + 13);
-  }
-  else {
-    document.body.innerHTML = '<h1>Page not found</h1>'; // Real 404
-  }
-</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,23 +15,19 @@
       justify-content: center;
       height: 100vh;
     }
-
     .container {
       text-align: center;
     }
-
     .error-code {
       font-size: 8em;
       font-weight: bold;
       color: #555;
     }
-
     .error-message {
       font-size: 1.5em;
       color: #777;
       margin-bottom: 20px;
     }
-
     .back-link {
       text-decoration: none;
       color: #333;
@@ -51,21 +38,41 @@
       display: inline-block;
       transition: background-color 0.3s, color 0.3s;
     }
-
     .back-link:hover {
       background-color: #333;
       color: #fff;
     }
   </style>
+  <script>
+    // Check if this is a tamer-kitchen URL with wrong case
+    (function() {
+      const path = window.location.pathname;
+      const tamerPath = '/tamer-kitchen';
+      
+      if (path.toLowerCase().includes(tamerPath.toLowerCase()) {
+        // Extract the correct path (case-sensitive) and any subpaths
+        const correctPath = tamerPath + path.slice(path.toLowerCase().indexOf(tamerPath.toLowerCase()) + tamerPath.length);
+        
+        // Only redirect if the case is wrong
+        if (path !== correctPath) {
+          window.location.href = correctPath;
+          return;
+        }
+      }
+      
+      // Show normal 404 content if not a tamer-kitchen URL
+      document.addEventListener('DOMContentLoaded', function() {
+        document.body.style.display = 'flex';
+      });
+    })();
+  </script>
 </head>
-<body>
-
+<body style="display:none">
   <div class="container">
     <div class="error-code">404</div>
     <div class="error-message">Oops! Page not found.</div>
     <p>The page you are looking for might be in another castle.</p>
     <a href="/" class="back-link">Go back home</a>
   </div>
-
 </body>
 </html>
