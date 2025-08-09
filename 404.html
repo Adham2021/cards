@@ -43,29 +43,7 @@
       color: #fff;
     }
   </style>
-  <script>
-    // Check if this is a tamer-kitchen URL with wrong case
-    (function() {
-      const path = window.location.pathname;
-      const tamerPath = '/tamer-kitchen';
-      
-      if (path.toLowerCase().includes(tamerPath.toLowerCase()) {
-        // Extract the correct path (case-sensitive) and any subpaths
-        const correctPath = tamerPath + path.slice(path.toLowerCase().indexOf(tamerPath.toLowerCase()) + tamerPath.length);
-        
-        // Only redirect if the case is wrong
-        if (path !== correctPath) {
-          window.location.href = correctPath;
-          return;
-        }
-      }
-      
-      // Show normal 404 content if not a tamer-kitchen URL
-      document.addEventListener('DOMContentLoaded', function() {
-        document.body.style.display = 'flex';
-      });
-    })();
-  </script>
+ 
 </head>
 <body style="display:none">
   <div class="container">
