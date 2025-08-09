@@ -1,5 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+<script>
+  const path = window.location.pathname;
+  if (path.toLowerCase().includes('tamer-kitchen')) {
+    window.location.href = '/tamer-kitchen' + path.slice(path.toLowerCase().indexOf('tamer-kitchen') + 13);
+  }
+  else {
+    document.body.innerHTML = '<h1>Page not found</h1>'; // Real 404
+  }
+</script>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
