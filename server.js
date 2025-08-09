@@ -210,10 +210,26 @@ app.get('/style.css', (req, res) => {
     res.sendFile(path.join(__dirname, 'etgar', 'index.html'));
   });
 
-  app.use('/tamer-kitchen', express.static(path.join(__dirname, 'tamer-kitchen')));
-  app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'tamer-kitchen', 'index.html'));
-  });
+  // app.use('/tamer-kitchen', express.static(path.join(__dirname, 'tamer-kitchen')));
+  // app.get('/', (req, res) => {
+  //   res.sendFile(path.join(__dirname, 'tamer-kitchen', 'index.html'));
+  // });
+
+// Case-insensitive redirect for /tamer-kitchen (catches any letter case variation)
+app.get(/\/tamer-kitchen/i, (req, res) => {
+  const correctPath = '/tamer-kitchen' + req.path.slice(
+    req.path.toLowerCase().indexOf('/tamer-kitchen') + '/tamer-kitchen'.length
+  );
+  res.redirect(correctPath);
+});
+
+// Static files serving (must match exact folder name)
+app.use('/tamer-kitchen', express.static(path.join(__dirname, 'tamer-kitchen')));
+
+// Root route serving tamer-kitchen's index.html
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'tamer-kitchen', 'index.html'));
+});
 
   app.use('/tiktak', express.static(path.join(__dirname, 'tiktak')));
   app.get('/', (req, res) => {
