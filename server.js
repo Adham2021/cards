@@ -161,15 +161,15 @@ app.get('/style.css', (req, res) => {
   });
 
 
-  // app.use('/ameen', express.static(path.join(__dirname, 'ameen')));
-  // app.get('/', (req, res) => {
-  //   res.sendFile(path.join(__dirname, 'ameen', 'index.html'));
-  // });
+  app.use('/ameen', express.static(path.join(__dirname, 'ameen')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'ameen', 'index.html'));
+  });
 
-  // app.use('/jannah', express.static(path.join(__dirname, 'jannah')));
-  // app.get('/', (req, res) => {
-  //   res.sendFile(path.join(__dirname, 'jannah', 'index.html'));
-  // });
+  app.use('/gena', express.static(path.join(__dirname, 'gena')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'gena', 'index.html'));
+  });
 
 
   // app.use('/dr-m.matani', express.static(path.join(__dirname, 'dr-m.matani')));
@@ -198,10 +198,10 @@ app.get('/style.css', (req, res) => {
   // });
 
 
-  // app.use('/gena', express.static(path.join(__dirname, 'gena')));
-  // app.get('/', (req, res) => {
-  //   res.sendFile(path.join(__dirname, 'gena', 'index.html'));
-  // });
+  app.use('/5rooms', express.static(path.join(__dirname, '5rooms')));
+  app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '5rooms', 'index.html'));
+  });
   
  
 

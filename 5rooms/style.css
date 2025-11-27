@@ -1,0 +1,738 @@
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+    background: #000814;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Starry background animation */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, #eee, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 60px 70px, #fff, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 50px 50px, #ddd, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 130px 80px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 90px 10px, #eee, rgba(0,0,0,0)),
+        radial-gradient(1px 1px at 10px 90px, #fff, rgba(0,0,0,0)),
+        radial-gradient(2px 2px at 130px 130px, #ddd, rgba(0,0,0,0));
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    animation: twinkle 5s infinite;
+    pointer-events: none;
+    z-index: 1;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+body > * {
+    position: relative;
+    z-index: 2;
+}
+
+
+
+.cover-photo {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 120px;
+}
+.cover-photo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(212, 165, 116, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(244, 208, 63, 0.3) 0%, transparent 50%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 100%, 0 85%);
+}
+
+.image-container {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+.toggle-content {
+    overflow: hidden;
+    display: none;
+    transition: max-height 0.5s ease;
+    background: linear-gradient(135deg, #2A2410 0%, #3D3017 100%);
+    border-radius: 1%;
+    border: 1px solid #C7933A;
+}
+
+.toggle-content li{
+    text-align: justify;
+    font-weight: bold;
+    color: #e0e0e0;
+    font-size: 15px;
+}
+
+.toggle-content.show {
+    max-height: 1000px;
+}
+
+
+.toggle-btn {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 2px solid #D4A574;
+    border-radius: 5px;
+    margin-top: 5px;
+    background: linear-gradient(135deg, #D4A574 0%, #C7933A 100%);
+    transition: all 0.3s ease;
+    color: #fff;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0 0 15px rgba(212, 165, 116, 0.5);
+}
+
+.toggle-btn:hover {
+    background: linear-gradient(135deg, #F4D03F 0%, #D4A574 100%);
+    box-shadow: 0 0 25px rgba(244, 208, 63, 0.8);
+    transform: translateY(-2px);
+}
+
+.toggle-btn i {
+    font-size: 16px;
+}
+
+.service-item,
+.faq-item,
+.review {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.service-icon,
+.faq-item label {
+    font-size: 24px;
+    margin-right: 10px;
+    transition: color 0.3s ease;
+}
+
+.service-item:hover .service-icon,
+.faq-item label:hover {
+    color: #007bff;
+}
+
+.service-text,
+.faq-item p,
+.review p,
+.working-hours p
+{
+    font-size: 19px;
+    color: #e0e0e0;
+}
+
+.faq-item label {
+    display: block;
+    padding: 10px;
+    background: linear-gradient(135deg, #2A2410 0%, #3D3017 100%);
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    width: 100%;
+    text-align: left;
+    color: #e0e0e0;
+    border: 1px solid #C7933A;
+}
+
+.faq-item label:hover {
+    background: linear-gradient(135deg, #C7933A 0%, #D4A574 100%);
+    box-shadow: 0 0 15px rgba(212, 165, 116, 0.5);
+    color: #fff;
+}
+
+.faq-item p {
+    overflow: hidden;
+    transition: height 0.5s ease;
+    background: linear-gradient(135deg, #2A2410 0%, #3D3017 100%);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    height: auto;
+    color: #e0e0e0;
+    border-left: 3px solid #D4A574;
+}
+
+.service-item p {
+    overflow: hidden;
+    transition: height 0.5s ease;
+    background: linear-gradient(135deg, #2A2410 0%, #3D3017 100%);
+    padding: 10px;
+    margin-top: 10px;
+    height: auto;
+    color: #ffffff;
+    font-weight: bold;
+    margin: 0;
+    border-left: 3px solid #F4D03F;
+}
+
+.review {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.review img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.review .subtitle {
+    font-style: italic;
+    /* Italicize the subtitle */
+    color: #888;
+    /* Set a subdued color for the subtitle */
+}
+
+.star-rating {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.star-rating i {
+    color: #ffd700;
+    /* Gold color for stars */
+    font-size: 18px;
+    margin-right: 2px;
+}
+
+
+.contact-info p {
+    margin: 0;
+}
+
+
+.waze i {
+    color: #a78bfa;
+}
+
+.facebook i {
+    color: #a78bfa;
+}
+
+.whatsapp i {
+    color: #a78bfa;
+}
+
+.phone i {
+    color: #a78bfa;
+}
+
+.email i {
+    color: #a78bfa;
+}
+
+.website i {
+    color: #a78bfa;
+}
+
+.instagram i {
+    color: #a78bfa;
+}
+
+.tiktok i {
+    color: #a78bfa;
+}
+
+.working-hours,
+.about-us,
+.services,
+.gallery-container,
+.faq,
+.reviews {
+    text-align: center;
+    padding-top: 10px;
+    margin-top: 30px;
+}
+
+.working-hours p {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.gallery-container h4 {
+    background-color: burlywood;
+    border-radius: 10%;
+}
+
+.about-us h2,
+.reviews h2,
+.share-section h2,
+.slider-container h2,
+.working-hours h2,
+.faq h2,
+.services h2 {
+    color: #F4D03F;
+    text-decoration: underline;
+    text-decoration-color: #D4A574;
+    text-shadow: 0 0 10px rgba(244, 208, 63, 0.5);
+}
+
+.gallery-container {
+    text-align: center; /* Center the text horizontally */
+}
+#working-hours-status span { 
+    color: #F4D03F;
+}
+.text {
+    color: #e0e0e0;
+    opacity: 0.996057;
+}
+
+.reviews-slider {
+    position: relative;
+    overflow: hidden;
+}
+iframe {
+    /* You can adjust the max-width if needed */
+    max-width: 100%;
+}
+
+.reviews {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review {
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+.slider-container {
+    position: relative;
+    width: 90%;
+    margin: 50px auto;
+    overflow: hidden;
+    text-align: center;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 5%;
+    background-color: ghostblack;
+}
+
+.slide img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.slide h3 {
+    margin: 5px 0;
+}
+
+.stars {
+    color: #ffd700;
+    /* gold color for stars */
+    margin: 5px 0;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.slide p {
+    font-weight: bold;
+
+}
+
+.profile img {
+    width: 65%;
+    height: 65%;
+    margin-bottom: 0;
+    border-radius: 0%;
+}
+
+.profile .subtitle{
+    font-size: 20px !important;
+    color: #F4D03F;
+    font-weight: bold !important;
+    margin-top: -25px;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInFromBottom 1s ease-out 1s forwards;
+}
+
+
+.profile h2 { 
+    font-size: 25px !important;
+    color: #F4D03F;
+    margin-top:-25px;
+    text-shadow: 0 0 10px rgba(244, 208, 63, 0.5);
+}
+.container {
+    background: none;
+    box-shadow: 0 -5px 10px rgba(212, 165, 116, 0.3);
+}
+
+
+#language-menu-btn {
+    background: linear-gradient(135deg, #C7933A 0%, #D4A574 100%);
+    border: 2px solid #D4A574;
+    border-radius: 5px;
+    padding: 8px 12px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(212, 165, 116, 0.5);
+}
+
+#scan-icon{
+    background: linear-gradient(135deg, #D4A574 0%, #F4D03F 100%);
+    border: 2px solid #D4A574;
+}
+#scan-icon i{
+    color: white;
+}
+.about-us p {
+    font-size: 19px;
+    color: #e0e0e0;
+    animation: slideFromBottom 1.6s ease-out forwards;
+}
+.add-to-contacts {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #D4A574 0%, #F4D03F 100%);
+    border-radius: 5px;
+    border: 2px solid #D4A574;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: fadeInFromBottom 1s ease-out 2s forwards;
+    opacity: 0;
+    transform: translateY(50px);
+    box-shadow: 0 0 15px rgba(212, 165, 116, 0.5);
+}
+
+
+.add-to-contacts span {
+    color: white;
+}
+
+.add-to-contacts:hover {
+    background: linear-gradient(135deg, #F4D03F 0%, #FFF700 100%);
+    box-shadow: 0 0 25px rgba(244, 208, 63, 0.8);
+    transform: translateY(-3px);
+}
+
+.add-to-contacts i {
+    font-size: 18px;
+    margin-right: 5px;
+    color: white;
+}
+.contact-icons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: 800px;
+}
+.contact-icons i
+{
+    color: #F4D03F;
+}
+.contact-icons span { 
+    color: #e0e0e0;
+}
+.icon-container {
+    text-align: center;
+    text-decoration: none;
+    color: #F4D03F;
+    font-size: 14px;
+    transition: all 0.3s;
+    margin-bottom: 20px;
+}
+
+
+.icon-circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border: 2px solid #D4A574;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #2A2410 0%, #3D3017 100%);
+    transition: all 0.3s ease;
+}
+
+.icon-circle:hover {
+    background: linear-gradient(135deg, #D4A574 0%, #F4D03F 100%);
+    color: #fff;
+    box-shadow: 0 0 15px rgba(212, 165, 116, 0.7);
+    transform: scale(1.1);
+}
+
+.icon-text {
+    display: block;
+    font-weight: bold;
+    color: #e0e0e0;
+}
+
+/* Magical additions for the new design */
+
+.share-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.share-icon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(127, 57, 251, 0.3);
+}
+
+.share-icon:hover {
+    background: linear-gradient(135deg, #7f39fb 0%, #a78bfa 100%);
+    color: #fff;
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.8);
+    transform: translateY(-3px) scale(1.1);
+}
+
+.share-icon i {
+    color: inherit;
+}
+
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    background: linear-gradient(135deg, #D4A574 0%, #C7933A 100%);
+    border: 2px solid #F4D03F;
+    cursor: pointer;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(212, 165, 116, 0.5);
+}
+
+.slider-button:hover {
+    background: linear-gradient(135deg, #F4D03F 0%, #FFF700 100%);
+    box-shadow: 0 0 20px rgba(244, 208, 63, 0.8);
+    transform: translateY(-50%) scale(1.15);
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.slide {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 5%;
+    background: linear-gradient(135deg, #2A2410 0%, #3D3017 100%);
+    border: 1px solid #C7933A;
+    padding: 20px;
+}
+
+.slide h3 {
+    margin: 5px 0;
+    color: #F4D03F;
+}
+
+.slide p {
+    color: #e0e0e0;
+}
+
+.stars {
+    color: #F4D03F;
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+footer {
+    background: linear-gradient(135deg, #000814 0%, #3D2817 50%, #000814 100%);
+    color: #F4D03F;
+    padding: 20px;
+    text-align: center;
+    border-top: 2px solid #C7933A;
+}
+
+footer p {
+    color: #e0e0e0;
+    margin: 10px 0;
+}
+
+.footerClass {
+    background: linear-gradient(135deg, #D4A574 0%, #F4D03F 100%);
+    border: 2px solid #D4A574;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(212, 165, 116, 0.5);
+}
+
+.footerClass:hover {
+    background: linear-gradient(135deg, #F4D03F 0%, #FFF700 100%);
+    box-shadow: 0 0 20px rgba(244, 208, 63, 0.8);
+    transform: translateY(-2px);
+}
+
+#whatsapp-icon {
+    position: fixed;
+    bottom: 30px;
+    z-index: 1000;
+}
+
+#whatsapp-icon a {
+    display: inline-flex;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+#whatsapp-icon a:hover {
+    box-shadow: 0 0 30px rgba(244, 208, 63, 0.9);
+    transform: scale(1.1);
+}
+
+#barcode-dialog {
+    background: linear-gradient(135deg, #000814 0%, #3D2817 50%, #000814 100%);
+    border: 2px solid #C7933A;
+    border-radius: 10px;
+    color: #e0e0e0;
+}
+
+#barcode-dialog .dialog-text {
+    color: #F4D03F;
+    font-weight: bold;
+}
+
+.close-btn {
+    background: linear-gradient(135deg, #D4A574 0%, #F4D03F 100%);
+    border: 2px solid #D4A574;
+    color: white;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: linear-gradient(135deg, #F4D03F 0%, #FFF700 100%);
+    box-shadow: 0 0 15px rgba(244, 208, 63, 0.7);
+}
+
+/* Language menu styling */
+#language-menu {
+    background: linear-gradient(135deg, #3D2817 0%, #4A3420 100%);
+    border: 2px solid #C7933A;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+#language-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: #F4D03F;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #C7933A;
+}
+
+#language-menu a:last-child {
+    border-bottom: none;
+}
+
+#language-menu a:hover {
+    background: linear-gradient(135deg, #C7933A 0%, #D4A574 100%);
+    color: #fff;
+    padding-left: 20px;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #000814;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #D4A574 0%, #F4D03F 100%);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #F4D03F 0%, #FFF700 100%);
+}
