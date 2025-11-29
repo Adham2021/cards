@@ -65,6 +65,9 @@ function updateWorkingHoursStatus() {
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مغلق';
             statusUntilElement.textContent = ' يفتح في الساعة 08:00';
+        } else if (currentLanguage === 'english') {
+            statusOpenElement.textContent = 'Closed';
+            statusUntilElement.textContent = ' Opens at 08:00';
         }
 
         statusOpenElement.classList.add('status-close');
@@ -76,6 +79,9 @@ function updateWorkingHoursStatus() {
         } else if (currentLanguage === 'arabic') {
             statusOpenElement.textContent = 'مفتوح';
             statusUntilElement.textContent = ' حتى 20:00';
+        } else if (currentLanguage === 'english') {
+            statusOpenElement.textContent = 'Open';
+            statusUntilElement.textContent = ' until 20:00';
         }
 
         statusOpenElement.classList.add('status-open');
@@ -156,7 +162,8 @@ $(document).ready(function() {
 function changeLanguage(language, byClickButton = true) {
     const languageData = {
         hebrew: { flag: "/assets/images/files/flags/israel.png", text: "עברית" },
-        arabic: { flag: "/assets/images/files/flags/egypt.png", text: "العربية" }
+        arabic: { flag: "/assets/images/files/flags/egypt.png", text: "العربية" },
+        english: { flag: "/assets/images/files/flags/united-kingdom.png", text: "English" }
     };
     const selectedLanguage = languageData[language];
     localStorage.setItem('preferredLanguage', language);
@@ -186,6 +193,9 @@ function updateContent(language) {
     }
     if(language=='hebrew'){
         $('body').css('font-family', 'Heebo, sans-serif');
+    }
+    if(language=='english'){
+        $('body').css('font-family', 'Arial, sans-serif');
     }
     const translatableElements = document.querySelectorAll('.translatable');
 
