@@ -710,6 +710,12 @@ footer p {
     border-bottom: 1px solid #C7933A;
 }
 
+.languages {
+    position: relative;
+    top: 20px;
+    margin-right: 0;
+}
+
 #language-menu a:last-child {
     border-bottom: none;
 }
